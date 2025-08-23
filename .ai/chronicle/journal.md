@@ -25,3 +25,4 @@ Formát pri každom merge (1–3 vety):
 - 2025-08-23, PR #b77a4a5, HF-MEM-FIX: Memory Spine updated and TypeScript cache added to .gitignore.
 - 2025-08-23, PR #734b8d8, HF-MEM-FIX: TypeScript cache files added to .gitignore.
 - 2025-08-23, PR #136, HF-GITIGNORE-PATCH: TypeScript build cache rules added to .gitignore.
+- 2025-08-23, PR #TODO, HF-MEM-SYNC: Memory Spine synchronized with current HEAD (3ba573c).
