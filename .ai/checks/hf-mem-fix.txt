@@ -1,0 +1,36 @@
+NODE: v18.17.0
+PNPM: 10.14.0
+
+# Memory Spine Fix Evidence
+HF-ID: HF-MEM-FIX
+DATE: 2025-08-23
+
+# Git Status (pred fixom)
+GIT_STATUS:
+On branch master
+Changes not staged for commit:
+        modified:   .ai/chronicle/journal.md
+        modified:   .ai/state.json
+
+# Git Log (posledných 10 commitov)
+GIT_LOG:
+da4bb4b (HEAD -> master) feat: replace typecheck placeholder with real TypeScript validation (HF-CI-TYPECHECK-PATCH)
+0c7f2d3 feat: pin Node/pnpm versions with .nvmrc and engines (HF-ENV-PIN)
+719c168 fix: simplify CI cache using built-in pnpm caching (HF-CI-CACHE-FIX)
+605e33a fix: CI workflow syntax and update Memory Spine (HF-CI-FIX)
+d2267d4 feat: add CI Quality Gates workflow (HF-CI-PATCH)
+81f5c4d feat: add Tailwind CSS baseline (HF-0003C)
+fc2b522 HF-RULES-PATCH: Guardrails vylepšené - rules.md updated with versioning, auto-write policy, CI gates
+a67f4a2 Initial commit: HF-0000 Phase0-3B complete - repo bootstrap, .ai core, Memory Spine, Automation Pack, App Scaffold, Types fix
+
+# Memory Spine Fix Details
+FIXES_APPLIED:
+1. .ai/chronicle/journal.md - doplnené chýbajúce riadky pre HF karty
+2. .ai/state.json - manifest_commit aktualizovaný na aktuálny HEAD
+
+# Current HEAD
+HEAD: 734b8d8
+
+RESULT: OK - Memory Spine zosúladnený s aktuálnym stavom repo
+DATE: 2025-08-23
+NOTE: Všetky HF karty sú teraz zaznamenané v journal.md, state.json odráža aktuálny HEAD
