@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "echo 'TODO lint'",
-    "typecheck": "echo 'TODO typecheck'",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
     "check:all": "npm run lint && npm run typecheck"
   },
   "dependencies": {
