@@ -2,7 +2,10 @@
   "mcpServers": {
     "example": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-examples"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-examples"
+      ],
       "env": {}
     }
   }
