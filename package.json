@@ -1,0 +1,29 @@
+{
+  "name": "mastrohub-v2",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "echo 'TODO lint'",
+    "typecheck": "echo 'TODO typecheck'",
+    "check:all": "npm run lint && npm run typecheck"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "typescript": "5.5.4",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/node": "^20"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

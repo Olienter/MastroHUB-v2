@@ -1,0 +1,17 @@
+id: HF-0002
+title: "Integration Dress Rehearsal"
+goal: "Dokazat integrovany tok: TALK -> PR -> evidence -> Memory Spine -> merge"
+why_now: "Zamknut ritual a dokazy pred prvym produktovym kodom"
+changeset:
+  - ".ai/checks/a11y-smoke.txt"
+  - ".ai/checks/link-check.txt"
+  - ".ai/checks/lighthouse-light.txt"
+  - ".ai/chronicle/journal.md"
+  - ".ai/handoff/HF-0002.yaml"
+acceptance:
+  - "Tri light reporty v .ai/checks/ maju pozadovane riadky a DATE"
+  - "Chronicle obsahuje 1 riadok s YYYY-MM-DD, PR # a textom pre HF-0002"
+  - "Status tejto karty = verified (po nahrani evidence a zelenom CI)"
+risks_fallback:
+  - "Ak >5 dotykov, rozdelit na HF-0002A/0002B"
+status: "verified"

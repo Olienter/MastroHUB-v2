@@ -1,0 +1,9 @@
+{
+  "policy_version": "2025-08-23",
+  "manifest_commit": "HF-0000-Phase2",
+  "active_handoff": null,
+  "last_verified_at": null,
+  "last_verified_by": null,
+  "components": [],
+  "notes": "Machine-readable project state. Agents MUST read this on /SYNC."
+}

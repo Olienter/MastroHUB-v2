@@ -1,0 +1,26 @@
+# AI System Ownership
+# These files require AI system expertise and follow strict protocols
+
+/.ai/ @ai-system-owners
+/.github/workflows/ai-quality-gates.yml @ai-system-owners
+/.github/CODEOWNERS @ai-system-owners
+/.github/pull_request_template.md @ai-system-owners
+
+# Project Core Files
+/README.md @project-owners
+/package.json @project-owners
+/.gitignore @project-owners
+
+# Evidence and Checks
+/.ai/checks/ @ai-system-owners @project-owners
+
+# Handoff and Chronicle
+/.ai/handoff/ @ai-system-owners
+/.ai/chronicle/ @ai-system-owners
+/.ai/decisions/ @ai-system-owners
+
+# Policy and Rules
+/.ai/rules.md @ai-system-owners
+/.ai/safety.md @ai-system-owners
+/.ai/check.md @ai-system-owners
+/.ai/policy-digest.txt @ai-system-owners

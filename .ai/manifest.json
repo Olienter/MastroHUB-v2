@@ -1,0 +1,5 @@
+{
+  "policy_version": "2025-08-23",
+  "manifest_commit": "INIT",
+  "files": [".ai/rules.md", ".ai/talk.md", ".ai/safety.md", ".ai/check.md"]
+}

@@ -1,0 +1,168 @@
+name: AI Quality Gates
+
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main]
+
+jobs:
+  ai-compliance-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Verify AI system integrity
+        run: |
+          echo "Checking AI system integrity..."
+
+          # Verify .ai/ directory exists
+          if [ ! -d ".ai" ]; then
+            echo "❌ .ai/ directory missing"
+            exit 1
+          fi
+
+          # Verify manifest.json exists
+          if [ ! -f ".ai/manifest.json" ]; then
+            echo "❌ .ai/manifest.json missing"
+            exit 1
+          fi
+
+          # Verify required files exist
+          required_files=(
+            ".ai/rules.md"
+            ".ai/talk.md"
+            ".ai/safety.md"
+            ".ai/check.md"
+            ".ai/state.json"
+          )
+
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "❌ Required file missing: $file"
+              exit 1
+            fi
+          done
+
+          echo "✅ AI system integrity verified"
+
+      - name: Check evidence requirements
+        run: |
+          echo "Checking evidence requirements..."
+
+          # Check if PR has evidence in .ai/checks/
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            if [ ! -d ".ai/checks" ] || [ -z "$(ls -A .ai/checks 2>/dev/null)" ]; then
+              echo "⚠️  Warning: No evidence found in .ai/checks/"
+              echo "Consider adding evidence for this PR"
+            else
+              echo "✅ Evidence found in .ai/checks/"
+            fi
+          fi
+
+      - name: Validate file count limits
+        run: |
+          set -euo pipefail
+          echo "Validating file count limits..."
+
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            # PR event: diff base vs head, exclude only .ai/checks/
+            base="${{ github.event.pull_request.base.sha }}"
+            head="${{ github.event.pull_request.head.sha }}"
+            echo "PR event: checking base=$base vs head=$head"
+            
+            changed_files=$(git diff --name-only "$base" "$head" | grep -vE '^\.ai/checks/' | wc -l)
+            echo "Changed files (excluding .ai/checks/): $changed_files"
+            
+            if [ "$changed_files" -gt 5 ]; then
+              echo "❌ FAILED: More than 5 files changed (excluding evidence)"
+              echo "Consider splitting into smaller phases"
+              exit 1
+            else
+              echo "✅ File count within limits (≤5)"
+            fi
+          else
+            # Push event: diff before vs current sha, exclude only .ai/checks/
+            prev="${{ github.event.before }}"
+            curr="${{ github.sha }}"
+            echo "Push event: checking before=$prev vs current=$curr"
+            
+            changed_files=$(git diff --name-only "$prev" "$curr" | grep -vE '^\.ai/checks/' | wc -l)
+            echo "Changed files (excluding .ai/checks/): $changed_files"
+            
+            if [ "$changed_files" -gt 5 ]; then
+              echo "❌ FAILED: More than 5 files changed (excluding evidence)"
+              echo "Consider splitting into smaller phases"
+              exit 1
+            else
+              echo "✅ File count within limits (≤5)"
+            fi
+          fi
+
+      - name: Install jq and validate manifest.json
+        run: |
+          set -euo pipefail
+          echo "Installing jq and validating manifest.json..."
+
+          # Install jq
+          sudo apt-get update && sudo apt-get install -y jq
+
+          # Validate required keys
+          if ! jq -e '.policy_version' .ai/manifest.json > /dev/null; then
+            echo "❌ FAILED: policy_version missing in manifest.json"
+            exit 1
+          fi
+
+          if ! jq -e '.manifest_commit' .ai/manifest.json > /dev/null; then
+            echo "❌ FAILED: manifest_commit missing in manifest.json"
+            exit 1
+          fi
+
+          if ! jq -e '.files | type == "array"' .ai/manifest.json > /dev/null; then
+            echo "❌ FAILED: files array missing in manifest.json"
+            exit 1
+          fi
+
+          echo "✅ Manifest validation passed"
+
+      - name: Check TALK sign-off
+        run: |
+          echo "Checking TALK sign-off..."
+
+          if ! grep -q "Approve plan?" .ai/talk.md; then
+            echo "❌ FAILED: TALK sign-off 'Approve plan?' not found"
+            exit 1
+          fi
+
+          echo "✅ TALK sign-off found"
+
+      - name: Run gitleaks (secrets scan)
+        uses: gitleaks/gitleaks-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run lychee (link check)
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --base-url https://github.com/user/mastrohub-v2 README.md **/*.md
+
+  quality-gates:
+    runs-on: ubuntu-latest
+    needs: ai-compliance-check
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run quality checks
+        run: |
+          echo "Running quality gates..."
+
+          # Basic quality checks
+          echo "✅ AI compliance check passed"
+          echo "✅ Quality gates completed"
+
+          # Update status in handoff files if needed
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "PR #${{ github.event.pull_request.number }} passed quality gates"
+          fi
