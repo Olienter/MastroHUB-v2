@@ -13,4 +13,7 @@ Formát pri každom merge (1–3 vety):
 - 2025-08-23, PR #128, HF-RULES-PATCH: Guardrails vylepšené.
 - 2025-08-23, PR #129, HF-0003C: Tailwind baseline added.
 - 2025-08-23, PR #130, HF-CI-PATCH: CI Quality Gates workflow added.
+- 2025-08-23, PR #132, HF-CI-CACHE-FIX: CI cache simplified using built-in pnpm caching.
+- 2025-08-23, PR #133, HF-ENV-PIN: Node/pnpm versions pinned.
+- 2025-08-23, PR #134, HF-CI-TYPECHECK-PATCH: TypeScript typecheck placeholder replaced with real validation.
 - 2025-08-23, PR #125, HF-0001 Phase3A: Canary CI check passed with file-count=1, manifest validation OK, TALK sign-off OK, gitleaks and lychee OK.
