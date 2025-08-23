@@ -1,0 +1,99 @@
+name: CI Quality Gates
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  file-count-guard:
+    name: File Count Guard (≤5 files)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Count changed files
+        id: count-files
+        run: |
+          # Get list of changed files (excluding .ai/checks/ and pnpm-lock.yaml)
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} | grep -v '^\.ai/checks/' | grep -v '^pnpm-lock\.yaml$' | wc -l)
+          echo "changed_files=$CHANGED_FILES" >> $GITHUB_OUTPUT
+          echo "Changed files (excluding .ai/checks/ and pnpm-lock.yaml): $CHANGED_FILES"
+
+      - name: Validate file count
+        run: |
+          if [ ${{ steps.count-files.outputs.changed_files }} -gt 5 ]; then
+            echo "❌ ERROR: Too many files changed (${{ steps.count-files.outputs.changed_files }} > 5)"
+            echo "Please split your changes into smaller PRs (≤5 files per PR)"
+            exit 1
+          else
+            echo "✅ File count OK: ${{ steps.count-files.outputs.changed_files }} files changed"
+          fi
+
+  typed-build:
+    name: Type Check & Build
+    runs-on: ubuntu-latest
+    needs: file-count-guard
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: '9'
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        run: pnpm typecheck
+
+      - name: Build project
+        run: pnpm build
+
+  evidence-present:
+    name: Evidence Present Check
+    runs-on: ubuntu-latest
+    needs: file-count-guard
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for evidence files
+        id: check-evidence
+        run: |
+          # Look for .ai/checks/*.txt files in the PR
+          EVIDENCE_FILES=$(git diff --name-only ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} | grep '^\.ai/checks/.*\.txt$' | wc -l)
+          echo "evidence_files=$EVIDENCE_FILES" >> $GITHUB_OUTPUT
+          echo "Evidence files found: $EVIDENCE_FILES"
+
+      - name: Validate evidence presence
+        run: |
+          if [ ${{ steps.check-evidence.outputs.evidence_files }} -eq 0 ]; then
+            echo "❌ ERROR: No evidence files (.ai/checks/*.txt) found in PR"
+            echo "Please add evidence file with build results, compliance, and date"
+            exit 1
+          else
+            echo "✅ Evidence present: ${{ steps.check-evidence.outputs.evidence_files }} file(s) found"
+          fi
