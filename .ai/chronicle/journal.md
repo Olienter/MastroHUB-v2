@@ -11,4 +11,6 @@ Formát pri každom merge (1–3 vety):
 - 2025-08-23, PR #, HF-0003A: Phase 3A - Automation Pack implemented with GitHub Actions workflow, CODEOWNERS, PR template, and CI evidence tracking for automated quality gates enforcement.
 - 2025-08-23, PR #127, HF-0003B: Types/next-env fix; TS errors resolved.
 - 2025-08-23, PR #128, HF-RULES-PATCH: Guardrails vylepšené.
+- 2025-08-23, PR #129, HF-0003C: Tailwind baseline added.
+- 2025-08-23, PR #130, HF-CI-PATCH: CI Quality Gates workflow added.
 - 2025-08-23, PR #125, HF-0001 Phase3A: Canary CI check passed with file-count=1, manifest validation OK, TALK sign-off OK, gitleaks and lychee OK.
