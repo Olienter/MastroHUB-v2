@@ -61,3 +61,4 @@ Formát pri každom merge (1–3 vety):
 - 2025-08-24, HF-OPS-ANALYSIS-0004E-REDTEAM-RUN: Red-team test executed with controlled errors in 3 files, build successful, ESLint warnings confirmed, ready for PR creation and CI watchdog testing.
 - 2025-08-24, HF-OPS-ANALYSIS-0004E-REALRUN: Red-team test executed with controlled errors, CI workflow updated with official path filter and Playwright setup, build successful, ready for GitHub Actions testing.
 - 2025-08-24, HF-OPS-ANALYSIS-0004E-NEXT: Red-team test ready for PR creation, evidence file created with PR instructions, branch watchdog/probe-001 pushed to GitHub, manual PR creation required (GitHub CLI not available).
+- 2025-08-24, HF-OPS-ANALYSIS-0004E-CI-FIX-RUN: CI workflow fixed with official path filters, reliable pnpm setup using pnpm/action-setup@v4, job-level conditions removed, permissions added, workflow pushed to GitHub, ready for PR testing.

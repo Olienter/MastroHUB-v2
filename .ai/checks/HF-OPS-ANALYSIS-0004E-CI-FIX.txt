@@ -76,15 +76,16 @@ permissions:
 5. Extract watchdog findings
 6. Update evidence with real results
 
-### RESULT: DIAGNOSIS COMPLETE - READY FOR FIXES
+### RESULT: FIXES APPLIED - READY FOR TESTING
 
-### DATE: 2025-08-24T19:30:00.000Z
+### DATE: 2025-08-24T20:00:00.000Z
 
-### HEAD SHA: af4abef
+### HEAD SHA: 61edca5
 
 ### Notes
-- CI workflow has incorrect trigger configuration
-- hard-fail job failing due to pnpm setup issues
-- watchdog job not running due to hard-fail failure
-- Need to implement official path filters and reliable pnpm setup
-- Ready to apply fixes and test with real PR
+- CI workflow fixed with official path filters
+- Reliable pnpm setup using pnpm/action-setup@v4
+- Job-level conditions removed
+- Permissions added for PR comments
+- Workflow pushed to GitHub
+- Ready for PR testing and watchdog validation
