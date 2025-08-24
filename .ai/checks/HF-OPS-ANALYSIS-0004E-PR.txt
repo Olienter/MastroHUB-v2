@@ -1,0 +1,108 @@
+HF-OPS-ANALYSIS-0004E-PR REDTEAM WATCHDOG TEST PR EVIDENCE
+
+## REDTEAM TEST - PR Creation & GitHub Actions
+
+### Environment Versions
+- NODE: v22.18.0
+- PNPM: 10.14.0
+- HEAD SHA: 266fac4
+- BRANCH: watchdog/probe-001
+
+### PR Creation Instructions
+
+#### Manual PR Creation (GitHub CLI not available)
+1. **Open GitHub Repository**: https://github.com/Olienter/MastroHUB-v2
+2. **Click "Compare & pull request"** for `watchdog/probe-001` branch
+3. **PR Title**: "REDTEAM: Watchdog Test with Controlled Errors"
+4. **PR Description**:
+   ```
+   ## Red-team Test for Watchdog Validation
+   
+   This PR contains controlled errors to test the Watchdog CI job:
+   - Console errors (synthetic console.error)
+   - A11y issues (duplicate H1, missing labels, no alt text)
+   - SEO regression (missing description, og:image)
+   - Performance impact (400kB blocking script)
+   - Hydration mismatch (server vs client diff)
+   - Network 404 (broken link)
+   
+   **Expected**: Watchdog should detect all issues and report warnings
+   **Status**: Will be reverted after validation
+   ```
+
+### Expected GitHub Actions Results
+
+#### CI Pipeline Stages
+1. **hard-fail** ✓ (build, typecheck, lint)
+2. **watchdog** ✓ (Playwright crawl with path filter)
+3. **Artifact upload** ✓ (watchdog report)
+
+#### Expected Watchdog Findings
+- **Console Errors**: ≥1 (synthetic console.error) → Warning ✓
+- **A11y Serious Issues**: ≥3 (duplicate H1, missing label, no alt) → Warning ✓
+- **SEO Issues**: 2 (missing description, og:image) → Warning ✓
+- **Performance Impact**: ~400kB script → Warning ✓
+- **Hydration Mismatch**: server vs client diff → Warning ✓
+- **Network 404**: ≥1 request → Warning ✓
+
+### Seeded Errors Implementation
+
+#### app/page.tsx
+- Console error: `console.error('WatchdogTest: synthetic console error')`
+- A11y: duplicate H1, missing label, no alt text
+- Performance: import of 400kB script
+- Hydration: `new Date().toISOString()` server/client diff
+- Network: broken link `/definitely-not-found`
+
+#### app/layout.tsx
+- SEO: missing description and og:image
+
+#### public/huge-test.js
+- Performance: 400kB blocking script
+
+### CI Workflow Configuration
+
+#### Path Filter
+```yaml
+on:
+  pull_request:
+    paths:
+      - 'app/**'
+      - 'components/**'
+```
+
+#### Watchdog Job
+```yaml
+watchdog:
+  needs: hard-fail
+  if: contains(github.event.pull_request.files.*.path, 'app/') || contains(github.event.pull_request.files.*.path, 'components/')
+  steps:
+    - name: Setup Playwright
+      run: npx playwright install --with-deps
+    - name: Run Watchdog
+      run: pnpm exec playwright test tests/watchdog.spec.ts --reporter=line
+    - name: Upload Watchdog artifacts
+      uses: actions/upload-artifact@v4
+```
+
+### Next Steps After PR Creation
+
+1. **Wait for CI run** to complete
+2. **Extract findings** from Watchdog job logs
+3. **Update evidence** with real GA run data
+4. **Create revert PR** to restore original code
+5. **Verify green Watchdog** after revert
+
+### RESULT: READY FOR PR CREATION
+
+### DATE: 2025-08-24T19:00:00.000Z
+
+### HEAD SHA: 266fac4
+
+### Notes
+- All controlled errors successfully implemented
+- CI workflow configured with official path filter
+- Branch pushed to GitHub repository
+- Manual PR creation required (GitHub CLI not available)
+- Ready for GitHub Actions testing
+- Next: Create PR via web interface and wait for CI results
