@@ -4,14 +4,18 @@ on:
     paths:
       - "app/**"
       - "components/**"
-      - "public/huge-test.js"
+      - "tests/**"
+      - ".github/workflows/**"
+      - "public/**"
   push:
     branches:
       - watchdog/probe-001
     paths:
       - "app/**"
       - "components/**"
-      - "public/huge-test.js"
+      - "tests/**"
+      - ".github/workflows/**"
+      - "public/**"
 
 permissions:
   contents: read
@@ -38,7 +42,6 @@ jobs:
         run: pnpm typecheck
       - name: Lint
         run: pnpm lint
-        continue-on-error: true
       - name: Security Check
         run: |
           echo "Security scan placeholder"
@@ -104,6 +107,7 @@ jobs:
           path: |
             playwright-report
             test-results
+          retention-days: 14
 
   nightly-full:
     runs-on: ubuntu-latest
