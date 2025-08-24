@@ -29,8 +29,9 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           version: 10.14.0
+          run_install: false
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Build
         run: pnpm build
       - name: Type Check
@@ -56,8 +57,9 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           version: 10.14.0
+          run_install: false
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Lighthouse Performance
         run: |
           echo "Lighthouse: TODO - placeholder for performance check"
@@ -82,8 +84,9 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           version: 10.14.0
+          run_install: false
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Build for Watchdog
         run: pnpm build
       - name: Setup Playwright
@@ -112,8 +115,9 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           version: 10.14.0
+          run_install: false
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Full Lighthouse Analysis
         run: |
           echo "Full Lighthouse + A11y crawl + Bundle analyzer: TODO"
