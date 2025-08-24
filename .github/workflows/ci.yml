@@ -2,16 +2,16 @@ name: Adaptive Enforcement CI
 on:
   pull_request:
     paths:
-      - 'app/**'
-      - 'components/**'
-      - 'public/huge-test.js'
+      - "app/**"
+      - "components/**"
+      - "public/huge-test.js"
   push:
     branches:
       - watchdog/probe-001
     paths:
-      - 'app/**'
-      - 'components/**'
-      - 'public/huge-test.js'
+      - "app/**"
+      - "components/**"
+      - "public/huge-test.js"
 
 permissions:
   contents: read
@@ -25,12 +25,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: "20"
       - uses: pnpm/action-setup@v4
         with:
           version: 10.14.0
-          run_install: true
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Build
         run: pnpm build
       - name: Type Check
@@ -52,12 +52,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: "20"
       - uses: pnpm/action-setup@v4
         with:
           version: 10.14.0
-          run_install: true
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Lighthouse Performance
         run: |
           echo "Lighthouse: TODO - placeholder for performance check"
@@ -78,12 +78,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: "20"
       - uses: pnpm/action-setup@v4
         with:
           version: 10.14.0
-          run_install: true
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Build for Watchdog
         run: pnpm build
       - name: Setup Playwright
@@ -108,12 +108,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: "20"
       - uses: pnpm/action-setup@v4
         with:
           version: 10.14.0
-          run_install: true
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Full Lighthouse Analysis
         run: |
           echo "Full Lighthouse + A11y crawl + Bundle analyzer: TODO"
@@ -123,4 +123,3 @@ jobs:
       - name: Bundle Analysis
         run: |
           echo "Bundle size analysis: TODO"
-
