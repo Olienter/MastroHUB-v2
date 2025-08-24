@@ -10,7 +10,7 @@
     "smoke": "node scripts/smoke.mjs",
     "lint": "next lint",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "check:all": "npm run lint && npm run typecheck",
+    "check:all": "pnpm run lint && pnpm run typecheck",
     "preinstall": "npx only-allow pnpm",
     "check:manifest": "node scripts/check-manifest.mjs"
   },
