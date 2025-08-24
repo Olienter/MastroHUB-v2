@@ -95,14 +95,15 @@ jobs:
         run: |
           echo "Watchdog: Starting preview crawl..."
           echo "Running Playwright tests..."
-          pnpm exec playwright test tests/watchdog.spec.ts --reporter=line || echo "Playwright tests failed, continuing with placeholder"
+          pnpm exec playwright test -c tests/playwright.config.ts --reporter=line || echo "Playwright tests failed, continuing with placeholder"
       - name: Upload Watchdog artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: watchdog-report
+          name: playwright-report
           path: |
-            playwright-report/**
-            watchdog/**.log
+            playwright-report
+            test-results
 
   nightly-full:
     runs-on: ubuntu-latest
