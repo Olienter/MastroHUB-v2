@@ -59,3 +59,4 @@ Formát pri každom merge (1–3 vety):
 - 2025-08-24, HF-OPS-ANALYSIS-0004E: Implemented Watchdog Plan with Playwright preview crawl, automated testing for hydration/a11y/SEO/performance issues, CI integration with path filtering.
 - 2025-08-24, HF-OPS-ANALYSIS-0004E-REDTEAM: Red-team test implemented with 6 seeded errors (console, a11y, SEO, performance, hydration, 404), evidence collected, ready for CI validation and revert testing.
 - 2025-08-24, HF-OPS-ANALYSIS-0004E-REDTEAM-RUN: Red-team test executed with controlled errors in 3 files, build successful, ESLint warnings confirmed, ready for PR creation and CI watchdog testing.
+- 2025-08-24, HF-OPS-ANALYSIS-0004E-REALRUN: Red-team test executed with controlled errors, CI workflow updated with official path filter and Playwright setup, build successful, ready for GitHub Actions testing.

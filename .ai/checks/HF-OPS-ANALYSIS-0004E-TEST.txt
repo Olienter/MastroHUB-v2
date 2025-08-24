@@ -100,14 +100,15 @@ Route (app)                              Size     First Load JS
 
 ### RESULT: PASS (All seeded errors successfully implemented)
 
-### DATE: 2025-08-24T18:00:00.000Z
+### DATE: 2025-08-24T18:30:00.000Z
 
-### HEAD SHA: 726253e
+### HEAD SHA: 9449c97
 
 ### Notes
 - All 6 types of seeded errors successfully implemented
 - Build passes with expected warnings
 - ESLint catches a11y issues during build
 - Performance impact confirmed (400kB script)
+- CI workflow updated with official path filter and Playwright setup
 - Ready for CI watchdog testing
 - Next step: Create PR and wait for CI results
