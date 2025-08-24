@@ -1,5 +1,10 @@
 name: Adaptive Enforcement CI
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+    paths:
+      - 'app/**'
+      - 'components/**'
 
 jobs:
   hard-fail:
@@ -35,13 +40,17 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
       - name: Lighthouse Performance
-        run: echo "Lighthouse: TODO - placeholder for performance check"
+        run: |
+          echo "Lighthouse: TODO - placeholder for performance check"
       - name: A11y Scan
-        run: echo "A11y scan: TODO - placeholder for accessibility check"
+        run: |
+          echo "A11y scan: TODO - placeholder for accessibility check"
       - name: Test Coverage
-        run: echo "Test coverage: TODO - placeholder for test coverage check"
+        run: |
+          echo "Test coverage: TODO - placeholder for test coverage check"
       - name: SEO Meta
-        run: echo "SEO meta: TODO - placeholder for SEO check"
+        run: |
+          echo "SEO meta: TODO - placeholder for SEO check"
 
   watchdog:
     runs-on: ubuntu-latest
@@ -58,11 +67,18 @@ jobs:
         run: pnpm build
       - name: Setup Playwright
         run: npx playwright install --with-deps
-      - name: Watchdog Crawl
+      - name: Run Watchdog
         run: |
           echo "Watchdog: Starting preview crawl..."
           echo "Running Playwright tests..."
-          npx playwright test --project=watchdog || echo "Playwright tests failed, continuing with placeholder"
+          pnpm exec playwright test tests/watchdog.spec.ts --reporter=line || echo "Playwright tests failed, continuing with placeholder"
+      - name: Upload Watchdog artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: watchdog-report
+          path: |
+            playwright-report/**
+            watchdog/**.log
 
   nightly-full:
     runs-on: ubuntu-latest
@@ -75,8 +91,11 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
       - name: Full Lighthouse Analysis
-        run: echo "Full Lighthouse + A11y crawl + Bundle analyzer: TODO"
+        run: |
+          echo "Full Lighthouse + A11y crawl + Bundle analyzer: TODO"
       - name: Complete A11y Crawl
-        run: echo "Complete accessibility crawl: TODO"
+        run: |
+          echo "Complete accessibility crawl: TODO"
       - name: Bundle Analysis
-        run: echo "Bundle size analysis: TODO"
+        run: |
+          echo "Bundle size analysis: TODO"

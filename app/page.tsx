@@ -14,7 +14,7 @@ export default function Page() {
         <input id="email" placeholder="Email" /> {/* ❌ bez <label>/aria-label */}
       </form>
       <img src="/logo.png" /> {/* ❌ bez alt */}
-      <a href="/definitely-not-found" rel="nofollow">Broken link</a> {/* ❌ 404 počas crawl */}
+      <a href="/definitely-not-found" rel="nofollow">Broken link</a> {/* ❌ 404 */}
       <div data-now={now}>Home</div>
     </main>
   );
