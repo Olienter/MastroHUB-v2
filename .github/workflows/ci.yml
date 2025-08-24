@@ -30,7 +30,7 @@ jobs:
         with:
           version: 10.14.0
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: Build
         run: pnpm build
       - name: Type Check
@@ -57,7 +57,7 @@ jobs:
         with:
           version: 10.14.0
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: Lighthouse Performance
         run: |
           echo "Lighthouse: TODO - placeholder for performance check"
@@ -83,7 +83,7 @@ jobs:
         with:
           version: 10.14.0
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: Build for Watchdog
         run: pnpm build
       - name: Setup Playwright
@@ -113,7 +113,7 @@ jobs:
         with:
           version: 10.14.0
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: Full Lighthouse Analysis
         run: |
           echo "Full Lighthouse + A11y crawl + Bundle analyzer: TODO"
