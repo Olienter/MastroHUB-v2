@@ -4,9 +4,9 @@ import { Topbar } from "../components/ui/Topbar";
 
 export const metadata = {
   title: 'MastroHUB v2 — Watchdog Test',
-  // description: 'REMOVED ON PURPOSE', // chýba description
+  // description: 'REMOVED ON PURPOSE', // ❌ chýba description
   openGraph: {
-    // images: ['/og.png'], // chýba og:image
+    // images: ['/og.png'], // ❌ chýba og:image
   },
 };
 

@@ -57,3 +57,4 @@ Formát pri každom merge (1–3 vety):
 - 2025-08-24, HF-SEC-NEXT-0001: Next 14.x security audit; patched to latest 14.x (if available); post-audit verdict recorded.
 - 2025-08-24, HF-OPS-ANALYSIS-0004B-A: Implemented Adaptive Enforcement Model with 3-stage CI pipeline, enforcement rules, PR template, and CODEOWNERS; all checks PASS.
 - 2025-08-24, HF-OPS-ANALYSIS-0004E: Implemented Watchdog Plan with Playwright preview crawl, automated testing for hydration/a11y/SEO/performance issues, CI integration with path filtering.
+- 2025-08-24, HF-OPS-ANALYSIS-0004E-REDTEAM: Red-team test implemented with 6 seeded errors (console, a11y, SEO, performance, hydration, 404), evidence collected, ready for CI validation and revert testing.
