@@ -25,6 +25,31 @@ Každá karta musí mať evidence v `.ai/checks/<handoff-id>.txt`:
 - Sekcie: HISTORY, INTENT, IMPACT_MAP, ACCEPTANCE, RISKS_FALLBACK, NEXT_PROMPT_REQUEST
 - Končiť: "<ROLE> Prepinam"
 
+### Komunikačné podpisy (ping‑pong)
+
+- Každá správa GPT končí "GPT Prepinam".
+- Každá správa Cursor končí "Cursor Prepinam".
+- Toto je komunikačný podpis, nie merge sign‑off.
+
+### Lanes in Practice
+
+- **Architekt ↔ GPT:** voľný štýl; GPT zabezpečí transformáciu do TALK v1, len ak je to určené pre Cursor.
+- **GPT ↔ Cursor:** striktne TALK v1 + komunikačný podpis na konci každej správy.
+- **Merge sign‑off:** výhradne Cursor po implementácii a evidence.
+
+### Compliance Echo (povinné)
+
+Každá správa v Lane B začína krátkym potvrdením:
+
+- policy_version overená,
+- IMPACT_MAP ≤5,
+- ACCEPTANCE + evidence definované,
+- Memory Spine: pripomenutie journal/evidence.
+
+### STOP guard (hard rule)
+
+- Ak IMPACT_MAP >5 alebo chýba ACCEPTANCE/evidence plán → okamžité **STOP & REPORT** (žiadne ďalšie ping‑pong správy).
+
 ## 4. Normalized Error Logging
 
 - Každý error musí byť v tvare:
@@ -35,13 +60,51 @@ Každá karta musí mať evidence v `.ai/checks/<handoff-id>.txt`:
   Suggested fix: pnpm add -D @types/react @types/react-dom
 ```
 
-## 5. CI Quality Gates (odporúčanie)
+## 5. Adaptive Enforcement Model
+
+### Enforcement Levels
+
+| Level             | Threshold | Action            | Examples                                        |
+| ----------------- | --------- | ----------------- | ----------------------------------------------- |
+| **Hard Fail**     | 0 errors  | Block deploy      | Build, typecheck, security, auth                |
+| **Warning**       | ≤3 issues | Report + continue | Lighthouse <90, a11y issues, test coverage <80% |
+| **Manual Review** | N/A       | Human decision    | Content pipeline, CTA flows, UX decisions       |
+
+### Escalation Logic
+
+- **Tests**: coverage <60% = Warning; <50% = Hard Fail; **delta** −5 p.b. vs `main` = Hard Fail
+- **Performance (Lighthouse mobile)**: score <90 = Warning; <80 = Hard Fail; **delta** −10 bodov = Hard Fail; bundle >250 kB gzip = Warning; >300 kB = Hard Fail
+- **A11y (axe/pa11y)**: 1–4 serious/critical = Warning; ≥5 = Hard Fail; **delta** +3 = Hard Fail
+- **SEO**: chýbajúci title/description alebo sitemap/robots = Warning; strata OG/Twitter vs `main` = Hard Fail
+- **Security/Auth**: hardcoded secrets, chýbajúce CSP/HSTS, demo účty → vždy Hard Fail
+- **Eskalácia**: 3× rovnaký Warning po sebe na tej istej vetve = Hard Fail; kumulovaný Warning score ≥10 = Hard Fail
+
+### CI Quality Gates
 
 Implementovať `.github/workflows/ci.yml` s jobmi:
 
-- **file-count-guard**: fail PR ak >5 files (mimo `.ai/checks/`).
-- **typed-build**: run `pnpm build` + typecheck.
-- **evidence-present**: fail PR ak chýba `.ai/checks/<handoff>.txt`.
+- **hard-fail**: build + typecheck + lint + security/auth check
+- **warnings**: Lighthouse perf, a11y scan, test coverage, SEO meta
+- **watchdog**: preview crawl cez Playwright (console, a11y, SEO, perf)
+- **nightly-full**: kompletný Lighthouse + a11y crawl + bundle analyzer
+
+### Watchdog Checks
+
+Automatický preview crawl cez Playwright na každom PR:
+
+- **Hydration Errors**: console errors, React SSR/CSR problémy
+- **SEO Meta**: title, description, Open Graph, Twitter Cards
+- **Accessibility**: alt text, headings, landmarks, ARIA labels
+- **Performance**: Core Web Vitals, bundle size, loading times
+- **Network**: failed requests, 4xx/5xx errors
+- **Console**: JavaScript errors, warnings, deprecations
+
+#### Watchdog Thresholds
+
+- **Console Errors**: 0 = PASS, ≥1 = Warning, ≥5 = Hard Fail
+- **A11y Violations**: 0-2 = PASS, 3-5 = Warning, ≥6 = Hard Fail
+- **SEO Missing**: 0 = PASS, 1-2 = Warning, ≥3 = Hard Fail
+- **Performance Delta**: -5% = PASS, -5% to -10% = Warning, >-10% = Hard Fail
 
 ## 6. Journal & State Discipline
 

@@ -1,0 +1,46 @@
+HF-OPS-STATE-0004 STATE SYNC EVIDENCE
+======================================
+
+DATE: 2025-08-24
+TIME: 15:55:18 UTC
+HEAD SHA: 466fbe6
+
+CHANGED FILES:
+- .ai/state.json: last_verified_at/by aktualizované
+- .ai/checks/HF-OPS-STATE-0004.txt: evidence (NEW)
+- .ai/chronicle/journal.md: +1 riadok pre HF-OPS-STATE-0004
+
+DIFF SUMMARY:
+- last_verified_at: null → "2025-08-24T15:55:18.000Z" (aktuálny UTC ISO timestamp)
+- last_verified_by: null → "Cursor"
+- active_handoff: zostáva null (už bol správne nastavený)
+
+PRED/PO DUMP DOTKNUTÝCH KĽÚČOV:
+
+PRED:
+```json
+{
+  "last_verified_at": null,
+  "last_verified_by": null,
+  "active_handoff": null
+}
+```
+
+PO:
+```json
+{
+  "last_verified_at": "2025-08-24T15:55:18.000Z",
+  "last_verified_by": "Cursor",
+  "active_handoff": null
+}
+```
+
+VERIFICATION:
+✅ last_verified_at: ISO timestamp nastavený
+✅ last_verified_by: "Cursor" nastavený  
+✅ active_handoff: null (správne, žiadna aktívna karta)
+✅ Schéma sa nezmenila (len hodnoty polí)
+
+RESULT: OK ✅
+
+NOTES: State.json verifikačné meta polia úspešne aktualizované bez zmeny schémy. active_handoff zostáva null - žiadna aktívna karta.

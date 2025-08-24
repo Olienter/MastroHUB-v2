@@ -1,5 +1,14 @@
 {
   "policy_version": "2025-08-23",
-  "manifest_commit": "INIT",
-  "files": [".ai/rules.md", ".ai/talk.md", ".ai/safety.md", ".ai/check.md"]
+  "manifest_commit": "466fbe6",
+  "files": [
+    ".ai/instructions.md",
+    ".ai/rules.md",
+    ".ai/safety.md",
+    ".ai/policy-digest.txt",
+    ".ai/state.json",
+    ".ai/chronicle/journal.md",
+    ".ai/handoff/index.json",
+    ".ai/talk.md"
+  ]
 }

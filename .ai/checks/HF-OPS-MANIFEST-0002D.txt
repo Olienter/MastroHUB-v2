@@ -1,0 +1,63 @@
+HF-OPS-MANIFEST-0002D HOTFIX EVIDENCE
+======================================
+
+DATE: 2025-08-24
+TIME: 15:15:42 UTC
+HEAD SHA: 466fbe6
+
+CHANGED FILES:
+- .ai/manifest.json: files array restored to SoT set
+- .ai/checks/HF-OPS-MANIFEST-0002D.txt: evidence (NEW)
+- .ai/chronicle/journal.md: +1 riadok pre HF-OPS-MANIFEST-0002D
+
+DIFF SUMMARY:
+- manifest.json.files: 4 položky → 8 položiek (SoT minimal set)
+- Odstránené: .ai/check.md (neexistujúci súbor)
+- Pridané: .ai/instructions.md, .ai/policy-digest.txt, .ai/state.json, .ai/chronicle/journal.md, .ai/handoff/index.json
+
+PÔVODNÉ vs. NOVÉ files[]:
+
+PRED:
+[
+  ".ai/rules.md",
+  ".ai/talk.md", 
+  ".ai/safety.md",
+  ".ai/check.md"
+]
+
+PO:
+[
+  ".ai/instructions.md",
+  ".ai/rules.md",
+  ".ai/safety.md",
+  ".ai/policy-digest.txt",
+  ".ai/state.json",
+  ".ai/chronicle/journal.md",
+  ".ai/handoff/index.json",
+  ".ai/talk.md"
+]
+
+MANIFEST CHECK OUTPUT:
+```
+🔍 Validating 8 files from manifest...
+✅ .ai/instructions.md
+✅ .ai/rules.md
+✅ .ai/safety.md
+✅ .ai/policy-digest.txt
+✅ .ai/state.json
+✅ .ai/chronicle/journal.md
+✅ .ai/handoff/index.json
+✅ .ai/talk.md
+
+✅ Manifest OK (8 files validated)
+```
+
+RESULT: PASS ✅
+
+ROOT CAUSE ANALYSIS:
+- Regresia spôsobená tým, že HF-OPS-MANIFEST-0002C sa nikdy nevykonal
+- .ai/manifest.json mal len Initial commit obsah (4 položky)
+- Chýbalo 5 kľúčových SoT súborov v files array
+- .ai/check.md bol uvedený v manifeste ale neexistoval
+
+NOTES: Manifest files array úspešne obnovený na SoT minimal set. CI check skript teraz PASS. Regresia vyriešená.

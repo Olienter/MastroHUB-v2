@@ -2,31 +2,36 @@
   "name": "mastrohub-v2",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9",
+  "packageManager": "pnpm@10.14.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "echo 'TODO lint'",
+    "start": "next start -p 3000",
+    "smoke": "node scripts/smoke.mjs",
+    "lint": "next lint",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "check:all": "npm run lint && npm run typecheck"
+    "check:all": "npm run lint && npm run typecheck",
+    "preinstall": "npx only-allow pnpm",
+    "check:manifest": "node scripts/check-manifest.mjs"
   },
   "dependencies": {
-    "next": "14.2.5",
+    "next": "14.2.32",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "typescript": "5.5.4",
+    "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/node": "^20",
-    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "15.5.0",
     "postcss": "^8.4.0",
-    "autoprefixer": "^10.4.0"
+    "tailwindcss": "^3.4.0",
+    "typescript": "5.5.4"
   },
   "engines": {
-    "node": ">=20.11.0",
-    "pnpm": ">=9.0.0"
+    "node": ">=20 <23",
+    "pnpm": "10.14.0"
   }
 }

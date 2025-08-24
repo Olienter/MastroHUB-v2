@@ -1,0 +1,67 @@
+HF-OPS-PNPM-0002 PACKAGE MANAGER ALIGNMENT EVIDENCE
+====================================================
+
+DATE: 2025-08-24
+TIME: 16:05:42 UTC
+HEAD SHA: 466fbe6
+
+CHANGED FILES:
+- package.json: packageManager a engines.pnpm zarovnané na presnú verziu
+- .ai/checks/HF-OPS-PNPM-0002.txt: evidence (NEW)
+- .ai/chronicle/journal.md: +1 riadok pre HF-OPS-PNPM-0002
+
+DIFF SUMMARY:
+- packageManager: "pnpm@9" → "pnpm@10.14.0"
+- engines.pnpm: ">=9.0.0" → "10.14.0"
+- engines.node: ">=20.11.0" → ">=20 <23"
+
+VERSION INFORMATION:
+✅ pnpm -v: 10.14.0
+✅ node -v: v22.18.0
+
+PNPM INSTALL TEST (--frozen-lockfile):
+```
+Lockfile is up to date, resolution step is skipped
+Already up to date
+Done in 479ms using pnpm v10.14.0
+```
+✅ **WARNING "Cannot switch to pnpm@9" sa NEobjavuje!**
+
+PNPM BUILD TEST:
+```
+> mastrohub-v2@0.0.0 build C:\Users\olastro
+> next build
+
+  ▲ Next.js 14.2.5
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+ ✓ Linting and checking validity of types    
+ ✓ Collecting page data    
+ ✓ Generating static pages (4/4)
+ ✓ Collecting build traces    
+ ✓ Finalizing page optimization
+```
+✅ **Build úspešný, žiadne warningy!**
+
+PACKAGE.JSON VERIFICATION:
+```json
+{
+  "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": ">=20 <23",
+    "pnpm": "10.14.0"
+  }
+}
+```
+
+COMPLIANCE CHECK:
+✅ packageManager = presná pnpm verzia (10.14.0)
+✅ engines.pnpm = presná pnpm verzia (10.14.0)  
+✅ engines.node = aktuálny range (>=20 <23)
+✅ Žiadne warningy v pnpm install/build
+✅ Žiadne iné zmeny v package.json
+
+RESULT: PASS ✅
+
+NOTES: Package manager warning úspešne odstránený. package.json je teraz zarovnaný s aktuálnou pnpm verziou 10.14.0. Všetky pnpm operácie bežia bez warningov.

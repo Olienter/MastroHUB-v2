@@ -1,0 +1,152 @@
+HF-FE-SMOKE-0001 SMOKE TEST EVIDENCE
+======================================
+
+DATE: 2025-08-24
+TIME: 18:20:00 UTC
+HEAD SHA: 466fbe6
+
+## IMPLEMENTED CHANGES
+
+### 1. scripts/smoke.mjs
+- ✅ Nový smoke test script vytvorený
+- ✅ Automatické spustenie servera a overenie endpointov
+- ✅ Používa Node.js built-in moduly (child_process, fetch)
+- ✅ Žiadne nové závislosti
+
+### 2. package.json
+- ✅ Pridaný `"smoke": "node scripts/smoke.mjs"` script
+- ✅ Integrácia s existujúcim pnpm workflow
+
+## SMOKE TEST EXECUTION
+
+### Príkaz:
+```bash
+pnpm smoke
+```
+
+### Výstup:
+```
+:: build
+:: start
+:: result {
+  "port": "3000",
+  "health": {
+    "status": "healthy",
+    "timestamp": "2025-08-24T17:15:26.047Z",
+    "version": "2.0.0"
+  },
+  "homeStatus": 200,
+  "ok": true,
+  "ts": "2025-08-24T17:15:38.935Z"
+}
+```
+
+### Exit Code: 0 ✅
+
+## TEST RESULTS ANALYSIS
+
+### Build Status:
+- **Command:** `npm run build`
+- **Result:** ✅ PASS - Build úspešne dokončený
+
+### Server Start:
+- **Command:** `npm run start -- -- -p 3000`
+- **Result:** ✅ PASS - Server spustený na porte 3000
+
+### Health Endpoint Test:
+- **URL:** `http://127.0.0.1:3000/api/health`
+- **Response:** JSON s `status: "healthy"`
+- **Status:** ✅ PASS - Health endpoint funguje
+
+### Homepage Test:
+- **URL:** `http://127.0.0.1:3000/`
+- **Response:** HTTP 200 OK
+- **Status:** ✅ PASS - Homepage dostupná
+
+### Overall Result:
+- **ok:** `true`
+- **Port:** 3000
+- **Timestamp:** 2025-08-24T17:15:38.935Z
+- **Status:** ✅ PASS - Všetky testy prešli
+
+## TECHNICAL IMPLEMENTATION
+
+### Smoke Script Features:
+1. **Build verification:** Spustí `npm run build` a overí úspech
+2. **Server startup:** Spustí `npm run start` s port parametrom
+3. **Health check:** Testuje `/api/health` endpoint
+4. **Homepage check:** Overuje dostupnosť hlavnej stránky
+5. **Automatic cleanup:** Zastaví server po testoch
+6. **Exit codes:** 0 = PASS, 1 = FAIL
+
+### Dependencies:
+- **Node.js built-in:** `child_process`, `fetch` (Node 18+)
+- **External:** Žiadne nové závislosti
+- **Commands:** Používa `npm run` namiesto `pnpm` pre PATH kompatibilitu
+
+### Error Handling:
+- **Build failure:** Script zlyhá s exit code 1
+- **Server startup failure:** Script zlyhá s exit code 1
+- **Health check failure:** Script zlyhá s exit code 1
+- **Network errors:** Script zlyhá s exit code 1
+
+## COMPLIANCE
+
+- [x] Smoke script vytvorený ✅
+- [x] package.json aktualizovaný ✅
+- [x] `pnpm smoke` exit code 0 ✅
+- [x] Všetky endpointy overené ✅
+- [x] ≤4 dotyky dodržané ✅
+- [x] Žiadne nové závislosti ✅
+
+## USAGE INSTRUCTIONS
+
+### Run smoke test:
+```bash
+pnpm smoke
+```
+
+### Expected output:
+- Build úspech
+- Server spustenie
+- Health endpoint test (PASS)
+- Homepage test (PASS)
+- Exit code 0
+
+### CI Integration:
+```bash
+# V CI pipeline
+pnpm smoke
+# Ak exit code ≠ 0, build zlyhá
+```
+
+## RISKS & MITIGATION
+
+### 1. PATH issues:
+- **Risk:** `pnpm` alebo `npm` nie je v PATH
+- **Mitigation:** Používam `npm run` s `exec` namiesto `spawn`
+
+### 2. Port conflicts:
+- **Risk:** Port 3000 môže byť obsadený
+- **Mitigation:** Script používa `process.env.PORT` alebo fallback na 3000
+
+### 3. Server startup time:
+- **Risk:** Server môže trvať dlhšie ako 3s
+- **Mitigation:** 3s timeout je dostatočný pre Next.js
+
+## RESULT
+
+**Smoke Test = PASS** ✅
+
+Smoke test script úspešne implementovaný a spustený. Všetky endpointy overené, server spustený a zastavený automaticky, exit code 0.
+
+**Test Results:**
+- **Build:** ✅ PASS
+- **Server Start:** ✅ PASS  
+- **Health Endpoint:** ✅ PASS
+- **Homepage:** ✅ PASS
+- **Overall:** ✅ PASS
+
+**Script:** `pnpm smoke` - automatické overenie FE funkcionality
+
+RESULT: PASS ✅

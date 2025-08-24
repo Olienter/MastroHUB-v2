@@ -1,0 +1,93 @@
+HF-FE-SKEL-0001 LITE SKELETON EVIDENCE
+========================================
+
+DATE: 2025-08-24
+TIME: 17:55:00 UTC
+HEAD SHA: 466fbe6
+
+## IMPLEMENTED CHANGES
+
+### 1. app/layout.tsx
+- ✅ Aktualizovaný s metadata a min-h-screen wrapper
+- ✅ Pridané Tailwind CSS classes pre layout
+- ✅ Zachovaný existujúci globals.css import
+
+### 2. components/ui/Shell.tsx
+- ✅ Nový komponent vytvorený
+- ✅ 'use client' directive pre React hooks
+- ✅ Responsive layout s max-w-6xl a padding
+- ✅ Header, main, footer štruktúra
+
+### 3. app/page.tsx
+- ✅ Dashboard tiles implementované (Lanes, PNPM, Manifest)
+- ✅ Grid layout s responsive breakpoints
+- ✅ Hover effects a transitions
+- ✅ Import opravený na relatívny (../components/ui/Shell)
+
+## BUILD & LINT RESULTS
+
+### pnpm build (posledných ~20 riadkov)
+```
+Route (app)                              Size     First Load JS
+┌ ○ /                                    448 B          87.5 kB
+└ ○ /_not-found                          872 B          87.9 kB
++ First Load JS shared by all            87 kB
+  ├ chunks/842-fe233c993c561c8d.js       31.5 kB
+  ├ chunks/94c12b52-aa44a6c43bed9217.js  53.6 kB
+  └ other shared chunks (total)          1.86 kB
+
+○  (Static)  prerendered as static content
+```
+
+**Build Status:** ✅ PASS - Compiled successfully
+
+### pnpm lint (posledných ~20 riadkov)
+```
+✔ No ESLint warnings or errors
+```
+
+**Lint Status:** ✅ PASS - No warnings or errors
+
+## DASHBOARD VERIFICATION
+
+### Tiles zobrazené:
+1. **Lanes** → "OK" ✅
+2. **PNPM** → "Aligned" ✅  
+3. **Manifest** → "PASS" ✅
+
+### Layout:
+- Grid: `sm:grid-cols-2 lg:grid-cols-3`
+- Responsive: 1 col (mobile) → 2 cols (sm) → 3 cols (lg)
+- Hover effects: `hover:shadow transition`
+
+## TECHNICAL NOTES
+
+### Import fix:
+- **Pôvodný:** `@/components/ui/Shell` (alias nefungoval)
+- **Opravený:** `../components/ui/Shell` (relatívny import)
+- **Dôvod:** tsconfig.json nemá alias `@/` nakonfigurovaný
+
+### Dotyky mimo .ai/checks/:
+1. ✅ `app/layout.tsx` (aktualizácia)
+2. ✅ `components/ui/Shell.tsx` (nový súbor)
+3. ✅ `app/page.tsx` (aktualizácia)
+4. ✅ `.ai/chronicle/journal.md` (append)
+
+**Total:** 4 dotyky ✅ (v limite ≤5)
+
+## COMPLIANCE
+
+- [x] Build PASS ✅
+- [x] Lint PASS ✅  
+- [x] 3 dashboard tiles zobrazené ✅
+- [x] ≤5 dotykov dodržané ✅
+- [x] Žiadne nové knižnice ✅
+- [x] Relatívny import opravený ✅
+
+## RESULT
+
+**FE Skeleton = PASS** ✅
+
+Minimálny Next.js shell úspešne implementovaný s dashboard tiles. Všetky kontroly prešli, build a lint OK, import opravený na relatívny.
+
+RESULT: PASS ✅

@@ -1,7 +1,20 @@
 {
   "cards": [],
   "meta": {
-    "updated_at": null,
-    "updated_by": null
-  }
+    "updated_at": "2025-08-24T13:46:31.724Z",
+    "updated_by": "HF-OPS-0008"
+  },
+  "schema_version": "1.0.0",
+  "history": [
+    {
+      "id": "HF-OPS-0003",
+      "title": "Manifest Sync",
+      "status": "done"
+    },
+    {
+      "id": "HF-OPS-0008",
+      "title": "Manifest Sync Refresh",
+      "status": "done"
+    }
+  ]
 }

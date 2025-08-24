@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "created_at": "2025-08-24T16:25:00.000Z",
+    "handoff_id": "HF-OPS-EVIDENCE-0006",
+    "description": "Mapping of legacy evidence filenames to standardized <handoff_id>.txt format"
+  },
+  "renames": [
+    {
+      "old": "a11y-smoke.txt",
+      "new": "LEGACY-a11y-smoke.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "ci-evidence.md",
+      "new": "HF-0003A.txt",
+      "reason": "Found Handoff ID: HF-0003A in content"
+    },
+    {
+      "old": "hf-ci-typecheck.txt",
+      "new": "HF-CI-TYPECHECK-PATCH.txt",
+      "reason": "Extracted from filename pattern"
+    },
+    {
+      "old": "hf-env-pin.txt",
+      "new": "HF-ENV-PIN.txt",
+      "reason": "Extracted from filename pattern"
+    },
+    {
+      "old": "hf-gitignore-patch.txt",
+      "new": "HF-GITIGNORE-PATCH.txt",
+      "reason": "Found HF-ID: HF-GITIGNORE-PATCH in content"
+    },
+    {
+      "old": "hf-mcp-setup.txt",
+      "new": "HF-MCP-SETUP.txt",
+      "reason": "Found HF-ID: HF-MCP-SETUP in content"
+    },
+    {
+      "old": "hf-mem-fix.txt",
+      "new": "HF-MEM-FIX.txt",
+      "reason": "Found HF-ID: HF-MEM-FIX in content"
+    },
+    {
+      "old": "hf-mem-sync.txt",
+      "new": "HF-MEM-SYNC.txt",
+      "reason": "Found HF-ID: HF-MEM-SYNC in content"
+    },
+    {
+      "old": "instructions-core-enhance.txt",
+      "new": "LEGACY-instructions-core-enhance.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "lighthouse-light.txt",
+      "new": "LEGACY-lighthouse-light.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "link-check.txt",
+      "new": "LEGACY-link-check.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "manifest-json-sync.txt",
+      "new": "LEGACY-manifest-json-sync.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "manifest-sync-refresh.txt",
+      "new": "LEGACY-manifest-sync-refresh.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "manifest-sync.txt",
+      "new": "LEGACY-manifest-sync.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "nextcfg-cleanup.txt",
+      "new": "LEGACY-nextcfg-cleanup.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "rolesync-fix.txt",
+      "new": "LEGACY-rolesync-fix.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "rolesync-guard.txt",
+      "new": "LEGACY-rolesync-guard.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "tailwind-setup.txt",
+      "new": "LEGACY-tailwind-setup.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "types-fix.txt",
+      "new": "LEGACY-types-fix.txt",
+      "reason": "No handoff_id found in content"
+    },
+    {
+      "old": "workflow-setup.txt",
+      "new": "LEGACY-workflow-setup.txt",
+      "reason": "No handoff_id found in content"
+    }
+  ],
+  "summary": {
+    "total_files": 28,
+    "already_ok": 8,
+    "renamed_by_id": 5,
+    "renamed_legacy": 15
+  }
+}

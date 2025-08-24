@@ -1,0 +1,19 @@
+# Content ownership
+content/** @mastro-content-team
+
+# App core ownership  
+app/** @mastro-dev-team
+components/** @mastro-dev-team
+
+# AI workflow ownership
+.ai/** @mastro-ai-team
+
+# Configuration files
+*.yml @mastro-dev-team
+*.yaml @mastro-dev-team
+*.json @mastro-dev-team
+*.md @mastro-dev-team
+
+# Package management
+package.json @mastro-dev-team
+pnpm-lock.yaml @mastro-dev-team

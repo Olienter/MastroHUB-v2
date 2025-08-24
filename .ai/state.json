@@ -1,9 +1,9 @@
 {
   "policy_version": "2025-08-23",
-  "manifest_commit": "3ba573c",
+  "manifest_commit": "466fbe6",
   "active_handoff": null,
-  "last_verified_at": null,
-  "last_verified_by": null,
+  "last_verified_at": "2025-08-24T15:55:18.000Z",
+  "last_verified_by": "Cursor",
   "components": [],
   "notes": "Machine-readable project state. Agents MUST read this on /SYNC."
 }

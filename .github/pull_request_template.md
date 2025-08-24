@@ -68,3 +68,41 @@
 ---
 
 **Remember:** This PR must follow AI workflow: TALK → PR → evidence → Memory Spine → merge
+
+## Manual Review Required
+
+### Content Pipeline
+
+- [ ] Content follows editorial guidelines
+- [ ] Images have proper alt text
+- [ ] Meta descriptions are compelling
+- [ ] Content is relevant to gastronomy/hospitality
+
+### CTA & UX Flows
+
+- [ ] User journey is intuitive
+- [ ] Call-to-action buttons are clear
+- [ ] Mobile experience is optimized
+- [ ] Navigation flow makes sense
+
+### Business Impact
+
+- [ ] Feature aligns with platform vision
+- [ ] User value is clear
+- [ ] Performance impact is acceptable
+- [ ] SEO implications considered
+
+## Technical Checklist
+
+- [ ] Build passes (`pnpm build`)
+- [ ] Type check passes (`pnpm typecheck`)
+- [ ] Lint passes (`pnpm lint`)
+- [ ] No hardcoded secrets
+- [ ] Evidence file present in `.ai/checks/`
+
+## Evidence
+
+- [ ] Evidence file created: `.ai/checks/<handoff-id>.txt`
+- [ ] Build log included
+- [ ] NODE/PNPM versions documented
+- [ ] RESULT status documented

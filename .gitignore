@@ -42,3 +42,6 @@ next-env.d.ts
 # TypeScript build cache
 *.tsbuildinfo
 tsconfig.tsbuildinfo
+
+# AI project specific
+.ai/check.md

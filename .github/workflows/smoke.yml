@@ -1,0 +1,59 @@
+name: Smoke & Docker E2E
+on:
+  push:
+  pull_request:
+jobs:
+  node-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Enable corepack & pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.14.0 --activate
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+      - name: Run smoke
+        run: pnpm smoke | tee smoke.log
+      - name: Upload smoke log
+        uses: actions/upload-artifact@v4
+        with:
+          name: node-smoke-log
+          path: smoke.log
+
+  docker-e2e:
+    runs-on: ubuntu-latest
+    needs: node-smoke
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker image
+        run: docker build -t mastrohubv2:ci .
+      - name: Run container
+        run: docker run -d --name mhv2 -p 3000:3000 mastrohubv2:ci
+      - name: Wait for health
+        run: |
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:3000/api/health >/dev/null 2>&1; then
+              echo "healthy"; exit 0; fi
+            sleep 1
+          done
+          echo "timeout waiting for health"; docker logs mhv2; exit 1
+      - name: Fetch health & home
+        run: |
+          curl -fsS http://127.0.0.1:3000/api/health | tee health.json
+          curl -I    http://127.0.0.1:3000/        | tee home.head
+      - name: Upload docker e2e artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-e2e
+          path: |
+            health.json
+            home.head
+      - name: Teardown
+        if: always()
+        run: |
+          docker logs mhv2 || true
+          docker rm -f mhv2 || true

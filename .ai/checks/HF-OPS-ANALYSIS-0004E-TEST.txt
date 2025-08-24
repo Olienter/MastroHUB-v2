@@ -1,0 +1,15 @@
+HF-OPS-ANALYSIS-0004E-TEST REDTEAM WATCHDOG TEST EVIDENCE
+
+## REDTEAM TEST - Watchdog Validation
+
+This file will be populated after CI runs with the seeded errors.
+
+### Seeded Errors (Expected to be caught by Watchdog)
+- Console errors: ≥1 (synthetic console.error)
+- A11y serious issues: ≥3 (duplicate H1, missing labels, no alt text)
+- SEO regression: missing description and og:image
+- Performance impact: ~400kB blocking script
+- Hydration mismatch: server vs client difference
+- Network 404: ≥1 request (broken link)
+
+### Evidence will be collected after CI run

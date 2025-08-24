@@ -1,0 +1,18 @@
+ROLE SYNC FIX EVIDENCE
+======================
+
+DIFF SUMMARY:
+- .ai/instructions.md: Added mandatory role prepinam rule in Invariants
+- .ai/instructions.md: Enhanced CLOSE Phase with role prepinam QA check
+- RESULT: Role prepinam consistency enforced
+
+BEFORE → AFTER DIFF SUMMARY:
+- BEFORE: Generic "<ROLE> Prepinam" placeholder without explicit rules
+- AFTER: Explicit rule "GPT vždy ukončuje GPT Prepinam, Cursor vždy ukončuje Cursor Prepinam"
+- RESULT: Role prepinam consistency enforced
+
+DATE: 2025-08-24
+TIME: 13:46:31 UTC
+RESULT: PASS
+
+NOTES: Added mandatory role prepinam rule to prevent future role switching errors in TALK v1 responses.
