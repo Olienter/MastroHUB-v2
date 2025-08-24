@@ -4,7 +4,7 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
 
 export default defineConfig({
-  testDir: './tests',
+  testDir: '../tests',
   timeout: 60_000,
   retries: 0,
   use: {
