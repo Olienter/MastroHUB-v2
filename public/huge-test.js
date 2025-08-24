@@ -1,4 +1,4 @@
 /* REDTEAM: will be reverted */
-/* CI TRIGGER: @playwright/test added to devDependencies */
+/* CI TRIGGER: --frozen-lockfile removed to fix pnpm sync issue */
 const pad = 'X'.repeat(400_000);
 console.log('[WatchdogTest] huge-test bytes:', pad.length);
