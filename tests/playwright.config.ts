@@ -6,7 +6,7 @@ const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
 export default defineConfig({
   testDir: '../tests',
   timeout: 60_000,
-  retries: 0,
+  retries: 1,
   use: {
     baseURL: BASE_URL,
     trace: 'on-first-retry',

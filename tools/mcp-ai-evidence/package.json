@@ -1,0 +1,19 @@
+{
+  "name": "mcp-ai-evidence",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "check": "tsc -p . --noEmit",
+    "start": "node dist/server.js",
+    "test:e2e": "node test/test-client.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

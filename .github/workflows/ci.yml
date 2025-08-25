@@ -4,14 +4,22 @@ on:
     paths:
       - "app/**"
       - "components/**"
-      - "public/huge-test.js"
+      - "tests/**"
+      - ".github/workflows/**"
+      - "public/**"
+      - "tools/**"
+      - ".ai/**"
   push:
     branches:
       - watchdog/probe-001
     paths:
       - "app/**"
       - "components/**"
-      - "public/huge-test.js"
+      - "tests/**"
+      - ".github/workflows/**"
+      - "public/**"
+      - "tools/**"
+      - ".ai/**"
 
 permissions:
   contents: read
@@ -38,13 +46,16 @@ jobs:
         run: pnpm typecheck
       - name: Lint
         run: pnpm lint
-        continue-on-error: true
       - name: Security Check
         run: |
           echo "Security scan placeholder"
           echo "Checking for hardcoded secrets..."
           echo "Checking for demo accounts..."
           echo "Security check: PASS"
+      - name: MCP typecheck
+        run: pnpm --dir tools/mcp-ai-evidence run check
+      - name: MCP build
+        run: pnpm --dir tools/mcp-ai-evidence run build
 
   warnings:
     runs-on: ubuntu-latest
@@ -104,6 +115,7 @@ jobs:
           path: |
             playwright-report
             test-results
+          retention-days: 14
 
   nightly-full:
     runs-on: ubuntu-latest
