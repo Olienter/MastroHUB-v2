@@ -1,17 +1,26 @@
 {
-  "name": "@mastro/mcp-ai-evidence",
+  "name": "mcp-ai-evidence",
   "version": "0.1.0",
+  "private": true,
   "type": "module",
-  "bin": { "mcp-ai-evidence": "./dist/server.js" },
+  "main": "dist/server.js",
+  "bin": {
+    "mcp-ai-evidence": "dist/server.js"
+  },
+  "engines": { "node": ">=18.17" },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "dev": "tsx src/server.ts"
+    "dev": "tsx src/server.ts",
+    "build": "tsup src/server.ts --format esm --dts --sourcemap --out-dir dist --clean",
+    "start": "node dist/server.js",
+    "check": "tsc --noEmit"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0"
+    "@modelcontextprotocol/sdk": "^1.2.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "tsx": "^4.15.7",
+    "tsup": "^7.2.0",
+    "tsx": "^4.16.0",
     "typescript": "^5.5.4"
   }
 }

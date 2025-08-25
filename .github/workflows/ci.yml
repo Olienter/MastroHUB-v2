@@ -52,6 +52,10 @@ jobs:
           echo "Checking for hardcoded secrets..."
           echo "Checking for demo accounts..."
           echo "Security check: PASS"
+      - name: MCP typecheck
+        run: pnpm --dir tools/mcp-ai-evidence run check
+      - name: MCP build
+        run: pnpm --dir tools/mcp-ai-evidence run build
 
   warnings:
     runs-on: ubuntu-latest

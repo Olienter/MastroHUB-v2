@@ -73,3 +73,6 @@ Formát pri každom merge (1–3 vety):
 - 2025-08-25, HF-OPS-ANALYSIS-0004E-AI-GATES-FIX: PR #2, HEAD 58769d5, AI Quality Gates failed due to missing .ai/check.md file, evidence updated, preparing fix.
 - 2025-08-25, HF-OPS-ANALYSIS-0004E-AI-GATES-SUCCESS: AI Quality Gates workflow fixed, .ai/check.md created, compliance achieved, all workflows passing, PR #2 ready for merge.
 - 2025-08-25, HF-OPS-ANALYSIS-0007E-MCP-MVP: MCP MVP created (tools/mcp-ai-evidence), bridge skeleton ready, 4 tools implemented: create_evidence, add_journal_entry, validate_talk_v1, check_ai_compliance.
+- 2025-08-25, HF-OPS-ANALYSIS-0007E-MCP-STATUS: MCP implementation status documented, TypeScript build failed, MCP server not active in Cursor, evidence file created for GPT analysis.
+- 2025-08-25T00:22:57Z, MCP evidence MVP created (build=True)
+
