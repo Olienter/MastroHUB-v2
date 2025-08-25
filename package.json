@@ -18,7 +18,8 @@
     "diag:mcp": "node tools/mcp-ai-evidence/scripts/diagnostic.mjs",
     "diag:ops": "node tools/diag/ops-health.mjs > .ai/checks/HF-OPS-HEALTH-0001.json",
     "diag:ops:raw": "node tools/diag/ops-health.mjs",
-    "build:typed": "pnpm run typecheck && pnpm run build"
+    "build:typed": "pnpm run typecheck && pnpm run build",
+    "verify:core": "node tools/diag/verify-core.mjs"
   },
   "dependencies": {
     "next": "14.2.32",

@@ -83,6 +83,20 @@
       "closed_at": "2025-01-25T00:00:00Z",
       "description": "Comprehensive project status assessment with workflow breakdown and priority matrix",
       "result": "Project 70% complete, PATH workflows done, ops-health and MCP incomplete"
+    },
+    {
+      "id": "HF-COMM-PROTOCOLS-0001-P1",
+      "title": "CORE Verification Implementation",
+      "status": "DELIVERED",
+      "files": [
+        "tools/diag/verify-core.mjs",
+        "package.json",
+        ".ai/checks/HF-COMM-PROTOCOLS-0001-P1.txt"
+      ],
+      "created_at": "2025-01-25T00:00:00Z",
+      "delivered_at": "2025-01-25T00:00:00Z",
+      "description": "CORE verification runner with git/typecheck/lint/build/port checks and evidence generation",
+      "result": "UI phase unblocked, CORE verification protocols implemented"
     }
   ]
 }

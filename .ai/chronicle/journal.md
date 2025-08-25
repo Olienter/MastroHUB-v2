@@ -143,3 +143,6 @@ Formát pri každom merge (1–3 vety):
 
 - 2025-08-25T22:51:31.459Z HF-MCP-DIAG-RUN-001: result=OK
 - 2025-08-25T23:05:08.606Z, HF-OPS-STATUS-0001: Infrastructure assessment completed. Build and TypeScript OK, but smoke test fails due to port binding and manifest commit mismatch (466fbe6 vs e5fb93b). UI phase HOLD until smoke test and manifest sync resolved.
+- 2025-08-25T23:30:18.360Z, HF-SERVER-START-0001: Server successfully started on port 3000 with 609ms startup time. All endpoints operational including health, home, and login. Middleware active and functioning correctly. Ready for UI development phase.
+- 2025-08-25T23:32:53.698Z, HF-COMM-PROTOCOLS-0001: Communication protocols implementation initiated. Verification checkpoints, systematic testing, and error handling protocols identified as MUST_HAVE for continuation. UI development phase blocked until protocols are implemented.
+- 2025-08-25T23:39:10.435Z, 2025-01-25 00:00 UTC — HF-COMM-PROTOCOLS-0001-P1: Implemented CORE verification (git/typecheck/lint/build/port) + evidence. UI phase unblocked.
