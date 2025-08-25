@@ -1,14 +1,18 @@
 {
   "pid": "HF-OPS-ANALYSIS-0007E-MCP-RUNTIME",
-  "timestamp": "2025-08-25T00:04:29Z",
-  "meta": { "headSha": "15737b2" },
+  "timestamp": "2025-08-25T00:55:47.448Z",
+  "meta": {
+    "headSha": "ref: re"
+  },
   "findings": {
     "build": true,
-    "runtime": true,
-    "notes": "sdk=^1.17.4, stdio ok"
+    "runtime": false,
+    "listOk": false,
+    "callsOk": false
   },
   "errors": {
     "buildError": null,
-    "runtimeError": null
+    "runtimeError": "TypeError [ERR_INVALID_ARG_TYPE]: The \"path\" argument must be of type string. Received undefined\n    at Object.normalize (node:path:357:5)\n    at parseNonShell (C:\\Users\\olieb\\Mastro\\tools\\mcp-ai-evidence\\node_modules\\.pnpm\\cross-spawn@7.0.6\\node_modules\\cross-spawn\\lib\\parse.js:49:31)\n    at parse (C:\\Users\\olieb\\Mastro\\tools\\mcp-ai-evidence\\node_modules\\.pnpm\\cross-spawn@7.0.6\\node_modules\\cross-spawn\\lib\\parse.js:88:37)\n    at spawn (C:\\Users\\olieb\\Mastro\\tools\\mcp-ai-evidence\\node_modules\\.pnpm\\cross-spawn@7.0.6\\node_modules\\cross-spawn\\index.js:9:20)\n    at file:///C:/Users/olieb/Mastro/tools/mcp-ai-evidence/node_modules/.pnpm/@modelcontextprotocol+sdk@1.17.4/node_modules/@modelcontextprotocol/sdk/dist/esm/client/stdio.js:67:29\n    at new Promise (<anonymous>)\n    at StdioClientTransport.start (file:///C:/Users/olieb/Mastro/tools/mcp-ai-evidence/node_modules/.pnpm/@modelcontextprotocol+sdk@1.17.4/node_modules/@modelcontextprotocol/sdk/dist/esm/client/stdio.js:65:16)\n    at Client.connect (file:///C:/Users/olieb/Mastro/tools/mcp-ai-evidence/node_modules/.pnpm/@modelcontextprotocol+sdk@1.17.4/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js:96:31)\n    at Client.connect (file:///C:/Users/olieb/Mastro/tools/mcp-ai-evidence/node_modules/.pnpm/@modelcontextprotocol+sdk@1.17.4/node_modules/@modelcontextprotocol/sdk/dist/esm/client/index.js:59:21)\n    at main (file:///C:/Users/olieb/Mastro/tools/mcp-ai-evidence/test/test-client.mjs:62:18)",
+    "e2eError": null
   }
 }

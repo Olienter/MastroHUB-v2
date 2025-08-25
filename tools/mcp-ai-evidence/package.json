@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc -p .",
     "check": "tsc -p . --noEmit",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "test:e2e": "node test/test-client.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.4"
