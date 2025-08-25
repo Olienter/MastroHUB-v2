@@ -1,0 +1,11 @@
+{
+  "name": "@mastro/ai-ci-bridge",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "run": "tsx src/bridge.ts" },
+  "dependencies": {},
+  "devDependencies": { 
+    "tsx": "^4.15.7", 
+    "typescript": "^5.5.4" 
+  }
+}

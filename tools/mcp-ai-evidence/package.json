@@ -1,0 +1,17 @@
+{
+  "name": "@mastro/mcp-ai-evidence",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": { "mcp-ai-evidence": "./dist/server.js" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/server.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.4"
+  }
+}

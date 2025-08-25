@@ -1,0 +1,11 @@
+﻿{
+    "timestamp":  "2025-08-25T00:04:29Z",
+    "pid":  "HF-OPS-ANALYSIS-0007E-MCP",
+    "findings":  {
+                     "bridge":  "skeleton",
+                     "mcp":  "initialized"
+                 },
+    "meta":  {
+                 "headSha":  "cc3fb97"
+             }
+}

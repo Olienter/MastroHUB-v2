@@ -72,3 +72,4 @@ Formát pri každom merge (1–3 vety):
 - 2025-08-25, HF-OPS-ANALYSIS-0004E-REVERT-SUCCESS: CI hardened with extended path filters, lint now blocking, artifact retention 14 days, Playwright retries 1, seeded REDTEAM errors removed, watchdog green without synthetic issues, production ready.
 - 2025-08-25, HF-OPS-ANALYSIS-0004E-AI-GATES-FIX: PR #2, HEAD 58769d5, AI Quality Gates failed due to missing .ai/check.md file, evidence updated, preparing fix.
 - 2025-08-25, HF-OPS-ANALYSIS-0004E-AI-GATES-SUCCESS: AI Quality Gates workflow fixed, .ai/check.md created, compliance achieved, all workflows passing, PR #2 ready for merge.
+- 2025-08-25, HF-OPS-ANALYSIS-0007E-MCP-MVP: MCP MVP created (tools/mcp-ai-evidence), bridge skeleton ready, 4 tools implemented: create_evidence, add_journal_entry, validate_talk_v1, check_ai_compliance.
