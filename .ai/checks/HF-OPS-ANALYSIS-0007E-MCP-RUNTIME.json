@@ -1,0 +1,14 @@
+{
+  "pid": "HF-OPS-ANALYSIS-0007E-MCP-RUNTIME",
+  "timestamp": "2025-08-25T00:04:29Z",
+  "meta": { "headSha": "15737b2" },
+  "findings": {
+    "build": true,
+    "runtime": true,
+    "notes": "sdk=^1.17.4, stdio ok"
+  },
+  "errors": {
+    "buildError": null,
+    "runtimeError": null
+  }
+}

@@ -4,22 +4,15 @@
   "private": true,
   "type": "module",
   "main": "dist/server.js",
-  "bin": {
-    "mcp-ai-evidence": "dist/server.js"
-  },
-  "engines": { "node": ">=18.17" },
   "scripts": {
-    "dev": "tsx src/server.ts",
-    "build": "tsup src/server.ts --format esm --dts --sourcemap --out-dir dist --clean",
-    "start": "node dist/server.js",
-    "check": "tsc --noEmit"
+    "build": "tsc -p .",
+    "check": "tsc -p . --noEmit",
+    "start": "node dist/server.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.2.0"
+    "@modelcontextprotocol/sdk": "^1.17.4"
   },
   "devDependencies": {
-    "tsup": "^8.0.0",
-    "tsx": "^4.16.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5.4.0"
   }
 }
