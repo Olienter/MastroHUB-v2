@@ -53,36 +53,36 @@ jobs:
           # Spusti server na pozadí, zachyť stderr, potlač stdout
           timeout 10s node dist/server.js 2>mcp-stderr.log 1>/dev/null &
           SERVER_PID=$!
-          
+
           # Kratučká pauza pre boot
           sleep 2
-          
+
           # Skontroluj či server beží
           if ! kill -0 $SERVER_PID 2>/dev/null; then
             echo "❌ MCP server failed to start"
             cat mcp-stderr.log
             exit 1
           fi
-          
+
           echo "✅ MCP server started (PID: $SERVER_PID)"
 
       - name: Verify stderr output
         run: |
           cd tools/mcp-ai-evidence
-          
+
           # Skontroluj či stderr log nie je prázdny
           if [ ! -s mcp-stderr.log ]; then
             echo "❌ MCP server stderr log is empty"
             exit 1
           fi
-          
+
           # Skontroluj boot signál
           if ! grep -q "MCP server ready" mcp-stderr.log; then
             echo "❌ MCP server boot signal not found in stderr"
             cat mcp-stderr.log
             exit 1
           fi
-          
+
           echo "✅ MCP server stderr log contains boot signal"
           echo "--- stderr tail ---"
           tail -10 mcp-stderr.log

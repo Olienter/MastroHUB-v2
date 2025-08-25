@@ -25,6 +25,22 @@ Každá karta musí mať evidence v `.ai/checks/<handoff-id>.txt`:
 - Sekcie: HISTORY, INTENT, IMPACT_MAP, ACCEPTANCE, RISKS_FALLBACK, NEXT_PROMPT_REQUEST
 - Končiť: "<ROLE> Prepinam"
 
+### Approval Requirements
+
+**Agents MUST wait for explicit approval before execution:**
+
+- **Required:** `APPROVED: <handoff_id>` (standalone, uppercase line)
+- **Allowed Pre-Approved:**
+  - /SYNC operations
+  - Read `.ai/*` files
+  - Planning and evidence preparation
+  - Non-applicable diff-previews
+- **Forbidden Pre-Approved:**
+  - Committable diffs/PRs
+  - Shell commands that mutate state
+  - "Final patch" attachments
+  - Any state-changing operations
+
 ### Komunikačné podpisy (ping‑pong)
 
 - Každá správa GPT končí "GPT Prepinam".

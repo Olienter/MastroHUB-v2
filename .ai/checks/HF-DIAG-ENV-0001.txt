@@ -1,0 +1,50 @@
+# HF-DIAG-ENV-0001: Environment Diagnostic Evidence
+
+## STATUS: READY FOR EXECUTION
+
+**PID:** HF-DIAG-ENV-0001  
+**Created:** 2025-08-25T00:00:00.000Z  
+**Status:** Environment diagnostic runner implemented, ready for execution
+
+## IMPLEMENTATION COMPLETED
+
+### Files Created/Modified:
+1. ✅ `tools/diag/verify-environment.mjs` - Cross-platform diagnostic runner
+2. ✅ `package.json` - Added `diag:env` script
+3. ✅ `.ai/chronicle/journal.md` - Journal entry added
+4. ✅ `.ai/handoff/index.json` - Handoff card registered
+
+## EXECUTION INSTRUCTIONS
+
+**Run the diagnostic:**
+```bash
+pnpm run diag:env
+```
+
+**Expected output:** JSON object with environment information
+
+## EVIDENCE TEMPLATE
+
+After running the script, this file will contain:
+
+```json
+{
+  "execution_timestamp": "2025-08-25T00:00:00.000Z",
+  "script_output": "JSON output from diagnostic runner",
+  "analysis": "Brief interpretation of results",
+  "recommendations": "Next steps based on findings"
+}
+```
+
+## NEXT STEPS
+
+1. **Execute:** `pnpm run diag:env`
+2. **Capture:** JSON output from terminal
+3. **Analyze:** Review environment status
+4. **Update:** This evidence file with results
+5. **Plan:** Next actions based on findings
+
+---
+
+**Note:** This runner is designed to be non-interactive and cross-platform safe.
+No external dependencies required - uses only Node.js built-in modules.

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Page() {
   return (
     <main>
@@ -6,7 +8,13 @@ export default function Page() {
         <label htmlFor="email">Email</label>
         <input id="email" placeholder="Email" />
       </form>
-      <img src="/logo.png" alt="MastroHUB Logo" />
+      <Image
+        src="/logo.png"
+        alt="MastroHUB Logo"
+        width={200}
+        height={100}
+        priority
+      />
       <div>Home</div>
     </main>
   );

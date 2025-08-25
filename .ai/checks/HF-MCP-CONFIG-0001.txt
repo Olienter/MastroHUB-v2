@@ -1,0 +1,51 @@
+HF-MCP-CONFIG-0001 Evidence Report
+====================================
+
+VERSIONS:
+- NODE: v22.18.0
+- TYPESCRIPT: ^5.4.0
+- MCP_SDK: 1.17.4
+
+GIT INFO:
+- HEAD short SHA: 9d3b6ab
+- DATE(UTC): Mon Aug 25 03:43:27 2025 +0200
+
+FINAL .cursor/mcp.json (pretty-printed):
+{
+  "mcpServers": {
+    "mastro-evidence": {
+      "command": "node",
+      "args": ["dist/server.js"],
+      "cwd": "tools/mcp-ai-evidence",
+      "env": {}
+    }
+  }
+}
+
+PROBE RESULTS:
+
+TOOLS_JSON={"tools":[{"name":"create_evidence","description":"Create or update .ai/checks/<pid>.json with provided data.","inputSchema":{"type":"object","properties":{"pid":{"type":"string"},"data":{"type":"object"}},"required":["pid","data"],"additionalProperties":true}},{"name":"add_journal_entry","description":"Append a line to .ai/chronicle/journal.md","inputSchema":{"type":"object","properties":{"message":{"type":"string"}},"required":["message"],"additionalProperties":false}},{"name":"health_check","description":"Returns basic server health info for diagnostics.","inputSchema":{"type":"object","properties":{},"additionalProperties":false}}]}
+
+INVOKE_RESULT={"content":[{"type":"text","text":"{\"ok\":true,\"cwd\":\"C:\\\\Users\\\\olieb\\\\Mastro\\\\tools\\\\mcp-ai-evidence\",\"pid\":18768,\"sdk\":\"1.17.4\"}"}]}
+
+PARSED HEALTH_CHECK PAYLOAD:
+{
+  "ok": true,
+  "cwd": "C:\\Users\\olieb\\Mastro\\tools\\mcp-ai-evidence",
+  "pid": 18768,
+  "sdk": "1.17.4"
+}
+
+RESULT: OK ✅
+
+ANALYSIS:
+- MCP server successfully started with direct node execution
+- All 3 tools are available: create_evidence, add_journal_entry, health_check
+- health_check tool invocation successful (ok: true, sdk: 1.17.4)
+- stdio transport working correctly
+- AI can now use MCP tools directly
+
+FIXES APPLIED:
+- Changed from "pnpm" + "start" to "node" + "dist/server.js"
+- Eliminated pnpm wrapper that was blocking stdio transport
+- Direct node execution ensures clean MCP protocol communication

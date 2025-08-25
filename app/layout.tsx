@@ -3,10 +3,13 @@ import "./globals.css";
 import { Topbar } from "../components/ui/Topbar";
 
 export const metadata = {
-  title: 'MastroHUB v2 — Watchdog Test',
-  description: 'MastroHUB v2 - AI-powered quality monitoring platform',
+  title: "MastroHUB v2 — Watchdog Test",
+  description: "MastroHUB v2 - AI-powered quality monitoring platform",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://mastrohub.dev"
+  ),
   openGraph: {
-    images: ['/og.png'],
+    images: ["/og.png"],
   },
 };
 

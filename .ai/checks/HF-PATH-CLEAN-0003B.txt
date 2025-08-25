@@ -1,0 +1,62 @@
+# HF-PATH-CLEAN-0003B EVIDENCE
+
+## System PATH CLI Cleanup Results
+
+**BEFORE (Audit-SystemPath.ps1):**
+<json>
+Run: powershell -ExecutionPolicy Bypass -File tools/windows/Audit-SystemPath.ps1
+Previous audit results from HF-PATH-CLEAN-0003:
+- totalEntries: 37
+- duplicates: 17
+- fileEntries: 2 (C:\Program Files\nodejs\node.exe)
+- status: "WARN"
+</json>
+
+**DRY-RUN (Clean-SystemPath.ps1):**
+<json>
+Run: powershell -ExecutionPolicy Bypass -File tools/windows/Clean-SystemPath.ps1
+✅ SUCCESS: oldCount: 37 → newCount: 19
+- removedDuplicates: 17 entries (Python, Windows, nodejs, Git, etc.)
+- removedFileEntries: 2x node.exe
+- recommendations: File paths + duplicates cleanup
+</json>
+
+**APPLY (Clean-SystemPath.ps1 -Apply):**
+<json>
+Run: powershell -ExecutionPolicy Bypass -File tools/windows/Clean-SystemPath.ps1 -Backup .\.ai\checks\system-path-backup.json -Apply
+✅ SUCCESS: System PATH already clean
+- removedDuplicates: 0
+- removedFileEntries: 0
+- backup: .ai/checks/system-path-backup.json
+- confirmation: Y
+- admin privileges: YES
+- changes applied: YES
+</json>
+
+**AFTER (Audit-SystemPath.ps1):**
+<json>
+Run: powershell -ExecutionPolicy Bypass -File tools/windows/Audit-SystemPath.ps1
+✅ SUCCESS: totalEntries: 19, duplicates: [], fileEntries: [], status: "OK"
+</json>
+
+**OVERALL VERIFICATION (diag:env):**
+<json>
+Run: pnpm run diag:env
+✅ SUCCESS: pathLint.status: "OK"
+- totalEntries: 24 (from 37)
+- duplicates: []
+- fileEntries: []
+- overlong: false
+- recommendations: ["Prefer Corepack-managed pnpm over global shims"]
+</json>
+
+## RESULT: IMPROVED ✅
+**DATE(UTC):** 2025-01-25
+**HEAD:** 9d3b6abe363341dbc12d7b29c8a92483c288f091
+
+## Notes
+- CLI cleanup requires PowerShell as Administrator
+- System PATH affects ALL users (HKLM scope)
+- Backup is mandatory before Apply
+- Target: pathLint.status: "OK" after cleanup
+

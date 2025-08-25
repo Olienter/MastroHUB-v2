@@ -22,15 +22,15 @@ class MCPClient {
       jsonrpc: "2.0",
       id,
       method,
-      params
+      params,
     };
 
     return new Promise((resolve, reject) => {
       this.pendingRequests.set(id, { resolve, reject });
-      
+
       // Send request to server
       this.child.stdin.write(JSON.stringify(request) + "\n");
-      
+
       // Timeout after 5 seconds
       setTimeout(() => {
         if (this.pendingRequests.has(id)) {
@@ -44,11 +44,11 @@ class MCPClient {
   handleResponse(response) {
     try {
       const data = JSON.parse(response);
-      
+
       if (data.id && this.pendingRequests.has(data.id)) {
         const { resolve, reject } = this.pendingRequests.get(data.id);
         this.pendingRequests.delete(data.id);
-        
+
         if (data.error) {
           reject(new Error(data.error.message || "MCP request failed"));
         } else {
@@ -87,36 +87,42 @@ async function main() {
   try {
     // Get HEAD SHA
     try {
-      headSha = (await fs.readFile(path.join(repoRoot, ".git", "HEAD"), "utf8")).trim().slice(0, 7);
+      headSha = (await fs.readFile(path.join(repoRoot, ".git", "HEAD"), "utf8"))
+        .trim()
+        .slice(0, 7);
     } catch {}
 
     // 1) Spawn MCP server
     const child = spawn("node", ["dist/server.js"], {
       cwd: pkgRoot,
-      stdio: ["pipe", "pipe", "pipe"]
+      stdio: ["pipe", "pipe", "pipe"],
     });
 
     let stdoutBuf = "";
     let stderrBuf = "";
-    
-    child.stdout.on("data", (d) => { stdoutBuf += d.toString(); });
-    child.stderr.on("data", (d) => { stderrBuf += d.toString(); });
+
+    child.stdout.on("data", (d) => {
+      stdoutBuf += d.toString();
+    });
+    child.stderr.on("data", (d) => {
+      stderrBuf += d.toString();
+    });
 
     // 2) Create MCP client
     const client = new MCPClient(child);
-    
+
     // 3) MCP Handshake
     console.log("🔌 MCP Handshake...");
     const initResult = await client.sendRequest("initialize", {
       protocolVersion: "2024-11-05",
-      capabilities: {}
+      capabilities: {},
     });
     console.log("✅ Initialize:", initResult);
 
     // 4) tools/list
     console.log("📋 tools/list...");
     const listResult = await client.sendRequest("tools/list", {});
-    toolsList = listResult.tools?.map(t => t.name) || [];
+    toolsList = listResult.tools?.map((t) => t.name) || [];
     console.log("✅ Tools:", toolsList);
 
     if (!toolsList.includes("create_evidence")) {
@@ -130,8 +136,8 @@ async function main() {
       arguments: {
         pid: "HF-OPS-ANALYSIS-0008E-PR3",
         probe: "e2e",
-        ok: true
-      }
+        ok: true,
+      },
     });
     console.log("✅ create_evidence result:", callResult);
     toolCall.ok = true;
@@ -139,12 +145,11 @@ async function main() {
     // 6) Shutdown
     console.log("🔄 Shutdown...");
     await client.sendRequest("shutdown", {});
-    
+
     // Wait for server to exit
     await delay(1000);
-    
-    status = "success";
 
+    status = "success";
   } catch (err) {
     console.error("❌ E2E test failed:", err.message);
     toolCall.error = err.message;
@@ -152,9 +157,11 @@ async function main() {
   } finally {
     // Get stderr tail (last 80 lines)
     stderrTail = stderrBuf.split("\n").slice(-80).join("\n");
-    
+
     // Cleanup
-    try { child?.kill("SIGINT"); } catch {}
+    try {
+      child?.kill("SIGINT");
+    } catch {}
   }
 
   // 7) Write evidence
@@ -165,17 +172,19 @@ async function main() {
     toolCall,
     stderrTail,
     timestamp: ts,
-    headSha
+    headSha,
   };
 
   const evidencePath = await writeEvidence(payload);
-  await appendJournal(`- ${ts}, HF-OPS-ANALYSIS-0008E-PR3: MCP E2E (tools/list + create_evidence) STATUS=${status}`);
-  
+  await appendJournal(
+    `- ${ts}, HF-OPS-ANALYSIS-0008E-PR3: MCP E2E (tools/list + create_evidence) STATUS=${status}`
+  );
+
   console.log(`🎯 MCP E2E DONE → ${evidencePath}`);
   console.log(`📊 Status: ${status}`);
   console.log(`🔧 Tools: ${toolsList.length}`);
   console.log(`✅ Tool call: ${toolCall.ok ? "SUCCESS" : "FAILED"}`);
-  
+
   if (status === "failure") {
     process.exitCode = 1;
   }

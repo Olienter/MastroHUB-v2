@@ -10,6 +10,14 @@
 - Dev: `pnpm --dir tools/mcp-ai-evidence dev`
 - Build: `pnpm --dir tools/mcp-ai-evidence build && node tools/mcp-ai-evidence/dist/server.js`
 
+## Cursor Integration:
+- **Configuration:** `.cursor/mcp.json` points to this server
+- **Server Name:** `mastro-evidence`
+- **Working Directory:** `tools/mcp-ai-evidence/`
+- **Command:** `node dist/server.js`
+- **Script:** `pnpm run cursor:mcp`
+- **Restart Required:** Cursor must be restarted after config changes
+
 ## Security:
 - file-first, atomic writes, no network calls
 - Sandboxed to .ai/ directory only

@@ -1,0 +1,86 @@
+{
+  "pid": "HF-MCP-DIAG-RUN-001",
+  "timestamp_utc": "2025-08-25T22:51:30.166Z",
+  "environment": {
+    "os_platform": "win32",
+    "os_release": "10.0.26100",
+    "node_version": "v22.18.0",
+    "pnpm_version": "10.14.0",
+    "sdk_version": "1.17.4",
+    "repo_root": "C:/Users/olieb/Mastro",
+    "tool_root": "C:/Users/olieb/Mastro/tools/mcp-ai-evidence"
+  },
+  "build": {
+    "exit_code": 0,
+    "last_log_lines": [
+      "",
+      ""
+    ],
+    "dist_exists": true,
+    "dist_size": 4724,
+    "dist_hash_sha256": "96d1a37efd27e515aaf220e198677b62a9f5ca133a0ad6a01d83deb4466ca348",
+    "dist_mtime_utc": "2025-08-25T17:58:26.794Z"
+  },
+  "probe": {
+    "tools_count": 3,
+    "tools_json": [
+      {
+        "name": "create_evidence",
+        "description": "Create or update .ai/checks/<pid>.json with provided data.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "pid": {
+              "type": "string"
+            },
+            "data": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "pid",
+            "data"
+          ],
+          "additionalProperties": true
+        }
+      },
+      {
+        "name": "add_journal_entry",
+        "description": "Append a line to .ai/chronicle/journal.md",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "message"
+          ],
+          "additionalProperties": false
+        }
+      },
+      {
+        "name": "health_check",
+        "description": "Returns basic server health info for diagnostics.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      }
+    ],
+    "invoke_result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"cwd\":\"C:\\\\Users\\\\olieb\\\\Mastro\\\\tools\\\\mcp-ai-evidence\",\"pid\":21868,\"sdk\":\"1.17.4\"}"
+        }
+      ]
+    },
+    "error": null
+  },
+  "terminal_interaction": "AUTO",
+  "git_head_short": "9d3b6ab",
+  "result": "OK"
+}

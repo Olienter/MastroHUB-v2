@@ -1,12 +1,13 @@
 {
   "mcpServers": {
-    "example": {
-      "command": "npx",
+    "mastro-evidence": {
+      "command": "node",
       "args": [
-        "-y",
-        "@modelcontextprotocol/server-examples"
+        "tools/mcp-ai-evidence/dist/server.js"
       ],
-      "env": {}
+      "cwd": ".",
+      "env": {},
+      "transport": "stdio"
     }
   }
 }

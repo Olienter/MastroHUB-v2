@@ -7,12 +7,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p 3000",
+    "start:mcp": "node tools/mcp-ai-evidence/dist/server.js",
     "smoke": "node scripts/smoke.mjs",
     "lint": "next lint",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "check:all": "pnpm run lint && pnpm run typecheck",
     "preinstall": "npx only-allow pnpm",
-    "check:manifest": "node scripts/check-manifest.mjs"
+    "check:manifest": "node scripts/check-manifest.mjs",
+    "diag:env": "node tools/diag/verify-environment.mjs",
+    "diag:mcp": "node tools/mcp-ai-evidence/scripts/diagnostic.mjs",
+    "diag:ops": "node tools/diag/ops-health.mjs > .ai/checks/HF-OPS-HEALTH-0001.json",
+    "diag:ops:raw": "node tools/diag/ops-health.mjs",
+    "build:typed": "pnpm run typecheck && pnpm run build"
   },
   "dependencies": {
     "next": "14.2.32",
@@ -29,7 +35,7 @@
     "eslint-config-next": "15.5.0",
     "postcss": "^8.4.0",
     "tailwindcss": "^3.4.0",
-    "typescript": "5.5.4"
+    "typescript": "5.9.2"
   },
   "engines": {
     "node": ">=20 <23",
