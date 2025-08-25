@@ -11,7 +11,7 @@
     "test:e2e": "node test/test-client.mjs"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.17.4"
+    "@modelcontextprotocol/sdk": "1.17.4"
   },
   "devDependencies": {
     "typescript": "^5.4.0"
