@@ -77,4 +77,5 @@ Formát pri každom merge (1–3 vety):
 - 2025-08-25T00:22:57Z, MCP evidence MVP created (build=True)
 
 - 2025-08-25T00:33:30Z, MCP build fix (build=True)
+- 2025-08-25, HF-OPS-ANALYSIS-0007E-MCP-BUILD-FIX: MCP build fix successful, TypeScript compilation passed, but runtime error with MCP SDK 1.17.4 API - setRequestHandler expects different parameters.
 
