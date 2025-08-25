@@ -1,108 +1,52 @@
-# Pull Request Template
+## TALK v1
 
-## 🤖 AI System Compliance
-
-**Handoff ID:** `HF-XXXX`
-**Manifest Commit:** `<hash|INIT>`
-**Policy Version:** `2025-08-23`
-
-### Evidence Requirements
-
-- [ ] Evidence uploaded to `.ai/checks/` directory
-- [ ] File count ≤5 (excluding evidence files)
-- [ ] Memory Spine updated (state.json, journal.md)
-- [ ] Handoff card created/updated
-
-## 📋 Change Summary
-
-**What does this PR do?**
-
-<!-- Brief description of changes -->
-
-**Why now?**
-
-<!-- Business/technical justification -->
-
-**Files changed:**
-
-<!-- List of modified files (max 5) -->
-
-## ✅ Acceptance Criteria
-
-- [ ] All acceptance criteria met
-- [ ] Evidence provided in `.ai/checks/`
-- [ ] No breaking changes
-- [ ] Tests passing (if applicable)
-
-## 🔍 Evidence
-
-**Evidence files:**
-
-```
-.ai/checks/
-├── [evidence-file-1]
-├── [evidence-file-2]
-└── [evidence-file-3]
-```
-
-**Performance metrics:**
-
-- LCP: `≤2.5s` ✅
-- CLS: `<0.1` ✅
-- A11y: `No serious issues` ✅
-
-## 🚨 Risks & Fallback
-
-**Potential risks:**
-
-<!-- List any risks -->
-
-**Fallback plan:**
-
-<!-- What if this fails? -->
-
-## 📝 Additional Notes
-
-<!-- Any other relevant information -->
+**PID:** [HF-ID]  
+**policy_version:** 2025-08-23  
+**manifest_commit:** [git HEAD short SHA]  
+**role:** [Cursor/GPT]  
+**handoff_id:** [HF-ID]  
+**lane:** [A/B]  
+**changeset_limit:** [≤5 súborov]  
 
 ---
 
-**Remember:** This PR must follow AI workflow: TALK → PR → evidence → Memory Spine → merge
+## INTENT
 
-## Manual Review Required
+[Krátky popis čo sa mení a prečo]
 
-### Content Pipeline
+## IMPACT_MAP
 
-- [ ] Content follows editorial guidelines
-- [ ] Images have proper alt text
-- [ ] Meta descriptions are compelling
-- [ ] Content is relevant to gastronomy/hospitality
+| Súbor | Zmena | Dôvod |
+|-------|-------|--------|
+| [cesta] | [create/modify/delete] | [dôvod] |
 
-### CTA & UX Flows
+**Total:** [X] súborov ✅ ≤5 limit
 
-- [ ] User journey is intuitive
-- [ ] Call-to-action buttons are clear
-- [ ] Mobile experience is optimized
-- [ ] Navigation flow makes sense
+## ACCEPTANCE
 
-### Business Impact
+**Evidence:** `.ai/checks/[HF-ID].json`  
+**Validation:** [čo sa overuje]  
+**Status:** [PASS/FAIL]  
 
-- [ ] Feature aligns with platform vision
-- [ ] User value is clear
-- [ ] Performance impact is acceptable
-- [ ] SEO implications considered
+## RISKS_FALLBACK
 
-## Technical Checklist
+**Risk:** [možný problém]  
+**Fallback:** [riešenie ak zlyhá]  
 
-- [ ] Build passes (`pnpm build`)
-- [ ] Type check passes (`pnpm typecheck`)
-- [ ] Lint passes (`pnpm lint`)
-- [ ] No hardcoded secrets
-- [ ] Evidence file present in `.ai/checks/`
+---
 
-## Evidence
+## Evidence Link
 
-- [ ] Evidence file created: `.ai/checks/<handoff-id>.txt`
-- [ ] Build log included
-- [ ] NODE/PNPM versions documented
-- [ ] RESULT status documented
+**Evidence:** `.ai/checks/[HF-ID].json`
+
+## Checklist
+
+- [ ] TALK v1 blok v PR description
+- [ ] Evidence link na `.ai/checks/[HF-ID].json`
+- [ ] Changeset ≤5 súborov (lane B)
+- [ ] Whitelisted paths (lane B)
+- [ ] No `console.log` v MCP serveri
+- [ ] SDK verzia pinned (bez `^`/`~`)
+- [ ] CI checks passing
+- [ ] Evidence file created
+- [ ] Journal updated
