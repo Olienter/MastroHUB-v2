@@ -142,3 +142,4 @@ Formát pri každom merge (1–3 vety):
 - 2025-08-25T22:44:24.888Z HF-MCP-DIAG-RUN-001: result=OK
 
 - 2025-08-25T22:51:31.459Z HF-MCP-DIAG-RUN-001: result=OK
+- 2025-08-25T23:05:08.606Z, HF-OPS-STATUS-0001: Infrastructure assessment completed. Build and TypeScript OK, but smoke test fails due to port binding and manifest commit mismatch (466fbe6 vs e5fb93b). UI phase HOLD until smoke test and manifest sync resolved.
