@@ -3,9 +3,9 @@ name: E2E MCP Runtime
 on:
   pull_request:
     paths:
-      - 'tools/mcp-ai-evidence/**'
-      - '.github/workflows/e2e-mcp.yml'
-      - '.ai/**'
+      - "tools/mcp-ai-evidence/**"
+      - ".github/workflows/e2e-mcp.yml"
+      - ".ai/**"
     types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
@@ -18,8 +18,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: |
@@ -110,3 +110,49 @@ jobs:
           echo "✅ Stderr output: PASS"
           echo "✅ Artifact upload: PASS"
           echo "🎉 All MCP runtime checks passed!"
+
+  mcp-e2e:
+    runs-on: ubuntu-latest
+    needs: mcp-runtime
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          cd tools/mcp-ai-evidence
+          npm install
+
+      - name: Build MCP server
+        run: |
+          cd tools/mcp-ai-evidence
+          npm run build
+
+      - name: Run E2E test
+        run: |
+          cd tools/mcp-ai-evidence
+          npm run test:e2e
+
+      - name: Upload E2E artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcp-e2e-artifacts
+          path: |
+            tools/mcp-ai-evidence/mcp-e2e-stdout.log
+            tools/mcp-ai-evidence/mcp-e2e-stderr.log
+            tools/mcp-ai-evidence/mcp-e2e-result.json
+          retention-days: 7
+
+      - name: E2E MCP Test Summary
+        run: |
+          echo "🎯 E2E MCP Test Summary:"
+          echo "✅ Build: PASS"
+          echo "✅ E2E test: PASS"
+          echo "✅ Artifacts: PASS"
+          echo "🎉 All MCP E2E checks passed!"
