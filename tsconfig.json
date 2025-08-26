@@ -14,7 +14,23 @@
     "noEmit": true,
     "strict": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
+      "@/styles/*": [
+        "./src/styles/*"
+      ],
+      "@/ui/*": [
+        "./src/ui/*"
+      ]
+    },
     "skipLibCheck": true,
     "incremental": true,
     "esModuleInterop": true,

@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* A11y: Focus-visible outline */
+/* ===== FOUNDATION PACK IMPORTS ===== */
+@import "../src/styles/tokens.css";
+@import "../src/styles/typography.css";
+@import "../src/styles/globals.css";
+
+/* ===== LEGACY A11Y SUPPORT ===== */
 :focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
