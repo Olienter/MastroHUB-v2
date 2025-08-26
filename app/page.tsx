@@ -22,7 +22,8 @@ export default function Page() {
           </div>
         </form>
 
-        <div className="mb-8">
+        {/* TODO: Add logo.png to public/ directory when available */}
+        {/* <div className="mb-8">
           <Image
             src="/logo.png"
             alt="MastroHUB Logo"
@@ -31,7 +32,7 @@ export default function Page() {
             priority
             className="rounded-radius-2 shadow-2"
           />
-        </div>
+        </div> */}
 
         <div className="text-step-2 text-fg-subtle">Home</div>
       </div>

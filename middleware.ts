@@ -1,25 +1,41 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 const PUBLIC_PATHS = [
-  "/",                    // Home page - CRITICAL for UI development
+  "/", // Home page - CRITICAL for UI development
   "/login",
-  "/api",                 // All API routes
+  "/api", // All API routes
   "/api/health",
   "/api/auth",
   "/favicon.ico",
+  "/logo.png", // Logo access for UI development
   "/robots.txt",
   "/sitemap.xml",
   "/sitemap.txt",
-  "/_next",              // Next.js static assets
-  "/assets",             // Custom static assets
+  "/_next", // Next.js static assets
+  "/assets", // Custom static assets
+  "/settings", // Settings page - allow for now
+  "/.well-known", // Allow well-known requests (Chrome devtools, etc.)
 ];
 
 function isPublic(req: NextRequest) {
   const { pathname } = req.nextUrl;
+
+  // Allow Next.js internal paths
   if (pathname.startsWith("/_next/")) return true;
   if (pathname.startsWith("/assets/")) return true;
-  if (PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/")))
-    return true;
+
+  // Check exact matches first
+  if (PUBLIC_PATHS.includes(pathname)) return true;
+
+  // Check if path starts with any public path (but not just "/")
+  for (const publicPath of PUBLIC_PATHS) {
+    if (publicPath === "/") {
+      // Special case: only exact "/" is public, not everything starting with "/"
+      continue;
+    }
+    if (pathname.startsWith(publicPath + "/")) return true;
+  }
+
   return false;
 }
 

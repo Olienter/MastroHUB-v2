@@ -1,0 +1,84 @@
+# HF-FRONTEND-TEMPLATES-003G - Setup-B Implementation Evidence
+
+## VERSION INFO
+- NODE: v20.11.1
+- PNPM: 10.14.0
+- Next.js: 14.2.32
+- Tailwind CSS: 3.4.17
+- shadcn/ui: Latest (class-variance-authority 0.7.1, @radix-ui/react-dropdown-menu 2.1.16)
+
+## BUILD LOG (~20 lines)
+> mastrohub-v2@0.0.0 build C:\Users\olieb\Mastro
+> next build
+
+  ▲ Next.js 14.2.32
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+ ✓ Linting and checking validity of types
+ ✓ Collecting page data    
+ ✓ Generating static pages (9/9)
+ ✓ Collecting build traces    
+ ✓ Finalizing page optimization
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    138 B          87.3 kB
+├ ○ /_not-found                          871 B            88 kB
+├ ƒ /api/auth/login                      0 B                0 B
+├ ƒ /api/auth/logout                     0 B                0 B
+├ ○ /api/health                          0 B                0 B
+├ ○ /dashboard                           2.9 kB          124 kB
+└ ○ /login                               5.75 kB        92.9 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/164-9ffd8df2d9a57c38.js       31.6 kB
+  ├ chunks/7f222c64-9af3b6b8af2783db.js  53.6 kB
+  └ other shared chunks (total)          1.9 kB
+
+ƒ Middleware                             26.8 kB
+
+## MANUAL TEST LOG
+
+### Components Tested:
+1. **Button Component**: ✅ Working with variants (default, outline, secondary)
+2. **Card Component**: ✅ Working with Header, Content, Footer
+3. **DropdownMenu Component**: ✅ Working with trigger and menu items
+4. **Dashboard Layout**: ✅ Sidebar (collapsed→expanded) + topbar shell
+5. **Dashboard Page**: ✅ 2-3 Card widgets (KPIs) + interactive Button demo
+
+### Interactions Tested:
+- Button click counter: ✅ Increments on each click
+- DropdownMenu: ✅ Opens/closes on trigger click
+- Sidebar collapse: ✅ Toggles between w-16 and w-64
+- Topbar user menu: ✅ Dropdown with Settings/Logout options
+
+### Styling Verification:
+- ✅ All colors use token-based classes (bg-primary, text-fg, etc.)
+- ✅ No hardcoded hex colors found
+- ✅ Focus rings use token colors (ring-focus)
+- ✅ Border radius uses token values (rounded-radius-1, rounded-radius-2)
+
+### Dark Mode Ready:
+- ✅ CSS variables support dark mode via class="dark"
+- ✅ All components inherit token-based colors
+- ✅ Ready for manual dark mode testing
+
+## IMPLEMENTED FILES (≤5)
+1. **`src/components/ui/button.tsx`** - shadcn Button with token-based variants
+2. **`src/components/ui/card.tsx`** - shadcn Card (Header/Content/Footer)
+3. **`src/components/ui/dropdown-menu.tsx`** - shadcn DropdownMenu wrapper
+4. **`app/dashboard/layout.tsx`** - Sidebar + topbar shell with DropdownMenu
+5. **`app/dashboard/page.tsx`** - Demo widgets + interactive Button demo
+
+## RESULT
+✅ **Setup-B Implementation Complete**
+- All 5 files implemented successfully
+- Build passes without errors
+- Components working with token-based styling
+- Interactive elements functional
+- Ready for dark mode testing
+
+## DATE
+2025-08-26 14:45 UTC
+
+## HEAD SHA
+Setup-B implementation completed with evidence tracking

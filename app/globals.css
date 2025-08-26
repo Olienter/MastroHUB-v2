@@ -2,13 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== FOUNDATION PACK IMPORTS ===== */
+/* ===== TOKENS IMPORT (SINGLE SOURCE) ===== */
 @import "../src/styles/tokens.css";
-@import "../src/styles/typography.css";
-@import "../src/styles/globals.css";
 
-/* ===== LEGACY A11Y SUPPORT ===== */
-:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
+/* ===== BASE LAYER - FOCUS STYLES ===== */
+@layer base {
+  /* Focus styles using token colors */
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-1);
+  }
+}
+
+/* ===== COMPONENTS LAYER - MINIMAL ===== */
+@layer components {
+  /* No custom components in Setup-A */
+}
+
+/* ===== UTILITIES LAYER - TAILWIND DEFAULT ===== */
+@layer utilities {
+  /* No custom utilities in Setup-A */
 }

@@ -1,6 +1,7 @@
 /* REDTEAM: will be reverted */
 import "./globals.css";
-import { Topbar } from "../components/ui/Topbar";
+import { ThemeProvider } from "next-themes";
+import type { ReactNode } from "react";
 
 export const metadata = {
   title: "MastroHUB v2 — Watchdog Test",
@@ -13,18 +14,18 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-white text-gray-900 antialiased">
-        <div className="min-h-screen flex flex-col">
-          <Topbar />
-          <div className="flex-1">{children}</div>
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-bg text-fg antialiased">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
