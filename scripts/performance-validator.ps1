@@ -64,7 +64,7 @@ function Test-PerformanceClaim {
     return $Issues
 }
 
-function Write-ValidationReport {
+function Show-ValidationReport {
     param([array]$Issues, [string]$Type, [string]$Claim, [string]$Baseline)
     
     Write-Host "`nPERFORMANCE VALIDATION REPORT" -ForegroundColor Yellow
@@ -93,7 +93,7 @@ function Write-ValidationReport {
 # Main execution
 try {
     $Issues = Test-PerformanceClaim -Type $ClaimType -Claim $ClaimValue -Baseline $BaselineValue
-    $Valid = Write-ValidationReport -Issues $Issues -Type $ClaimType -Claim $ClaimValue -Baseline $BaselineValue
+    $Valid = Show-ValidationReport -Issues $Issues -Type $ClaimType -Claim $ClaimValue -Baseline $BaselineValue
     
     if (-not $Valid) {
         Write-Host "`nPERFORMANCE CLAIM REJECTED - Please revise and provide evidence!" -ForegroundColor Red

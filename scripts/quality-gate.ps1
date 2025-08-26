@@ -81,7 +81,7 @@ function Test-PowerShellQuality {
     return $Issues
 }
 
-function Write-QualityReport {
+function Show-QualityReport {
     param([array]$Issues, [string]$ScriptPath)
     
     Write-Host "QUALITY GATE REPORT for: $ScriptPath" -ForegroundColor Yellow
@@ -131,7 +131,7 @@ try {
     }
     
     $Issues = Test-PowerShellQuality -Path $ScriptPath
-    $Result = Write-QualityReport -Issues $Issues -ScriptPath $ScriptPath
+    $Result = Show-QualityReport -Issues $Issues -ScriptPath $ScriptPath
     
     # Exit with appropriate code
     exit $Result.ExitCode

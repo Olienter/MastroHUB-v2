@@ -14,7 +14,7 @@ $StartTime = Get-Date
 $Results = @()
 $WorkspacePath = Get-Location
 
-function Write-Step {
+function Show-Step {
     param([string]$Step)
     $Elapsed = ((Get-Date) - $StartTime).TotalMilliseconds
     $Results += @{ Step = $Step; Elapsed = $Elapsed }
@@ -25,7 +25,7 @@ function Test-QuantumSmoke {
     Write-Host "Running QUANTUM AI smoke test (0.02s target)..." -ForegroundColor Magenta
     
     # PARALLEL execution using background jobs with explicit working directory
-    Write-Step "Starting parallel verification"
+    Show-Step "Starting parallel verification"
     
     $dependencyJob = Start-Job -ScriptBlock {
         Set-Location $using:WorkspacePath
@@ -55,7 +55,7 @@ function Test-QuantumSmoke {
     }
     
     # Wait for all jobs and collect results
-    Write-Step "Collecting parallel results"
+    Show-Step "Collecting parallel results"
     $dependencyResult = Receive-Job -Job $dependencyJob -Wait
     $configResult = Receive-Job -Job $configJob -Wait
     $implementationResult = Receive-Job -Job $implementationJob -Wait
@@ -64,7 +64,7 @@ function Test-QuantumSmoke {
     Remove-Job -Job $dependencyJob, $configJob, $implementationJob -Force
     
     # Verify results
-    Write-Step "Verifying results"
+    Show-Step "Verifying results"
     if (-not $dependencyResult.nextThemes) { throw "next-themes dependency missing" }
     if (-not $dependencyResult.tailwindAnimate) { throw "tailwindcss-animate dependency missing" }
     if (-not $configResult.darkMode) { throw "darkMode configuration missing" }
@@ -72,7 +72,7 @@ function Test-QuantumSmoke {
     if (-not $implementationResult.themeProvider) { throw "ThemeProvider missing" }
     if (-not $implementationResult.nextThemes) { throw "next-themes import missing" }
     
-    Write-Step "Quantum smoke test completed"
+    Show-Step "Quantum smoke test completed"
 }
 
 function Test-QuantumTargeted {
@@ -85,7 +85,7 @@ function Test-QuantumTargeted {
     }
     
     # ULTRA-FAST file check with caching
-    Write-Step "Checking $FilePath with cache"
+    Show-Step "Checking $FilePath with cache"
     $content = Get-Content $FilePath -Raw
     
     # Multiple checks in single pass
@@ -101,7 +101,7 @@ function Test-QuantumTargeted {
         }
     }
     
-    Write-Step "Quantum targeted test completed"
+    Show-Step "Quantum targeted test completed"
 }
 
 function Test-QuantumFull {
@@ -110,7 +110,7 @@ function Test-QuantumFull {
     Write-Host "Running QUANTUM AI full test for task: $TaskId (incremental build target)..." -ForegroundColor Magenta
     
     # Phase 1: Ultra-fast checks (parallel)
-    Write-Step "Phase 1: Parallel verification"
+    Show-Step "Phase 1: Parallel verification"
     $dependencyJob = Start-Job -ScriptBlock {
         Set-Location $using:WorkspacePath
         $pkg = Get-Content "package.json" | ConvertFrom-Json
@@ -149,7 +149,7 @@ function Test-QuantumFull {
     if (-not $configResult.content) { throw "Content paths missing" }
     
     # Phase 2: Incremental build (faster than full build)
-    Write-Step "Phase 2: Incremental build"
+    Show-Step "Phase 2: Incremental build"
     try {
         # Use Next.js incremental build if available
         if (Get-Command "next" -ErrorAction SilentlyContinue) {
@@ -164,7 +164,7 @@ function Test-QuantumFull {
     }
     
     # Phase 3: Evidence verification
-    Write-Step "Phase 3: Evidence verification"
+    Show-Step "Phase 3: Evidence verification"
     $evidencePath = ".ai/checks/$TaskId.txt"
     if (-not (Test-Path $evidencePath)) {
         throw "Evidence file $TaskId not found"
@@ -174,10 +174,10 @@ function Test-QuantumFull {
         throw "Evidence file $TaskId not marked as PASS"
     }
     
-    Write-Step "Quantum full test completed"
+    Show-Step "Quantum full test completed"
 }
 
-function Write-QuantumResults {
+function Show-QuantumResults {
     param([string]$Level)
     
     $TotalTime = ((Get-Date) - $StartTime).TotalMilliseconds
@@ -186,27 +186,27 @@ function Write-QuantumResults {
     
     # Check quantum performance targets
     if ($Level -eq "quantum-smoke" -and $TotalTime -lt 50) {
-        Write-Host "🎯 QUANTUM ACHIEVED: Under 50ms!" -ForegroundColor Green
+        Write-Host "QUANTUM ACHIEVED: Under 50ms!" -ForegroundColor Green
     } elseif ($Level -eq "quantum-smoke" -and $TotalTime -gt 50) {
-        Write-Host "⚠️  QUANTUM WARNING: Over 50ms target" -ForegroundColor Yellow
+        Write-Host "QUANTUM WARNING: Over 50ms target" -ForegroundColor Yellow
     }
     
     if ($Level -eq "quantum-targeted" -and $TotalTime -lt 20) {
-        Write-Host "🎯 QUANTUM ACHIEVED: Under 20ms!" -ForegroundColor Green
+        Write-Host "QUANTUM ACHIEVED: Under 20ms!" -ForegroundColor Green
     } elseif ($Level -eq "quantum-targeted" -and $TotalTime -gt 20) {
-        Write-Host "⚠️  QUANTUM WARNING: Over 20ms target" -ForegroundColor Yellow
+        Write-Host "QUANTUM WARNING: Over 20ms target" -ForegroundColor Yellow
     }
     
     if ($Level -eq "quantum-full" -and $TotalTime -lt 60000) {
-        Write-Host "🎯 QUANTUM ACHIEVED: Under 1 minute!" -ForegroundColor Green
+        Write-Host "QUANTUM ACHIEVED: Under 1 minute!" -ForegroundColor Green
     } elseif ($Level -eq "quantum-full" -and $TotalTime -gt 60000) {
-        Write-Host "⚠️  QUANTUM WARNING: Over 1 minute target" -ForegroundColor Yellow
+        Write-Host "QUANTUM WARNING: Over 1 minute target" -ForegroundColor Yellow
     }
 }
 
 # Main execution
 try {
-    Write-Host "🚀 Starting QUANTUM AI $Level verification..." -ForegroundColor Magenta
+    Write-Host "Starting QUANTUM AI $Level verification..." -ForegroundColor Magenta
     
     switch ($Level) {
         "quantum-smoke" { Test-QuantumSmoke }
@@ -224,7 +224,7 @@ try {
         }
     }
     
-    Write-QuantumResults -Level $Level
+    Show-QuantumResults -Level $Level
 } catch {
     Write-Host "[QUANTUM ERROR] $Level verification failed: $($_.Exception.Message)" -ForegroundColor Red
     exit 1

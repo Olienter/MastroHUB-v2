@@ -9,8 +9,10 @@ on:
       - "public/**"
       - "tools/**"
       - ".ai/**"
+      - "scripts/**"
   push:
     branches:
+      - main
       - watchdog/probe-001
     paths:
       - "app/**"
@@ -20,6 +22,7 @@ on:
       - "public/**"
       - "tools/**"
       - ".ai/**"
+      - "scripts/**"
 
 permissions:
   contents: read
@@ -52,6 +55,22 @@ jobs:
           echo "Checking for hardcoded secrets..."
           echo "Checking for demo accounts..."
           echo "Security check: PASS"
+      - name: PowerShell Script Validation
+        run: |
+          echo "Validating PowerShell scripts..."
+          if [ -f "scripts/quality-gate.ps1" ]; then
+            echo "Quality Gate script exists"
+          else
+            echo "Quality Gate script missing"
+            exit 1
+          fi
+          if [ -f "scripts/verification-pipeline.ps1" ]; then
+            echo "Verification Pipeline script exists"
+          else
+            echo "Verification Pipeline script missing"
+            exit 1
+          fi
+          echo "PowerShell scripts validation: PASS"
       - name: MCP typecheck
         run: pnpm --dir tools/mcp-ai-evidence run check
       - name: MCP build

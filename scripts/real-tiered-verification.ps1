@@ -1,5 +1,5 @@
 # REAL TIERED VERIFICATION SYSTEM
-# Actually provides different verification levels based on change type
+# Distinguishes between file-only, quick-build, and full-build verification
 
 param(
     [Parameter(Mandatory=$true)]
@@ -11,12 +11,10 @@ param(
 )
 
 $StartTime = Get-Date
-$Results = @()
 
-function Write-Step {
+function Show-Step {
     param([string]$Step)
     $Elapsed = ((Get-Date) - $StartTime).TotalMilliseconds
-    $Results += @{ Step = $Step; Elapsed = $Elapsed }
     Write-Host "  [OK] $Step ($([math]::Round($Elapsed))ms)" -ForegroundColor Green
 }
 
@@ -24,47 +22,47 @@ function Test-FileOnlyVerification {
     Write-Host "Running FILE-ONLY verification (0.1s target)..." -ForegroundColor Green
     
     # Only file checks - no build
-    Write-Step "Dependency check"
+    Show-Step "Dependency check"
     $pkg = Get-Content "package.json" | ConvertFrom-Json
     if (-not $pkg.dependencies.'next-themes') {
         throw "next-themes dependency missing"
     }
     
-    Write-Step "Configuration check"
+    Show-Step "Configuration check"
     $tailwindConfig = Get-Content "tailwind.config.ts" -Raw
     if (-not $tailwindConfig.Contains('darkMode: ["class"]')) {
         throw "darkMode configuration missing"
     }
     
-    Write-Step "Implementation check"
+    Show-Step "Implementation check"
     $layout = Get-Content "app/layout.tsx" -Raw
     if (-not $layout.Contains('ThemeProvider')) {
-        throw "ThemeProvider missing from layout"
+        throw "ThemeProvider missing"
     }
     
-    Write-Step "File-only verification completed"
+    Show-Step "File-only verification completed"
 }
 
 function Test-QuickBuildVerification {
     Write-Host "Running QUICK-BUILD verification (1-2m target)..." -ForegroundColor Yellow
     
     # File checks + quick build
-    Write-Step "Dependency check"
+    Show-Step "Dependency check"
     $pkg = Get-Content "package.json" | ConvertFrom-Json
     if (-not $pkg.dependencies.'next-themes') {
         throw "next-themes dependency missing"
     }
     
-    Write-Step "Configuration check"
+    Show-Step "Configuration check"
     $tailwindConfig = Get-Content "tailwind.config.ts" -Raw
     if (-not $tailwindConfig.Contains('darkMode: ["class"]')) {
         throw "darkMode configuration missing"
     }
     
-    Write-Step "Quick build check"
+    Show-Step "Quick build"
     pnpm build
     
-    Write-Step "Quick-build verification completed"
+    Show-Step "Quick-build verification completed"
 }
 
 function Test-FullBuildVerification {
@@ -73,7 +71,7 @@ function Test-FullBuildVerification {
     Write-Host "Running FULL-BUILD verification (5m target)..." -ForegroundColor Red
     
     # Complete verification + evidence check
-    Write-Step "Dependency verification"
+    Show-Step "Dependency verification"
     $pkg = Get-Content "package.json" | ConvertFrom-Json
     $required = @('next-themes', 'tailwindcss-animate')
     foreach ($dep in $required) {
@@ -82,7 +80,7 @@ function Test-FullBuildVerification {
         }
     }
     
-    Write-Step "Configuration verification"
+    Show-Step "Configuration verification"
     $tailwindConfig = Get-Content "tailwind.config.ts" -Raw
     if (-not $tailwindConfig.Contains('darkMode: ["class"]')) {
         throw "darkMode configuration missing"
@@ -91,19 +89,19 @@ function Test-FullBuildVerification {
         throw "tailwindcss-animate plugin missing"
     }
     
-    Write-Step "Implementation verification"
+    Show-Step "Implementation verification"
     $layout = Get-Content "app/layout.tsx" -Raw
     if (-not $layout.Contains('ThemeProvider')) {
-        throw "ThemeProvider missing from layout"
+        throw "ThemeProvider missing"
     }
     if (-not $layout.Contains('next-themes')) {
         throw "next-themes import missing"
     }
     
-    Write-Step "Full build check"
+    Show-Step "Full build"
     pnpm build
     
-    Write-Step "Evidence verification"
+    Show-Step "Evidence verification"
     $evidencePath = ".ai/checks/$TaskId.txt"
     if (-not (Test-Path $evidencePath)) {
         throw "Evidence file $TaskId not found"
@@ -113,10 +111,10 @@ function Test-FullBuildVerification {
         throw "Evidence file $TaskId not marked as PASS"
     }
     
-    Write-Step "Full-build verification completed"
+    Show-Step "Full-build verification completed"
 }
 
-function Write-Results {
+function Show-Results {
     param([string]$Level)
     
     $TotalTime = ((Get-Date) - $StartTime).TotalMilliseconds
@@ -158,7 +156,7 @@ try {
         }
     }
     
-    Write-Results -Level $Level
+    Show-Results -Level $Level
 } catch {
     Write-Host "[ERROR] $Level verification failed: $($_.Exception.Message)" -ForegroundColor Red
     exit 1

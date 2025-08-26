@@ -114,7 +114,7 @@ function Test-Functionality {
     }
 }
 
-function Write-PipelineReport {
+function Show-PipelineReport {
     param([hashtable]$Quality, [hashtable]$Performance, [hashtable]$Functionality, [string]$ScriptPath)
     
     Write-Host "=== VERIFICATION PIPELINE REPORT ===" -ForegroundColor Yellow
@@ -167,7 +167,7 @@ try {
     $FunctionalityResult = Test-Functionality -Path $ScriptPath
     
     # Final Report
-    $AllPassed = Write-PipelineReport -Quality $QualityResult -Performance $PerformanceResult -Functionality $FunctionalityResult -ScriptPath $ScriptPath
+    $AllPassed = Show-PipelineReport -Quality $QualityResult -Performance $PerformanceResult -Functionality $FunctionalityResult -ScriptPath $ScriptPath
     
     if (-not $AllPassed) {
         exit 1

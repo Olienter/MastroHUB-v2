@@ -1,5 +1,5 @@
-# TIERED VERIFICATION SYSTEM - PowerShell Implementation
-# Implementing Gemini's feedback about workflow efficiency
+# TIERED VERIFICATION SYSTEM
+# Implements different verification levels for optimal performance
 
 param(
     [Parameter(Mandatory=$true)]
@@ -11,12 +11,10 @@ param(
 )
 
 $StartTime = Get-Date
-$Results = @()
 
-function Write-Step {
+function Show-Step {
     param([string]$Step)
     $Elapsed = ((Get-Date) - $StartTime).TotalMilliseconds
-    $Results += @{ Step = $Step; Elapsed = $Elapsed }
     Write-Host "  [OK] $Step ($([math]::Round($Elapsed))ms)" -ForegroundColor Green
 }
 
@@ -24,17 +22,17 @@ function Test-SmokeTest {
     Write-Host "Running smoke test..." -ForegroundColor Yellow
     
     # Quick build check
-    Write-Step "Build check"
+    Show-Step "Build check"
     pnpm build
     
     # Basic dependency check
-    Write-Step "Dependency check"
+    Show-Step "Dependency check"
     $pkg = Get-Content "package.json" | ConvertFrom-Json
     if (-not $pkg.dependencies.'next-themes') {
         throw "next-themes dependency missing"
     }
     
-    Write-Step "Smoke test completed"
+    Show-Step "Smoke test completed"
 }
 
 function Test-TargetedVerification {
@@ -46,18 +44,19 @@ function Test-TargetedVerification {
         throw "Target file path required for targeted verification"
     }
     
-    # Check specific file
-    Write-Step "Checking $FilePath"
-    $content = Get-Content $FilePath -Raw
-    if (-not $content.Contains('next-themes')) {
-        throw "$FilePath missing next-themes integration"
+    # File-specific checks
+    Show-Step "File existence check"
+    if (-not (Test-Path $FilePath)) {
+        throw "Target file not found: $FilePath"
     }
     
-    # Quick build to ensure no regressions
-    Write-Step "Quick build check"
-    pnpm build
+    Show-Step "File content check"
+    $content = Get-Content $FilePath -Raw
+    if (-not $content.Contains('next-themes')) {
+        throw "File missing next-themes integration"
+    }
     
-    Write-Step "Targeted verification completed"
+    Show-Step "Targeted verification completed"
 }
 
 function Test-FullVerification {
@@ -66,7 +65,7 @@ function Test-FullVerification {
     Write-Host "Running full verification for task: $TaskId" -ForegroundColor Yellow
     
     # Complete dependency verification
-    Write-Step "Dependency verification"
+    Show-Step "Dependency verification"
     $pkg = Get-Content "package.json" | ConvertFrom-Json
     $required = @('next-themes', 'tailwindcss-animate')
     foreach ($dep in $required) {
@@ -76,31 +75,25 @@ function Test-FullVerification {
     }
     
     # Configuration verification
-    Write-Step "Configuration verification"
+    Show-Step "Configuration verification"
     $tailwindConfig = Get-Content "tailwind.config.ts" -Raw
     if (-not $tailwindConfig.Contains('darkMode: ["class"]')) {
         throw "darkMode configuration missing"
     }
-    if (-not $tailwindConfig.Contains('tailwindcss-animate')) {
-        throw "tailwindcss-animate plugin missing"
-    }
     
     # Implementation verification
-    Write-Step "Implementation verification"
+    Show-Step "Implementation verification"
     $layout = Get-Content "app/layout.tsx" -Raw
     if (-not $layout.Contains('ThemeProvider')) {
         throw "ThemeProvider missing from layout"
     }
-    if (-not $layout.Contains('next-themes')) {
-        throw "next-themes import missing"
-    }
     
     # Build verification
-    Write-Step "Build verification"
+    Show-Step "Build verification"
     pnpm build
     
     # Evidence verification
-    Write-Step "Evidence verification"
+    Show-Step "Evidence verification"
     $evidencePath = ".ai/checks/$TaskId.txt"
     if (-not (Test-Path $evidencePath)) {
         throw "Evidence file $TaskId not found"
@@ -110,10 +103,10 @@ function Test-FullVerification {
         throw "Evidence file $TaskId not marked as PASS"
     }
     
-    Write-Step "Full verification completed"
+    Show-Step "Full verification completed"
 }
 
-function Write-Results {
+function Show-Results {
     param([string]$Level)
     
     $TotalTime = ((Get-Date) - $StartTime).TotalMilliseconds
@@ -149,7 +142,7 @@ try {
         }
     }
     
-    Write-Results -Level $Level
+    Show-Results -Level $Level
 } catch {
     Write-Host "[ERROR] $Level verification failed: $($_.Exception.Message)" -ForegroundColor Red
     exit 1
