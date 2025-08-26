@@ -1,6 +1,6 @@
 {
   "policy_version": "2025-08-23",
-  "manifest_commit": "fbbc177",
+  "manifest_commit": "00a2d7f",
   "files": [
     ".ai/instructions.md",
     ".ai/rules.md",
