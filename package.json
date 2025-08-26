@@ -20,7 +20,8 @@
     "diag:ops:raw": "node tools/diag/ops-health.mjs",
     "build:typed": "pnpm run typecheck && pnpm run build",
     "verify:core": "node tools/diag/verify-core.mjs",
-    "validate:css": "node tools/diag/validate-css.mjs"
+    "validate:css": "node tools/diag/validate-css.mjs",
+    "test:ui:ci": "playwright test tests/ui-snapshots.spec.ts --config tests/playwright.config.ts --reporter=html"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.16",

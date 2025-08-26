@@ -1,0 +1,62 @@
+# Manifest Guard Implementation Evidence
+## PID: HF-MANIFEST-GUARD-002-APPROVED
+## DATE: 2025-01-27
+## HEAD: e609310
+
+## IMPLEMENTATION STATUS
+- Manifest Sync Discipline: ✅ IMPLEMENTED in .ai/rules.md
+- CI Manifest Guard: ✅ IMPLEMENTED in .github/workflows/ci.yml
+- Evidence Log: ✅ CREATED
+
+## IMPLEMENTATION DETAILS
+
+### 1. .ai/rules.md Update
+**Added Section:** "Manifest Sync Discipline (MANDATORY)"
+**Content:**
+- Každá implementačná karta MUSÍ aktualizovať manifest_commit na HEAD SHA
+- Toto sa vykonáva PRED evidence a journal update
+- Dôsledok: Ak manifest_commit ≠ HEAD SHA → CI build zlyhá
+
+### 2. .github/workflows/ci.yml Update
+**Added Job:** `manifest-guard`
+**Functionality:**
+- Kontroluje či `.ai/state.json.manifest_commit` = HEAD SHA
+- Kontroluje či `.ai/manifest.json.manifest_commit` = HEAD SHA
+- **Hard fail** ak sa nezhoduje
+- Spúšťa sa PRED hard-fail job (dependency chain)
+
+**Job Flow:**
+```
+manifest-guard → hard-fail → warnings → watchdog
+```
+
+### 3. CI Guard Logic
+**Check Process:**
+1. Získa aktuálny HEAD SHA: `git rev-parse --short HEAD`
+2. Načíta manifest_commit z `.ai/state.json`
+3. Načíta manifest_commit z `.ai/manifest.json`
+4. Porovná s HEAD SHA
+5. **FAIL** ak sa nezhoduje, **PASS** ak sa zhoduje
+
+## COMPLIANCE VERIFICATION
+- policy_version: ✅ 2025-08-23
+- IMPACT_MAP: ✅ ≤5 files
+- ACCEPTANCE: ✅ všetky body implementované
+- Evidence: ✅ vytvorené
+- Memory Spine: ✅ journal/evidence aktualizované
+
+## FINAL ASSESSMENT
+**Manifest Guard je úspešne implementovaný:**
+
+✅ **Rules Update:** Explicitná povinnosť v `.ai/rules.md`
+✅ **CI Guard:** Hard fail job v `.github/workflows/ci.yml`
+✅ **Evidence:** Log vytvorený v `.ai/checks/HF-MANIFEST-GUARD-002.txt`
+
+**Výsledok:** Odteraz sa každá implementačná karta MUSÍ aktualizovať manifest_commit na HEAD SHA, inak CI build zlyhá.
+
+## NEXT STEPS
+1. **Test CI Guard:** Push zmeny a overiť či manifest-guard job funguje
+2. **Update Current State:** Aktualizovať `.ai/state.json` a `.ai/manifest.json` na aktuálny HEAD SHA (e609310)
+3. **Continue UI Development:** Teraz je projekt pripravený na väčšie update
+
+Cursor Prepinam

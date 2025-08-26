@@ -127,6 +127,27 @@ Automatický preview crawl cez Playwright na každom PR:
 - Každá karta musí pridať riadok do `.ai/chronicle/journal.md`.
 - `.ai/state.json.manifest_commit` = HEAD short SHA.
 
+### Manifest Sync Discipline (MANDATORY)
+
+**Každá implementačná karta MUSÍ:**
+
+- Aktualizovať `.ai/state.json.manifest_commit` na aktuálny HEAD SHA
+- Aktualizovať `.ai/manifest.json.manifest_commit` na aktuálny HEAD SHA
+- Toto sa vykonáva PRED evidence a journal update
+
+**Dôvod:** Zabrániť manifest_commit mismatch ktorý spôsobuje STOP condition.
+**Dôsledok:** Ak sa manifest_commit nezhoduje s HEAD SHA → CI build zlyhá.
+
+### Git Pager Fix (MANDATORY)
+
+**Pri získavaní HEAD SHA vždy používať:**
+
+- `git --no-pager rev-parse --short HEAD` (namiesto `git rev-parse --short HEAD`)
+- `git --no-pager log --oneline -1 | cut -d' ' -f1` (alternatíva)
+
+**Dôvod:** Git automaticky spúšťa pager (less/more) na Windows, čo spôsobuje zaseknutie terminalu.
+**Dôsledok:** Bez `--no-pager` sa terminal zasekne a SHA validácia zlyhá.
+
 ## 7. Fallback Strategy
 
 - Ak sa nedá ≤5 súborov → splitni HF-XXX-A/B.

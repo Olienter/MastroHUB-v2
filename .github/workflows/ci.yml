@@ -30,8 +30,49 @@ permissions:
   actions: read
 
 jobs:
+  manifest-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Manifest Commit Check
+        run: |
+          echo "Checking manifest_commit consistency..."
+          HEAD_SHA=$(git --no-pager rev-parse --short HEAD)
+          echo "Current HEAD SHA: $HEAD_SHA"
+
+          if [ -f ".ai/state.json" ]; then
+            MANIFEST_COMMIT=$(node -e "console.log(require('./.ai/state.json').manifest_commit)")
+            echo "State.json manifest_commit: $MANIFEST_COMMIT"
+            if [ "$MANIFEST_COMMIT" != "$HEAD_SHA" ]; then
+              echo "❌ ERROR: manifest_commit mismatch in .ai/state.json"
+              echo "Expected: $HEAD_SHA, Found: $MANIFEST_COMMIT"
+              exit 1
+            fi
+          else
+            echo "❌ ERROR: .ai/state.json not found"
+            exit 1
+          fi
+
+          if [ -f ".ai/manifest.json" ]; then
+            MANIFEST_COMMIT=$(node -e "console.log(require('./.ai/manifest.json').manifest_commit)")
+            echo "Manifest.json manifest_commit: $MANIFEST_COMMIT"
+            if [ "$MANIFEST_COMMIT" != "$HEAD_SHA" ]; then
+              echo "❌ ERROR: manifest_commit mismatch in .ai/manifest.json"
+              echo "Expected: $HEAD_SHA, Found: $MANIFEST_COMMIT"
+              exit 1
+            fi
+          else
+            echo "❌ ERROR: .ai/manifest.json not found"
+            exit 1
+          fi
+
+          echo "✅ SUCCESS: All manifest_commit values match HEAD SHA"
+
   hard-fail:
     runs-on: ubuntu-latest
+    needs: manifest-guard
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -76,9 +117,39 @@ jobs:
       - name: MCP build
         run: pnpm --dir tools/mcp-ai-evidence run build
 
-  warnings:
+  ui-snapshot-testing:
     runs-on: ubuntu-latest
     needs: hard-fail
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.14.0
+          run_install: false
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      - name: Build application
+        run: pnpm build
+      - name: Setup Playwright
+        run: npx playwright install --with-deps
+      - name: Run UI Snapshot Tests
+        run: pnpm test:ui:ci
+      - name: Upload UI Snapshot artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-snapshots
+          path: |
+            test-results
+            playwright-report
+          retention-days: 30
+
+  warnings:
+    runs-on: ubuntu-latest
+    needs: [hard-fail, ui-snapshot-testing]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
