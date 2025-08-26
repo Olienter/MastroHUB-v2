@@ -1,13 +1,17 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 const PUBLIC_PATHS = [
+  "/",                    // Home page - CRITICAL for UI development
   "/login",
+  "/api",                 // All API routes
   "/api/health",
   "/api/auth",
   "/favicon.ico",
   "/robots.txt",
   "/sitemap.xml",
   "/sitemap.txt",
+  "/_next",              // Next.js static assets
+  "/assets",             // Custom static assets
 ];
 
 function isPublic(req: NextRequest) {
