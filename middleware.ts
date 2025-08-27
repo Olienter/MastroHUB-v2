@@ -3,6 +3,10 @@ import { NextResponse, type NextRequest } from "next/server";
 const PUBLIC_PATHS = [
   "/", // Home page - CRITICAL for UI development
   "/login",
+  "/dashboard", // Dashboard - CRITICAL for UI testing
+  "/docs", // Documentation - for UI testing
+  "/about", // About page - for UI testing
+  "/demo", // Phase 3 demo page - CRITICAL for component testing
   "/api", // All API routes
   "/api/health",
   "/api/auth",

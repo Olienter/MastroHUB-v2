@@ -4,8 +4,15 @@ test.describe("UI Component Snapshot Testing", () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to homepage before each test
     await page.goto("/");
-    // Wait for page to load completely
-    await page.waitForLoadState("networkidle");
+
+    // Wait for DOM to be ready (fast, reliable)
+    await page.waitForLoadState("domcontentloaded");
+
+    // Wait for critical content to be visible (specific, fast)
+    await page.waitForSelector('h1:has-text("MastroHUB v2")', {
+      state: "visible",
+      timeout: 10000, // 10s instead of 60s
+    });
   });
 
   test("NavBar Component - Desktop View", async ({ page }) => {
@@ -117,8 +124,11 @@ test.describe("UI Component Snapshot Testing", () => {
     // Set viewport to mobile size
     await page.setViewportSize({ width: 375, height: 667 });
 
-    // Wait for page to load
-    await page.waitForLoadState("networkidle");
+    // Wait for critical content instead of networkidle
+    await page.waitForSelector('h1:has-text("MastroHUB v2")', {
+      state: "visible",
+      timeout: 10000,
+    });
 
     // Verify mobile layout elements
     await expect(page.locator('h1:has-text("MastroHUB v2")')).toBeVisible();
@@ -132,8 +142,11 @@ test.describe("UI Component Snapshot Testing", () => {
     // Set viewport to tablet size
     await page.setViewportSize({ width: 768, height: 1024 });
 
-    // Wait for page to load
-    await page.waitForLoadState("networkidle");
+    // Wait for critical content instead of networkidle
+    await page.waitForSelector('h1:has-text("MastroHUB v2")', {
+      state: "visible",
+      timeout: 10000,
+    });
 
     // Verify tablet layout elements
     await expect(page.locator('h1:has-text("MastroHUB v2")')).toBeVisible();

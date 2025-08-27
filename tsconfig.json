@@ -16,19 +16,19 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
+        "./app/*"
       ],
       "@/components/*": [
-        "./src/components/*"
+        "./app/components/*"
       ],
       "@/lib/*": [
-        "./src/lib/*"
+        "./app/lib/*"
       ],
       "@/styles/*": [
-        "./src/styles/*"
+        "./app/styles/*"
       ],
       "@/ui/*": [
-        "./src/ui/*"
+        "./app/ui/*"
       ]
     },
     "skipLibCheck": true,

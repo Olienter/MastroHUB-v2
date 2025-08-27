@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ===== TOKENS IMPORT (SINGLE SOURCE) ===== */
-@import "../src/styles/tokens.css";
+@import "../../src/styles/tokens.css";
 
 /* ===== BASE LAYER - FOCUS STYLES ===== */
 @layer base {

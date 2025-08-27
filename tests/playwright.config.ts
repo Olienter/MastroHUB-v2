@@ -13,14 +13,11 @@ export default defineConfig({
     screenshot: "only-on-failure",
     video: "retain-on-failure",
   },
-  reporter: [
-    ['line'],
-    ['html', { open: 'never' }]
-  ],
+  reporter: [["line"], ["html", { open: "never" }]],
   webServer: {
     command: `pnpm build && pnpm exec next start -p ${PORT}`,
     url: `${BASE_URL}/api/health`,
     timeout: 120_000,
-    reuseExistingServer: false,
+    reuseExistingServer: true,
   },
 });

@@ -1,60 +1,95 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Menu, User, Settings, LogOut, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/Button";
+import { Sidebar, NavigationItem } from "@/components/ui/Sidebar";
+import { PageHeader } from "@/components/ui/PageHeader";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Menu,
+  User,
+  Settings,
+  LogOut,
+  BarChart3,
+  Users,
+  FileText,
+  Shield,
+} from "lucide-react";
 
 export default function DashboardLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+  // Navigation items for sidebar
+  const navigationItems: NavigationItem[] = [
+    {
+      id: "dashboard",
+      label: "Dashboard",
+      icon: <Menu className="h-4 w-4" />,
+      onClick: () => console.log("Dashboard clicked"),
+    },
+    {
+      id: "analytics",
+      label: "Analytics",
+      icon: <BarChart3 className="h-4 w-4" />,
+      onClick: () => console.log("Analytics clicked"),
+      badge: "New",
+    },
+    {
+      id: "users",
+      label: "Users",
+      icon: <Users className="h-4 w-4" />,
+      onClick: () => console.log("Users clicked"),
+    },
+    {
+      id: "reports",
+      label: "Reports",
+      icon: <FileText className="h-4 w-4" />,
+      onClick: () => console.log("Reports clicked"),
+    },
+    {
+      id: "settings",
+      label: "Settings",
+      icon: <Settings className="h-4 w-4" />,
+      onClick: () => console.log("Settings clicked"),
+    },
+    {
+      id: "security",
+      label: "Security",
+      icon: <Shield className="h-4 w-4" />,
+      onClick: () => console.log("Security clicked"),
+    },
+  ];
 
   return (
     <div className="min-h-dvh bg-bg text-fg flex">
       {/* Sidebar */}
-      <aside className={`bg-surface border-r border-border transition-all duration-300 ${
-        sidebarCollapsed ? "w-16" : "w-64"
-      }`}>
-        <div className="p-4 border-b border-border">
-          <div className="flex items-center justify-between">
-            {!sidebarCollapsed && (
-              <h2 className="text-lg font-semibold text-fg">MastroHUB</h2>
-            )}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-              className="ml-auto"
-            >
-              {sidebarCollapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
-            </Button>
-          </div>
-        </div>
-        
-        <nav className="p-4">
-          <div className="space-y-2">
-            <Button variant="ghost" className="w-full justify-start" size="sm">
-              <Menu className="h-4 w-4 mr-2" />
-              {!sidebarCollapsed && "Dashboard"}
-            </Button>
-            <Button variant="ghost" className="w-full justify-start" size="sm">
-              <Settings className="h-4 w-4 mr-2" />
-              {!sidebarCollapsed && "Settings"}
-            </Button>
-          </div>
-        </nav>
-      </aside>
+      <Sidebar
+        collapsed={sidebarCollapsed}
+        items={navigationItems}
+        onCollapse={setSidebarCollapsed}
+      />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Topbar */}
         <header className="bg-surface border-b border-border px-6 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-xl font-semibold text-fg">Dashboard</h1>
-            
+            <div>
+              <h1 className="text-xl font-semibold text-fg">Dashboard</h1>
+              <p className="text-sm text-fg-muted">Welcome to MastroHUB v2.0</p>
+            </div>
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -78,10 +113,8 @@ export default function DashboardLayout({
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 p-6">
-          {children}
-        </main>
+        <main className="flex-1 p-6">{children}</main>
       </div>
     </div>
-  )
+  );
 }
