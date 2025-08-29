@@ -1,6 +1,6 @@
 {
   "pid": "HF-MCP-DIAG-RUN-001",
-  "timestamp_utc": "2025-08-29T16:22:57.245Z",
+  "timestamp_utc": "2025-08-29T16:46:12.626Z",
   "environment": {
     "os_platform": "win32",
     "os_release": "10.0.26100",
@@ -74,13 +74,13 @@
       "content": [
         {
           "type": "text",
-          "text": "{\"ok\":true,\"cwd\":\"C:\\\\Users\\\\olieb\\\\Mastro\\\\tools\\\\mcp-ai-evidence\",\"pid\":23336,\"sdk\":\"1.17.4\"}"
+          "text": "{\"ok\":true,\"cwd\":\"C:\\\\Users\\\\olieb\\\\Mastro\\\\tools\\\\mcp-ai-evidence\",\"pid\":2388,\"sdk\":\"1.17.4\"}"
         }
       ]
     },
     "error": null
   },
   "terminal_interaction": "AUTO",
-  "git_head_short": "56fb960",
+  "git_head_short": "1c09e70",
   "result": "OK"
 }

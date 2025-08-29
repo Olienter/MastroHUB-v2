@@ -1,8 +1,8 @@
 HF-UI-FOUNDATION-0002-A-VALIDATION EVIDENCE
-DATE_UTC: 2025-08-29T16:21:11.921Z
+DATE_UTC: 2025-08-29T16:45:20.371Z
 NODE: v22.18.0
 PNPM: 10.14.0
-HEAD: 56fb960
+HEAD: 1c09e70
 
 RESULT: OK
 NOTES:
@@ -11,7 +11,6 @@ NOTES:
 --- CSS FILE VALIDATION ---
 ✅ app/styles/tokens.css
 ✅ app/styles/typography.css
-✅ app/styles/globals.css
 ✅ app/globals.css
 
 --- CSS IMPORT VALIDATION ---
