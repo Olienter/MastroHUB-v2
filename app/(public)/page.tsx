@@ -8,6 +8,7 @@ import { HeroSection } from "../../components/sections/HeroSection";
 import { FeaturedPostCard } from "../../components/cards/FeaturedPostCard";
 import { PostGrid } from "../../components/sections/PostGrid";
 import { LiveNewsSidebar } from "../../components/sections/LiveNewsSidebar";
+import { Container } from "../../components/ui/Container";
 
 export default function HomePage() {
   const homeData = getHomePageData();
@@ -18,18 +19,18 @@ export default function HomePage() {
       <Header />
 
       <main role="main">
-        {/* Hero Section */}
+        {/* Hero Section - Full width */}
         <HeroSection
           title="Discover the Art of Gastronomy"
           subtitle="Premium Magazine"
           description="Your premier destination for gastronomy and hospitality insights, featuring exclusive content from world-renowned chefs and industry experts."
           ctaText="Explore Articles"
           ctaLink="/posts"
-          backgroundImage="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+          backgroundImage="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?auto=format&fit=crop&w=1200&q=80"
         />
 
-        {/* Main Content Area */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Main Content Area - Wide container */}
+        <Container variant="wide" className="py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Column - Main Content */}
             <div className="lg:col-span-2 space-y-8">
@@ -71,7 +72,7 @@ export default function HomePage() {
               <LiveNewsSidebar posts={homeData.latestPosts} />
             </div>
           </div>
-        </div>
+        </Container>
       </main>
 
       {/* Footer */}
@@ -80,7 +81,7 @@ export default function HomePage() {
         role="contentinfo"
         data-testid="site-footer"
       >
-        <div className="container mx-auto max-w-6xl">
+        <Container variant="wide">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-step-2 font-semibold mb-4">MastroHUB</h3>
@@ -156,7 +157,7 @@ export default function HomePage() {
           <div className="border-t border-fg-subtle mt-8 pt-8 text-center text-step-0 text-fg-subtle">
             <p>&copy; 2024 MastroHUB. All rights reserved.</p>
           </div>
-        </div>
+        </Container>
       </footer>
     </div>
   );

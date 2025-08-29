@@ -19,7 +19,7 @@ export const PostGrid: React.FC<PostGridProps> = ({
 }) => {
   return (
     <section className="py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full">
         {/* Header */}
         {(title || subtitle) && (
           <div className="text-center mb-12">
@@ -36,10 +36,15 @@ export const PostGrid: React.FC<PostGridProps> = ({
           </div>
         )}
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grid - Responsive 12-column system */}
+        <div className="grid grid-cols-12 gap-x-8 gap-y-8">
           {posts.map((post) => (
-            <PostCard key={post.id} post={post} />
+            <div 
+              key={post.id} 
+              className="col-span-12 md:col-span-6 lg:col-span-4"
+            >
+              <PostCard post={post} />
+            </div>
           ))}
         </div>
 

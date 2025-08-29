@@ -16,6 +16,7 @@ export const FeaturedPostCard: React.FC<FeaturedPostCardProps> = ({ post }) => {
           src={post.featuredImage || "/images/placeholder.jpg"}
           alt={post.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           priority
         />
@@ -75,6 +76,7 @@ export const FeaturedPostCard: React.FC<FeaturedPostCardProps> = ({ post }) => {
                 src={post.author.avatar || "/images/avatar-placeholder.jpg"}
                 alt={post.author.name}
                 fill
+                sizes="40px"
                 className="object-cover"
               />
             </div>

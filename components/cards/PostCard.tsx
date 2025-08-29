@@ -9,12 +9,13 @@ interface PostCardProps {
 export const PostCard: React.FC<PostCardProps> = ({ post }) => {
   return (
     <article className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-      {/* Image */}
+      {/* Image - Optimized with sizes and aspect ratio */}
       <div className="relative aspect-[16/9] overflow-hidden">
         <Image
           src={post.featuredImage || "/images/placeholder.jpg"}
           alt={post.title}
           fill
+          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
 
@@ -67,6 +68,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post }) => {
                 alt={post.author.name}
                 fill
                 className="object-cover"
+                sizes="32px"
               />
             </div>
             <div>

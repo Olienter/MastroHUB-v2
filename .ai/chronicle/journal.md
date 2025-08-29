@@ -1,6 +1,22 @@
-# MastroHUB v2 Development Chronicle
+# MastroHUB Development Chronicle
 
 ## 2025-01-27
+
+### HF-SERVER-CONFIRM-AND-RUN-3000-001
+
+- **Layout konflikty vyriešené**: PostGrid, Container, HeroSection opravené na full-width
+- **Build úspešný**: TypeScript OK, ESLint OK, Next.js 14.2.32
+- **Server spustený**: PID 15368 na porte 3000
+- **UI opravy implementované**: čierne miesta na krajoch odstránené, hero výška znížená na 25vh
+- **Evidence Pack**: HF-SERVER-CONFIRM-AND-RUN-3000-001.txt vytvorený
+
+### HF-UI-LAYOUT-HERO-FIX-003
+
+- **Layout fix**: max-w-7xl → w-full + overflow-x-auto + scrollbar-none
+- **Hero sekcia**: výška znížená z 80vh na 25vh
+- **Gastronomický obrázok**: nový Unsplash obrázok (pizza/pasta)
+- **Scrollbar utility**: .scrollbar-none pridané do globals.css
+- **PostGrid oprava**: layout konzistencia s hlavnou stránkou
 
 ### HF-CI-HARDEN-001: CI Hardening Implementation
 
@@ -534,12 +550,14 @@
 **Next phase:** Phase 7 - Final Integration & Testing (Dashboard Enhancement, Final Testing)
 
 ---
+
 - 2025-08-27T00:56:19.675Z, ### HF-UI-FINAL-001 - Phase 7 COMPLETED ✅
-**Time:** 16:00 UTC  
-**Agent:** Cursor Frontend Developer  
-**Status:** COMPLETED  
+  **Time:** 16:00 UTC  
+  **Agent:** Cursor Frontend Developer  
+  **Status:** COMPLETED
 
 **What was accomplished:**
+
 - ✅ Enhanced app/dashboard/page.tsx with Phase 6 interactive components
 - ✅ Integrated Modal, Tooltip, Toast, and Loading components
 - ✅ Added comprehensive dashboard features: stats grid, performance metrics, recent activity, projects table
@@ -548,6 +566,7 @@
 - ✅ Generated evidence file HF-UI-FINAL-001.txt
 
 **Technical details:**
+
 - Build: ✅ PASS (Next.js 14.2.32)
 - Dashboard: 8.55 kB (enhanced with interactive features)
 - All 23 components from Phases 1-6 fully integrated

@@ -20,18 +20,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage,
 }) => {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+    <section className="relative aspect-[16/9] min-h-[400px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Content */}
-      <Container className="relative z-10 text-center text-white">
-        <div className="max-w-4xl mx-auto space-y-6">
+      <Container
+        variant="full"
+        className="relative z-10 text-center text-white"
+      >
+        <div className="max-w-4xl mx-auto space-y-6 px-4">
           {/* Subtitle */}
           <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
             <span className="text-sm font-medium">{subtitle}</span>
