@@ -1,27 +1,26 @@
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import type { ReactNode } from "react";
-import NavBar from "./components/NavBar";
 
 export const metadata = {
-  title: "MastroHUB v2 — AI-Powered Quality Platform",
+  title: "MastroHUB — Gastronomy & Hospitality Magazine",
   description:
-    "MastroHUB v2 - Advanced AI-powered quality monitoring and development platform",
+    "MastroHUB - Premium gastronomy and hospitality magazine with AI-powered insights, recipes, and industry trends",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://mastrohub.dev"
   ),
   openGraph: {
-    title: "MastroHUB v2 — AI-Powered Quality Platform",
+    title: "MastroHUB — Gastronomy & Hospitality Magazine",
     description:
-      "Advanced AI-powered quality monitoring and development platform",
+      "Premium gastronomy and hospitality magazine with AI-powered insights, recipes, and industry trends",
     images: ["/og.png"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MastroHUB v2 — AI-Powered Quality Platform",
+    title: "MastroHUB — Gastronomy & Hospitality Magazine",
     description:
-      "Advanced AI-powered quality monitoring and development platform",
+      "Premium gastronomy and hospitality magazine with AI-powered insights, recipes, and industry trends",
   },
 };
 
@@ -35,8 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           enableSystem
           disableTransitionOnChange
         >
-          <NavBar />
-          {children}
+          <div className="MainContainer">{children}</div>
         </ThemeProvider>
       </body>
     </html>

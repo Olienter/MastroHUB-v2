@@ -22,7 +22,7 @@
         "./app/components/*"
       ],
       "@/lib/*": [
-        "./app/lib/*"
+        "./lib/*"
       ],
       "@/styles/*": [
         "./app/styles/*"
