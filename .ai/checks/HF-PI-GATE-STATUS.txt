@@ -134,3 +134,15 @@
 
 **Fix Applied:** Updated both files to match current commit hash
 **Expected Result:** CI pipeline should now pass manifest-guard job
+
+---
+
+## 🔧 **SECOND FIX APPLIED:**
+
+**Problem Persisted:** Files were not properly updated in previous commit
+- **Previous manifest_commit:** `c1bf029` (still old)
+- **Current HEAD:** `06bb21d` (actual)
+- **Files Manually Updated:** `.ai/manifest.json`, `.ai/state.json`
+
+**Fix Applied:** Direct file editing to ensure manifest_commit matches current HEAD
+**Expected Result:** CI pipeline should now pass manifest-guard job with commit `06bb21d`
