@@ -1,26 +1,31 @@
-# AI System Ownership
-# These files require AI system expertise and follow strict protocols
+# Critical infrastructure ownership
+.github/** @Olienter
+.github/workflows/** @Olienter
+.github/CODEOWNERS @Olienter
+.github/PULL_REQUEST_TEMPLATE.md @Olienter
 
-/.ai/ @ai-system-owners
-/.github/workflows/ai-quality-gates.yml @ai-system-owners
-/.github/CODEOWNERS @ai-system-owners
-/.github/pull_request_template.md @ai-system-owners
+# AI workflow ownership
+.ai/** @mastro-ai-team
+.ai/checks/** @mastro-ai-team
+.ai/chronicle/** @mastro-ai-team
 
-# Project Core Files
-/README.md @project-owners
-/package.json @project-owners
-/.gitignore @project-owners
+# MCP tools ownership
+tools/** @mastro-dev-team
+tools/mcp-ai-evidence/** @mastro-dev-team
 
-# Evidence and Checks
-/.ai/checks/ @ai-system-owners @project-owners
+# App core ownership  
+app/** @mastro-dev-team
+components/** @mastro-dev-team
 
-# Handoff and Chronicle
-/.ai/handoff/ @ai-system-owners
-/.ai/chronicle/ @ai-system-owners
-/.ai/decisions/ @ai-system-owners
+# Configuration files
+*.yml @mastro-dev-team
+*.yaml @mastro-dev-team
+*.json @mastro-dev-team
+*.md @mastro-dev-team
 
-# Policy and Rules
-/.ai/rules.md @ai-system-owners
-/.ai/safety.md @ai-system-owners
-/.ai/check.md @ai-system-owners
-/.ai/policy-digest.txt @ai-system-owners
+# Package management
+package.json @mastro-dev-team
+pnpm-lock.yaml @mastro-dev-team
+
+# Content ownership
+content/** @mastro-content-team

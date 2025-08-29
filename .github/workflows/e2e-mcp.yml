@@ -1,0 +1,158 @@
+name: E2E MCP Runtime
+
+on:
+  pull_request:
+    paths:
+      - "tools/mcp-ai-evidence/**"
+      - ".github/workflows/e2e-mcp.yml"
+      - ".ai/**"
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  mcp-runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          cd tools/mcp-ai-evidence
+          npm install
+
+      - name: Build MCP server
+        run: |
+          cd tools/mcp-ai-evidence
+          npm run build
+
+      - name: Verify build output
+        run: |
+          if [ ! -f "tools/mcp-ai-evidence/dist/server.js" ]; then
+            echo "❌ Build failed - dist/server.js not found"
+            exit 1
+          fi
+          echo "✅ Build successful - dist/server.js exists"
+
+      - name: Check for console.log ban
+        run: |
+          if grep -r "console\.log" tools/mcp-ai-evidence/src/; then
+            echo "❌ MCP server contains console.log (use console.error instead)"
+            exit 1
+          fi
+          echo "✅ MCP console.log check passed"
+
+      - name: Start MCP server (stdio)
+        run: |
+          cd tools/mcp-ai-evidence
+          # Spusti server na pozadí, zachyť stderr, potlač stdout
+          timeout 10s node dist/server.js 2>mcp-stderr.log 1>/dev/null &
+          SERVER_PID=$!
+
+          # Kratučká pauza pre boot
+          sleep 2
+
+          # Skontroluj či server beží
+          if ! kill -0 $SERVER_PID 2>/dev/null; then
+            echo "❌ MCP server failed to start"
+            cat mcp-stderr.log
+            exit 1
+          fi
+
+          echo "✅ MCP server started (PID: $SERVER_PID)"
+
+      - name: Verify stderr output
+        run: |
+          cd tools/mcp-ai-evidence
+
+          # Skontroluj či stderr log nie je prázdny
+          if [ ! -s mcp-stderr.log ]; then
+            echo "❌ MCP server stderr log is empty"
+            exit 1
+          fi
+
+          # Skontroluj boot signál
+          if ! grep -q "MCP server ready" mcp-stderr.log; then
+            echo "❌ MCP server boot signal not found in stderr"
+            cat mcp-stderr.log
+            exit 1
+          fi
+
+          echo "✅ MCP server stderr log contains boot signal"
+          echo "--- stderr tail ---"
+          tail -10 mcp-stderr.log
+
+      - name: Cleanup server
+        run: |
+          cd tools/mcp-ai-evidence
+          # Nájdi a ukonči server proces
+          pkill -f "node dist/server.js" || true
+          sleep 1
+
+      - name: Upload stderr artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcp-stderr-log
+          path: tools/mcp-ai-evidence/mcp-stderr.log
+          retention-days: 7
+
+      - name: E2E MCP Runtime Summary
+        run: |
+          echo "🎯 E2E MCP Runtime Summary:"
+          echo "✅ Build: PASS"
+          echo "✅ Console.log ban: PASS"
+          echo "✅ Server start: PASS"
+          echo "✅ Stderr output: PASS"
+          echo "✅ Artifact upload: PASS"
+          echo "🎉 All MCP runtime checks passed!"
+
+  mcp-e2e:
+    runs-on: ubuntu-latest
+    needs: mcp-runtime
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          cd tools/mcp-ai-evidence
+          npm install
+
+      - name: Build MCP server
+        run: |
+          cd tools/mcp-ai-evidence
+          npm run build
+
+      - name: Run E2E test
+        run: |
+          cd tools/mcp-ai-evidence
+          npm run test:e2e
+
+      - name: Upload E2E artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mcp-e2e-artifacts
+          path: |
+            tools/mcp-ai-evidence/mcp-e2e-stdout.log
+            tools/mcp-ai-evidence/mcp-e2e-stderr.log
+            tools/mcp-ai-evidence/mcp-e2e-result.json
+          retention-days: 7
+
+      - name: E2E MCP Test Summary
+        run: |
+          echo "🎯 E2E MCP Test Summary:"
+          echo "✅ Build: PASS"
+          echo "✅ E2E test: PASS"
+          echo "✅ Artifacts: PASS"
+          echo "🎉 All MCP E2E checks passed!"

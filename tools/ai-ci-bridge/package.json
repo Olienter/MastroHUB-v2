@@ -1,0 +1,22 @@
+{
+  "name": "@mastro/ai-ci-bridge",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/bridge.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node dist/bridge.js",
+    "dev": "tsx src/bridge.ts",
+    "test": "node dist/bridge.js status",
+    "create-evidence": "node dist/bridge.js create-evidence",
+    "trigger-ci": "node dist/bridge.js trigger-ci",
+    "validate": "node dist/bridge.js validate"
+  },
+  "dependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.4"
+  }
+}

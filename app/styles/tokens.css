@@ -1,0 +1,178 @@
+/* ========================================
+   DESIGN TOKENS - SINGLE SOURCE OF TRUTH
+   ======================================== */
+
+:root {
+  /* ===== COLOR TOKENS ===== */
+  /* Light theme defaults */
+  --color-bg: oklch(1 0 0);
+  --color-fg: oklch(0.2 0 0);
+  --color-fg-subtle: oklch(0.4 0 0);
+  --color-fg-muted: oklch(0.6 0 0);
+  
+  /* Brand colors */
+  --color-brand: oklch(0.72 0.2 25);
+  --color-brand-subtle: oklch(0.85 0.15 25);
+  --color-brand-muted: oklch(0.95 0.1 25);
+  
+  /* Semantic colors */
+  --color-focus: oklch(0.75 0.18 250);
+  --color-success: oklch(0.65 0.2 140);
+  --color-warning: oklch(0.75 0.2 80);
+  --color-error: oklch(0.65 0.2 25);
+  
+  /* UI colors */
+  --color-border: oklch(0.9 0 0);
+  --color-border-subtle: oklch(0.95 0 0);
+  --color-surface: oklch(0.98 0 0);
+  --color-surface-subtle: oklch(0.96 0 0);
+  
+  /* Code & table colors */
+  --color-code-bg: oklch(0.96 0 0);
+  --color-code-fg: oklch(0.3 0 0);
+  --color-table-header: oklch(0.97 0 0);
+  --color-select: oklch(0.8 0.15 250);
+  
+  /* ===== SPACING TOKENS ===== */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  
+  /* ===== BORDER RADIUS TOKENS ===== */
+  --radius-0: 0;
+  --radius-1: 0.375rem;  /* 6px */
+  --radius-2: 0.75rem;   /* 12px */
+  --radius-3: 1rem;      /* 16px */
+  --radius-4: 1.5rem;    /* 24px */
+  --radius-full: 9999px;
+  
+  /* ===== TYPOGRAPHY TOKENS ===== */
+  /* Fluid type scale (clamp-based) */
+  --step-0: clamp(14px, 1.2vw + 10px, 16px);   /* Base */
+  --step-1: clamp(18px, 1.4vw + 12px, 20px);   /* Small headings */
+  --step-2: clamp(22px, 1.8vw + 12px, 28px);   /* Medium headings */
+  --step-3: clamp(28px, 2.4vw + 16px, 36px);   /* Large headings */
+  --step-4: clamp(36px, 3.2vw + 20px, 48px);   /* Hero headings */
+  
+  /* Line length guard */
+  --measure: 66ch;
+  --measure-wide: 80ch;
+  --measure-narrow: 45ch;
+  
+  /* ===== Z-INDEX MAP ===== */
+  --z-base: 0;
+  --z-sticky: 10;
+  --z-dropdown: 20;
+  --z-popover: 30;
+  --z-popover: 40;
+  --z-overlay: 50;
+  --z-toast: 60;
+  --z-tooltip: 70;
+  --z-modal: 80;
+  --z-drawer: 90;
+  
+  /* ===== MOTION TOKENS ===== */
+  --dur-fast: 120ms;
+  --dur-med: 200ms;
+  --dur-slow: 320ms;
+  --dur-slower: 500ms;
+  
+  --ease-standard: cubic-bezier(0.2, 0, 0.2, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0.4, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  
+  /* ===== LAYOUT TOKENS ===== */
+  --container-max: clamp(320px, 90vw, 1200px);
+  --container-padding: var(--space-4);
+  --container-padding-sm: var(--space-2);
+  --container-padding-lg: var(--space-6);
+  
+  /* ===== SHADOW TOKENS ===== */
+  --shadow-1: 0 1px 2px 0 oklch(0 0 0 / 0.05);
+  --shadow-2: 0 1px 3px 0 oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1);
+  --shadow-3: 0 4px 6px -1px oklch(0 0 0 / 0.1), 0 2px 4px -2px oklch(0 0 0 / 0.1);
+  --shadow-4: 0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.1);
+  --shadow-5: 0 20px 25px -5px oklch(0 0 0 / 0.1), 0 8px 10px -6px oklch(0 0 0 / 0.1);
+}
+
+/* ===== DARK THEME (AUTOMATIC SYSTEM DETECTION) ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark theme colors */
+    --color-bg: oklch(0.13 0.02 250);
+    --color-fg: oklch(0.95 0.02 250);
+    --color-fg-subtle: oklch(0.8 0.02 250);
+    --color-fg-muted: oklch(0.6 0.02 250);
+    
+    /* Dark UI colors */
+    --color-border: oklch(0.2 0.02 250);
+    --color-border-subtle: oklch(0.15 0.02 250);
+    --color-surface: oklch(0.18 0.02 250);
+    --color-surface-subtle: oklch(0.16 0.02 250);
+    
+    /* Dark code & table colors */
+    --color-code-bg: oklch(0.2 0.02 250);
+    --color-code-fg: oklch(0.8 0.02 250);
+    --color-table-header: oklch(0.22 0.02 250);
+    --color-select: oklch(0.3 0.15 250);
+  }
+}
+
+/* ===== MANUAL THEME OVERRIDE ===== */
+:root[data-theme="light"] {
+  --color-bg: oklch(1 0 0);
+  --color-fg: oklch(0.2 0 0);
+  --color-fg-subtle: oklch(0.4 0 0);
+  --color-fg-muted: oklch(0.6 0 0);
+  --color-border: oklch(0.9 0 0);
+  --color-border-subtle: oklch(0.95 0 0);
+  --color-surface: oklch(0.98 0 0);
+  --color-surface-subtle: oklch(0.96 0 0);
+  --color-code-bg: oklch(0.96 0 0);
+  --color-code-fg: oklch(0.3 0 0);
+  --color-table-header: oklch(0.97 0 0);
+  --color-select: oklch(0.8 0.15 250);
+}
+
+:root[data-theme="dark"] {
+  --color-bg: oklch(0.13 0.02 250);
+  --color-fg: oklch(0.95 0.02 250);
+  --color-fg-subtle: oklch(0.8 0.02 250);
+  --color-fg-muted: oklch(0.6 0.02 250);
+  --color-border: oklch(0.2 0.02 250);
+  --color-border-subtle: oklch(0.15 0.02 250);
+  --color-surface: oklch(0.18 0.02 250);
+  --color-surface-subtle: oklch(0.16 0.02 250);
+  --color-code-bg: oklch(0.2 0.02 250);
+  --color-code-fg: oklch(0.8 0.02 250);
+  --color-table-header: oklch(0.22 0.02 250);
+  --color-select: oklch(0.3 0.15 250);
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-med: 0ms;
+    --dur-slow: 0ms;
+    --dur-slower: 0ms;
+  }
+}
+
+/* ===== HIGH CONTRAST SUPPORT ===== */
+@media (prefers-contrast: more) {
+  :root {
+    --color-border: oklch(0 0 0);
+    --color-focus: oklch(0 0 0);
+  }
+}

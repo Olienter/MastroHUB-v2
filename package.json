@@ -7,17 +7,34 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p 3000",
+    "start:mcp": "node tools/mcp-ai-evidence/dist/server.js",
     "smoke": "node scripts/smoke.mjs",
     "lint": "next lint",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "check:all": "pnpm run lint && pnpm run typecheck",
     "preinstall": "npx only-allow pnpm",
-    "check:manifest": "node scripts/check-manifest.mjs"
+    "check:manifest": "node scripts/check-manifest.mjs",
+    "diag:env": "node tools/diag/verify-environment.mjs",
+    "diag:mcp": "node tools/mcp-ai-evidence/scripts/diagnostic.mjs",
+    "diag:ops": "node tools/diag/ops-health.mjs > .ai/checks/HF-OPS-HEALTH-0001.json",
+    "diag:ops:raw": "node tools/diag/ops-health.mjs",
+    "build:typed": "pnpm run typecheck && pnpm run build",
+    "verify:core": "node tools/diag/verify-core.mjs",
+    "validate:css": "node tools/diag/validate-css.mjs",
+    "test:ui:ci": "pnpm build && playwright test --config tests/playwright.config.ts --reporter=html"
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.542.0",
     "next": "14.2.32",
+    "next-themes": "^0.4.6",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "tailwind-merge": "^3.3.1",
+    "zod": "^4.1.5"
   },
   "devDependencies": {
     "@playwright/test": "^1.41.2",
@@ -29,7 +46,8 @@
     "eslint-config-next": "15.5.0",
     "postcss": "^8.4.0",
     "tailwindcss": "^3.4.0",
-    "typescript": "5.5.4"
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "5.9.2"
   },
   "engines": {
     "node": ">=20 <23",

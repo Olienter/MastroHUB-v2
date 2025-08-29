@@ -1,22 +1,40 @@
-import { defineConfig } from '@playwright/test';
-
-const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
-const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: '../tests',
   timeout: 60_000,
-  retries: 0,
+  expect: {
+    timeout: 10_000,
+    toHaveScreenshot: {
+      maxDiffPixelRatio: 0.01,
+      animations: 'disabled',
+      caret: 'hide',
+      scale: 'css',
+    },
+  },
+  fullyParallel: true,
+  reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
   use: {
-    baseURL: BASE_URL,
-    trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
+    baseURL: 'http://localhost:3000',
+    viewport: { width: 1280, height: 800 },
+    locale: 'en-US',
+    timezoneId: 'UTC',
+    colorScheme: 'light',
+    geolocation: { latitude: 0, longitude: 0 },
+    permissions: [],
     video: 'retain-on-failure',
+    screenshot: 'only-on-failure',
+    trace: 'on-first-retry',
   },
   webServer: {
-    command: `pnpm build && pnpm exec next start -p ${PORT}`,
-    url: `${BASE_URL}/api/health`,
+    command: 'pnpm start',
+    url: 'http://localhost:3000',
+    reuseExistingServer: !process.env.CI,
     timeout: 120_000,
-    reuseExistingServer: false,
+    stdout: 'pipe',
+    stderr: 'pipe',
   },
+  projects: [
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+  ],
 });

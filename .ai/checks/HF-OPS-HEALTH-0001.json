@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "timestamp": "2025-08-29T16:45:45.571Z",
+    "head": "1c09e70"
+  },
+  "env": {
+    "status": "OK",
+    "exitCode": 0,
+    "durationMs": 1123,
+    "output": "{\n  \"os\": {\n    \"platform\": \"win32\",\n    \"release\": \"10.0.26100\",\n    \"cpus\": \"13th Gen Intel(R) Core(TM) i3-1315U\"\n  },\n  \"node\": {\n    \"version\": \"v22.18.0\",\n    \"path\": \"C:\\\\Program Files\\\\nodejs\\\\node.exe\",\n    \"status\": \"OK\"\n  },\n  \"npm\": {\n    \"version\": \"10.9.3\",\n    \"path\": \"C:\\\\Program Files\\\\nodejs\\\\npm\",\n    \"status\": \"OK\"\n  },\n  \"pnpm\": {\n    \"version\": \"10.14.0\",\n    \"path\": \"C:\\\\Program Files\\\\nodejs\\\\pnpm.CMD\",\n    \"status\": \"OK\"\n  },\n  \"git\": {\n    \"version\": \"git version 2.49.0.windows.1\",\n    \"path\": \"C:\\\\Program Files\\\\Git\\\\cmd\\\\git.exe\",\n    \"status\": \"OK\"\n  },\n  \"systemPath\": [\n    \"C:\\\\Users\\\\olieb\\\\Mastro\\\\node_modules\\\\.bin\",\n    \"C:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\node\\\\corepack\\\\v1\\\\pnpm\\\\10.14.0\\\\dist\\\\node-gyp-bin\",\n    \"c:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\Programs\\\\cursor\\\\resources\\\\app\\\\bin\",\n    \"C:\\\\Program Files (x86)\\\\Microsoft\\\\Edge\\\\Application\",\n    \"C:\\\\Python313\\\\Scripts\\\\\",\n    \"C:\\\\Python313\\\\\",\n    \"C:\\\\WINDOWS\\\\system32\",\n    \"C:\\\\WINDOWS\",\n    \"C:\\\\WINDOWS\\\\System32\\\\Wbem\",\n    \"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\\",\n    \"C:\\\\WINDOWS\\\\System32\\\\OpenSSH\\\\\",\n    \"C:\\\\ProgramData\\\\chocolatey\\\\bin\",\n    \"C:\\\\Projects\\\\Gargamel\",\n    \"C:\\\\Program Files\\\\nodejs\",\n    \"C:\\\\Users\\\\olieb\\\\AppData\\\\Roaming\\\\npm\",\n    \"C:\\\\Program Files\\\\dotnet\\\\\",\n    \"C:\\\\mastro\\\\node_modules\\\\.bin\",\n    \"C:\\\\Program Files\\\\Git\\\\cmd\",\n    \"C:\\\\Program Files\\\\PostgreSQL\\\\17\\\\bin\",\n    \"C:\\\\mast\",\n    \"C:\\\\Users\\\\olieb\\\\AppData\\\\Roaming\\\\nvm\",\n    \"C:\\\\Users\\\\olieb\\\\scoop\\\\shims\",\n    \"c:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\Programs\\\\cursor\\\\resources\\\\app\\\\codeBin\",\n    \"c:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\Programs\\\\cursor\\\\resources\\\\app\\\\bin\",\n    \"C:\\\\Program Files (x86)\\\\Microsoft\\\\Edge\\\\Application\",\n    \"C:\\\\Python313\\\\Scripts\\\\\",\n    \"C:\\\\Python313\\\\\",\n    \"C:\\\\WINDOWS\\\\system32\",\n    \"C:\\\\WINDOWS\",\n    \"C:\\\\WINDOWS\\\\System32\\\\Wbem\",\n    \"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\\",\n    \"C:\\\\WINDOWS\\\\System32\\\\OpenSSH\\\\\",\n    \"C:\\\\ProgramData\\\\chocolatey\\\\bin\",\n    \"C:\\\\Projects\\\\Gargamel\",\n    \"C:\\\\Program Files\\\\nodejs\",\n    \"C:\\\\Users\\\\olieb\\\\AppData\\\\Roaming\\\\npm\",\n    \"C:\\\\Program Files\\\\dotnet\\\\\",\n    \"C:\\\\mastro\\\\node_modules\\\\.bin\",\n    \"C:\\\\Program Files\\\\Git\\\\cmd\",\n    \"C:\\\\Program Files\\\\PostgreSQL\\\\17\\\\bin\",\n    \"C:\\\\mast\",\n    \"C:\\\\Users\\\\olieb\\\\AppData\\\\Roaming\\\\nvm\",\n    \"C:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\Programs\\\\Microsoft VS Code\\\\bin\",\n    \"C:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\Programs\\\\cursor\\\\resources\\\\app\\\\bin\"\n  ],\n  \"pathLint\": {\n    \"totalEntries\": 44,\n    \"uniqueEntries\": 24,\n    \"duplicates\": [\n      \"c:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\Programs\\\\cursor\\\\resources\\\\app\\\\bin\",\n      \"C:\\\\Program Files (x86)\\\\Microsoft\\\\Edge\\\\Application\",\n      \"C:\\\\Python313\\\\Scripts\\\\\",\n      \"C:\\\\Python313\\\\\",\n      \"C:\\\\WINDOWS\\\\system32\",\n      \"C:\\\\WINDOWS\",\n      \"C:\\\\WINDOWS\\\\System32\\\\Wbem\",\n      \"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\\",\n      \"C:\\\\WINDOWS\\\\System32\\\\OpenSSH\\\\\",\n      \"C:\\\\ProgramData\\\\chocolatey\\\\bin\",\n      \"C:\\\\Projects\\\\Gargamel\",\n      \"C:\\\\Program Files\\\\nodejs\",\n      \"C:\\\\Users\\\\olieb\\\\AppData\\\\Roaming\\\\npm\",\n      \"C:\\\\Program Files\\\\dotnet\\\\\",\n      \"C:\\\\mastro\\\\node_modules\\\\.bin\",\n      \"C:\\\\Program Files\\\\Git\\\\cmd\",\n      \"C:\\\\Program Files\\\\PostgreSQL\\\\17\\\\bin\",\n      \"C:\\\\mast\",\n      \"C:\\\\Users\\\\olieb\\\\AppData\\\\Roaming\\\\nvm\",\n      \"C:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\Programs\\\\cursor\\\\resources\\\\app\\\\bin\"\n    ],\n    \"fileEntries\": [],\n    \"overlong\": false,\n    \"status\": \"WARN\",\n    \"recommendations\": [\n      \"Remove duplicate PATH entries to reduce lookup ambiguity\",\n      \"Prefer Corepack-managed pnpm over global shims\"\n    ]\n  },\n  \"spawnTest\": {\n    \"command\": \"C:\\\\Users\\\\olieb\\\\Mastro\\\\node_modules\\\\.bin\\\\tsc.CMD\",\n    \"exitCode\": 0,\n    \"output\": \"Version 5.9.2\",\n    \"status\": \"OK\"\n  },\n  \"environmentVariables\": {\n    \"NODE_ENV\": \"undefined\",\n    \"PATH\": \"defined\",\n    \"HOME\": \"C:\\\\Users\\\\olieb\"\n  }\n}\n",
+    "error": "",
+    "tail": "    \"C:\\\\mast\",\n    \"C:\\\\Users\\\\olieb\\\\AppData\\\\Roaming\\\\nvm\",\n    \"C:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\Programs\\\\Microsoft VS Code\\\\bin\",\n    \"C:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\Programs\\\\cursor\\\\resources\\\\app\\\\bin\"\n  ],\n  \"pathLint\": {\n    \"totalEntries\": 44,\n    \"uniqueEntries\": 24,\n    \"duplicates\": [\n      \"c:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\Programs\\\\cursor\\\\resources\\\\app\\\\bin\",\n      \"C:\\\\Program Files (x86)\\\\Microsoft\\\\Edge\\\\Application\",\n      \"C:\\\\Python313\\\\Scripts\\\\\",\n      \"C:\\\\Python313\\\\\",\n      \"C:\\\\WINDOWS\\\\system32\",\n      \"C:\\\\WINDOWS\",\n      \"C:\\\\WINDOWS\\\\System32\\\\Wbem\",\n      \"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\\",\n      \"C:\\\\WINDOWS\\\\System32\\\\OpenSSH\\\\\",\n      \"C:\\\\ProgramData\\\\chocolatey\\\\bin\",\n      \"C:\\\\Projects\\\\Gargamel\",\n      \"C:\\\\Program Files\\\\nodejs\",\n      \"C:\\\\Users\\\\olieb\\\\AppData\\\\Roaming\\\\npm\",\n      \"C:\\\\Program Files\\\\dotnet\\\\\",\n      \"C:\\\\mastro\\\\node_modules\\\\.bin\",\n      \"C:\\\\Program Files\\\\Git\\\\cmd\",\n      \"C:\\\\Program Files\\\\PostgreSQL\\\\17\\\\bin\",\n      \"C:\\\\mast\",\n      \"C:\\\\Users\\\\olieb\\\\AppData\\\\Roaming\\\\nvm\",\n      \"C:\\\\Users\\\\olieb\\\\AppData\\\\Local\\\\Programs\\\\cursor\\\\resources\\\\app\\\\bin\"\n    ],\n    \"fileEntries\": [],\n    \"overlong\": false,\n    \"status\": \"WARN\",\n    \"recommendations\": [\n      \"Remove duplicate PATH entries to reduce lookup ambiguity\",\n      \"Prefer Corepack-managed pnpm over global shims\"\n    ]\n  },\n  \"spawnTest\": {\n    \"command\": \"C:\\\\Users\\\\olieb\\\\Mastro\\\\node_modules\\\\.bin\\\\tsc.CMD\",\n    \"exitCode\": 0,\n    \"output\": \"Version 5.9.2\",\n    \"status\": \"OK\"\n  },\n  \"environmentVariables\": {\n    \"NODE_ENV\": \"undefined\",\n    \"PATH\": \"defined\",\n    \"HOME\": \"C:\\\\Users\\\\olieb\"\n  }\n}"
+  },
+  "nodeTools": {
+    "node": {
+      "version": "v22.18.0",
+      "path": "OK",
+      "status": "OK"
+    },
+    "git": {
+      "version": "git version 2.49.0.windows.1",
+      "path": "OK",
+      "status": "OK"
+    },
+    "pnpm": {
+      "version": "10.14.0",
+      "path": "OK",
+      "status": "OK"
+    },
+    "npm": {
+      "version": "10.9.3",
+      "path": "OK",
+      "status": "OK"
+    }
+  },
+  "typecheck": {
+    "status": "OK",
+    "exitCode": 0,
+    "durationMs": 1979,
+    "tail": "> mastrohub-v2@0.0.0 typecheck C:\\Users\\olieb\\Mastro\n> tsc -p tsconfig.json --noEmit"
+  },
+  "eslint": {
+    "status": "FAIL",
+    "exitCode": 2,
+    "durationMs": 730,
+    "warningsCount": 4,
+    "tail": "Oops! Something went wrong! :(\nESLint: 8.57.1\nError: Failed to patch ESLint because the calling module was not recognized.\nIf you are using a newer ESLint version that may be unsupported, please create a GitHub issue:\nhttps://github.com/microsoft/rushstack/issues\n    at Object.<anonymous> (C:\\Users\\olieb\\Mastro\\node_modules\\.pnpm\\@rushstack+eslint-patch@1.12.0\\node_modules\\@rushstack\\eslint-patch\\lib\\_patch-base.js:244:19)\n    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n    at Object..js (node:internal/modules/cjs/loader:1820:10)\n    at Module.load (node:internal/modules/cjs/loader:1423:32)\n    at Function._load (node:internal/modules/cjs/loader:1246:12)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Module.require (node:internal/modules/cjs/loader:1445:12)\n    at require (node:internal/modules/helpers:135:16)\n    at Object.<anonymous> (C:\\Users\\olieb\\Mastro\\node_modules\\.pnpm\\@rushstack+eslint-patch@1.12.0\\node_modules\\@rushstack\\eslint-patch\\lib\\modern-module-resolution.js:11:23)\n(node:2896) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/olieb/Mastro/eslint.config.js?mtime=1756291643729 is not specified and it doesn't parse as CommonJS.\nReparsing as ES module because module syntax was detected. This incurs a performance overhead.\nTo eliminate this warning, add \"type\": \"module\" to C:\\Users\\olieb\\Mastro\\package.json.\n(Use `node --trace-warnings ...` to show where the warning was created)"
+  },
+  "build": {
+    "status": "OK",
+    "exitCode": 0,
+    "durationMs": 21760,
+    "warningsCount": 0,
+    "tail": "  ▲ Next.js 14.2.32\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/9) ...\n   Generating static pages (2/9) \r\n   Generating static pages (4/9) \r\n   Generating static pages (6/9) \r\n ✓ Generating static pages (9/9)\n   Finalizing page optimization ...\n   Collecting build traces ...\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    138 B          87.3 kB\n├ ○ /_not-found                          871 B            88 kB\n├ ƒ /api/auth/login                      0 B                0 B\n├ ƒ /api/auth/logout                     0 B                0 B\n├ ○ /api/health                          0 B                0 B\n├ ○ /dashboard                           8.67 kB         105 kB\n└ ○ /login                               5.75 kB        92.9 kB\n+ First Load JS shared by all            87.1 kB\n  ├ chunks/164-19c6569c1672719b.js       31.6 kB\n  ├ chunks/7f222c64-90e476dbd15be589.js  53.6 kB\n  └ other shared chunks (total)          1.9 kB\nƒ Middleware                             26.8 kB\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand"
+  },
+  "mcp": {
+    "status": "UNKNOWN_FORMAT",
+    "exitCode": 0,
+    "durationMs": 2798,
+    "rawTail": "> mastrohub-v2@0.0.0 diag:mcp C:\\Users\\olieb\\Mastro\n> node tools/mcp-ai-evidence/scripts/diagnostic.mjs\n--- SCRIPT START ---\n--- MAIN FUNCTION START ---\n--- STEP 1: Getting versions ---\n--- STEP 2: Running build ---\n--- BUILD: Starting runBuild function ---\n--- BUILD: Attempting to run: C:\\Users\\olieb\\Mastro\\tools\\mcp-ai-evidence\\node_modules\\.bin\\tsc.cmd -p . ---\n--- BUILD: tsc command finished with code: 0 ---\n--- BUILD: Finished runBuild function ---\n--- STEP 3: Dist sanity check ---\nEVIDENCE -> .ai/checks/HF-MCP-DIAG-RUN.txt"
+  },
+  "envVars": {},
+  "summary": {
+    "status": "WARN",
+    "timestamp": "2025-08-29T16:46:14.643Z",
+    "totalDurationMs": 28390
+  }
+}

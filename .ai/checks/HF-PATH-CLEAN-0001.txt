@@ -1,0 +1,20 @@
+HF-PATH-CLEAN-0001 EVIDENCE
+
+BEFORE:
+- diag:env pathLint JSON:
+  (paste block)
+
+MANUAL ACTION (outside repo):
+- Windows → System Properties → Environment Variables → PATH:
+  • Remove file-path entries (…\node.exe, …\*.cmd, …\*.bat, …\*.ps1)
+  • Remove duplicates
+  • Keep only necessary folders (Node, Git, Cursor/VS Code, etc.)
+  • Apply + restart shell
+
+AFTER:
+- diag:env pathLint JSON:
+  (paste block)
+
+RESULT: (IMPROVED/NO_CHANGE)
+DATE(UTC):
+HEAD:

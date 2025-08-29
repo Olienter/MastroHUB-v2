@@ -1,0 +1,25 @@
+[33me5fb93b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/infra/mcp-e2e[m[33m, [m[1;32minfra/mcp-e2e[m[33m)[m feat: Complete MCP integration and project stabilization
+* [32mfeat/ui-build-b-p0[m
+  infra/guardrails-policy[m
+  infra/mcp-build-fix[m
+  infra/mcp-e2e[m
+  infra/mcp-evidence-mvp[m
+  infra/mcp-runtime-e2e[m
+  infra/mcp-runtime-fix[m
+  infra/mcp-runtime-smoke[m
+  main[m
+  master[m
+  watchdog/probe-001[m
+  watchdog/revert-001[m
+  [31mremotes/origin/HEAD[m -> origin/watchdog/probe-001
+  [31mremotes/origin/feat/ui-build-b-p0[m
+  [31mremotes/origin/infra/guardrails-policy[m
+  [31mremotes/origin/infra/mcp-build-fix[m
+  [31mremotes/origin/infra/mcp-e2e[m
+  [31mremotes/origin/infra/mcp-evidence-mvp[m
+  [31mremotes/origin/infra/mcp-runtime-e2e[m
+  [31mremotes/origin/infra/mcp-runtime-fix[m
+  [31mremotes/origin/infra/mcp-runtime-smoke[m
+  [31mremotes/origin/main[m
+  [31mremotes/origin/watchdog/probe-001[m
+  [31mremotes/origin/watchdog/revert-001[m

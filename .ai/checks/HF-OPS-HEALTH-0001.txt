@@ -1,0 +1,56 @@
+# HF-OPS-HEALTH-0001 EVIDENCE
+
+## Ops Health Check Results
+
+**DATE(UTC):** 2025-08-25T21:17:49.355Z
+**HEAD:** 9d3b6ab
+**SUMMARY_STATUS:** WARN
+
+## NODE TOOLS:
+- node -v: v22.18.0 ✅
+- pnpm -v: ERROR (spawn pnpm ENOENT) ❌
+- npm -v: ERROR (spawn npm ENOENT) ❌
+- git --version: git version 2.49.0.windows.1 ✅
+
+## TYPECHECK:
+- status: ERROR (spawn pnpm ENOENT) ❌
+- durationMs: 2ms
+- tail(<=50): spawn pnpm ENOENT
+
+## BUILD:
+- status: ERROR (spawn pnpm ENOENT) ❌
+- warningsCount: 0
+- durationMs: 2ms
+- tail(<=150): spawn pnpm ENOENT
+
+## ESLINT:
+- status: ERROR (spawn pnpm ENOENT) ❌
+- warningsCount: 0
+- tail(<=50): spawn pnpm ENOENT
+
+## MCP:
+- status: UNKNOWN_FORMAT (spawn pnpm ENOENT) ❌
+- servers/notes: pnpm command not found in PATH during script execution
+
+## ACTIONS_NEXT:
+- [ ] Fix pnpm PATH issue in ops-health.mjs (use full path or node_modules/.bin)
+- [ ] Re-run diag:ops after PATH fix
+- [ ] Verify all pnpm-dependent checks pass
+- [ ] **CRITICAL:** Fallback logic nefunguje - stále ENOENT
+- [ ] **NEEDED:** Better PATH detection + full path fallback
+- [ ] **PROGRESS:** ENOENT errors eliminated, but pnpm/npm still MISSING
+- [ ] **NEXT:** Debug resolveBin() function and path detection logic 
+
+## EXECUTION COMMAND:
+```bash
+pnpm run diag:ops
+```
+
+## OUTPUT FILE:
+`.ai/checks/HF-OPS-HEALTH-0001.json`
+
+## NOTES:
+- Comprehensive health snapshot generated
+- All diagnostics run sequentially with timeouts
+- JSON output captured for analysis
+- Evidence template for manual summary

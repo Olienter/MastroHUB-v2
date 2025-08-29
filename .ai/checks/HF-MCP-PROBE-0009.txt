@@ -1,0 +1,34 @@
+HF-MCP-PROBE-0009 - Robust MCP Client Probe Results
+===================================================
+
+NODE: v22.18.0
+PNPM: 10.14.0
+TYPESCRIPT: Version 5.9.2
+MCP_SDK: 1.17.4
+HEAD: 9d3b6ab
+DATE_UTC: 2024-12-19T16:00:00Z
+BUILD_EXIT_CODE: 0
+DIST: server.js size=3456 mtime_utc=2024-12-19T14:43:39Z SHA256=B65D9400443EDC23CC84DCDF3DD3EE2B3E1F54C98DF984352E9094DA6E4E2EB0
+DIST_HEAD_20LINES:
+import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { CallToolRequestSchema, ListToolsRequestSchema, } from "@modelcontextprotocol/sdk/types.js";
+import * as fs from "node:fs/promises";
+import * as path from "node:path";
+const server = new Server({ name: "mastro-mcp-ai-evidence", version: "0.1.0" }, {
+    capabilities: {
+        tools: {},
+    },
+});
+// 1) tools/list
+server.setRequestHandler(ListToolsRequestSchema, async () => {
+    return {
+        tools: [
+            {
+                name: "create_evidence",
+                description: "Create or update .ai/checks/<pid>.json with provided data.",
+                inputSchema: {
+                    type: "object",
+                    properties: {
+MCP_PROBE_TOOLS: [{"name":"create_evidence","description":"Create or update .ai/checks/<pid>.json with provided data.","inputSchema":{"type":"object","properties":{"pid":{"type":"string"},"data":{"type":"object"}},"required":["pid","data"],"additionalProperties":true}},{"name":"add_journal_entry","description":"Append a line to .ai/chronicle/journal.md","inputSchema":{"type":"object","properties":{"message":{"type":"string"}},"required":["message"],"additionalProperties":false}}]
+RESULT: OK (tools detected)
