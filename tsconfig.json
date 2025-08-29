@@ -14,7 +14,26 @@
     "noEmit": true,
     "strict": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@/*": [
+        "./app/*"
+      ],
+      "@/components/*": [
+        "./app/components/*"
+      ],
+      "@/lib/*": [
+        "./lib/*"
+      ],
+      "@/styles/*": [
+        "./app/styles/*"
+      ],
+      "@/styles": [
+        "./app/styles"
+      ],
+      "@/ui/*": [
+        "./app/ui/*"
+      ]
+    },
     "skipLibCheck": true,
     "incremental": true,
     "esModuleInterop": true,
@@ -26,8 +45,8 @@
     ]
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
+    "app/**/*.ts",
+    "app/**/*.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts"
   ],

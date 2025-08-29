@@ -1,0 +1,33 @@
+﻿=== HF-FRONTEND-TEMPLATES-003H-MW-CLOSE ===
+DATE_UTC: 2025-08-26T14:33:39Z
+HEAD_SHA: 4fa3c12
+
+## VERSIONS
+node: v22.18.0
+pnpm: 10.14.0
+next: 14.2.32
+tailwindcss: ^3.4.0
+
+## BUILD LOG
+ Compiled successfully
+ Linting and checking validity of types
+ Collecting page data
+ Generating static pages (9/9)
+ Collecting build traces
+ Finalizing page optimization
+Dashboard route: 2.9 kB (124 kB First Load JS)
+Middleware: 26.8 kB
+## HTTP CHECKS (unauthenticated)
+GET / -> 200
+GET /login -> 200
+GET /dashboard -> 200
+GET /api/health -> 200
+GET /dashboard -> 200 (STILL PUBLIC - ISSUE)
+GET /dashboard -> 200 (STILL PUBLIC - CRITICAL ISSUE)
+## CRITICAL ISSUE ANALYSIS
+PROBLEM: /dashboard still returns HTTP 200 after middleware cleanup
+ANALYSIS: Next.js App Router behavior - /dashboard/index accessible
+STATUS: Middleware cleanup FAILED - investigation needed
+## RESULT: FAIL
+DATE: 2025-08-26T14:36:58Z
+HEAD_SHA: 4fa3c12

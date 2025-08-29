@@ -1,0 +1,225 @@
+# HF-MCP-DIAGNOSE-0005: MCP Diagnostic Report
+
+**Policy Version:** 2025-08-23  
+**Manifest Commit:** 466fbe6  
+**Role:** Cursor (Builder)  
+**Handoff ID:** HF-MCP-DIAGNOSE-0005  
+**Changeset Limit:** ≤3  
+**Status:** COMPLETED ✅  
+
+## EXECUTION SUMMARY
+Diagnosed MCP integration issues and identified root causes for why MCP is not working in Cursor. Created comprehensive diagnostic report with fix plan.
+
+## ROOT CAUSE ANALYSIS
+
+### 🔍 **Primary Issue: MCP Configuration Mismatch**
+- **Current Config:** `.cursor/mcp.json` uses placeholder `@modelcontextprotocol/server-examples`
+- **Project MCP:** `tools/mcp-ai-evidence/` has working MCP server implementation
+- **Gap:** Cursor not configured to use project's MCP tools
+
+### 🔍 **Secondary Issue: MCP Server Not Active**
+- **Server Status:** ✅ Built and ready (`dist/server.js` exists)
+- **Transport:** ✅ stdio transport configured
+- **Tools:** ✅ 4 tools implemented (create_evidence, add_journal_entry, validate_talk_v1, check_ai_compliance)
+- **Integration:** ❌ Not active in Cursor environment
+
+### 🔍 **Tertiary Issue: Configuration Path**
+- **Expected:** Cursor should use local MCP server
+- **Actual:** Cursor uses external example server
+- **Impact:** Project tools unavailable to agents
+
+## REPRODUCTION STEPS
+
+### 1. **Environment Check**
+```bash
+# Current working directory
+pwd  # Should be /c/Users/olieb/Mastro
+
+# MCP server build status
+cd tools/mcp-ai-evidence
+pnpm run build  # Should succeed
+ls dist/        # Should show server.js
+```
+
+### 2. **MCP Server Test**
+```bash
+# Test MCP server directly
+cd tools/mcp-ai-evidence
+node dist/server.js
+# Should output: "MCP server ready (stdio)."
+```
+
+### 3. **Cursor MCP Configuration**
+```bash
+# Check current MCP config
+cat .cursor/mcp.json
+# Shows: example server, not project server
+```
+
+### 4. **Integration Test**
+```bash
+# MCP server is ready but Cursor not using it
+# Tools available but not accessible
+```
+
+## ENVIRONMENT MATRIX
+
+### **MCP Server Environment**
+- **Location:** `tools/mcp-ai-evidence/`
+- **Build Status:** ✅ Successful
+- **Runtime:** ✅ Ready (stdio transport)
+- **Tools:** ✅ 4 tools implemented
+- **Dependencies:** ✅ @modelcontextprotocol/sdk@1.17.4
+
+### **Cursor Environment**
+- **MCP Config:** `.cursor/mcp.json`
+- **Current Server:** `@modelcontextprotocol/server-examples`
+- **Project Integration:** ❌ Not configured
+- **Tool Access:** ❌ Project tools unavailable
+
+### **CI Environment**
+- **MCP Testing:** ✅ E2E workflow exists
+- **Build Verification:** ✅ Automated checks
+- **Runtime Validation:** ✅ Server startup tests
+- **Integration:** ❌ Not tested with Cursor
+
+## CURRENT CONFIGURATION
+
+### **`.cursor/mcp.json` (Current - BROKEN)**
+```json
+{
+  "mcpServers": {
+    "example": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-examples"
+      ],
+      "env": {}
+    }
+  }
+}
+```
+
+### **Project MCP Server (Available - WORKING)**
+```typescript
+// tools/mcp-ai-evidence/src/server.ts
+const server = new Server(
+  { name: "mastro-mcp-ai-evidence", version: "0.1.0" },
+  {
+    capabilities: { tools: {} }
+  }
+);
+
+// Available tools:
+// - create_evidence
+// - add_journal_entry
+// - validate_talk_v1
+// - check_ai_compliance
+```
+
+## PROPOSED FIX PLAN
+
+### **New TALK v1 Card: HF-MCP-INTEGRATE-0001**
+
+**PID:** HF-MCP-INTEGRATE-0001  
+**policy_version:** 2025-08-23  
+**manifest_commit:** 466fbe6  
+**role:** Cursor (Builder)  
+**handoff_id:** HF-MCP-INTEGRATE-0001  
+**changeset_limit:** ≤3  
+
+#### **HISTORY**
+MCP tools are implemented and working, but Cursor is not configured to use them. Current config uses placeholder server instead of project's MCP implementation.
+
+#### **INTENT**
+Integrate project MCP server with Cursor by updating `.cursor/mcp.json` configuration and ensuring proper tool access.
+
+#### **IMPACT_MAP (≤3)**
+1. `.cursor/mcp.json` → replace example server with project MCP server
+2. `tools/mcp-ai-evidence/package.json` → add start script for Cursor integration
+3. `tools/mcp-ai-evidence/README.md` → add Cursor integration instructions
+
+#### **ACCEPTANCE**
+- [ ] Cursor MCP config points to project server
+- [ ] MCP tools accessible in Cursor environment
+- [ ] Evidence creation and journal updates work via MCP
+- [ ] CI MCP tests pass with new configuration
+
+#### **RISKS_FALLBACK**
+**Riziko:** MCP server may not work in Cursor's environment.  
+**Fallback:** Keep example server as backup, implement gradual migration.
+
+## TRIVIAL FIX IDENTIFIED
+
+### **`.cursor/mcp.json` - Immediate Fix**
+```diff
+{
+  "mcpServers": {
+-   "example": {
+-     "command": "npx",
+-     "args": [
+-       "-y",
+-       "@modelcontextprotocol/server-examples"
+-     ],
+-     "env": {}
+-   }
++   "mastro-evidence": {
++     "command": "node",
++     "args": ["dist/server.js"],
++     "cwd": "tools/mcp-ai-evidence",
++     "env": {}
++   }
+  }
+}
+```
+
+### **Why This Fix Works**
+1. **Path Resolution:** `cwd` ensures correct working directory
+2. **Command:** `node dist/server.js` runs built server
+3. **Integration:** Direct access to project MCP tools
+4. **Compatibility:** stdio transport works with Cursor
+
+## TECHNICAL DETAILS
+
+### **MCP Server Capabilities**
+- **Protocol:** MCP v1.17.4
+- **Transport:** stdio (compatible with Cursor)
+- **Tools:** 4 evidence management tools
+- **Error Handling:** Comprehensive error responses
+- **File Operations:** Safe .ai/* file management
+
+### **Integration Requirements**
+- **Working Directory:** Must be `tools/mcp-ai-evidence/`
+- **Node Environment:** Node.js 20+ required
+- **Build Status:** `dist/server.js` must exist
+- **Permissions:** Read/write access to `.ai/*` directory
+
+## NEXT STEPS
+
+### **Immediate (≤3 files)**
+1. **Update `.cursor/mcp.json`** with project server config
+2. **Add start script** to MCP package.json
+3. **Document integration** in README
+
+### **Verification**
+1. **Cursor restart** required after config change
+2. **MCP tool test** via agent workflow
+3. **CI validation** of new configuration
+
+### **Future Enhancements**
+1. **Tool validation** in Cursor environment
+2. **Error handling** for MCP failures
+3. **Performance monitoring** of MCP operations
+
+## EVIDENCE LOCATION
+- **Diagnostic Report:** `.ai/checks/HF-MCP-DIAGNOSE-0005.txt`
+- **MCP Server:** `tools/mcp-ai-evidence/src/server.ts`
+- **Current Config:** `.cursor/mcp.json`
+- **Build Output:** `tools/mcp-ai-evidence/dist/server.js`
+
+---
+**Diagnostic Completed:** 2025-01-25  
+**Root Cause:** MCP configuration mismatch  
+**Fix Plan:** HF-MCP-INTEGRATE-0001 (≤3 files)  
+**Status:** READY FOR IMPLEMENTATION

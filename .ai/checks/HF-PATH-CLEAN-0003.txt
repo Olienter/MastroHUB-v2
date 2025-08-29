@@ -1,0 +1,73 @@
+# HF-PATH-CLEAN-0003 EVIDENCE
+
+## System PATH Audit Results
+
+**BEFORE (diag:env pathLint):**
+<block>
+Current User PATH status from previous HF-PATH-CLEAN-0002:
+- totalEntries: 43
+- duplicates: 18 (including System PATH duplicates)
+- fileEntries: 2 (C:\Program Files\nodejs\node.exe)
+- status: "WARN"
+</block>
+
+**System PATH Audit (Audit-SystemPath.ps1):**
+<json>
+Run: powershell -ExecutionPolicy Bypass -File tools/windows/Audit-SystemPath.ps1
+{
+    "timestamp": "2025-08-25T20:37:00.7000179Z",
+    "scope": "System PATH (HKLM)",
+    "totalEntries": 37,
+    "uniqueEntries": 20,
+    "duplicates": [
+        "C:\\Python313\\Scripts\\",
+        "C:\\Python313\\",
+        "C:\\WINDOWS\\system32",
+        "C:\\WINDOWS",
+        "C:\\WINDOWS\\System32\\Wbem",
+        "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\",
+        "C:\\WINDOWS\\System32\\OpenSSH\\",
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\ProgramData\\chocolatey\\bin",
+        "C:\\Projects\\Gargamel",
+        "C:\\Program Files\\nodejs",
+        "C:\\Users\\olieb\\AppData\\Roaming\\npm",
+        "C:\\Program Files\\dotnet\\",
+        "C:\\mastro\\node_modules\\.bin",
+        "C:\\Program Files\\Git\\cmd",
+        "C:\\Program Files\\PostgreSQL\\17\\bin",
+        "C:\\Program Files\\nodejs"
+    ],
+    "fileEntries": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Program Files\\nodejs\\node.exe"
+    ],
+    "overlong": false,
+    "status": "WARN",
+    "recommendations": [
+        "Remove file paths from System PATH: *.exe, *.cmd, *.bat, *.ps1, *.msi, *.dll",
+        "Remove duplicate System PATH entries to reduce lookup ambiguity"
+    ]
+}
+</json>
+
+**Manual Cleanup Actions:**
+- GUI cleanup performed: YES/NO
+- System PATH edited via Environment Variables: YES/NO
+- Duplicates removed: YES/NO
+- File entries removed: YES/NO
+
+**AFTER (diag:env pathLint):**
+<block>
+Run: pnpm run diag:env
+Expected: pathLint.status: "OK", duplicates: [], fileEntries: []
+</block>
+
+## RESULT: (IMPROVED/NO_CHANGE/FAILED)
+**DATE(UTC):** 2025-01-25
+**HEAD:** [git rev-parse HEAD]
+
+## Notes
+- System PATH cleanup requires manual GUI intervention
+- PowerShell script provides read-only audit only
+- Target: pathLint.status: "OK" after manual cleanup

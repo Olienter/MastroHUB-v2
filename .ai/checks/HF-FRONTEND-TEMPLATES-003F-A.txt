@@ -1,0 +1,35 @@
+﻿# EVIDENCE LOG: HF-FRONTEND-TEMPLATES-003F-A
+RESULT: PASS
+DATE: 2025-08-26T14:53:20Z
+HEAD_SHA: 4fa3c12
+
+## VERSIONS
+NODE: v22.18.0
+PNPM: 10.14.0
+NEXT: 14.2.32
+TAILWIND: ^3.4.0
+
+## BUILD LOG (tail ~20 lines)
+
+## CHECKS
+- [ ] deps added: next-themes, tailwindcss-animate
+- [ ] tailwind.config.ts: darkMode=class, content OK, plugin added, OKLCH colors mapped
+- [ ] app/layout.tsx uses next-themes (no extra files)
+- [ ] pnpm build OK
+## BUILD LOG (tail ~20 lines)
+ Compiled successfully
+ Linting and checking validity of types
+ Collecting page data
+ Generating static pages (9/9)
+ Collecting build traces
+ Finalizing page optimization
+Dashboard route: 2.9 kB (124 kB First Load JS)
+Middleware: 26.8 kB
+## CHECKS
+- [x] deps added: next-themes, tailwindcss-animate
+- [x] tailwind.config.ts: darkMode=class, content OK, plugin added, OKLCH colors mapped
+- [x] app/layout.tsx uses next-themes (no extra files)
+- [x] pnpm build OK
+## RESULT: PASS
+DATE: 2025-08-26T14:54:36Z
+HEAD_SHA: 4fa3c12

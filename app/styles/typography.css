@@ -1,0 +1,382 @@
+/* ========================================
+   FLUID TYPOGRAPHY & PROSE STYLES
+   ======================================== */
+
+:root {
+  /* ===== FLUID TYPE SCALE (CLAMP-BASED) ===== */
+  --step-0: clamp(14px, 1.2vw + 10px, 16px);   /* Base */
+  --step-1: clamp(18px, 1.4vw + 12px, 20px);   /* Small headings */
+  --step-2: clamp(22px, 1.8vw + 12px, 28px);   /* Medium headings */
+  --step-3: clamp(28px, 2.4vw + 16px, 36px);   /* Large headings */
+  --step-4: clamp(36px, 3.2vw + 20px, 48px);   /* Hero headings */
+  
+  /* ===== LINE LENGTH GUARD ===== */
+  --measure: 66ch;
+  --measure-wide: 80ch;
+  --measure-narrow: 45ch;
+  
+  /* ===== LINE HEIGHT TOKENS ===== */
+  --leading-tight: 1.1;
+  --leading-snug: 1.2;
+  --leading-normal: 1.4;
+  --leading-relaxed: 1.6;
+  --leading-loose: 1.8;
+  
+  /* ===== FONT WEIGHT TOKENS ===== */
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+}
+
+/* ===== BASE TYPOGRAPHY ===== */
+html { 
+  font-size: var(--step-0); 
+  line-height: var(--leading-normal);
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+               Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: var(--leading-relaxed);
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: 'kern' 1;
+  font-feature-settings: 'kern' 1;
+}
+
+/* ===== HEADING HIERARCHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  margin: 0;
+  color: var(--color-fg);
+}
+
+h1 { 
+  font-size: var(--step-4);
+  font-weight: var(--weight-extrabold);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-6);
+}
+
+h2 { 
+  font-size: var(--step-3);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-4);
+}
+
+h3 { 
+  font-size: var(--step-2);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+}
+
+h4 { 
+  font-size: var(--step-1);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-2);
+}
+
+h5, h6 { 
+  font-size: var(--step-0);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-normal);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+/* ===== PARAGRAPH & TEXT ===== */
+p {
+  margin: 0 0 var(--space-4) 0;
+  line-height: var(--leading-relaxed);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== PROSE STYLES (CONTENT OPTIMIZED) ===== */
+.prose {
+  max-width: var(--measure);
+  line-height: var(--leading-relaxed);
+  color: var(--color-fg);
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+  color: var(--color-fg);
+}
+
+.prose h1:first-child, .prose h2:first-child, .prose h3:first-child {
+  margin-top: 0;
+}
+
+.prose p {
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-relaxed);
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== LISTS ===== */
+.prose ul, .prose ol {
+  margin: var(--space-4) 0;
+  padding-left: var(--space-6);
+  line-height: var(--leading-relaxed);
+}
+
+.prose li {
+  margin-bottom: var(--space-2);
+}
+
+.prose li:last-child {
+  margin-bottom: 0;
+}
+
+.prose ul li {
+  list-style-type: disc;
+}
+
+.prose ol li {
+  list-style-type: decimal;
+}
+
+.prose ul ul, .prose ol ol, .prose ul ol, .prose ol ul {
+  margin: var(--space-2) 0;
+}
+
+/* ===== BLOCKQUOTES ===== */
+.prose blockquote {
+  margin: var(--space-6) 0;
+  padding: var(--space-4) var(--space-6);
+  border-left: 4px solid var(--color-brand);
+  background: var(--color-surface-subtle);
+  border-radius: 0 var(--radius-2) var(--radius-2) 0;
+  font-style: italic;
+  color: var(--color-fg-subtle);
+}
+
+.prose blockquote p {
+  margin: 0;
+  font-size: var(--step-1);
+  line-height: var(--leading-relaxed);
+}
+
+.prose blockquote cite {
+  display: block;
+  margin-top: var(--space-3);
+  font-size: var(--step-0);
+  color: var(--color-fg-muted);
+  font-style: normal;
+}
+
+/* ===== CODE & PRE ===== */
+.prose code {
+  background: var(--color-code-bg);
+  color: var(--color-code-fg);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-1);
+  font-size: 0.9em;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', 
+               Consolas, 'Courier New', monospace;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.prose pre {
+  background: var(--color-code-bg);
+  color: var(--color-code-fg);
+  padding: var(--space-4);
+  border-radius: var(--radius-2);
+  overflow-x: auto;
+  margin: var(--space-6) 0;
+  border: 1px solid var(--color-border-subtle);
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', 
+               Consolas, 'Courier New', monospace;
+  font-size: 0.9em;
+  line-height: var(--leading-normal);
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* ===== TABLES ===== */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+  font-size: var(--step-0);
+  line-height: var(--leading-normal);
+}
+
+.prose th, .prose td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  background: var(--color-table-header);
+  font-weight: var(--weight-semibold);
+  color: var(--color-fg);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.prose tr:hover {
+  background: var(--color-surface-subtle);
+}
+
+/* ===== HORIZONTAL RULE ===== */
+.prose hr {
+  margin: var(--space-8) 0;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  height: 1px;
+}
+
+/* ===== LINKS ===== */
+.prose a {
+  color: var(--color-brand);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color var(--dur-fast) var(--ease-standard);
+}
+
+.prose a:hover {
+  color: var(--color-brand-subtle);
+  text-decoration-thickness: 2px;
+}
+
+.prose a:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: var(--radius-1);
+}
+
+/* ===== EMPHASIS ===== */
+.prose strong {
+  font-weight: var(--weight-semibold);
+  color: var(--color-fg);
+}
+
+.prose em {
+  font-style: italic;
+  color: var(--color-fg);
+}
+
+.prose mark {
+  background: var(--color-brand-muted);
+  color: var(--color-fg);
+  padding: 0.1em 0.2em;
+  border-radius: var(--radius-1);
+}
+
+/* ===== SMALL TEXT ===== */
+.prose small {
+  font-size: 0.875em;
+  color: var(--color-fg-muted);
+}
+
+/* ===== SUBSCRIPT & SUPERSCRIPT ===== */
+.prose sub, .prose sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.prose sup {
+  top: -0.5em;
+}
+
+.prose sub {
+  bottom: -0.25em;
+}
+
+/* ===== DEFINITION LISTS ===== */
+.prose dl {
+  margin: var(--space-4) 0;
+}
+
+.prose dt {
+  font-weight: var(--weight-semibold);
+  color: var(--color-fg);
+  margin-top: var(--space-4);
+}
+
+.prose dd {
+  margin: var(--space-2) 0 var(--space-4) var(--space-4);
+  color: var(--color-fg-subtle);
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .prose {
+    max-width: 100%;
+  }
+  
+  .prose h1 {
+    font-size: var(--step-3);
+  }
+  
+  .prose h2 {
+    font-size: var(--step-2);
+  }
+  
+  .prose h3 {
+    font-size: var(--step-1);
+  }
+  
+  .prose blockquote {
+    padding: var(--space-3) var(--space-4);
+    margin: var(--space-4) 0;
+  }
+  
+  .prose pre {
+    padding: var(--space-3);
+    margin: var(--space-4) 0;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .prose {
+    max-width: none;
+    color: black;
+    background: white;
+  }
+  
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    color: black;
+    page-break-after: avoid;
+  }
+  
+  .prose p, .prose li {
+    page-break-inside: avoid;
+  }
+  
+  .prose blockquote {
+    border-left-color: #ccc;
+    background: #f9f9f9;
+  }
+}

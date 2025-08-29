@@ -1,0 +1,14 @@
+﻿{
+  "pid": "HF-OPS-ANALYSIS-0007E-MCP",
+  "timestamp": "2025-08-25T00:04:29Z",
+  "meta": {
+    "headSha": "72d07ec"
+  },
+  "findings": {
+    "mcp": "build_fix_attempt",
+    "build": true,
+    "runtime": false,
+    "issue": "MCP SDK 1.17.4 API incompatibility - setRequestHandler expects different parameters",
+    "error": "TypeError: Cannot read properties of undefined (reading 'method') at Server.setRequestHandler"
+  }
+}

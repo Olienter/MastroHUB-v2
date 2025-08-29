@@ -16,12 +16,33 @@ Jednotný manuál, podľa ktorého má GPT odpovedať v kontexte projektu Mastro
 
 - Single Source of Truth: `.ai/*`.
 - Limit: ≤5 dotykov mimo `.ai/checks/` na jeden krok. Ak treba viac, rozfázuj HF-X-A/B.
-- Žiadny WRITE bez „Approved" od Architekta.
+- **APPROVAL GATE:** Žiadny WRITE bez explicitného `APPROVED: <handoff_id>` (standalone, uppercase) od Architekta.
 - Evidence-first: dôkazy idú do `.ai/checks/`.
 - Content ≠ Secrets: žiadne tajomstvá do repo.
 - Každá odpoveď používa TALK v1 a končí „<ROLE> Prepinam".
 - Každý krok musí pridať riadok do `.ai/chronicle/journal.md` a aktualizovať `.ai/handoff/index.json`.
 - **Role Prepinam Rule:** GPT vždy ukončuje odpoveď `GPT Prepinam`, Cursor vždy ukončuje odpoveď `Cursor Prepinam`.
+
+## APPROVAL GATE
+
+**Machine-verifiable approval mechanism:**
+
+- **Format:** `APPROVED: <handoff_id>` (standalone line, uppercase)
+- **Scope:** Required for ALL state-mutating operations
+- **Examples:**
+  - ✅ Valid: `APPROVED: HF-PROTO-GATE-0002`
+  - ❌ Invalid: `approved: hf-proto-gate-0002`
+  - ❌ Invalid: `APPROVED: HF-PROTO-GATE-0002 (with extra text)`
+- **Handshake Rule:** Future enhancement - agents must echo approval status
+- **Pre-Approved Operations:**
+  - /SYNC checks
+  - Read `.ai/*` files
+  - Planning and evidence preparation
+  - Non-applicable diff-previews
+- **Forbidden Pre-Approved:**
+  - Committable diffs/PRs
+  - Shell commands that mutate state
+  - "Final patch" attachments
 
 ## /SYNC — Strict Read Order
 

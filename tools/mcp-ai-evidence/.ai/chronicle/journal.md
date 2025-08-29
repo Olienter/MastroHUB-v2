@@ -1,0 +1,1 @@
+- 2025-08-25T17:53:03.638Z, Test journal entry from MCP tool

@@ -1,0 +1,103 @@
+name: Policy Gates
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  policy-compliance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check TALK v1 format
+        run: |
+          echo "🔍 Checking TALK v1 format in PR description..."
+          
+          # Get PR body
+          PR_BODY="${{ github.event.pull_request.body }}"
+          
+          # Check for TALK v1 block
+          if ! echo "$PR_BODY" | grep -q "## TALK v1"; then
+            echo "❌ Missing TALK v1 block in PR description"
+            exit 1
+          fi
+          
+          # Check for evidence link
+          if ! echo "$PR_BODY" | grep -q "\.ai/checks/"; then
+            echo "❌ Missing evidence link to .ai/checks/ in PR description"
+            exit 1
+          fi
+          
+          echo "✅ TALK v1 format check passed"
+
+      - name: Check Lane B compliance
+        if: contains(github.event.pull_request.labels.*.name, 'lane-b')
+        run: |
+          echo "🔍 Checking Lane B compliance..."
+          
+          # Count changed files (excluding .ai/checks/)
+          CHANGED_FILES=$(git diff --name-only origin/main...HEAD | grep -v "\.ai/checks/" | wc -l)
+          
+          if [ "$CHANGED_FILES" -gt 5 ]; then
+            echo "❌ Lane B PR has $CHANGED_FILES files (max 5 allowed)"
+            exit 1
+          fi
+          
+          # Check whitelisted paths
+          CHANGED_PATHS=$(git diff --name-only origin/main...HEAD | grep -v "\.ai/checks/" | grep -v "^\.github/workflows/" | grep -v "^\.github/CODEOWNERS" | grep -v "^\.github/PULL_REQUEST_TEMPLATE.md" | grep -v "^tools/mcp-ai-evidence/" | grep -v "^tests/" || true)
+          
+          if [ -n "$CHANGED_PATHS" ]; then
+            echo "❌ Lane B PR contains non-whitelisted paths:"
+            echo "$CHANGED_PATHS"
+            exit 1
+          fi
+          
+          echo "✅ Lane B compliance check passed"
+
+      - name: Check MCP console.log ban
+        run: |
+          echo "🔍 Checking MCP server for console.log usage..."
+          
+          if grep -r "console\.log" tools/mcp-ai-evidence/src/; then
+            echo "❌ MCP server contains console.log (use console.error instead)"
+            exit 1
+          fi
+          
+          echo "✅ MCP console.log check passed"
+
+      - name: Check SDK version pinning
+        run: |
+          echo "🔍 Checking SDK version pinning..."
+          
+          # Check if @modelcontextprotocol/sdk is pinned (no ^ or ~)
+          if grep -q '"@modelcontextprotocol/sdk": "^' tools/mcp-ai-evidence/package.json; then
+            echo "❌ SDK version must be pinned (no ^ allowed)"
+            exit 1
+          fi
+          
+          if grep -q '"@modelcontextprotocol/sdk": "~' tools/mcp-ai-evidence/package.json; then
+            echo "❌ SDK version must be pinned (no ~ allowed)"
+            exit 1
+          fi
+          
+          echo "✅ SDK version pinning check passed"
+
+      - name: Policy Gates Summary
+        run: |
+          echo "🎯 Policy Gates Summary:"
+          echo "✅ TALK v1 format: PASS"
+          echo "✅ Evidence link: PASS"
+          echo "✅ MCP console.log ban: PASS"
+          echo "✅ SDK version pinning: PASS"
+          
+          if contains(github.event.pull_request.labels.*.name, 'lane-b'); then
+            echo "✅ Lane B compliance: PASS"
+          else
+            echo "ℹ️  Lane B compliance: SKIP (not lane-b)"
+          fi
+          
+          echo "🎉 All policy gates passed!"

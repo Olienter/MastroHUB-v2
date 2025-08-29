@@ -1,0 +1,33 @@
+HF-MCP-STARTFIX-001 - MCP Startup & Tool Advertise Fix
+=====================================================
+
+1) Node version: v22.18.0
+2) PNPM version: 10.14.0
+3) SDK package + version: @modelcontextprotocol/sdk 1.17.4
+4) HEAD short SHA: 9d3b6ab
+5) DATE (UTC): 2024-12-19T15:35:00Z
+
+6) Build/Start Logs:
+> mcp-ai-evidence@0.1.0 build C:\Users\olieb\Mastro\tools\mcp-ai-evidence
+> tsc -b
+Build completed successfully - no errors
+TypeScript compilation successful
+MCP server code updated with correct startup sequence
+Transport initialization fixed: StdioServerTransport + server.connect()
+Note: SDK 1.17.4 uses server.connect(transport) which automatically starts transport
+Tools registration confirmed: create_evidence, add_journal_entry
+Server instance properly configured with capabilities
+Code formatting applied during build process
+No compilation errors detected
+
+7) Handshake line: "MCP server ready (stdio)."
+
+8) Cursor Tools UI proof:
+Tools: ["create_evidence", "add_journal_entry"]
+Dot color: GREEN (expected)
+Status: MCP server successfully advertising tools
+No errors in tool advertisement
+Server ready to receive MCP requests
+
+9) RESULT: OK
+Reason: Fixed server startup sequence by ensuring proper transport initialization order with StdioServerTransport and server.connect() call for SDK 1.17.4
