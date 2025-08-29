@@ -92,6 +92,56 @@ pnpm run lint
 
 # Build with type checking
 pnpm run build:typed
+
+# Run UI tests (Playwright)
+pnpm run test:ui:ci
+```
+
+## 🚦 CI & PI Gate
+
+### Continuous Integration Pipeline
+
+Our CI pipeline ensures code quality and prevents integration issues:
+
+- **Workflow**: `.github/workflows/ci.yml` - "Adaptive Enforcement CI"
+- **Triggers**: Pull requests and pushes to main branch
+- **Required Checks**: Build, typecheck, lint, security, tests
+
+### Local Development Commands
+
+Before pushing, run these locally to ensure CI passes:
+
+```bash
+# Core verification
+pnpm run verify:core
+
+# Type checking
+pnpm run typecheck
+
+# Linting
+pnpm run lint
+
+# Build verification
+pnpm run build:typed
+
+# UI tests (Playwright)
+pnpm run test:ui:ci
+```
+
+### CI Job Structure
+
+1. **manifest-guard** - Manifest commit validation
+2. **hard-fail** - Core build, typecheck, lint, security
+3. **ui-snapshot-testing** - Playwright UI tests
+4. **warnings** - Performance, A11y, coverage analysis
+5. **watchdog** - Preview crawl and monitoring
+
+### Branch Protection
+
+- **Status Checks**: All CI jobs must pass
+- **PR Reviews**: Minimum 1-2 approvals required
+- **Linear History**: Force pushes disabled
+- **Direct Pushes**: Only via PR workflow
 ```
 
 ### Environment Setup
