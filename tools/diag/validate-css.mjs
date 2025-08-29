@@ -51,7 +51,6 @@ function validateCSSFiles() {
   const requiredFiles = [
     "app/styles/tokens.css",
     "app/styles/typography.css",
-    "app/styles/globals.css",
     "app/globals.css",
   ];
 

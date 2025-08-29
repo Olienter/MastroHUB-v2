@@ -1,27 +1,468 @@
+/* ========================================
+   GLOBAL STYLES - RESET + BASE + THEMING
+   ======================================== */
+
+/* ===== TAILWIND CSS INTEGRATION ===== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ===== TOKENS IMPORT (SINGLE SOURCE) ===== */
-@import "./styles/tokens.css";
-@import "./styles/typography.css";
+/* ===== IMPORT DESIGN SYSTEM ===== */
+@import './styles/tokens.css';
+@import './styles/typography.css';
 
-/* ===== BASE LAYER - FOCUS STYLES ===== */
+/* ===== BASE LAYER (RESET + FOUNDATION) ===== */
 @layer base {
-  /* Focus styles using token colors */
+  /* ===== UNIVERSAL RESET ===== */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ===== HTML & BODY FOUNDATION ===== */
+  html {
+    color-scheme: light dark;
+    hanging-punctuation: first last;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+                 Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: var(--leading-relaxed);
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: 'kern' 1;
+    font-feature-settings: 'kern' 1;
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height */
+    overflow-x: hidden;
+  }
+
+  /* ===== MEDIA ELEMENTS ===== */
+  img,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  /* ===== FORM ELEMENTS RESET ===== */
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  input,
+  textarea {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+  }
+
+  /* ===== LIST RESET ===== */
+  ul,
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ===== LINK RESET ===== */
+  a {
+    color: inherit;
+    text-decoration: none;
+    background: transparent;
+  }
+
+  /* ===== TABLE RESET ===== */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+
+  th,
+  td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ===== FOCUS MANAGEMENT ===== */
   :focus-visible {
     outline: 2px solid var(--color-focus);
     outline-offset: 2px;
     border-radius: var(--radius-1);
   }
+
+  /* Remove focus outline for mouse users */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* ===== SELECTION STYLING ===== */
+  ::selection {
+    background: var(--color-select);
+    color: var(--color-bg);
+  }
+
+  ::-moz-selection {
+    background: var(--color-select);
+    color: var(--color-bg);
+  }
+
+  /* ===== SCROLLBAR STYLING ===== */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface-subtle);
+    border-radius: var(--radius-1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: var(--radius-1);
+    border: 2px solid var(--color-surface-subtle);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-border-subtle);
+  }
+
+  /* ===== REDUCED MOTION SUPPORT ===== */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ===== HIGH CONTRAST SUPPORT ===== */
+  @media (prefers-contrast: more) {
+    :root {
+      --color-border: oklch(0 0 0);
+      --color-focus: oklch(0 0 0);
+    }
+    
+    * {
+      border-color: currentColor !important;
+    }
+  }
+
+  /* ===== SAFE AREA SUPPORT ===== */
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: max(var(--space-4), env(safe-area-inset-left));
+      padding-right: max(var(--space-4), env(safe-area-inset-right));
+    }
+  }
 }
 
-/* ===== COMPONENTS LAYER - MINIMAL ===== */
+/* ===== COMPONENTS LAYER ===== */
 @layer components {
-  /* No custom components in Setup-A */
+  /* ===== SKIP TO CONTENT LINK ===== */
+  .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--color-brand);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: var(--radius-1);
+    z-index: var(--z-toast);
+    transition: top var(--dur-fast) var(--ease-standard);
+  }
+
+  .skip-to-content:focus {
+    top: 6px;
+  }
+
+  /* ===== SCREEN READER ONLY ===== */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ===== FOCUS TRAP ===== */
+  .focus-trap {
+    outline: none;
+  }
+
+  .focus-trap:focus-within {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  /* ===== LOADING STATES ===== */
+  .loading {
+    opacity: 0.6;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--color-border);
+    border-top-color: var(--color-brand);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* ===== UTILITY CLASSES ===== */
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+
+  .container-sm {
+    max-width: 640px;
+  }
+
+  .container-md {
+    max-width: 768px;
+  }
+
+  .container-lg {
+    max-width: 1024px;
+  }
+
+  .container-xl {
+    max-width: 1280px;
+  }
+
+  .container-full {
+    max-width: none;
+  }
+
+  /* ===== GRID SYSTEM ===== */
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-4);
+  }
+
+  .grid-6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-4);
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .grid-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  /* ===== RESPONSIVE GRID ===== */
+  @media (max-width: 768px) {
+    .grid-12,
+    .grid-6,
+    .grid-4,
+    .grid-3,
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .grid-12 {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .grid-6,
+    .grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
 
-/* ===== UTILITIES LAYER - TAILWIND DEFAULT ===== */
+/* ===== UTILITIES LAYER ===== */
 @layer utilities {
-  /* No custom utilities in Setup-A */
+  /* ===== SPACING UTILITIES ===== */
+  .space-y-0 > * + * { margin-top: var(--space-0); }
+  .space-y-1 > * + * { margin-top: var(--space-1); }
+  .space-y-2 > * + * { margin-top: var(--space-2); }
+  .space-y-3 > * + * { margin-top: var(--space-3); }
+  .space-y-4 > * + * { margin-top: var(--space-4); }
+  .space-y-5 > * + * { margin-top: var(--space-5); }
+  .space-y-6 > * + * { margin-top: var(--space-6); }
+  .space-y-8 > * + * { margin-top: var(--space-8); }
+
+  .space-x-0 > * + * { margin-left: var(--space-0); }
+  .space-x-1 > * + * { margin-left: var(--space-1); }
+  .space-x-2 > * + * { margin-left: var(--space-2); }
+  .space-x-3 > * + * { margin-left: var(--space-3); }
+  .space-x-4 > * + * { margin-left: var(--space-4); }
+  .space-x-5 > * + * { margin-left: var(--space-5); }
+  .space-x-6 > * + * { margin-left: var(--space-6); }
+  .space-x-8 > * + * { margin-left: var(--space-8); }
+
+  /* ===== TEXT UTILITIES ===== */
+  .text-step-0 { font-size: var(--step-0); }
+  .text-step-1 { font-size: var(--step-1); }
+  .text-step-2 { font-size: var(--step-2); }
+  .text-step-3 { font-size: var(--step-3); }
+  .text-step-4 { font-size: var(--step-4); }
+
+  .leading-tight { line-height: var(--leading-tight); }
+  .leading-snug { line-height: var(--leading-snug); }
+  .leading-normal { line-height: var(--leading-normal); }
+  .leading-relaxed { line-height: var(--leading-relaxed); }
+  .leading-loose { line-height: var(--leading-loose); }
+
+  /* ===== COLOR UTILITIES ===== */
+  .text-fg { color: var(--color-fg); }
+  .text-fg-subtle { color: var(--color-fg-subtle); }
+  .text-fg-muted { color: var(--color-fg-muted); }
+  .text-brand { color: var(--color-brand); }
+  .text-success { color: var(--color-success); }
+  .text-warning { color: var(--color-warning); }
+  .text-error { color: var(--color-error); }
+
+  .bg-bg { background-color: var(--color-bg); }
+  .bg-surface { background-color: var(--color-surface); }
+  .bg-surface-subtle { background-color: var(--color-surface-subtle); }
+  .bg-brand { background-color: var(--color-brand); }
+  .bg-success { background-color: var(--color-success); }
+  .bg-warning { background-color: var(--color-warning); }
+  .bg-error { background-color: var(--color-error); }
+
+  /* ===== BORDER UTILITIES ===== */
+  .border-border { border-color: var(--color-border); }
+  .border-border-subtle { border-color: var(--color-border-subtle); }
+
+  /* ===== SHADOW UTILITIES ===== */
+  .shadow-1 { box-shadow: var(--shadow-1); }
+  .shadow-2 { box-shadow: var(--shadow-2); }
+  .shadow-3 { box-shadow: var(--shadow-3); }
+  .shadow-4 { box-shadow: var(--shadow-4); }
+  .shadow-5 { box-shadow: var(--shadow-5); }
+
+  /* ===== TRANSITION UTILITIES ===== */
+  .transition-fast { transition-duration: var(--dur-fast); }
+  .transition-med { transition-duration: var(--dur-med); }
+  .transition-slow { transition-duration: var(--dur-slow); }
+  .transition-slower { transition-duration: var(--dur-slower); }
+
+  .ease-standard { transition-timing-function: var(--ease-standard); }
+  .ease-emphasized { transition-timing-function: var(--ease-emphasized); }
+  .ease-decelerate { transition-timing-function: var(--ease-decelerate); }
+  .ease-accelerate { transition-timing-function: var(--ease-accelerate); }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  .skip-to-content,
+  .sr-only,
+  .focus-trap {
+    display: none !important;
+  }
 }
