@@ -3,7 +3,15 @@ import { test, expect } from "@playwright/test";
 test.describe("UI Component Snapshot Testing", () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to homepage before each test
-    await page.goto("/");
+    await page.goto("/", { waitUntil: 'networkidle' });
+
+    // Disable animations and transitions for stable screenshots
+    await page.addStyleTag({ 
+      content: '* { transition: none !important; animation: none !important; }' 
+    });
+
+    // Wait for fonts to be ready
+    await page.evaluate(() => (document as any).fonts?.ready ?? Promise.resolve());
 
     // Wait for DOM to be ready (fast, reliable)
     await page.waitForLoadState("domcontentloaded");
