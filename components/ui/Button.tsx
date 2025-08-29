@@ -1,9 +1,7 @@
 import React from "react";
-import { cn } from "@/lib/utils";
-import { Loader2 } from "lucide-react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "secondary" | "outline" | "ghost" | "link" | "destructive";
+  variant?: "default" | "primary" | "secondary" | "outline" | "ghost" | "link" | "destructive";
   size?: "sm" | "md" | "lg" | "icon";
   loading?: boolean;
   children: React.ReactNode;
@@ -11,33 +9,33 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { 
-      className, 
-      variant = "default", 
-      size = "md", 
+    {
+      className = "",
+      variant = "default",
+      size = "md",
       loading = false,
       disabled,
-      children, 
-      ...props 
+      children,
+      ...props
     },
     ref
   ) => {
-    const baseClasses =
-      "inline-flex items-center justify-center rounded-radius-2 font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-95";
+    const baseClasses = "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-95";
 
     const variants = {
-      default: "bg-brand text-brand-fg hover:bg-brand/90 shadow-sm hover:shadow-md",
-      secondary: "bg-surface text-fg hover:bg-surface/80 border border-border",
-      outline: "border border-border bg-transparent hover:bg-surface hover:text-fg",
-      ghost: "hover:bg-surface hover:text-fg",
-      link: "text-brand underline-offset-4 hover:underline",
-      destructive: "bg-error text-white hover:bg-error/90 shadow-sm hover:shadow-md",
+      default: "bg-blue-600 text-white hover:bg-blue-700 shadow-sm hover:shadow-md",
+      primary: "bg-blue-600 text-white hover:bg-blue-700 shadow-sm hover:shadow-md",
+      secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-300",
+      outline: "border border-gray-300 bg-transparent hover:bg-gray-50 hover:text-gray-900",
+      ghost: "hover:bg-gray-100 hover:text-gray-900",
+      link: "text-blue-600 underline-offset-4 hover:underline",
+      destructive: "bg-red-600 text-white hover:bg-red-700 shadow-sm hover:shadow-md",
     };
 
     const sizes = {
-      sm: "h-8 px-3 text-step-0",
-      md: "h-10 px-4 py-2 text-step-1",
-      lg: "h-12 px-6 py-3 text-step-2",
+      sm: "h-8 px-3 text-sm",
+      md: "h-10 px-4 py-2 text-base",
+      lg: "h-12 px-6 py-3 text-lg",
       icon: "h-10 w-10 p-0",
     };
 
@@ -45,14 +43,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <button
-        className={cn(baseClasses, variants[variant], sizes[size], className)}
+        className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`}
         ref={ref}
         disabled={isDisabled}
         {...props}
       >
-        {loading && (
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-        )}
         {children}
       </button>
     );

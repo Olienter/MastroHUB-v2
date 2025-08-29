@@ -114,7 +114,7 @@ export const mockPosts: Post[] = [
     excerpt:
       "Discover how modern chefs are pushing culinary boundaries with science and creativity in this exclusive deep-dive into molecular gastronomy.",
     content:
-      "Molecular gastronomy represents the intersection of culinary art and scientific innovation...",
+      "Molecular gastronomy represents the intersection of culinary art and scientific innovation, where chefs become both artists and scientists. This revolutionary approach to cooking combines traditional culinary techniques with cutting-edge scientific principles, creating dishes that challenge our perceptions of taste, texture, and presentation. From liquid nitrogen ice cream to spherified caviar, molecular gastronomy pushes the boundaries of what's possible in the kitchen while maintaining the soul and passion that makes food truly memorable.",
     featuredImage:
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
     author: {
@@ -125,7 +125,7 @@ export const mockPosts: Post[] = [
       bio: "Award-winning chef and molecular gastronomy pioneer",
     },
     category: mockSections[0], // Fine Dining
-    tags: [mockTags[2], mockTags[5], mockTags[6]],
+    tags: [mockTags[2], mockTags[5]],
     publishedAt: "2024-01-15T10:00:00Z",
     updatedAt: "2024-01-15T10:00:00Z",
     readTime: 8,
@@ -141,7 +141,7 @@ export const mockPosts: Post[] = [
     excerpt:
       "How street food is transforming urban dining culture and creating new culinary destinations around the world.",
     content:
-      "Street food has evolved from simple sustenance to a global culinary movement...",
+      "Street food has evolved from simple sustenance to a global culinary movement that transcends cultural boundaries and economic status. From the bustling night markets of Bangkok to the food truck revolution in Brooklyn, street food represents the democratization of fine dining. These mobile kitchens serve as incubators for culinary innovation, where traditional recipes meet modern techniques and global influences. The rise of street food has transformed urban landscapes, creating new culinary destinations and fostering communities around shared food experiences.",
     featuredImage:
       "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=600&fit=crop",
     author: {
@@ -168,7 +168,7 @@ export const mockPosts: Post[] = [
     excerpt:
       "Learn the secrets of perfect wine and food pairing from sommeliers and enhance your dining experiences.",
     content:
-      "The art of wine pairing goes beyond simple red-with-meat, white-with-fish rules...",
+      "The art of wine pairing goes beyond simple red-with-meat, white-with-fish rules, evolving into a sophisticated dance between flavors, textures, and aromas. Modern sommeliers understand that successful wine pairing requires consideration of multiple factors: the dish's primary flavors, cooking methods, seasoning, and even the emotional context of the dining experience. From the bold tannins of a Cabernet Sauvignon complementing the richness of a perfectly seared steak to the delicate acidity of a Riesling cutting through the creaminess of a seafood risotto, wine pairing has become an art form that enhances both the food and the wine.",
     featuredImage:
       "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=800&h=600&fit=crop",
     author: {
@@ -195,7 +195,7 @@ export const mockPosts: Post[] = [
     excerpt:
       "How artificial intelligence is revolutionizing luxury hospitality and creating personalized guest experiences.",
     content:
-      "Luxury hotels are embracing technology to deliver unprecedented levels of personalization...",
+      "Luxury hotels are embracing technology to deliver unprecedented levels of personalization, transforming the traditional hospitality experience into something truly extraordinary. Artificial intelligence now powers everything from predictive room preferences to personalized dining recommendations, while IoT devices create seamless, intuitive environments that adapt to guest needs. This technological revolution goes beyond convenience—it's about creating emotional connections and memorable experiences that guests will cherish long after their stay. The future of luxury hospitality lies in the perfect balance between cutting-edge technology and timeless human warmth.",
     featuredImage:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop",
     author: {
@@ -222,7 +222,7 @@ export const mockPosts: Post[] = [
     excerpt:
       "Exclusive behind-the-scenes look at an intimate chef's table experience with culinary legend Gordon Ramsay.",
     content:
-      "The kitchen is quiet except for the rhythmic sound of knives on cutting boards...",
+      "The kitchen is quiet except for the rhythmic sound of knives on cutting boards, the gentle hiss of gas flames, and the soft clinking of fine china being prepared. Gordon Ramsay moves with the precision of a surgeon and the grace of a dancer, his hands orchestrating a symphony of flavors that will soon grace the plates of his most discerning guests. This intimate chef's table experience offers a rare glimpse into the mind of a culinary legend, where every ingredient tells a story and every technique has been perfected through decades of passion and dedication.",
     featuredImage:
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop",
     author: {
@@ -233,7 +233,7 @@ export const mockPosts: Post[] = [
       bio: "Food critic and culinary journalist",
     },
     category: mockSections[4], // Chef Interviews
-    tags: [mockTags[0], mockTags[5], mockTags[6]],
+    tags: [mockTags[0], mockTags[5]],
     publishedAt: "2024-01-11T09:45:00Z",
     updatedAt: "2024-01-11T09:45:00Z",
     readTime: 10,
@@ -249,7 +249,7 @@ export const mockPosts: Post[] = [
     excerpt:
       "How plant-based cuisine is transforming fine dining and challenging traditional culinary norms.",
     content:
-      "The plant-based movement has evolved far beyond simple salads and tofu dishes...",
+      "The plant-based movement has evolved far beyond simple salads and tofu dishes, emerging as a sophisticated culinary revolution that challenges traditional notions of fine dining. Modern plant-based chefs are creating dishes that rival and often surpass their meat-based counterparts in complexity, flavor, and presentation. From jackfruit pulled 'pork' that melts in your mouth to cashew-based cheeses that rival the finest artisanal varieties, plant-based cuisine has become a celebration of innovation, sustainability, and culinary artistry that appeals to diners of all dietary preferences.",
     featuredImage:
       "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&h=600&fit=crop",
     author: {
@@ -260,7 +260,7 @@ export const mockPosts: Post[] = [
       bio: "Pioneering plant-based chef and sustainability advocate",
     },
     category: mockSections[0], // Fine Dining
-    tags: [mockTags[2], mockTags[5], mockTags[6]],
+    tags: [mockTags[2], mockTags[5]],
     publishedAt: "2024-01-10T13:20:00Z",
     updatedAt: "2024-01-10T13:20:00Z",
     readTime: 8,
@@ -308,7 +308,7 @@ export const getHomePageData = () => {
       excerpt:
         "Your premier destination for gastronomy and hospitality insights",
       content:
-        "Welcome to MastroHUB, where culinary excellence meets hospitality innovation...",
+        "Welcome to MastroHUB, where culinary excellence meets hospitality innovation in perfect harmony. Our platform serves as the premier destination for gastronomy enthusiasts, hospitality professionals, and food lovers worldwide. We bring together the finest culinary minds, cutting-edge industry insights, and innovative hospitality practices to create a comprehensive resource that inspires, educates, and connects the global food and hospitality community. From exclusive chef interviews to groundbreaking hospitality technology, MastroHUB is your gateway to the future of gastronomy and hospitality excellence.",
       featuredImage:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop",
       author: {

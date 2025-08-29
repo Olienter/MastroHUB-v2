@@ -1,193 +1,78 @@
 // ========================================
-// MASTROHUB HOMEPAGE SKELETON
+// MASTROHUB HOMEPAGE - UI BUILD PHASE B
 // ========================================
 
 import { getHomePageData } from "@/lib/mock-data";
+import { Header } from "../../components/layout/Header";
+import { HeroSection } from "../../components/sections/HeroSection";
+import { FeaturedPostCard } from "../../components/cards/FeaturedPostCard";
+import { PostGrid } from "../../components/sections/PostGrid";
+import { LiveNewsSidebar } from "../../components/sections/LiveNewsSidebar";
 
 export default function HomePage() {
   const homeData = getHomePageData();
 
   return (
-    <main className="min-h-screen bg-bg text-fg" role="main">
-      {/* Hero Section */}
-      <section
-        className="bg-gradient-to-br from-brand/10 to-brand/5 p-8"
-        role="banner"
-        data-testid="hero"
-      >
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-8">
-            <h1 className="text-step-5 font-bold text-brand mb-4">MastroHUB</h1>
-            <p className="text-step-2 text-fg-subtle max-w-2xl mx-auto">
-              Premium gastronomy and hospitality magazine with AI-powered
-              insights, recipes, and industry trends
-            </p>
-          </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <Header />
 
-          {/* Featured Post Hero */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-radius-3 p-6 shadow-lg">
-            <div className="text-left">
-              <span className="inline-block bg-brand/20 text-brand px-3 py-1 rounded-radius-2 text-step-0 font-medium mb-3">
-                {homeData.featuredPost.category.name}
-              </span>
-              <h2 className="text-step-4 font-bold text-fg mb-3">
-                {homeData.featuredPost.title}
-              </h2>
-              <p className="text-step-1 text-fg-subtle mb-4">
-                {homeData.featuredPost.excerpt}
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <img
-                    src={homeData.featuredPost.author.avatar}
-                    alt={homeData.featuredPost.author.name}
-                    className="w-8 h-8 rounded-full"
-                  />
-                  <span className="text-step-0 text-fg-subtle">
-                    {homeData.featuredPost.author.name}
-                  </span>
-                </div>
-                <span className="text-step-0 text-fg-subtle">
-                  {homeData.featuredPost.readTime} min read
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <main role="main">
+        {/* Hero Section */}
+        <HeroSection
+          title="Discover the Art of Gastronomy"
+          subtitle="Premium Magazine"
+          description="Your premier destination for gastronomy and hospitality insights, featuring exclusive content from world-renowned chefs and industry experts."
+          ctaText="Explore Articles"
+          ctaLink="/posts"
+          backgroundImage="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+        />
 
-      {/* Main Content Grid */}
-      <section className="p-8">
-        <div className="container mx-auto max-w-7xl">
+        {/* Main Content Area */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Left Column - Articles List */}
-            <div
-              className="lg:col-span-2 space-y-6"
-              data-testid="articles-column"
-            >
-              <h2 className="text-step-3 font-semibold text-fg mb-6">
-                Latest Articles
-              </h2>
-
-              {/* Article Cards Placeholder */}
-              {homeData.latestPosts.slice(0, 4).map((post) => (
-                <article
-                  key={post.id}
-                  className="bg-white rounded-radius-3 p-6 shadow-sm border border-border/50"
-                  data-testid="article-card"
-                >
-                  <div className="flex gap-4">
-                    {post.featuredImage && (
-                      <img
-                        src={post.featuredImage}
-                        alt={post.title}
-                        className="w-24 h-24 rounded-radius-2 object-cover flex-shrink-0"
-                      />
-                    )}
-                    <div className="flex-1">
-                      <span className="inline-block bg-brand/10 text-brand px-2 py-1 rounded-radius-1 text-step-0 font-medium mb-2">
-                        {post.category.name}
-                      </span>
-                      <h3 className="text-step-2 font-semibold text-fg mb-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-step-1 text-fg-subtle mb-3 line-clamp-2">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center gap-4 text-step-0 text-fg-subtle">
-                        <span>{post.author.name}</span>
-                        <span>{post.readTime} min read</span>
-                        <span>{post.views} views</span>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            {/* Right Column - Sidebar */}
-            <div className="space-y-6">
-              {/* Live Feed Widget */}
-              <div
-                className="bg-white rounded-radius-3 p-6 shadow-sm border border-border/50"
-                data-testid="live-feed"
-              >
-                <h3 className="text-step-2 font-semibold text-fg mb-4">
-                  Live Feed
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 p-3 bg-brand/5 rounded-radius-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-step-0 text-fg-subtle">
-                      New article published: &ldquo;Street Food
-                      Revolution&rdquo;
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 bg-brand/5 rounded-radius-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                    <span className="text-step-0 text-fg-subtle">
-                      Trending: Molecular Gastronomy
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 bg-brand/5 rounded-radius-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                    <span className="text-step-0 text-fg-subtle">
-                      New category: Sustainable Dining
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Trending Tags */}
-              <div
-                className="bg-white rounded-radius-3 p-6 shadow-sm border border-border/50"
-                data-testid="trending-tags"
-              >
-                <h3 className="text-step-2 font-semibold text-fg mb-4">
-                  Trending Tags
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {homeData.trendingTags.slice(0, 8).map((tag) => (
-                    <span
-                      key={tag.id}
-                      className="inline-block bg-brand/10 text-brand px-3 py-1 rounded-radius-2 text-step-0 font-medium hover:bg-brand/20 transition-colors cursor-pointer"
-                    >
-                      {tag.name}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sections Grid */}
-      <section className="p-8 bg-brand/5">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-step-3 font-semibold text-fg mb-8 text-center">
-            Explore Our Sections
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {homeData.sections.map((section) => (
-              <div
-                key={section.id}
-                className="bg-white rounded-radius-3 p-6 shadow-sm border border-border/50 hover:shadow-md transition-shadow cursor-pointer"
-              >
-                <div className="text-center">
-                  <div className="text-4xl mb-4">{section.icon}</div>
-                  <h3 className="text-step-2 font-semibold text-fg mb-2">
-                    {section.name}
-                  </h3>
-                  <p className="text-step-1 text-fg-subtle">
-                    {section.description}
+            {/* Left Column - Main Content */}
+            <div className="lg:col-span-2 space-y-8">
+              {/* Featured Post Section */}
+              <section>
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Featured Article
+                  </h2>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Our top pick for this week - a must-read for gastronomy
+                    enthusiasts
                   </p>
                 </div>
-              </div>
-            ))}
+                <FeaturedPostCard post={homeData.featuredPost} />
+              </section>
+
+              {/* Latest Posts Section */}
+              <PostGrid
+                posts={homeData.latestPosts.slice(0, 6)}
+                title="Latest Articles"
+                subtitle="Stay updated with the newest insights from the gastronomy world"
+                showViewAll={true}
+                viewAllLink="/posts"
+              />
+
+              {/* Popular Posts Section */}
+              <PostGrid
+                posts={homeData.popularPosts.slice(0, 6)}
+                title="Popular Articles"
+                subtitle="Most read and shared content from our community"
+                showViewAll={true}
+                viewAllLink="/posts/popular"
+              />
+            </div>
+
+            {/* Right Column - Live News Sidebar */}
+            <div className="lg:col-span-1">
+              <LiveNewsSidebar posts={homeData.latestPosts} />
+            </div>
           </div>
         </div>
-      </section>
+      </main>
 
       {/* Footer */}
       <footer
@@ -273,6 +158,6 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
-    </main>
+    </div>
   );
 }

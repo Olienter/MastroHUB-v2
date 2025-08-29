@@ -1,136 +1,155 @@
-"use client";
+import React from "react";
 
-import { useState } from "react";
-import Link from "next/link";
-
-export default function NavBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+export const Header: React.FC = () => {
   return (
-    <nav className="bg-surface border-b border-border sticky top-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          {/* Brand */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-brand rounded-full flex items-center justify-center">
-                <span className="text-brand-fg font-bold text-sm">MH</span>
-              </div>
-              <span className="text-step-2 font-bold text-brand">
-                MastroHUB
-              </span>
-            </Link>
-          </div>
+    <header className="bg-white shadow-sm border-b border-gray-200">
+      {/* Top Bar */}
+      <div className="bg-red-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-12">
+            {/* Logo */}
+            <div className="flex items-center">
+              <h1 className="text-xl font-bold">MastroHUB</h1>
+            </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/dashboard"
-              className="text-fg hover:text-brand transition-colors"
-            >
-              Dashboard
-            </Link>
-            <Link
-              href="/docs"
-              className="text-fg hover:text-brand transition-colors"
-            >
-              Documentation
-            </Link>
-            <Link
-              href="/about"
-              className="text-fg hover:text-brand transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              href="/login"
-              className="bg-brand text-brand-fg px-4 py-2 rounded-radius-2 hover:bg-brand/90 transition-colors"
-            >
-              Login
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-fg hover:text-brand transition-colors"
-              aria-label="Toggle mobile menu"
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-              data-testid="mobile-menu-toggle"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            {/* Top Navigation */}
+            <nav className="hidden md:flex items-center space-x-6 text-sm">
+              <a
+                href="/gastronomy"
+                className="hover:text-red-200 transition-colors"
               >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
+                GASTRONOMY
+              </a>
+              <a
+                href="/hospitality"
+                className="hover:text-red-200 transition-colors"
+              >
+                HOSPITALITY
+              </a>
+              <a href="/chefs" className="hover:text-red-200 transition-colors">
+                CHEFS
+              </a>
+              <a
+                href="/recipes"
+                className="hover:text-red-200 transition-colors"
+              >
+                RECIPES
+              </a>
+              <a
+                href="/trends"
+                className="hover:text-red-200 transition-colors"
+              >
+                TRENDS
+              </a>
+            </nav>
+
+            {/* Weather & Date */}
+            <div className="flex items-center space-x-4 text-sm">
+              <span>🌤️ 22°C - Bratislava</span>
+              <span>
+                {new Date().toLocaleDateString("en-US", {
+                  weekday: "long",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Main Categories */}
+          <nav className="flex items-center space-x-8">
+            <a
+              href="/fine-dining"
+              className="text-gray-900 hover:text-red-600 font-medium transition-colors"
+            >
+              FINE DINING
+            </a>
+            <a
+              href="/street-food"
+              className="text-gray-900 hover:text-red-600 font-medium transition-colors"
+            >
+              STREET FOOD
+            </a>
+            <a
+              href="/wine-spirits"
+              className="text-gray-900 hover:text-red-600 font-medium transition-colors"
+            >
+              WINE & SPIRITS
+            </a>
+            <a
+              href="/hotels"
+              className="text-gray-900 hover:text-red-600 font-medium transition-colors"
+            >
+              HOTELS
+            </a>
+            <a
+              href="/chef-interviews"
+              className="text-gray-900 hover:text-red-600 font-medium transition-colors"
+            >
+              CHEF INTERVIEWS
+            </a>
+            <a
+              href="/food-trends"
+              className="text-gray-900 hover:text-red-600 font-medium transition-colors"
+            >
+              FOOD TRENDS
+            </a>
+          </nav>
+
+          {/* Right Side */}
+          <div className="flex items-center space-x-4">
+            <button className="p-2 text-gray-600 hover:text-red-600 transition-colors">
+              🔍
+            </button>
+            <button className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+              Login
             </button>
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div
-            id="mobile-menu"
-            role="menu"
-            className="md:hidden border-t border-border"
-            data-testid="mobile-menu"
-          >
-            <div className="py-4 space-y-4">
-              <Link
-                href="/dashboard"
-                className="block text-fg hover:text-brand transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Dashboard
-              </Link>
-              <Link
-                href="/docs"
-                className="block text-fg hover:text-brand transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Documentation
-              </Link>
-              <Link
-                href="/about"
-                className="block text-fg hover:text-brand transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/login"
-                className="block bg-brand text-brand-fg px-4 py-2 rounded-radius-2 hover:bg-brand/90 transition-colors text-center"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Login
-              </Link>
-            </div>
-          </div>
-        )}
       </div>
-    </nav>
+
+      {/* Sub Navigation */}
+      <div className="bg-gray-50 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center space-x-6 h-12 text-sm">
+            <a
+              href="/latest"
+              className="text-gray-600 hover:text-red-600 transition-colors"
+            >
+              Latest News
+            </a>
+            <a
+              href="/featured"
+              className="text-gray-600 hover:text-red-600 transition-colors"
+            >
+              Featured
+            </a>
+            <a
+              href="/exclusive"
+              className="text-gray-600 hover:text-red-600 transition-colors"
+            >
+              Exclusive
+            </a>
+            <a
+              href="/podcast"
+              className="text-gray-600 hover:text-red-600 transition-colors"
+            >
+              Podcast
+            </a>
+            <a
+              href="/video"
+              className="text-gray-600 hover:text-red-600 transition-colors"
+            >
+              Video
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
   );
-}
+};
