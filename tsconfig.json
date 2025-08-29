@@ -27,6 +27,9 @@
       "@/styles/*": [
         "./app/styles/*"
       ],
+      "@/styles": [
+        "./app/styles"
+      ],
       "@/ui/*": [
         "./app/ui/*"
       ]
@@ -42,8 +45,8 @@
     ]
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
+    "app/**/*.ts",
+    "app/**/*.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts"
   ],

@@ -1,28 +1,26 @@
 HF-UI-FOUNDATION-0002-A-VALIDATION EVIDENCE
-DATE_UTC: 2025-08-26T01:01:56.415Z
+DATE_UTC: 2025-08-29T15:41:50.280Z
 NODE: v22.18.0
 PNPM: 10.14.0
-HEAD: 9c46eff
+HEAD: 62fd015
 
 RESULT: OK
 NOTES:
 - None
 
 --- CSS FILE VALIDATION ---
-✅ src/styles/tokens.css
-✅ src/styles/typography.css
-✅ src/styles/globals.css
+✅ app/styles/tokens.css
+✅ app/styles/typography.css
+✅ app/styles/globals.css
 ✅ app/globals.css
 
 --- CSS IMPORT VALIDATION ---
-✅ ../src/styles/tokens.css
-✅ ../src/styles/typography.css
-✅ ../src/styles/globals.css
+✅ ./styles/tokens.css
+✅ ./styles/typography.css
 
 --- TAILWIND CONFIG VALIDATION ---
 ✅ ./app/**/*.{js,ts,jsx,tsx,mdx}
 ✅ ./components/**/*.{js,ts,jsx,tsx,mdx}
-✅ ./src/**/*.{js,ts,jsx,tsx,mdx}
 
 --- BUILD OUTPUT ---
 ✅ Build successful
@@ -37,28 +35,29 @@ Last 20 lines:
  ✓ Compiled successfully
    Linting and checking validity of types ...
    Collecting page data ...
-   Generating static pages (0/8) ...
-   Generating static pages (2/8) 
-   Generating static pages (4/8) 
-   Generating static pages (6/8) 
- ✓ Generating static pages (8/8)
+   Generating static pages (0/9) ...
+   Generating static pages (2/9) 
+   Generating static pages (4/9) 
+   Generating static pages (6/9) 
+ ✓ Generating static pages (9/9)
    Finalizing page optimization ...
    Collecting build traces ...
 
 Route (app)                              Size     First Load JS
-┌ ƒ /                                    175 B          92.4 kB
-├ ƒ /_not-found                          871 B            88 kB
+┌ ○ /                                    138 B          87.3 kB
+├ ○ /_not-found                          871 B            88 kB
 ├ ƒ /api/auth/login                      0 B                0 B
 ├ ƒ /api/auth/logout                     0 B                0 B
 ├ ○ /api/health                          0 B                0 B
-└ ƒ /login                               785 B          93.1 kB
+├ ○ /dashboard                           8.67 kB         105 kB
+└ ○ /login                               5.75 kB        92.9 kB
 + First Load JS shared by all            87.1 kB
-  ├ chunks/164-3dd24548912c64e6.js       31.6 kB
-  ├ chunks/7f222c64-e8f67f92d86d27e9.js  53.6 kB
+  ├ chunks/164-19c6569c1672719b.js       31.6 kB
+  ├ chunks/7f222c64-90e476dbd15be589.js  53.6 kB
   └ other shared chunks (total)          1.9 kB
 
 
-ƒ Middleware                             26.7 kB
+ƒ Middleware                             26.8 kB
 
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand

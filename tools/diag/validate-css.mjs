@@ -49,9 +49,9 @@ function checkPort(host = "127.0.0.1", port = 3000, timeoutMs = 1000) {
 
 function validateCSSFiles() {
   const requiredFiles = [
-    "src/styles/tokens.css",
-    "src/styles/typography.css",
-    "src/styles/globals.css",
+    "app/styles/tokens.css",
+    "app/styles/typography.css",
+    "app/styles/globals.css",
     "app/globals.css",
   ];
 
@@ -66,11 +66,7 @@ function validateCSSFiles() {
 function validateCSSImports() {
   const globalsContent = fs.readFileSync("app/globals.css", "utf8");
 
-  const requiredImports = [
-    "../src/styles/tokens.css",
-    "../src/styles/typography.css",
-    "../src/styles/globals.css",
-  ];
+  const requiredImports = ["./styles/tokens.css", "./styles/typography.css"];
 
   const results = {};
   for (const importPath of requiredImports) {
@@ -86,7 +82,6 @@ function validateTailwindConfig() {
   const requiredPaths = [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ];
 
   const results = {};

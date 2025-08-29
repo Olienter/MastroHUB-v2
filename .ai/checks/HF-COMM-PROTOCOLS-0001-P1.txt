@@ -1,15 +1,15 @@
 HF-COMM-PROTOCOLS-0001-P1 EVIDENCE
-DATE_UTC: 2025-08-26T00:11:25.302Z
+DATE_UTC: 2025-08-29T15:53:53.476Z
 NODE: v22.18.0
 PNPM: 10.14.0
-HEAD: 9c46eff
+HEAD: 62fd015
 REMOTE:
 origin	https://github.com/Olienter/MastroHUB-v2.git (fetch)
 origin	https://github.com/Olienter/MastroHUB-v2.git (push)
 
-RESULT: OK
+RESULT: FAIL
 NOTES:
-- None
+- Git working directory is not clean.
 
 --- TYPECHECK (tail) ---
 
@@ -18,23 +18,23 @@ NOTES:
 ✔ No ESLint warnings or errors
 
 --- BUILD (tail) ---
-   Finalizing page optimization ...
    Collecting build traces ...
 
 Route (app)                              Size     First Load JS
-┌ ƒ /                                    175 B          92.4 kB
-├ ƒ /_not-found                          871 B            88 kB
+┌ ○ /                                    138 B          87.3 kB
+├ ○ /_not-found                          871 B            88 kB
 ├ ƒ /api/auth/login                      0 B                0 B
 ├ ƒ /api/auth/logout                     0 B                0 B
 ├ ○ /api/health                          0 B                0 B
-└ ƒ /login                               786 B          93.1 kB
+├ ○ /dashboard                           8.67 kB         105 kB
+└ ○ /login                               5.75 kB        92.9 kB
 + First Load JS shared by all            87.1 kB
-  ├ chunks/164-3dd24548912c64e6.js       31.6 kB
-  ├ chunks/7f222c64-e8f67f92d86d27e9.js  53.6 kB
-  └ other shared chunks (total)          1.89 kB
+  ├ chunks/164-19c6569c1672719b.js       31.6 kB
+  ├ chunks/7f222c64-90e476dbd15be589.js  53.6 kB
+  └ other shared chunks (total)          1.9 kB
 
 
-ƒ Middleware                             26.7 kB
+ƒ Middleware                             26.8 kB
 
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand

@@ -206,7 +206,7 @@ const DashboardPage = () => {
 
       {/* Header Section */}
       <div className="border-b border-border bg-surface">
-        <Container size="xl" padding="lg">
+        <Container maxWidth="xl" padding="lg">
           <Flex justify="between" align="center" className="py-6">
             <div>
               <h1 className="text-3xl font-bold text-fg">Dashboard</h1>
@@ -240,7 +240,7 @@ const DashboardPage = () => {
       </div>
 
       {/* Main Content */}
-      <Container size="xl" padding="lg">
+      <Container maxWidth="xl" padding="lg">
         <Stack spacing="xl" className="py-6">
           {/* Stats Grid */}
           <Grid cols={4} gap="lg">
@@ -355,8 +355,8 @@ const DashboardPage = () => {
                               activity.status === "completed"
                                 ? "bg-green-100 text-green-800"
                                 : activity.status === "pending"
-                                ? "bg-yellow-100 text-yellow-800"
-                                : "bg-red-100 text-red-800"
+                                  ? "bg-yellow-100 text-yellow-800"
+                                  : "bg-red-100 text-red-800"
                             }`}
                           >
                             {activity.status}
