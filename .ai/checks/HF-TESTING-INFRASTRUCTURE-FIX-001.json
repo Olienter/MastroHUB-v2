@@ -1,0 +1,20 @@
+{
+  "pid": "HF-TESTING-INFRASTRUCTURE-FIX-001",
+  "policy_version": "2025-08-23",
+  "manifest_commit": "4c97a08",
+  "role": "GPT",
+  "handoff_id": "HF-TESTING-INFRASTRUCTURE-FIX-001",
+  "status": "FIX_IN_PROGRESS",
+  "timestamp": "2025-08-30T13:40:00Z",
+  "intent": "Fix broken testing infrastructure by adding missing data-testid attributes and accessibility landmarks",
+  "issues_identified": [
+    "missing_data_testid",
+    "missing_accessibility_landmarks",
+    "component_rendering_failures"
+  ],
+  "fix_plan": [
+    "add_data_testid_attributes",
+    "fix_accessibility_landmarks",
+    "restore_component_visibility"
+  ]
+}

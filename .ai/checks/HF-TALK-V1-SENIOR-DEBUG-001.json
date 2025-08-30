@@ -1,0 +1,12 @@
+{
+  "pid": "HF-TALK-V1-SENIOR-DEBUG-001",
+  "policy_version": "2025-08-23",
+  "manifest_commit": "4c97a08",
+  "role": "GPT",
+  "handoff_id": "HF-TALK-V1-SENIOR-DEBUG-001",
+  "status": "SENIOR_DEBUG",
+  "timestamp": "2025-08-30T13:30:00Z",
+  "intent": "Senior developer analysis of TALK v1 system issues",
+  "issue": "talk_v1_system_not_working_properly",
+  "ci_pipeline_status": "running_partially"
+}

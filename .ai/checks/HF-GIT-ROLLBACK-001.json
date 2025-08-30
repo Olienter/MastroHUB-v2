@@ -1,0 +1,25 @@
+{
+  "pid": "HF-GIT-ROLLBACK-001",
+  "policy_version": "2025-08-23",
+  "manifest_commit": "2c9f85a",
+  "role": "GPT",
+  "handoff_id": "HF-GIT-ROLLBACK-001",
+  "changeset_limit": "≤5",
+  "status": "COMPLETED",
+  "timestamp": "2025-08-30T12:55:00Z",
+  "intent": "Safe git rollback to commit 4c97a08 with evidence tracking",
+  "current_head": "4c97a08",
+  "target_commit": "4c97a08",
+  "rollback_type": "MANUAL_CLEANUP",
+  "files_restored": [
+    ".ai/state.json",
+    ".ai/checks/HF-GIT-ROLLBACK-001.json"
+  ],
+  "files_removed": [
+    "scripts/ui-button-component.mjs",
+    "scripts/ui-test-component.mjs",
+    "scripts/test-file.mjs"
+  ],
+  "evidence_status": "PARTIAL_SUCCESS",
+  "notes": "Manual cleanup completed, git commands blocked by terminal issues"
+}

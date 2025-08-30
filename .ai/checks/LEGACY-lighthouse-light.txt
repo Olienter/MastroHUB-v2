@@ -1,2 +1,0 @@
-LH_LIGHT: OK - LCP~2.5s, CLS<0.1 (sample)
-DATE: 2025-08-23

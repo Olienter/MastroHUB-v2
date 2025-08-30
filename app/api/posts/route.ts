@@ -51,8 +51,7 @@ const fallbackPosts = [
 export async function GET(request: NextRequest) {
   try {
     // Parse and validate query parameters with safeParse
-    const { searchParams } = new URL(request.url);
-    const query = Object.fromEntries(searchParams.entries());
+    const query = Object.fromEntries(request.nextUrl.searchParams.entries());
 
     const queryValidation = PostListQuerySchema.safeParse(query);
 

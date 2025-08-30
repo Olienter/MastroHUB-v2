@@ -1,2 +1,0 @@
-LINK_CHECK: OK - 0 broken links (sample)
-DATE: 2025-08-23

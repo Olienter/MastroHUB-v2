@@ -1,0 +1,12 @@
+{
+  "pid": "HF-CI-PIPELINE-DEBUG-001",
+  "policy_version": "2025-08-23",
+  "manifest_commit": "4c97a08",
+  "role": "GPT",
+  "handoff_id": "HF-CI-PIPELINE-DEBUG-001",
+  "status": "DEBUGGING",
+  "timestamp": "2025-08-30T13:25:00Z",
+  "intent": "Debug why CI pipeline is not executing properly",
+  "issue": "ci_pipeline_not_executing",
+  "terminal_status": "red_terminal_stuck"
+}

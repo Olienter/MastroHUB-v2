@@ -13,7 +13,7 @@ export const SectionsGrid: React.FC<SectionsGridProps> = ({
   subtitle,
 }) => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-brand/5" data-testid="sections-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         {(title || subtitle) && (

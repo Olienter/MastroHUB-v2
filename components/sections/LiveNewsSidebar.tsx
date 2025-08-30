@@ -20,7 +20,7 @@ export const LiveNewsSidebar: React.FC<LiveNewsSidebarProps> = ({ posts }) => {
   return (
     <aside className="w-full lg:w-80 space-y-6">
       {/* Live News Section */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <div data-testid="live-feed" className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-bold text-gray-900">LIVE NEWS</h3>
           <span className="inline-flex items-center px-2 py-1 bg-red-100 text-red-800 text-xs font-medium rounded-full">

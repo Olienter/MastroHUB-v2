@@ -1,0 +1,12 @@
+{
+  "pid": "HF-TALK-V1-RECOVERY-001",
+  "policy_version": "2025-08-23",
+  "manifest_commit": "4c97a08",
+  "role": "GPT",
+  "handoff_id": "HF-TALK-V1-RECOVERY-001",
+  "status": "RECOVERING",
+  "timestamp": "2025-08-30T13:20:00Z",
+  "intent": "Recover TALK v1 core system that was accidentally deleted",
+  "issue": "talk_v1_core_file_deleted",
+  "recovery_action": "recreate_talk_v1_core_system"
+}

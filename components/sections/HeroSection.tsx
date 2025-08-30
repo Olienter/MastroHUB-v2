@@ -30,6 +30,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section
+      data-testid="hero"
+      role="banner"
       className="relative min-h-[250px] md:min-h-[300px] lg:min-h-[350px] flex items-center justify-center overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

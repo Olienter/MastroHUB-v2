@@ -1,0 +1,22 @@
+{
+  "pid": "HF-ROOT-CAUSE-ANALYSIS-001",
+  "policy_version": "2025-08-23",
+  "manifest_commit": "4c97a08",
+  "role": "GPT",
+  "handoff_id": "HF-ROOT-CAUSE-ANALYSIS-001",
+  "status": "ROOT_CAUSE_ANALYSIS",
+  "timestamp": "2025-08-30T13:45:00Z",
+  "intent": "Deep analysis of testing infrastructure failures to identify root cause",
+  "test_results": {
+    "total": 19,
+    "passed": 2,
+    "failed": 17,
+    "success_rate": "10.5%"
+  },
+  "critical_issues": [
+    "all_data_testid_selectors_failing",
+    "components_not_rendering",
+    "page_title_empty",
+    "mock_data_not_working"
+  ]
+}

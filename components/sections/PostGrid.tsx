@@ -62,7 +62,7 @@ export const PostGrid: React.FC<PostGridProps> = ({
 
   return (
     <section className="py-16">
-      <div className="w-full">
+      <div data-testid="articles-column" className="w-full">
         {/* Header with fade-in animation */}
         {(title || subtitle) && (
           <div

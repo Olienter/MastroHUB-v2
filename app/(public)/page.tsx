@@ -12,6 +12,8 @@ import { FeaturedPostCard } from "../../components/cards/FeaturedPostCard";
 import { PostGrid } from "../../components/sections/PostGrid";
 import { LiveNewsSidebar } from "../../components/sections/LiveNewsSidebar";
 import { NewsletterSection } from "../../components/sections/NewsletterSection";
+import { SectionsGrid } from "../../components/sections/SectionsGrid";
+import { TrendingTags } from "../../components/sections/TrendingTags";
 import { Container } from "../../components/ui/Container";
 import { Skeleton } from "../../components/ui/Skeleton";
 
@@ -73,6 +75,27 @@ export default function HomePage() {
     );
   }
 
+  // Ensure homeData is available
+  if (!homeData) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
+        <Header />
+        <main role="main" className="relative">
+          <div className="flex items-center justify-center min-h-[400px]">
+            <div className="text-center">
+              <h1 className="text-2xl font-bold text-gray-900 mb-4">
+                Loading...
+              </h1>
+              <p className="text-gray-600">
+                Please wait while we prepare your content.
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
       {/* Enhanced Header */}
@@ -81,12 +104,20 @@ export default function HomePage() {
       <main role="main" className="relative">
         {/* Hero Section - Enhanced */}
         <HeroSection
-          title="Discover the Art of Gastronomy"
+          title={
+            homeData.featuredPost?.title || "Discover the Art of Gastronomy"
+          }
           subtitle="Premium Magazine"
-          description="Your premier destination for gastronomy and hospitality insights, featuring exclusive content from world-renowned chefs and industry experts."
+          description={
+            homeData.featuredPost?.excerpt ||
+            "Your premier destination for gastronomy and hospitality insights, featuring exclusive content from world-renowned chefs and industry experts."
+          }
           ctaText="Explore Articles"
           ctaLink="/posts"
-          backgroundImage="/images/placeholders/hero-gastronomy.svg"
+          backgroundImage={
+            homeData.featuredPost?.featuredImage ||
+            "/images/placeholders/hero-gastronomy.svg"
+          }
         />
 
         {/* Enhanced Main Content Area */}
@@ -132,9 +163,9 @@ export default function HomePage() {
                 </div>
 
                 <PostGrid
-                  posts={homeData.latestPosts.slice(0, 6)}
-                  title=""
-                  subtitle=""
+                  posts={homeData.latestPosts?.slice(0, 6) || []}
+                  title="Latest Articles"
+                  subtitle="Stay updated with the newest insights from the gastronomy world"
                   showViewAll={true}
                   viewAllLink="/posts"
                 />
@@ -156,9 +187,9 @@ export default function HomePage() {
                 </div>
 
                 <PostGrid
-                  posts={homeData.popularPosts.slice(0, 6)}
-                  title=""
-                  subtitle=""
+                  posts={homeData.popularPosts?.slice(0, 6) || []}
+                  title="Popular Articles"
+                  subtitle="Most read and shared content from our community"
                   showViewAll={true}
                   viewAllLink="/posts/popular"
                 />
@@ -171,11 +202,25 @@ export default function HomePage() {
             {/* Right Column - Enhanced Live News Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-24">
-                <LiveNewsSidebar posts={homeData.latestPosts} />
+                <LiveNewsSidebar posts={homeData.latestPosts || []} />
               </div>
             </div>
           </div>
         </Container>
+
+        {/* Enhanced Sections Grid */}
+        <SectionsGrid
+          sections={homeData.sections || []}
+          title="Explore Our Sections"
+          subtitle="Discover curated content across gastronomy and hospitality"
+        />
+
+        {/* Enhanced Trending Tags */}
+        <TrendingTags
+          tags={homeData.trendingTags || []}
+          title="Trending Topics"
+          subtitle="What's hot in the gastronomy world"
+        />
       </main>
 
       {/* Enhanced Footer */}
