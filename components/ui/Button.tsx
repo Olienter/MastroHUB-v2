@@ -1,9 +1,18 @@
 import React from "react";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "primary" | "secondary" | "outline" | "ghost" | "link" | "destructive";
+  variant?:
+    | "default"
+    | "primary"
+    | "secondary"
+    | "outline"
+    | "ghost"
+    | "link"
+    | "destructive"
+    | "cta";
   size?: "sm" | "md" | "lg" | "icon";
   loading?: boolean;
+  asChild?: boolean;
   children: React.ReactNode;
 }
 
@@ -15,21 +24,29 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = "md",
       loading = false,
       disabled,
+      asChild = false,
       children,
       ...props
     },
     ref
   ) => {
-    const baseClasses = "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-95";
+    const baseClasses =
+      "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-95";
 
     const variants = {
-      default: "bg-blue-600 text-white hover:bg-blue-700 shadow-sm hover:shadow-md",
-      primary: "bg-blue-600 text-white hover:bg-blue-700 shadow-sm hover:shadow-md",
-      secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-300",
-      outline: "border border-gray-300 bg-transparent hover:bg-gray-50 hover:text-gray-900",
+      default:
+        "bg-blue-600 text-white hover:bg-blue-700 shadow-sm hover:shadow-md",
+      primary:
+        "bg-blue-600 text-white hover:bg-blue-700 shadow-sm hover:shadow-md",
+      secondary:
+        "bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-300",
+      outline:
+        "border border-gray-300 bg-transparent hover:bg-gray-50 hover:text-gray-900",
       ghost: "hover:bg-gray-100 hover:text-gray-900",
       link: "text-blue-600 underline-offset-4 hover:underline",
-      destructive: "bg-red-600 text-white hover:bg-red-700 shadow-sm hover:shadow-md",
+      destructive:
+        "bg-red-600 text-white hover:bg-red-700 shadow-sm hover:shadow-md",
+      cta: "bg-white text-black hover:bg-gray-100 shadow-lg hover:shadow-xl",
     };
 
     const sizes = {
@@ -40,6 +57,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const isDisabled = disabled || loading;
+
+    if (asChild && React.isValidElement(children)) {
+      return React.cloneElement(children, {
+        className: `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`,
+        ref,
+        disabled: isDisabled,
+        ...props,
+      });
+    }
 
     return (
       <button

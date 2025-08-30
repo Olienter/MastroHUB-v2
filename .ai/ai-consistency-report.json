@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-08-30T00:43:11.940Z",
+  "overall_score": 75,
+  "checks": {
+    "talk_v1_format": {
+      "status": "fail",
+      "score": 0
+    },
+    "decision_tracking": {
+      "status": "pass",
+      "score": 10
+    },
+    "manifest_consistency": {
+      "status": "pass",
+      "score": 10
+    },
+    "framework_implementation": {
+      "status": "pass",
+      "score": 10
+    }
+  },
+  "violations": [
+    "Main page missing TALK v1 format"
+  ],
+  "recommendations": [
+    "Ensure all AI interactions follow TALK v1 format"
+  ]
+}

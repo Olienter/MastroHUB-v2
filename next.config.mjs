@@ -1,16 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        port: "",
-        pathname: "/**",
-      },
-    ],
-  },
+  // Removed remotePatterns for Unsplash to prevent 404 errors
+  // All images now use local placeholder paths
 };
 
 export default nextConfig;

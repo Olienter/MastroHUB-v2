@@ -1,0 +1,24 @@
+{
+  "pid": "HF-MAIN-OPTIMIZATION-001",
+  "analysis_type": "Main Page Optimization Analysis",
+  "timestamp": "2025-01-27T10:00:00Z",
+  "build_status": "SUCCESS",
+  "build_warnings": [
+    "API route /api/posts has dynamic server usage warning"
+  ],
+  "page_size": "175 B",
+  "first_load_js": "92.4 kB",
+  "optimization_areas": [
+    "Performance",
+    "UX",
+    "SEO",
+    "Accessibility",
+    "Mobile"
+  ],
+  "priority_levels": {
+    "critical": 3,
+    "high": 5,
+    "medium": 4,
+    "low": 2
+  }
+}

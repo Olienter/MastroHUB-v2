@@ -15,13 +15,11 @@ const fallbackPosts = [
     excerpt: "Your premier destination for gastronomy and hospitality insights",
     content:
       "Welcome to MastroHUB, where culinary excellence meets hospitality innovation...",
-    featuredImage:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&h=600&fit=crop",
+    featuredImage: "/images/placeholders/hero-gastronomy.jpg",
     author: {
       id: "fallback-author",
       name: "MastroHUB Team",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+      avatar: "/images/placeholders/avatar-default.jpg",
       bio: "Your trusted source for gastronomy insights",
     },
     category: {

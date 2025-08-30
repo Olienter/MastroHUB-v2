@@ -21,7 +21,16 @@
     "build:typed": "pnpm run typecheck && pnpm run build",
     "verify:core": "node tools/diag/verify-core.mjs",
     "validate:css": "node tools/diag/validate-css.mjs",
-    "test:ui:ci": "pnpm build && playwright test --config tests/playwright.config.ts --reporter=html"
+    "test:ui:ci": "pnpm build && playwright test --config tests/playwright.config.ts --reporter=html",
+    "quality:gate": "node scripts/quality-gate.mjs",
+    "quality:check": "pnpm run quality:gate",
+    "ai:consistency": "node scripts/ai-consistency-check.mjs",
+    "improve:ux": "pnpm run quality:gate && pnpm run ai:consistency",
+    "precommit": "pnpm run quality:gate && pnpm run lint && pnpm run typecheck",
+    "ci:pipeline": "node scripts/ci-pipeline.mjs",
+    "ci:full": "pnpm run ci:pipeline",
+    "test:unit": "echo 'Unit tests not configured yet'",
+    "deploy:check": "pnpm run ci:pipeline && echo 'Ready for deployment'"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.16",
