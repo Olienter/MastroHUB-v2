@@ -1,0 +1,27 @@
+# Tailwind config - legitímne používa require()
+tailwind.config.js
+
+# Build artifacts
+dist/
+build/
+.next/
+out/
+
+# Generated files
+*.d.ts
+*.js.map
+
+# Node modules
+node_modules/
+
+# Public assets
+public/images/placeholders/placeholder-generator.js
+
+# Test files
+tests/
+**/*.spec.ts
+**/*.test.ts
+
+# Tools (third-party)
+tools/ai-ci-bridge/dist/
+tools/mcp-ai-evidence/dist/

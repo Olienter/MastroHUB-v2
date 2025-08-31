@@ -1,0 +1,9 @@
+{
+  "taskId": "build-project",
+  "success": true,
+  "exitCode": 0,
+  "output": "\n> mastrohub-v2@0.0.0 build C:\\Users\\olieb\\Mastro\n> next build\n\n  ▲ Next.js 14.2.32\n\n   Creating an optimized production build ...\n ✓ Compiled successfully\n   Linting and checking validity of types ...\n   Collecting page data ...\n   Generating static pages (0/6) ...\n   Generating static pages (1/6) \r\n   Generating static pages (2/6) \r\n   Generating static pages (4/6) \r\n ✓ Generating static pages (6/6)\n   Finalizing page optimization ...\n   Collecting build traces ...\n\nRoute (app)                              Size     First Load JS\n┌ ○ /                                    12.6 kB         113 kB\n├ ○ /_not-found                          871 B            88 kB\n├ ƒ /api/posts                           0 B                0 B\n├ ○ /dashboard                           5.2 kB          103 kB\n└ ○ /login                               767 B          93.2 kB\n+ First Load JS shared by all            87.1 kB\n  ├ chunks/164-88757c678bdfa42d.js       31.6 kB\n  ├ chunks/7f222c64-315438abd83c03f4.js  53.6 kB\n  └ other shared chunks (total)          1.89 kB\n\n\nƒ Middleware                             26.7 kB\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\n",
+  "errorOutput": "\n ⚠ The Next.js plugin was not detected in your ESLint configuration. See https://nextjs.org/docs/basic-features/eslint#migrating-existing-config\n",
+  "duration": 87320,
+  "timestamp": "2025-08-31T18:21:17.970Z"
+}

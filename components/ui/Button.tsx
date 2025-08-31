@@ -2,19 +2,12 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import {
-  colors,
-  spacing,
-  borderRadius,
-  shadows,
-  transitions,
-  typography,
-} from "@/lib/design-tokens";
+// Design tokens removed - using Tailwind classes instead
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "ghost" | "outline" | "danger";
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "sm" | "md" | "lg" | "xl" | "icon";
   isLoading?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
@@ -82,6 +75,12 @@ const buttonVariants = {
       px-8 py-4 
       text-xl font-semibold
       rounded-xl
+    `,
+    icon: `
+      p-2
+      text-base font-medium
+      rounded-lg
+      aspect-square
     `,
   },
 };

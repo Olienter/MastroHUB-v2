@@ -14,6 +14,7 @@ export interface Post {
     name: string;
     avatar?: string;
     bio?: string;
+    isAI?: boolean; // New: AI-generated content flag
   };
   category: Section;
   tags: Tag[];
@@ -24,6 +25,16 @@ export interface Post {
   likes: number;
   isFeatured: boolean;
   isPublished: boolean;
+  // New fields for AI content
+  aiGenerated?: boolean;
+  aiPrompt?: string;
+  aiModel?: string;
+  contentQuality?: 'draft' | 'review' | 'published' | 'archived';
+  seoData?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    keywords?: string[];
+  };
 }
 
 export interface Tag {
@@ -64,6 +75,51 @@ export interface HomePageData {
   popularPosts: Post[];
   sections: Section[];
   trendingTags: Tag[];
+  // New: AI content highlights
+  aiGeneratedPosts?: Post[];
+  dailyDigest?: {
+    date: string;
+    summary: string;
+    posts: Post[];
+  };
+}
+
+// ========================================
+// AI AGENT TYPES
+// ========================================
+
+export interface AIAgent {
+  id: string;
+  name: string;
+  role: 'content_creator' | 'editor' | 'curator' | 'analyst';
+  capabilities: string[];
+  lastActive: string;
+  dailyQuota: number;
+  contentQuality: number; // 0-100
+}
+
+export interface ContentGenerationRequest {
+  id: string;
+  prompt: string;
+  category: string;
+  targetAudience: string;
+  tone: 'professional' | 'casual' | 'academic' | 'conversational';
+  keywords: string[];
+  estimatedReadTime: number;
+  status: 'pending' | 'generating' | 'completed' | 'failed';
+  createdAt: string;
+  completedAt?: string;
+  generatedPost?: Post;
+}
+
+export interface ContentSchedule {
+  id: string;
+  title: string;
+  category: string;
+  scheduledDate: string;
+  aiAgent: string;
+  status: 'scheduled' | 'in_progress' | 'completed' | 'cancelled';
+  priority: 'low' | 'medium' | 'high' | 'urgent';
 }
 
 // ========================================
@@ -79,3 +135,5 @@ export interface ApiResponse<T> {
 
 export type PostListApiResponse = ApiResponse<PostListResponse>;
 export type HomePageApiResponse = ApiResponse<HomePageData>;
+export type AIAgentResponse = ApiResponse<AIAgent[]>;
+export type ContentGenerationResponse = ApiResponse<ContentGenerationRequest>;

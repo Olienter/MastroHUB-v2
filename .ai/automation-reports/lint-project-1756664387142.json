@@ -1,0 +1,9 @@
+{
+  "taskId": "lint-project",
+  "success": true,
+  "exitCode": 0,
+  "output": "\n> mastrohub-v2@0.0.0 lint C:\\Users\\olieb\\Mastro\n> eslint .\n\n",
+  "errorOutput": "",
+  "duration": 6830,
+  "timestamp": "2025-08-31T18:19:47.134Z"
+}

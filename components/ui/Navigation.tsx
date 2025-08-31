@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import { colors, spacing, transitions, typography } from "@/lib/design-tokens";
+// Design tokens removed - using Tailwind classes instead
 
 export interface NavigationItem {
   label: string;

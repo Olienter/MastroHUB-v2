@@ -1,56 +1,45 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
     "lib": [
-      "ES2022",
-      "DOM",
-      "DOM.Iterable"
+      "dom",
+      "dom.iterable",
+      "es6"
     ],
-    "jsx": "preserve",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "resolveJsonModule": true,
-    "allowJs": false,
-    "noEmit": true,
-    "strict": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./app/*"
-      ],
-      "@/components/*": [
-        "./app/components/*"
-      ],
-      "@/lib/*": [
-        "./lib/*"
-      ],
-      "@/styles/*": [
-        "./app/styles/*"
-      ],
-      "@/styles": [
-        "./app/styles"
-      ],
-      "@/ui/*": [
-        "./app/ui/*"
-      ]
-    },
+    "allowJs": true,
     "skipLibCheck": true,
-    "incremental": true,
+    "strict": true,
+    "noEmit": true,
     "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
     "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
   },
   "include": [
-    "app/**/*.ts",
-    "app/**/*.tsx",
     "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "scripts/**/*.ts",
+    "scripts/**/*.js",
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    ".next",
+    "out",
+    "dist"
   ]
 }

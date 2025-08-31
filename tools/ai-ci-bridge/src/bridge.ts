@@ -19,7 +19,7 @@ interface EvidenceData {
   headSha: string;
   implementation: string[];
   technicalChanges: string[];
-  validationResults: Record<string, any>;
+  validationResults: Record<string, unknown>;
   conclusion: string;
 }
 
@@ -90,8 +90,10 @@ ${data.technicalChanges.map((item) => `- ${item}`).join("\n")}
 ## VALIDATION RESULTS
 ${Object.entries(data.validationResults)
   .map(
-    ([key, value]) =>
-      `### **${key}:**\n- **Status:** ${value.status}\n- **Details:** ${value.details}`
+    ([key, value]) => {
+      const val = value as { status: string; details: string };
+      return `### **${key}:**\n- **Status:** ${val.status}\n- **Details:** ${val.details}`;
+    }
   )
   .join("\n\n")}
 
@@ -117,7 +119,8 @@ ${data.conclusion}
 
       await fs.appendFile(this.journalPath, entry, "utf8");
     } catch (error) {
-      console.warn(`Failed to add journal entry: ${error}`);
+              // eslint-disable-next-line no-console
+        console.warn(`Failed to add journal entry: ${error}`);
     }
   }
 
@@ -157,7 +160,7 @@ ${data.conclusion}
   /**
    * Validate evidence compliance
    */
-  async validateEvidenceCompliance(pid: string): Promise<Record<string, any>> {
+  async validateEvidenceCompliance(pid: string): Promise<Record<string, unknown>> {
     try {
       const evidencePath = path.join(this.evidencePath, `${pid}.txt`);
       const evidence = await fs.readFile(evidencePath, "utf8");
@@ -223,7 +226,7 @@ ${data.conclusion}
   /**
    * Get bridge status
    */
-  async getStatus(): Promise<Record<string, any>> {
+  async getStatus(): Promise<Record<string, unknown>> {
     return {
       status: "operational",
       version: "1.0.0",
@@ -249,9 +252,10 @@ async function main() {
 
   try {
     switch (command) {
-      case "create-evidence":
+      case "create-evidence": {
         if (args.length < 1) {
-          console.error("Usage: create-evidence <pid>");
+          // eslint-disable-next-line no-console
+        console.error("Usage: create-evidence <pid>");
           process.exit(1);
         }
         const evidenceData: EvidenceData = {
@@ -277,33 +281,44 @@ async function main() {
           conclusion: "Feature successfully implemented and validated",
         };
         const result = await bridge.createEvidence(evidenceData);
+        // eslint-disable-next-line no-console
         console.log(result);
         break;
+      }
 
-      case "trigger-ci":
+      case "trigger-ci": {
         if (args.length < 1) {
-          console.error("Usage: trigger-ci <workflow-name>");
+          // eslint-disable-next-line no-console
+        console.error("Usage: trigger-ci <workflow-name>");
           process.exit(1);
         }
         const ciResult = await bridge.triggerCIWorkflow(args[0]);
+        // eslint-disable-next-line no-console
         console.log(ciResult);
         break;
+      }
 
-      case "validate":
+      case "validate": {
         if (args.length < 1) {
-          console.error("Usage: validate <pid>");
+          // eslint-disable-next-line no-console
+        console.error("Usage: validate <pid>");
           process.exit(1);
         }
         const validation = await bridge.validateEvidenceCompliance(args[0]);
+        // eslint-disable-next-line no-console
         console.log(JSON.stringify(validation, null, 2));
         break;
+      }
 
-      case "status":
+      case "status": {
         const status = await bridge.getStatus();
+        // eslint-disable-next-line no-console
         console.log(JSON.stringify(status, null, 2));
         break;
+      }
 
       default:
+        // eslint-disable-next-line no-console
         console.log(`
 AI CI Bridge - Available Commands:
 
@@ -320,14 +335,16 @@ Examples:
         `);
     }
   } catch (error) {
-    console.error(`Error: ${error}`);
+            // eslint-disable-next-line no-console
+        console.error(`Error: ${error}`);
     process.exit(1);
   }
 }
 
 // Always run main function
 main().catch((error) => {
-  console.error(`Fatal error: ${error}`);
+          // eslint-disable-next-line no-console
+        console.error(`Fatal error: ${error}`);
   process.exit(1);
 });
 

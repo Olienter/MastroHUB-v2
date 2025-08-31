@@ -21,9 +21,9 @@ interface MegaMenuProps {
 
 const MegaMenu = React.forwardRef<HTMLElement, MegaMenuProps>(
   ({ items, className, orientation = "horizontal" }, ref) => {
-    const [activeItem, setActiveItem] = useState<string | null>(null);
+      const [activeItem, setActiveItem] = useState<string | null>(null);
 
-    const menuRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
     // Close menu when clicking outside
     useEffect(() => {
@@ -32,7 +32,6 @@ const MegaMenu = React.forwardRef<HTMLElement, MegaMenuProps>(
           menuRef.current &&
           !menuRef.current.contains(event.target as Node)
         ) {
-          setIsOpen(false);
           setActiveItem(null);
         }
       };
@@ -50,18 +49,15 @@ const MegaMenu = React.forwardRef<HTMLElement, MegaMenuProps>(
         // Handle navigation
         // Navigation logic will be implemented
       }
-      setIsOpen(false);
       setActiveItem(null);
     };
 
     const handleMouseEnter = (itemId: string) => {
       setActiveItem(itemId);
-      setIsOpen(true);
     };
 
     const handleMouseLeave = () => {
       setActiveItem(null);
-      setIsOpen(false);
     };
 
     const renderMenuItem = (item: MegaMenuItem, isTopLevel = false) => {

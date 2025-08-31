@@ -1,6 +1,6 @@
 {
   "pid": "HF-MCP-DIAG-RUN-001",
-  "timestamp_utc": "2025-08-30T23:33:17.409Z",
+  "timestamp_utc": "2025-08-31T17:51:07.701Z",
   "environment": {
     "os_platform": "win32",
     "os_release": "10.0.26100",
@@ -17,9 +17,9 @@
       ""
     ],
     "dist_exists": true,
-    "dist_size": 4724,
-    "dist_hash_sha256": "96d1a37efd27e515aaf220e198677b62a9f5ca133a0ad6a01d83deb4466ca348",
-    "dist_mtime_utc": "2025-08-25T17:58:26.794Z"
+    "dist_size": 8315,
+    "dist_hash_sha256": "508a7d76df19442544cc0e4bc75ae7276ab41a302735fa4298e97364c05203da",
+    "dist_mtime_utc": "2025-08-31T17:51:10.170Z"
   },
   "probe": {
     "tools_count": 3,
@@ -74,13 +74,13 @@
       "content": [
         {
           "type": "text",
-          "text": "{\"ok\":true,\"cwd\":\"C:\\\\Users\\\\olieb\\\\Mastro\\\\tools\\\\mcp-ai-evidence\",\"pid\":22140,\"sdk\":\"1.17.4\"}"
+          "text": "{\"ok\":true,\"cwd\":\"C:\\\\Users\\\\olieb\\\\Mastro\\\\tools\\\\mcp-ai-evidence\",\"pid\":20384,\"uptime\":0,\"memory\":{\"rss\":46,\"heapUsed\":8,\"heapTotal\":12},\"sdk\":\"1.17.4\",\"timestamp\":\"2025-08-31T17:51:10.443Z\"}"
         }
       ]
     },
     "error": null
   },
   "terminal_interaction": "AUTO",
-  "git_head_short": "a08c627",
+  "git_head_short": "c76de01",
   "result": "OK"
 }

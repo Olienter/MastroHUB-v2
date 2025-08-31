@@ -8,7 +8,8 @@
     "build": "tsc -p .",
     "check": "tsc -p . --noEmit",
     "start": "node dist/server.js",
-    "cursor:mcp": "node dist/server.js",
+    "start:managed": "node start-server.mjs",
+    "cursor:mcp": "node start-server.mjs",
     "test:e2e": "node test/e2e-client.mjs",
     "diag:mcp": "node scripts/diagnostic.mjs"
   },

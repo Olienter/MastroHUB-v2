@@ -1,0 +1,17 @@
+{
+  "id": "development-1756664578125",
+  "name": "development",
+  "startTime": "2025-08-31T18:19:40.290Z",
+  "endTime": "2025-08-31T18:22:58.125Z",
+  "duration": 197835,
+  "totalTasks": 0,
+  "successfulTasks": 0,
+  "failedTasks": 1,
+  "results": [],
+  "summary": {
+    "success": false,
+    "totalDuration": 197835,
+    "averageTaskDuration": 0,
+    "successRate": 0
+  }
+}

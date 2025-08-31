@@ -1,281 +1,270 @@
-import React from "react";
-import { cn } from "@/lib/utils";
-import { ChevronDown, ChevronUp, Filter, MoreHorizontal } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import React, { forwardRef, useState, useMemo } from 'react';
+import { cn } from '@/lib/utils';
+import { Button } from './Button';
+import { Input } from './Input';
+import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, Search, Download } from 'lucide-react';
 
-interface DataGridColumn<T> {
-  key: keyof T;
-  header: string;
-  sortable?: boolean;
-  filterable?: boolean;
-  width?: string;
-  render?: (value: T[keyof T], row: T) => React.ReactNode;
-}
-
-interface DataGridProps<T> {
+export interface DataGridProps<T extends Record<string, unknown>> {
   data: T[];
-  columns: DataGridColumn<T>[];
-  sortable?: boolean;
-  filterable?: boolean;
-  selectable?: boolean;
-  pagination?: boolean;
-  search?: boolean;
+  columns: {
+    key: keyof T;
+    header: string;
+    sortable?: boolean;
+    filterable?: boolean;
+    width?: string;
+  }[];
+  pageSize?: number;
   className?: string;
-  onSort?: (key: keyof T, direction: "asc" | "desc") => void;
-  onFilter?: (filters: Record<keyof T, string>) => void;
+  onRowClick?: (row: T) => void;
   onSelectionChange?: (selectedRows: T[]) => void;
-  sortKey?: keyof T;
-  sortDirection?: "asc" | "desc";
+  selectable?: boolean;
+  searchable?: boolean;
+  downloadable?: boolean;
 }
 
-const DataGrid = React.forwardRef<HTMLDivElement, DataGridProps<T>>(
-  (
-    {
-      data,
-      columns,
-      sortable = false,
-      filterable = false,
-      selectable = false,
-      pagination = false,
-      search = false,
-      className,
-      onSort,
-      onFilter,
-      onSelectionChange,
-      sortKey,
-      sortDirection,
-    },
-    ref
-  ) => {
-    const [searchTerm, setSearchTerm] = React.useState("");
-    const [currentPage, setCurrentPage] = React.useState(1);
-    const [selectedRows, setSelectedRows] = React.useState<T[]>([]);
-    const [filters, setFilters] = React.useState<Record<string, string>>({});
-    const [showFilters, setShowFilters] = React.useState(false);
-    const itemsPerPage = 10;
+export interface DataGridRef {
+  refresh: () => void;
+  setPage: (page: number) => void;
+  setSearchTerm: (term: string) => void;
+}
 
-    // Filter data based on search and filters
-    const filteredData = React.useMemo(() => {
-      let filtered = data;
+const DataGrid = forwardRef<DataGridRef, DataGridProps<Record<string, unknown>>>(
+  ({ 
+    data, 
+    columns, 
+    pageSize = 10, 
+    className,
+    onRowClick,
+    onSelectionChange,
+    selectable = false,
+    searchable = true,
+    downloadable = false
+  }, ref) => {
+    const [currentPage, setCurrentPage] = useState(1);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [sortColumn, setSortColumn] = useState<keyof Record<string, unknown> | null>(null);
+    const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+    const [selectedRows, setSelectedRows] = useState<Record<string, unknown>[]>([]);
+    const [filters, setFilters] = useState<Record<string, string>>({});
 
-      // Apply search
-      if (searchTerm) {
-        filtered = filtered.filter((row) =>
-          Object.values(row).some((value) =>
-            String(value).toLowerCase().includes(searchTerm.toLowerCase())
-          )
-        );
-      }
-
-      // Apply column filters
-      Object.entries(filters).forEach(([key, value]) => {
-        if (value) {
-          filtered = filtered.filter((row) =>
-            String(row[key]).toLowerCase().includes(value.toLowerCase())
-          );
+    // Filter and search data
+    const filteredData = useMemo(() => {
+      const filtered = data.filter(row => {
+        // Search across all columns
+        if (searchTerm) {
+          const searchLower = searchTerm.toLowerCase();
+          const hasMatch = columns.some(column => {
+            const value = row[column.key];
+            return value && String(value).toLowerCase().includes(searchLower);
+          });
+          if (!hasMatch) return false;
         }
+
+        // Apply column filters
+        for (const [key, filterValue] of Object.entries(filters)) {
+          if (filterValue && row[key as keyof Record<string, unknown>] !== filterValue) {
+            return false;
+          }
+        }
+
+        return true;
       });
 
+      // Sort data
+      if (sortColumn) {
+        filtered.sort((a, b) => {
+          const aVal = a[sortColumn];
+          const bVal = b[sortColumn];
+          
+          if (aVal === bVal) return 0;
+          if (aVal === null || aVal === undefined) return 1;
+          if (bVal === null || bVal === undefined) return -1;
+          
+          const comparison = String(aVal).localeCompare(String(bVal));
+          return sortDirection === 'asc' ? comparison : -comparison;
+        });
+      }
+
       return filtered;
-    }, [data, searchTerm, filters]);
+    }, [data, searchTerm, filters, sortColumn, sortDirection, columns]);
 
-    // Paginate data
-    const paginatedData = React.useMemo(() => {
-      if (!pagination) return filteredData;
+    // Pagination
+    const totalPages = Math.ceil(filteredData.length / pageSize);
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    const currentData = filteredData.slice(startIndex, endIndex);
 
-      const startIndex = (currentPage - 1) * itemsPerPage;
-      const endIndex = startIndex + itemsPerPage;
-      return filteredData.slice(startIndex, endIndex);
-    }, [filteredData, pagination, currentPage]);
-
-    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
-
-    const handleSort = (key: keyof T) => {
-      if (!sortable || !onSort) return;
-
-      const direction =
-        sortKey === key && sortDirection === "asc" ? "desc" : "asc";
-      onSort(key, direction);
-    };
-
-    const handleFilter = (key: string, value: string) => {
-      const newFilters = { ...filters, [key]: value };
-      setFilters(newFilters);
-      onFilter?.(newFilters);
-      setCurrentPage(1); // Reset to first page when filtering
-    };
-
-    const handleSelectAll = (checked: boolean) => {
-      if (checked) {
-        setSelectedRows(paginatedData);
-        onSelectionChange?.(paginatedData);
+    // Handle sorting
+    const handleSort = (column: keyof Record<string, unknown>) => {
+      if (sortColumn === column) {
+        setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
       } else {
-        setSelectedRows([]);
-        onSelectionChange?.([]);
+        setSortColumn(column);
+        setSortDirection('asc');
       }
     };
 
-    const handleSelectRow = (row: T, checked: boolean) => {
-      let newSelection;
-      if (checked) {
-        newSelection = [...selectedRows, row];
-      } else {
-        newSelection = selectedRows.filter((r) => r !== row);
-      }
+    // Handle row selection
+    const handleRowSelect = (row: Record<string, unknown>) => {
+      const newSelection = selectedRows.includes(row)
+        ? selectedRows.filter(r => r !== row)
+        : [...selectedRows, row];
+      
       setSelectedRows(newSelection);
       onSelectionChange?.(newSelection);
     };
 
-    const getSortIcon = (key: keyof T) => {
-      if (!sortable) return null;
-
-      if (sortKey === key) {
-        return sortDirection === "asc" ? (
-          <ChevronUp className="h-4 w-4" />
-        ) : (
-          <ChevronDown className="h-4 w-4" />
-        );
-      }
-
-      return <ChevronDown className="h-4 w-4 text-fg-muted" />;
+    // Handle select all
+    const handleSelectAll = () => {
+      const newSelection = selectedRows.length === currentData.length ? [] : currentData;
+      setSelectedRows(newSelection);
+      onSelectionChange?.(newSelection);
     };
 
+      // Handle filter change
+  const handleFilterChange = (column: keyof Record<string, unknown>, value: string) => {
+    setFilters(prev => ({
+      ...prev,
+      [column]: value
+    }));
+    setCurrentPage(1);
+  };
+
+    // Handle search change
+    const handleSearchChange = (value: string) => {
+      setSearchTerm(value);
+      setCurrentPage(1);
+    };
+
+    // Handle page change
+    const handlePageChange = (page: number) => {
+      setCurrentPage(Math.max(1, Math.min(page, totalPages)));
+    };
+
+    // Expose methods via ref
+    React.useImperativeHandle(ref, () => ({
+      refresh: () => {
+        setCurrentPage(1);
+        setSearchTerm('');
+        setFilters({});
+        setSortColumn(null);
+        setSortDirection('asc');
+      },
+      setPage: (page: number) => handlePageChange(page),
+      setSearchTerm: (term: string) => handleSearchChange(term),
+    }));
+
     return (
-      <div ref={ref} className={cn("space-y-4", className)}>
-        {/* Controls */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            {search && (
-              <input
-                type="text"
+      <div className={cn('w-full space-y-4', className)}>
+        {/* Search and Filters */}
+        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+          {searchable && (
+            <div className="relative flex-1 max-w-sm">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Input
                 placeholder="Search..."
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="flex h-9 w-full rounded-radius-2 border border-border bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-fg-muted focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-focus"
+                onChange={(e) => handleSearchChange(e.target.value)}
+                className="pl-10"
               />
-            )}
-
-            {filterable && (
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center space-x-2"
-              >
-                <Filter className="h-4 w-4" />
-                <span>Filters</span>
+            </div>
+          )}
+          
+          <div className="flex gap-2">
+            {downloadable && (
+              <Button variant="outline" size="sm">
+                <Download className="h-4 w-4 mr-2" />
+                Export
               </Button>
             )}
           </div>
-
-          {selectable && selectedRows.length > 0 && (
-            <div className="text-sm text-fg-muted">
-              {selectedRows.length} row(s) selected
-            </div>
-          )}
         </div>
 
-        {/* Filters */}
-        {filterable && showFilters && (
-          <div className="p-4 bg-surface border border-border rounded-radius-2">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {columns
-                .filter((col) => col.filterable)
-                .map((column) => (
-                  <div key={String(column.key)} className="space-y-2">
-                    <label className="text-sm font-medium text-fg">
-                      {column.header}
-                    </label>
-                    <input
-                      type="text"
-                      placeholder={`Filter ${column.header}...`}
-                      value={filters[String(column.key)] || ""}
-                      onChange={(e) =>
-                        handleFilter(String(column.key), e.target.value)
-                      }
-                      className="flex h-8 w-full rounded-radius-1 border border-border bg-transparent px-2 py-1 text-sm transition-colors placeholder:text-fg-muted focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-focus"
-                    />
-                  </div>
-                ))}
-            </div>
+        {/* Filters Row */}
+        {Object.keys(filters).length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {columns
+              .filter(col => col.filterable)
+              .map(column => (
+                <div key={String(column.key)} className="flex items-center gap-2">
+                  <span className="text-sm text-gray-600">{column.header}:</span>
+                  <Input
+                    placeholder={`Filter ${column.header}`}
+                    value={filters[String(column.key)] || ''}
+                    onChange={(e) => handleFilterChange(column.key, e.target.value)}
+                    className="w-32"
+                  />
+                </div>
+              ))}
           </div>
         )}
 
-        {/* Grid */}
-        <div className="rounded-radius-2 border border-border overflow-hidden">
+        {/* Data Table */}
+        <div className="border rounded-lg overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="w-full caption-bottom text-sm">
-              <thead className="border-b border-border bg-surface">
+            <table className="w-full">
+              <thead className="bg-gray-50 border-b">
                 <tr>
                   {selectable && (
-                    <th className="h-12 px-4 text-left align-middle">
+                    <th className="px-4 py-3 text-left">
                       <input
                         type="checkbox"
-                        checked={
-                          selectedRows.length === paginatedData.length &&
-                          paginatedData.length > 0
-                        }
-                        onChange={(e) => handleSelectAll(e.target.checked)}
-                        className="rounded border-border"
+                        checked={selectedRows.length === currentData.length && currentData.length > 0}
+                        onChange={handleSelectAll}
+                        className="rounded border-gray-300"
                       />
                     </th>
                   )}
-                  {columns.map((column) => (
+                  {columns.map(column => (
                     <th
                       key={String(column.key)}
                       className={cn(
-                        "h-12 px-4 text-left align-middle font-medium text-fg-muted",
-                        column.sortable &&
-                          sortable &&
-                          "cursor-pointer hover:bg-surface/50",
+                        'px-4 py-3 text-left text-sm font-medium text-gray-700',
+                        column.sortable && 'cursor-pointer hover:bg-gray-100',
                         column.width
                       )}
                       onClick={() => column.sortable && handleSort(column.key)}
                     >
-                      <div className="flex items-center space-x-2">
-                        <span>{column.header}</span>
-                        {column.sortable && getSortIcon(column.key)}
+                      <div className="flex items-center gap-2">
+                        {column.header}
+                        {column.sortable && sortColumn === column.key && (
+                          <span className="text-gray-400">
+                            {sortDirection === 'asc' ? '↑' : '↓'}
+                          </span>
+                        )}
                       </div>
                     </th>
                   ))}
-                  <th className="h-12 px-4 text-left align-middle w-12">
-                    <MoreHorizontal className="h-4 w-4 text-fg-muted" />
-                  </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border">
-                {paginatedData.map((row, rowIndex) => (
+              <tbody className="divide-y divide-gray-200">
+                {currentData.map((row, rowIndex) => (
                   <tr
                     key={rowIndex}
                     className={cn(
-                      "border-b border-border bg-transparent hover:bg-surface/50 transition-colors",
-                      selectedRows.includes(row) && "bg-brand/10"
+                      'hover:bg-gray-50 transition-colors',
+                      onRowClick && 'cursor-pointer'
                     )}
+                    onClick={() => onRowClick?.(row)}
                   >
                     {selectable && (
-                      <td className="p-4 align-middle">
+                      <td className="px-4 py-3">
                         <input
                           type="checkbox"
                           checked={selectedRows.includes(row)}
-                          onChange={(e) =>
-                            handleSelectRow(row, e.target.checked)
-                          }
-                          className="rounded border-border"
+                          onChange={() => handleRowSelect(row)}
+                          className="rounded border-gray-300"
                         />
                       </td>
                     )}
-                    {columns.map((column) => (
-                      <td key={String(column.key)} className="p-4 align-middle">
-                        {column.render
-                          ? column.render(row[column.key], row)
-                          : String(row[column.key] || "")}
+                    {columns.map(column => (
+                      <td
+                        key={String(column.key)}
+                        className="px-4 py-3 text-sm text-gray-900"
+                      >
+                        {String(row[column.key] ?? '')}
                       </td>
                     ))}
-                    <td className="p-4 align-middle">
-                      <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                        <MoreHorizontal className="h-4 w-4" />
-                      </Button>
-                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -284,49 +273,47 @@ const DataGrid = React.forwardRef<HTMLDivElement, DataGridProps<T>>(
         </div>
 
         {/* Pagination */}
-        {pagination && totalPages > 1 && (
+        {totalPages > 1 && (
           <div className="flex items-center justify-between">
-            <div className="text-sm text-fg-muted">
-              Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
-              {Math.min(currentPage * itemsPerPage, filteredData.length)} of{" "}
-              {filteredData.length} results
+            <div className="text-sm text-gray-700">
+              Showing {startIndex + 1} to {Math.min(endIndex, filteredData.length)} of {filteredData.length} results
             </div>
-
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handlePageChange(1)}
                 disabled={currentPage === 1}
-                className="flex h-8 w-8 items-center justify-center rounded-radius-1 border border-border bg-transparent text-sm font-medium transition-colors hover:bg-surface disabled:pointer-events-none disabled:opacity-50"
               >
-                ←
-              </button>
-
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                (page) => (
-                  <button
-                    key={page}
-                    onClick={() => setCurrentPage(page)}
-                    className={cn(
-                      "flex h-8 w-8 items-center justify-center rounded-radius-1 border text-sm font-medium transition-colors",
-                      page === currentPage
-                        ? "border-brand bg-brand text-brand-fg"
-                        : "border-border bg-transparent hover:bg-surface"
-                    )}
-                  >
-                    {page}
-                  </button>
-                )
-              )}
-
-              <button
-                onClick={() =>
-                  setCurrentPage(Math.min(totalPages, currentPage + 1))
-                }
+                <ChevronsLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              <span className="text-sm text-gray-700">
+                Page {currentPage} of {totalPages}
+              </span>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="flex h-8 w-8 items-center justify-center rounded-radius-1 border border-border bg-transparent text-sm font-medium transition-colors hover:bg-surface disabled:pointer-events-none disabled:opacity-50"
               >
-                →
-              </button>
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handlePageChange(totalPages)}
+                disabled={currentPage === totalPages}
+              >
+                <ChevronsRight className="h-4 w-4" />
+              </Button>
             </div>
           </div>
         )}
@@ -335,7 +322,6 @@ const DataGrid = React.forwardRef<HTMLDivElement, DataGridProps<T>>(
   }
 );
 
-DataGrid.displayName = "DataGrid";
+DataGrid.displayName = 'DataGrid';
 
 export { DataGrid };
-export type { DataGridProps, DataGridColumn };

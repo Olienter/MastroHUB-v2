@@ -1,0 +1,40 @@
+HF-COMM-PROTOCOLS-0001-P1 EVIDENCE
+DATE_UTC: 2025-08-31T17:51:14.323Z
+NODE: v22.18.0
+PNPM: 10.14.0
+HEAD: c76de01
+REMOTE:
+origin	https://github.com/Olienter/MastroHUB-v2.git (fetch)
+origin	https://github.com/Olienter/MastroHUB-v2.git (push)
+
+RESULT: FAIL
+NOTES:
+- Git working directory is not clean.
+
+--- TYPECHECK (tail) ---
+
+
+--- LINT (tail) ---
+
+
+--- BUILD (tail) ---
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    20.3 kB         113 kB
+├ ○ /_not-found                          871 B            88 kB
+├ ƒ /api/posts                           0 B                0 B
+└ ○ /login                               767 B          93.2 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/164-bfe60b4af805634a.js       31.6 kB
+  ├ chunks/7f222c64-315438abd83c03f4.js  53.6 kB
+  └ other shared chunks (total)          1.89 kB
+
+
+ƒ Middleware                             26.7 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand

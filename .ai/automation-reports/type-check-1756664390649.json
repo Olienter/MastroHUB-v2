@@ -1,0 +1,9 @@
+{
+  "taskId": "type-check",
+  "success": true,
+  "exitCode": 0,
+  "output": "\n> mastrohub-v2@0.0.0 type-check C:\\Users\\olieb\\Mastro\n> tsc --noEmit\n\n",
+  "errorOutput": "",
+  "duration": 3503,
+  "timestamp": "2025-08-31T18:19:50.648Z"
+}

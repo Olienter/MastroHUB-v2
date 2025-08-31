@@ -9,7 +9,7 @@ import { getHomePageData } from "@/lib/mock-data";
 import { HomePageData, Section } from "@/lib/types";
 import { Header } from "../../components/layout/Header";
 import { HeroSection } from "../../components/sections/HeroSection";
-import { FeaturedPostCard } from "../../components/cards/FeaturedPostCard";
+import { FeaturedPostCard } from "../../components/cards/PostCard";
 import { PostGrid } from "../../components/sections/PostGrid";
 import { LiveNewsSidebar } from "../../components/sections/LiveNewsSidebar";
 import { NewsletterSection } from "../../components/sections/NewsletterSection";

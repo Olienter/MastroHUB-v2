@@ -7,7 +7,6 @@ import {
   spacing,
   typography,
   shadows,
-  transitions,
   borderRadius,
 } from "../../lib/design-tokens";
 

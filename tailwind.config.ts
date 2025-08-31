@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
   darkMode: ["class"],
@@ -262,7 +263,8 @@ const config: Config = {
   },
   plugins: [
     // ===== CUSTOM PLUGINS =====
-    function ({ addUtilities }: { addUtilities: (utilities: Record<string, any>) => void }) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function ({ addUtilities }: { addUtilities: (utilities: any) => void }) {
       const newUtilities = {
         // ===== CONTAINER QUERIES =====
         ".cq-xs": { containerType: "inline-size" },
@@ -304,7 +306,7 @@ const config: Config = {
       addUtilities(newUtilities);
     },
     // ===== TAILWIND ANIMATE PLUGIN =====
-    import("tailwindcss-animate"),
+    tailwindcssAnimate,
   ],
 };
 

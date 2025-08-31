@@ -1,51 +1,22 @@
 "use client";
 
 import React from "react";
-import { cn } from "@/lib/utils";
-import {
-  colors,
-  spacing,
-  borderRadius,
-  shadows,
-  transitions,
-} from "@/lib/design-tokens";
+import { cn } from "../../lib/utils";
+
+// Design tokens removed - using Tailwind classes instead
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: "default" | "featured" | "news" | "elevated" | "outlined";
+  variant?: "default" | "elevated" | "outlined" | "featured";
   size?: "sm" | "md" | "lg";
   isHoverable?: boolean;
-  children: React.ReactNode;
 }
 
 const cardVariants = {
   variant: {
-    default: `
-      bg-white 
-      border border-gray-200
-      shadow-sm
-    `,
-    featured: `
-      bg-gradient-to-br from-red-50 to-orange-50
-      border border-red-200
-      shadow-md
-      relative overflow-hidden
-    `,
-    news: `
-      bg-white 
-      border border-gray-200
-      shadow-sm
-      hover:shadow-md
-    `,
-    elevated: `
-      bg-white 
-      border border-gray-200
-      shadow-lg
-    `,
-    outlined: `
-      bg-transparent 
-      border-2 border-gray-300
-      shadow-none
-    `,
+    default: "bg-white border border-gray-200",
+    elevated: "bg-white shadow-lg border-0",
+    outlined: "bg-white border-2 border-gray-300",
+    featured: "bg-gradient-to-br from-white to-gray-50 border-2 border-yellow-200 shadow-xl",
   },
   size: {
     sm: "p-4",
@@ -57,10 +28,10 @@ const cardVariants = {
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (
     {
-      className,
       variant = "default",
       size = "md",
       isHoverable = false,
+      className,
       children,
       ...props
     },
@@ -101,62 +72,4 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
 
 Card.displayName = "Card";
 
-// Card sub-components for better composition
-export const CardHeader = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex flex-col space-y-1.5 pb-4", className)}
-    {...props}
-  />
-));
-CardHeader.displayName = "CardHeader";
-
-export const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  <h3
-    ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight text-gray-900",
-      className
-    )}
-    {...props}
-  />
-));
-CardTitle.displayName = "CardTitle";
-
-export const CardDescription = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
-  <p
-    ref={ref}
-    className={cn("text-sm text-gray-600 leading-relaxed", className)}
-    {...props}
-  />
-));
-CardDescription.displayName = "CardDescription";
-
-export const CardContent = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("pt-0", className)} {...props} />
-));
-CardContent.displayName = "CardContent";
-
-export const CardFooter = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn("flex items-center pt-4", className)}
-    {...props}
-  />
-));
-CardFooter.displayName = "CardFooter";
+// Card sub-components removed - not used in current implementation
