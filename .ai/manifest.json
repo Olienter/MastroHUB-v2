@@ -104,9 +104,9 @@
     "talk_v1_core": "talk-v1-core.mjs"
   },
   "ai_consistency": {
-    "last_check": "2025-08-31T15:02:00.000Z",
-    "overall_score": 75,
-    "violations_count": 1,
-    "recommendations_count": 1
+    "last_check": "2025-08-31T22:03:25.448Z",
+    "overall_score": 100,
+    "violations_count": 0,
+    "recommendations_count": 0
   }
 }

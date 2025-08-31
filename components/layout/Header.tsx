@@ -69,11 +69,7 @@ export const Header: React.FC<HeaderProps> = ({
               <a
                 key={item.id}
                 href={item.href}
-                className="font-medium transition-colors"
-                style={{ 
-                  color: '#111827',
-                  ':hover': { color: '#dc2626' }
-                }}
+                className="font-medium transition-colors text-gray-900 hover:text-red-600"
               >
                 {item.label}
               </a>
@@ -89,12 +85,7 @@ export const Header: React.FC<HeaderProps> = ({
             )}
             {config.showLogin && (
               <button 
-                className="px-4 py-2 rounded-lg transition-colors"
-                style={{
-                  backgroundColor: '#dc2626',
-                  color: 'white',
-                  ':hover': { backgroundColor: '#b91c1c' }
-                }}
+                className="px-4 py-2 rounded-lg transition-colors bg-red-600 text-white hover:bg-red-700"
               >
                 Login
               </button>
@@ -111,11 +102,7 @@ export const Header: React.FC<HeaderProps> = ({
               <a
                 key={item.id}
                 href={item.href}
-                className="transition-colors"
-                style={{ 
-                  color: '#6b7280',
-                  ':hover': { color: '#dc2626' }
-                }}
+                className="transition-colors text-gray-500 hover:text-red-600"
               >
                 {item.label}
               </a>

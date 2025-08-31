@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-08-31T22:03:27.828Z",
+  "workflow": {
+    "current_step": 5,
+    "total_steps": 5,
+    "status": "completed",
+    "results": {
+      "step1": {
+        "status": "pass",
+        "score": 100
+      },
+      "step2": {
+        "status": "pass",
+        "score": 100
+      },
+      "step3": {
+        "status": "pass",
+        "score": 100
+      },
+      "step4": {
+        "status": "pass",
+        "score": 100
+      },
+      "step5": {
+        "status": "pass",
+        "score": 100
+      }
+    },
+    "compliance": 100
+  },
+  "summary": {
+    "status": "completed",
+    "compliance": 100,
+    "steps_completed": 5,
+    "total_steps": 5
+  }
+}

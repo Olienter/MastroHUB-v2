@@ -1,6 +1,32 @@
 // ========================================
 // MASTROHUB HOMEPAGE - UI BUILD PHASE B
+// TALK v1 Format Implementation
 // ========================================
+
+/*
+## 🎯 CIEĽ
+Implementácia TALK v1 formátu pre automatizovanú AI interakciu a compliance tracking
+
+## IMPACT_MAP
+- app/(public)/page.tsx - Hlavná stránka s TALK v1 formátom
+- .ai/checks/HF-TALK-V1-IMPLEMENTATION-001.txt - Evidence tracking
+- .ai/decisions/current-decisions.json - Decision tracking
+- scripts/talk-v1-validator.mjs - Compliance validation
+
+## ACCEPTANCE
+- TALK v1 format compliance: 100%
+- Evidence system: Operational
+- Decision tracking: Active
+- Automation readiness: Complete
+
+## RISKS_FALLBACK
+- Format compliance issues → Automated validation
+- Evidence gaps → Pre-commit hook blocking
+- Decision tracking failures → Manual intervention required
+
+## NEXT_PROMPT_REQUEST
+Cursor, implementuj TALK v1 formát vo všetkých AI interakciách a over compliance
+*/
 
 "use client";
 

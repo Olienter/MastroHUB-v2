@@ -1,20 +1,20 @@
 {
-  "timestamp": "2025-08-31T22:03:25.448Z",
-  "overall_score": 100,
-  "checks": {
-    "talk_v1_format": {
+  "timestamp": "2025-08-31T22:03:27.371Z",
+  "overall_score": 10,
+  "compliance": {
+    "format": {
       "status": "pass",
       "score": 10
     },
-    "decision_tracking": {
+    "evidence": {
       "status": "pass",
       "score": 10
     },
-    "manifest_consistency": {
+    "decisions": {
       "status": "pass",
       "score": 10
     },
-    "framework_implementation": {
+    "automation": {
       "status": "pass",
       "score": 10
     }

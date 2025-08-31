@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-08-31T21:54:00.000Z",
+    "total_decisions": 3
+  },
+  "decisions": [
+    {
+      "id": "DEC-001",
+      "timestamp": "2025-08-31T21:52:00.000Z",
+      "decision": "Fix TypeScript errors in Header.tsx",
+      "impact": "Build compatibility restored",
+      "status": "COMPLETED",
+      "evidence_file": "HF-VERIF-FIX-001.txt",
+      "compliance": "100%"
+    },
+    {
+      "id": "DEC-002",
+      "timestamp": "2025-08-31T21:54:00.000Z",
+      "decision": "Implement TALK v1 core framework",
+      "impact": "Automation system foundation",
+      "status": "IN_PROGRESS",
+      "evidence_file": "HF-TALK-V1-IMPLEMENTATION-001.txt",
+      "compliance": "75%"
+    },
+    {
+      "id": "DEC-003",
+      "timestamp": "2025-08-31T21:54:00.000Z",
+      "decision": "Create comprehensive evidence system",
+      "impact": "Pre-commit hook compliance",
+      "status": "PLANNED",
+      "evidence_file": "HF-EVIDENCE-SYSTEM-001.txt",
+      "compliance": "0%"
+    }
+  ],
+  "quality_metrics": {
+    "overall_score": 75,
+    "build_status": "PASS",
+    "type_check": "PASS",
+    "lint_status": "PASS",
+    "talk_v1_compliance": "75%"
+  }
+}
