@@ -25,12 +25,12 @@ export const Header: React.FC<HeaderProps> = ({
       className={`bg-white shadow-sm border-b border-gray-200 ${className}`}
     >
       {/* Top Bar */}
-      <div className="bg-red-600 text-white">
+      <div style={{ backgroundColor: '#dc2626', color: 'white' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-12">
             {/* Logo */}
             <div className="flex items-center">
-              <h1 className="text-xl font-bold">MastroHUB</h1>
+              <h1 className="text-xl font-bold" style={{ color: 'white' }}>MastroHUB</h1>
             </div>
 
             {/* Top Navigation */}
@@ -40,6 +40,7 @@ export const Header: React.FC<HeaderProps> = ({
                   key={item.id}
                   href={item.href}
                   className="hover:text-red-200 transition-colors"
+                  style={{ color: 'white' }}
                 >
                   {item.label}
                 </a>
@@ -49,10 +50,10 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Weather & Date */}
             {config.showWeather && (
               <div className="flex items-center space-x-4 text-sm">
-                <span>
+                <span style={{ color: 'white' }}>
                   {weather.icon} {weather.temperature} - {weather.location}
                 </span>
-                <span>{currentDate}</span>
+                <span style={{ color: 'white' }}>{currentDate}</span>
               </div>
             )}
           </div>
@@ -68,7 +69,11 @@ export const Header: React.FC<HeaderProps> = ({
               <a
                 key={item.id}
                 href={item.href}
-                className="text-gray-900 hover:text-red-600 font-medium transition-colors"
+                className="font-medium transition-colors"
+                style={{ 
+                  color: '#111827',
+                  ':hover': { color: '#dc2626' }
+                }}
               >
                 {item.label}
               </a>
@@ -83,7 +88,14 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             )}
             {config.showLogin && (
-              <button className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+              <button 
+                className="px-4 py-2 rounded-lg transition-colors"
+                style={{
+                  backgroundColor: '#dc2626',
+                  color: 'white',
+                  ':hover': { backgroundColor: '#b91c1c' }
+                }}
+              >
                 Login
               </button>
             )}
@@ -99,7 +111,11 @@ export const Header: React.FC<HeaderProps> = ({
               <a
                 key={item.id}
                 href={item.href}
-                className="text-gray-600 hover:text-red-600 transition-colors"
+                className="transition-colors"
+                style={{ 
+                  color: '#6b7280',
+                  ':hover': { color: '#dc2626' }
+                }}
               >
                 {item.label}
               </a>

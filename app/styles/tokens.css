@@ -4,16 +4,16 @@
 
 :root {
   /* ===== COLOR TOKENS ===== */
-  /* Light theme defaults */
-  --color-bg: oklch(1 0 0);
-  --color-fg: oklch(0.2 0 0);
-  --color-fg-subtle: oklch(0.4 0 0);
-  --color-fg-muted: oklch(0.6 0 0);
+  /* Light theme defaults - IMPROVED CONTRAST */
+  --color-bg: oklch(1 0 0);                    /* White background */
+  --color-fg: oklch(0.15 0 0);                 /* Dark text - IMPROVED from 0.2 */
+  --color-fg-subtle: oklch(0.3 0 0);           /* Medium text - IMPROVED from 0.4 */
+  --color-fg-muted: oklch(0.5 0 0);            /* Light text - IMPROVED from 0.6 */
 
-  /* Brand colors */
-  --color-brand: oklch(0.72 0.2 25);
-  --color-brand-subtle: oklch(0.85 0.15 25);
-  --color-brand-muted: oklch(0.95 0.1 25);
+  /* Brand colors - GASTRONOMY THEME */
+  --color-brand: oklch(0.65 0.25 25);          /* Rich red - food passion */
+  --color-brand-subtle: oklch(0.75 0.2 25);    /* Lighter red */
+  --color-brand-muted: oklch(0.9 0.1 25);      /* Very light red */
 
   /* Semantic colors */
   --color-focus: oklch(0.75 0.18 250);
@@ -21,17 +21,33 @@
   --color-warning: oklch(0.75 0.2 80);
   --color-error: oklch(0.65 0.2 25);
 
-  /* UI colors */
-  --color-border: oklch(0.9 0 0);
-  --color-border-subtle: oklch(0.95 0 0);
-  --color-surface: oklch(0.98 0 0);
-  --color-surface-subtle: oklch(0.96 0 0);
+  /* UI colors - IMPROVED CONTRAST */
+  --color-border: oklch(0.8 0 0);              /* Darker border - IMPROVED from 0.9 */
+  --color-border-subtle: oklch(0.85 0 0);      /* Medium border - IMPROVED from 0.95 */
+  --color-surface: oklch(0.98 0 0);            /* White surface */
+  --color-surface-subtle: oklch(0.95 0 0);     /* Light surface - IMPROVED from 0.96 */
 
   /* Code & table colors */
   --color-code-bg: oklch(0.96 0 0);
-  --color-code-fg: oklch(0.3 0 0);
-  --color-table-header: oklch(0.97 0 0);
+  --color-code-fg: oklch(0.2 0 0);             /* Darker code text - IMPROVED */
+  --color-table-header: oklch(0.95 0 0);        /* Lighter table header */
   --color-select: oklch(0.8 0.15 250);
+
+  /* ===== GASTRONOMY-SPECIFIC COLORS ===== */
+  --color-gastronomy-primary: oklch(0.65 0.25 25);    /* Rich red - main brand */
+  --color-gastronomy-secondary: oklch(0.2 0.05 250);  /* Dark blue - sophistication */
+  --color-gastronomy-accent: oklch(0.75 0.2 80);      /* Orange - warmth & creativity */
+  --color-gastronomy-warm: oklch(0.85 0.15 60);       /* Warm yellow */
+  --color-gastronomy-cool: oklch(0.7 0.1 200);        /* Cool blue */
+  --color-gastronomy-neutral: oklch(0.3 0.02 60);     /* Neutral brown */
+
+  /* ===== GASTRONOMY-SPECIFIC COLORS ===== */
+  --color-gastronomy-primary: oklch(0.65 0.25 25);    /* Rich red - main brand */
+  --color-gastronomy-secondary: oklch(0.2 0.05 250);  /* Dark blue - sophistication */
+  --color-gastronomy-accent: oklch(0.75 0.2 80);      /* Orange - warmth & creativity */
+  --color-gastronomy-warm: oklch(0.85 0.15 60);       /* Warm yellow */
+  --color-gastronomy-cool: oklch(0.7 0.1 200);        /* Cool blue */
+  --color-gastronomy-neutral: oklch(0.3 0.02 60);     /* Neutral brown */
 
   /* ===== SPACING TOKENS ===== */
   --space-0: 0;

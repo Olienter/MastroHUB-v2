@@ -733,3 +733,95 @@ footer {
   background: #ffffff !important;
   background-color: #ffffff !important;
 }
+
+/* ===== HARDCODED COLOR OVERRIDES FOR READABILITY ===== */
+.text-gray-900 {
+  color: #111827 !important;
+}
+
+.text-gray-800 {
+  color: #1f2937 !important;
+}
+
+.text-gray-700 {
+  color: #374151 !important;
+}
+
+.text-gray-600 {
+  color: #4b5563 !important;
+}
+
+.text-gray-500 {
+  color: #6b7280 !important;
+}
+
+.text-gray-400 {
+  color: #9ca3af !important;
+}
+
+.text-gray-300 {
+  color: #d1d5db !important;
+}
+
+.text-gray-200 {
+  color: #e5e7eb !important;
+}
+
+.text-gray-100 {
+  color: #f3f4f6 !important;
+}
+
+.text-gray-50 {
+  color: #f9fafb !important;
+}
+
+/* ===== GASTRONOMY BRAND COLORS ===== */
+.text-gastronomy-primary {
+  color: #dc2626 !important;
+}
+
+.text-gastronomy-secondary {
+  color: #1f2937 !important;
+}
+
+.text-gastronomy-accent {
+  color: #ea580c !important;
+}
+
+.bg-gastronomy-primary {
+  background-color: #dc2626 !important;
+}
+
+.bg-gastronomy-secondary {
+  background-color: #1f2937 !important;
+}
+
+.bg-gastronomy-accent {
+  background-color: #ea580c !important;
+}
+
+/* ===== FORCE DARK TEXT ON WHITE BACKGROUND ===== */
+h1, h2, h3, h4, h5, h6 {
+  color: #111827 !important;
+}
+
+p, span, div {
+  color: #374151 !important;
+}
+
+/* ===== OVERRIDE LIGHT BLUE TEXT ===== */
+.text-blue-400,
+.text-blue-300,
+.text-blue-200,
+.text-blue-100 {
+  color: #1f2937 !important;
+}
+
+/* ===== FORCE PROPER CONTRAST ===== */
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-black {
+  color: #000000 !important;
+}

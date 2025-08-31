@@ -3,10 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
-import {
-  colors,
-  typography,
-} from "@/lib/design-tokens";
 
 interface HeroSectionProps {
   title: string;
@@ -37,6 +33,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       data-testid="hero"
       role="banner"
       className="relative min-h-[250px] md:min-h-[300px] lg:min-h-[350px] flex items-center justify-center overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #dc2626 0%, #1f2937 50%, #374151 100%)'
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -48,11 +47,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           transform: isHovered ? "scale(1.05)" : "scale(1)",
         }}
       >
-        {/* Fallback gastro gradient using design tokens */}
+        {/* Fallback gastro gradient using hardcoded colors */}
         <div
           className="absolute inset-0 transition-opacity duration-500"
           style={{
-            background: `linear-gradient(135deg, ${colors.primary[900]} 0%, ${colors.primary[800]} 50%, ${colors.secondary[800]} 100%)`,
+            background: 'linear-gradient(135deg, #dc2626 0%, #1f2937 50%, #ea580c 100%)',
           }}
         />
         <div className="absolute inset-0 bg-black/30 transition-opacity duration-500" />
@@ -73,23 +72,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             }`}
             style={{ transitionDelay: "0ms" }}
           >
-            <span className="text-sm font-medium">{subtitle}</span>
+            <span className="text-sm font-medium text-white">{subtitle}</span>
           </div>
 
           {/* Main Title with fade-in and scale animation */}
           <h1
-            className={`font-bold leading-tight transition-all duration-1000 ${
+            className={`font-bold leading-tight transition-all duration-1000 text-white ${
               isVisible
                 ? "translate-y-0 opacity-100 scale-100"
                 : "translate-y-12 opacity-0 scale-95"
             }`}
             style={{
               transitionDelay: "200ms",
-              fontFamily: typography.presets.h1.fontFamily,
               fontSize: "clamp(2.5rem, 8vw, 4.5rem)",
-              fontWeight: typography.presets.h1.fontWeight,
-              lineHeight: typography.presets.h1.lineHeight,
-              letterSpacing: typography.presets.h1.letterSpacing,
+              fontWeight: 800,
+              lineHeight: 1.1,
+              letterSpacing: "-0.02em",
             }}
           >
             {title}
@@ -104,10 +102,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             }`}
             style={{
               transitionDelay: "400ms",
-              fontFamily: typography.presets.body.fontFamily,
               fontSize: "clamp(1.125rem, 2.5vw, 1.25rem)",
-              fontWeight: typography.presets.body.fontWeight,
-              lineHeight: typography.presets.body.lineHeight,
+              fontWeight: 400,
+              lineHeight: 1.6,
             }}
           >
             {description}
@@ -127,6 +124,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 variant="primary"
                 size="lg"
                 className="transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
+                style={{
+                  backgroundColor: '#ffffff',
+                  color: '#dc2626',
+                }}
               >
                 {ctaText}
               </Button>

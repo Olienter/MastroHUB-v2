@@ -39,6 +39,16 @@ const config: Config = {
         "code-fg": "var(--color-code-fg)",
         "table-header": "var(--color-table-header)",
         select: "var(--color-select)",
+
+        // ===== GASTRONOMY-SPECIFIC COLORS =====
+        gastronomy: {
+          primary: "var(--color-gastronomy-primary)",
+          secondary: "var(--color-gastronomy-secondary)",
+          accent: "var(--color-gastronomy-accent)",
+          warm: "var(--color-gastronomy-warm)",
+          cool: "var(--color-gastronomy-cool)",
+          neutral: "var(--color-gastronomy-neutral)",
+        },
       },
 
       // ===== SPACING FROM CSS VARS =====
