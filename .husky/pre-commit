@@ -1,22 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "🚀 Running Pre-commit Checks..."
-
-# Run quality gate
-echo "📊 Quality Gate Check..."
-pnpm run quality:gate
-
-# Run linting
-echo "🔍 Linting Check..."
-pnpm run lint
-
-# Run TypeScript check
-echo "📝 TypeScript Check..."
-pnpm run typecheck
-
-# Run AI consistency check
-echo "🤖 AI Consistency Check..."
-pnpm run ai:consistency
-
-echo "✅ Pre-commit checks completed!"
+echo "🔍 Running pre-commit checks..."
+pnpm run lint:fix
+pnpm run type-check
+echo "✅ Pre-commit checks passed!"

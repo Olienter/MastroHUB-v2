@@ -64,14 +64,11 @@ function passThrough() {
 }
 
 export function middleware(req: NextRequest) {
-  console.log("🔒 MIDDLEWARE EXECUTED:", req.nextUrl.pathname);
-
   const authed = Boolean(req.cookies.get("mhv2_auth")?.value);
   const url = req.nextUrl.clone();
 
   // allow public paths
   if (isPublic(req)) {
-    console.log("📖 PUBLIC PATH:", req.nextUrl.pathname);
     // if user is authed and tries to open /login, redirect home
     if (authed && url.pathname === "/login") {
       url.pathname = "/";
@@ -82,12 +79,10 @@ export function middleware(req: NextRequest) {
 
   // protect everything else
   if (!authed) {
-    console.log("🚫 UNAUTHORIZED ACCESS:", req.nextUrl.pathname);
     url.pathname = "/login";
     return NextResponse.redirect(url);
   }
 
-  console.log("✅ AUTHORIZED ACCESS:", req.nextUrl.pathname);
   return passThrough();
 }
 

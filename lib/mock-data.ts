@@ -282,8 +282,8 @@ export const getHomePageData = () => {
       sections,
       trendingTags,
     };
-  } catch (error) {
-    console.warn("Error in getHomePageData, using fallback:", error);
+  } catch {
+    // Error in getHomePageData, using fallback
 
     // Fallback data structure with LOCAL placeholder images
     const fallbackPost = {

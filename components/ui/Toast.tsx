@@ -31,7 +31,6 @@ const Toast = React.forwardRef<HTMLDivElement, ToastProps>(
     { id, type = "info", title, message, duration = 5000, onClose, className },
     ref
   ) => {
-    const [isVisible, setIsVisible] = useState(true);
     const [isExiting, setIsExiting] = useState(false);
     const timeoutRef = useRef<NodeJS.Timeout>();
 

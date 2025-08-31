@@ -76,7 +76,7 @@ const MobileNavigation = React.forwardRef<
         item.onClick();
       }
       if (item.href) {
-        console.log("Navigating to:", item.href);
+        // Navigation logic will be implemented
       }
       setIsOpen(false);
       setActiveItem(null);

@@ -77,5 +77,5 @@ export interface ApiResponse<T> {
   error?: string;
 }
 
-export interface PostListApiResponse extends ApiResponse<PostListResponse> {}
-export interface HomePageApiResponse extends ApiResponse<HomePageData> {}
+export type PostListApiResponse = ApiResponse<PostListResponse>;
+export type HomePageApiResponse = ApiResponse<HomePageData>;

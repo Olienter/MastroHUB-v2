@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Post } from "../../lib/types";
 import {
   colors,
@@ -175,7 +175,7 @@ export const LiveNewsSidebar: React.FC<LiveNewsSidebarProps> = ({ posts }) => {
         </h3>
 
         <div className="space-y-4">
-          {posts.slice(0, 3).map((post, index) => (
+          {posts.slice(0, 3).map((post) => (
             <article
               key={post.id}
               className="border-b border-gray-100 pb-4 last:border-b-0"
@@ -228,39 +228,30 @@ export const LiveNewsSidebar: React.FC<LiveNewsSidebarProps> = ({ posts }) => {
           TRENDING TOPICS
         </h3>
         <div className="space-y-2">
-          <a
-            href="#"
-            className="block p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-          >
+          <button className="block w-full text-left p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
             <span className="text-sm font-medium text-gray-900">
               #MolecularGastronomy
             </span>
             <span className="block text-xs text-gray-500 mt-1">
               2.5K mentions
             </span>
-          </a>
-          <a
-            href="#"
-            className="block p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-          >
+          </button>
+          <button className="block w-full text-left p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
             <span className="text-sm font-medium text-gray-900">
               #SustainableDining
             </span>
             <span className="block text-xs text-gray-500 mt-1">
               1.8K mentions
             </span>
-          </a>
-          <a
-            href="#"
-            className="block p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-          >
+          </button>
+          <button className="block w-full text-left p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
             <span className="text-sm font-medium text-gray-900">
               #WinePairing
             </span>
             <span className="block text-xs text-gray-500 mt-1">
               1.2K mentions
             </span>
-          </a>
+          </button>
         </div>
       </div>
     </aside>

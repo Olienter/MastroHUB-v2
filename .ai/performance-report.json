@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-08-31T11:38:00.000Z",
+  "overall_score": 88,
+  "metrics": {
+    "build_time": "2.3s",
+    "bundle_size": "103 kB",
+    "first_load_js": "103 kB",
+    "page_size": "10.5 kB"
+  },
+  "checks": {
+    "build_performance": {
+      "status": "pass",
+      "score": 10
+    },
+    "bundle_optimization": {
+      "status": "pass",
+      "score": 10
+    },
+    "page_speed": {
+      "status": "pass",
+      "score": 10
+    }
+  },
+  "recommendations": [
+    "Continue monitoring bundle size",
+    "Optimize images for better performance"
+  ]
+}

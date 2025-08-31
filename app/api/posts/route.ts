@@ -59,10 +59,7 @@ export async function GET(request: NextRequest) {
     const queryValidation = PostListQuerySchema.safeParse(query);
 
     if (!queryValidation.success) {
-      console.warn(
-        "Invalid query parameters, using defaults:",
-        queryValidation.error
-      );
+      // Invalid query parameters, using defaults
       // Use default values instead of failing
       const defaultQuery = {
         page: 1,
@@ -164,7 +161,7 @@ export async function GET(request: NextRequest) {
     const responseValidation = PostListResponseSchema.safeParse(responseData);
 
     if (!responseValidation.success) {
-      console.error("Response validation failed:", responseValidation.error);
+      // Response validation failed
       // Return fallback data if validation fails
       const fallbackResponse = {
         items: fallbackPosts,
@@ -190,8 +187,8 @@ export async function GET(request: NextRequest) {
       data: responseValidation.data,
       message: "Posts retrieved successfully",
     });
-  } catch (error) {
-    console.error("Posts API Error:", error);
+  } catch {
+    // Posts API Error
 
     // Always return fallback data instead of error
     const fallbackResponse = {

@@ -22,7 +22,7 @@ interface TableProps<T> {
   sortDirection?: "asc" | "desc";
 }
 
-const Table = React.forwardRef<HTMLDivElement, TableProps<any>>(
+const Table = React.forwardRef<HTMLDivElement, TableProps<T>>(
   (
     {
       data,
@@ -63,7 +63,7 @@ const Table = React.forwardRef<HTMLDivElement, TableProps<any>>(
 
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
-    const handleSort = (key: keyof any) => {
+    const handleSort = (key: keyof T) => {
       if (!sortable || !onSort) return;
 
       const direction =
@@ -71,7 +71,7 @@ const Table = React.forwardRef<HTMLDivElement, TableProps<any>>(
       onSort(key, direction);
     };
 
-    const getSortIcon = (key: keyof any) => {
+    const getSortIcon = (key: keyof T) => {
       if (!sortable) return null;
 
       if (sortKey === key) {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Post } from "../../lib/types";
 import { PostCard } from "../cards/PostCard";
-import { Grid, GridItem } from "../ui/Grid";
+
 import { Skeleton } from "../ui/Skeleton";
 
 interface PostGridProps {

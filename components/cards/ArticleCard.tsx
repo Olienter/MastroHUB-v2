@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Post } from "../../lib/types";
-import { Card, CardContent } from "../ui/Card";
+
 import { Button } from "../ui/Button";
 import {
   getTagColorClasses,

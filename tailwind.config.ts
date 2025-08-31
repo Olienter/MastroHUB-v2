@@ -262,7 +262,7 @@ const config: Config = {
   },
   plugins: [
     // ===== CUSTOM PLUGINS =====
-    function ({ addUtilities, theme }: { addUtilities: any; theme: any }) {
+    function ({ addUtilities }: { addUtilities: (utilities: Record<string, any>) => void }) {
       const newUtilities = {
         // ===== CONTAINER QUERIES =====
         ".cq-xs": { containerType: "inline-size" },
@@ -304,7 +304,7 @@ const config: Config = {
       addUtilities(newUtilities);
     },
     // ===== TAILWIND ANIMATE PLUGIN =====
-    require("tailwindcss-animate"),
+    import("tailwindcss-animate"),
   ],
 };
 

@@ -32,12 +32,26 @@ export default function LoginPage() {
   return (
     <>
       <h1>Login</h1>
-      <h1>Duplicate Heading</h1> {/* duplicitné H1 */}
-      <form>
-        <input id="email" type="email" placeholder="Email" />{" "}
-        {/* bez <label> alebo aria-label */}
+      <form onSubmit={onSubmit}>
+        <label htmlFor="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label htmlFor="password">Password:</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        {error && <div style={{ color: "red" }}>{error}</div>}
         <Image src="/logo.png" alt="MastroHUB Logo" width={150} height={75} />
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </>
   );

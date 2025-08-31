@@ -92,6 +92,23 @@ pnpm run lint
 
 # Build with type checking
 pnpm run build:typed
+
+# Code quality and formatting
+pnpm run format
+pnpm run lint:fix
+pnpm run health:check
+
+# Performance monitoring
+pnpm run perf:monitor
+pnpm run perf:report
+
+# Development setup
+pnpm run setup:dev
+pnpm run dev:clean
+
+# Pre-release checks
+pnpm run preflight
+pnpm run release:check
 ```
 
 ### Environment Setup

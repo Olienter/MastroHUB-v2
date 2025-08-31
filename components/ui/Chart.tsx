@@ -73,12 +73,6 @@ const Chart = React.forwardRef<HTMLDivElement, ChartProps>(
           <div className="relative bg-surface border border-border rounded-radius-2 p-4">
             <div className="flex items-end justify-center space-x-2 h-64">
               {labels.map((label, index) => {
-                const values = datasets.map(
-                  (dataset) => dataset.data[index] || 0
-                );
-                const maxBarValue = Math.max(...values);
-                const barHeight = (maxBarValue / maxValue) * 100;
-
                 return (
                   <div
                     key={index}

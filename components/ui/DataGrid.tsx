@@ -28,7 +28,7 @@ interface DataGridProps<T> {
   sortDirection?: "asc" | "desc";
 }
 
-const DataGrid = React.forwardRef<HTMLDivElement, DataGridProps<any>>(
+const DataGrid = React.forwardRef<HTMLDivElement, DataGridProps<T>>(
   (
     {
       data,
@@ -49,7 +49,7 @@ const DataGrid = React.forwardRef<HTMLDivElement, DataGridProps<any>>(
   ) => {
     const [searchTerm, setSearchTerm] = React.useState("");
     const [currentPage, setCurrentPage] = React.useState(1);
-    const [selectedRows, setSelectedRows] = React.useState<any[]>([]);
+    const [selectedRows, setSelectedRows] = React.useState<T[]>([]);
     const [filters, setFilters] = React.useState<Record<string, string>>({});
     const [showFilters, setShowFilters] = React.useState(false);
     const itemsPerPage = 10;
@@ -90,7 +90,7 @@ const DataGrid = React.forwardRef<HTMLDivElement, DataGridProps<any>>(
 
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
-    const handleSort = (key: keyof any) => {
+    const handleSort = (key: keyof T) => {
       if (!sortable || !onSort) return;
 
       const direction =
@@ -115,7 +115,7 @@ const DataGrid = React.forwardRef<HTMLDivElement, DataGridProps<any>>(
       }
     };
 
-    const handleSelectRow = (row: any, checked: boolean) => {
+    const handleSelectRow = (row: T, checked: boolean) => {
       let newSelection;
       if (checked) {
         newSelection = [...selectedRows, row];
@@ -126,7 +126,7 @@ const DataGrid = React.forwardRef<HTMLDivElement, DataGridProps<any>>(
       onSelectionChange?.(newSelection);
     };
 
-    const getSortIcon = (key: keyof any) => {
+    const getSortIcon = (key: keyof T) => {
       if (!sortable) return null;
 
       if (sortKey === key) {
