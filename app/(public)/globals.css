@@ -2,6 +2,10 @@
    GLOBAL STYLES - RESET + BASE + THEMING
    ======================================== */
 
+/* ===== IMPORT DESIGN SYSTEM FIRST ===== */
+@import "../styles/tokens.css";
+@import "../styles/typography.css";
+
 /* ===== TAILWIND CSS INTEGRATION ===== */
 @tailwind base;
 @tailwind components;
@@ -89,10 +93,6 @@ html {
   color: #991b1b;
 }
 
-/* ===== IMPORT DESIGN SYSTEM ===== */
-@import "../styles/tokens.css";
-@import "../styles/typography.css";
-
 /* ===== BASE LAYER (RESET + FOUNDATION) ===== */
 @layer base {
   /* ===== UNIVERSAL RESET ===== */
@@ -114,10 +114,13 @@ html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
   }
 
   body {
-    background: var(--color-bg);
+    background: #ffffff;
     color: var(--color-fg);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -128,6 +131,8 @@ html {
     min-height: 100vh;
     min-height: 100dvh; /* Dynamic viewport height */
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
   }
 
   /* ===== MEDIA ELEMENTS ===== */
@@ -287,8 +292,9 @@ html {
   /* ===== SAFE AREA SUPPORT ===== */
   @supports (padding: max(0px)) {
     body {
-      padding-left: max(var(--space-4), env(safe-area-inset-left));
-      padding-right: max(var(--space-4), env(safe-area-inset-right));
+      /* Disabled safe area padding to prevent black borders */
+      /* padding-left: max(var(--space-4), env(safe-area-inset-left)); */
+      /* padding-right: max(var(--space-4), env(safe-area-inset-right)); */
     }
   }
 }
@@ -452,6 +458,39 @@ html {
       grid-template-columns: repeat(2, 1fr);
     }
   }
+}
+
+/* ===== GLOBAL CONTAINER RESET ===== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* ===== FORCE WHITE BACKGROUND EVERYWHERE ===== */
+html,
+body,
+#__next,
+.app,
+main,
+div {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* ===== OVERRIDE TAILWIND BACKGROUNDS ===== */
+.bg-bg,
+.bg-surface,
+.bg-surface-subtle {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
 }
 
 /* ===== UTILITIES LAYER ===== */
@@ -667,4 +706,30 @@ html {
   .focus-trap {
     display: none !important;
   }
+}
+
+/* ===== FINAL BACKGROUND OVERRIDE ===== */
+html,
+body,
+#__next,
+.app,
+main,
+div,
+section,
+article,
+aside,
+header,
+footer {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* ===== OVERRIDE ALL TAILWIND BACKGROUNDS ===== */
+.bg-\\[\\#ffffff\\],
+.bg-white,
+.bg-gray-50,
+.bg-gray-100,
+.bg-gray-200 {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
 }

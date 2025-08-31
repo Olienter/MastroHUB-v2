@@ -4,8 +4,8 @@ const PUBLIC_PATHS = [
   "/", // Home page - CRITICAL for UI development
   "/login",
   "/dashboard", // Dashboard - CRITICAL for UI testing
-  "/docs", // Documentation - for UI testing
-  "/about", // About page - for UI testing
+  "/docs", // Documentation for UI testing
+  "/about", // About page for UI testing
   "/demo", // Phase 3 demo page - CRITICAL for component testing
   "/api", // All API routes
   "/api/health",
@@ -17,6 +17,8 @@ const PUBLIC_PATHS = [
   "/sitemap.txt",
   "/_next", // Next.js static assets
   "/assets", // Custom static assets
+  "/images", // Images directory - CRITICAL for UI
+  "/images/placeholders", // Specific images subdirectory
   "/settings", // Settings page - allow for now
   "/.well-known", // Allow well-known requests (Chrome devtools, etc.)
 ];
@@ -24,12 +26,21 @@ const PUBLIC_PATHS = [
 function isPublic(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Allow Next.js internal paths
+  // CRITICAL: Allow all Next.js internal paths first
   if (pathname.startsWith("/_next/")) return true;
   if (pathname.startsWith("/assets/")) return true;
 
-  // Check exact matches first
+  // CRITICAL: Allow all static assets
+  if (pathname.includes("/static/")) return true;
+  if (pathname.includes("/chunks/")) return true;
+  if (pathname.includes("/css/")) return true;
+  if (pathname.includes("/js/")) return true;
+
+  // Check exact matches
   if (PUBLIC_PATHS.includes(pathname)) return true;
+
+  // Special handling for images
+  if (pathname.startsWith("/images/")) return true;
 
   // Check if path starts with any public path (but not just "/")
   for (const publicPath of PUBLIC_PATHS) {

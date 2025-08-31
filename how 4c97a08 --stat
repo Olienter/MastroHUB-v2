@@ -1,0 +1,10 @@
+[33ma08c627[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeat/ui-perf-optimize-001[m[33m, [m[1;31morigin/feat/ui-perf-optimize-001[m[33m)[m feat: major UI restructuring and optimization - Clean up legacy files and evidence - Restructure UI components and layout - Add new UI components (ArticleCard, NewsletterSection, ProgressBar, Skeleton) - Optimize existing components (Header, HeroSection, PostGrid) - Update navigation and utilities - Implement new CI pipeline and quality gates - Add pre-commit hooks with Husky
+[33m4c97a08[m[33m ([m[1;32mmain[m[33m)[m feat: UI optimization and evidence first system complete
+[33m4955881[m feat: UI performance optimization and design improvements
+[33m3ce08a6[m[33m ([m[1;31morigin/main[m[33m)[m feat: Implement new UI design similar to aktuality.sk - Add Header with navigation and categories - Add HeroSection with large background image - Add FeaturedPostCard and PostCard components - Add PostGrid for article listings - Add LiveNewsSidebar with live news and trending topics - Simplify Button and Container components - Update mock data with proper Zod validation - Configure Next.js for Unsplash images - Redesign homepage with grid layout and sidebar - Professional news/magazine feeling achieved
+[33m5b1cfa4[m docs: add PI Gate status evidence with manifest commit fix details
+[33m799f094[m fix: update manifest_commit to cfcbd8d for CI pipeline on main
+[33mcfcbd8d[m fix: P0 blockers removed, ready for UI Build B
+[33m879599c[m feat: implement snapshot baseline stabilization - deterministic tests, artifact exclusion, binary protection
+[33mee6d3c3[m feat: complete UI test bootstrap implementation - all tests connect successfully
+[33m90df7f3[m feat: implement reliable UI test bootstrap with webServer, fix EOL normalization

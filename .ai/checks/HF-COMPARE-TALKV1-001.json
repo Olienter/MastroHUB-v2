@@ -1,0 +1,19 @@
+{
+  "pid": "HF-COMPARE-TALKV1-001",
+  "status": "INIT",
+  "timestamp": "2025-01-27T10:00:00Z",
+  "policy_version": "2025-08-23",
+  "manifest_commit": "INIT",
+  "role": "GPT",
+  "handoff_id": "HF-COMPARE-TALKV1-001",
+  "changeset_limit": 5,
+  "current_commit": "4c97a08",
+  "target_commit": "HEAD",
+  "impact_files": [
+    ".ai/talk.md",
+    ".ai/state.json",
+    ".ai/manifest.json",
+    ".ai/chronicle/journal.md"
+  ],
+  "analysis_plan": "Compare TALK v1 compliance between HEAD and 4c97a08 commit"
+}

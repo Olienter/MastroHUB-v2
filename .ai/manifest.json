@@ -102,5 +102,11 @@
     "tracking_system": "ai-decisions.json",
     "quality_gates": "quality-report.json",
     "talk_v1_core": "talk-v1-core.mjs"
+  },
+  "ai_consistency": {
+    "last_check": "2025-08-30T23:12:26.099Z",
+    "overall_score": 75,
+    "violations_count": 1,
+    "recommendations_count": 1
   }
 }

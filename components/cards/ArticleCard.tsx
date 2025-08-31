@@ -175,9 +175,11 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         {/* CTA Button for Featured */}
         {isFeatured && (
           <div className="pt-4">
-            <Button variant="primary" size="md" asChild className="w-full">
-              <a href={`/posts/${post.slug}`}>Read Full Article</a>
-            </Button>
+            <a href={`/posts/${post.slug}`} className="block w-full">
+              <Button variant="primary" size="md" className="w-full">
+                Read Full Article
+              </Button>
+            </a>
           </div>
         )}
       </div>

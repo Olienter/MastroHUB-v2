@@ -3,6 +3,13 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
+import {
+  colors,
+  spacing,
+  typography,
+  shadows,
+  transitions,
+} from "@/lib/design-tokens";
 
 interface HeroSectionProps {
   title: string;
@@ -44,8 +51,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           transform: isHovered ? "scale(1.05)" : "scale(1)",
         }}
       >
-        {/* Fallback gastro gradient if image fails */}
-        <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-orange-900" />
+        {/* Fallback gastro gradient using design tokens */}
+        <div
+          className="absolute inset-0 transition-opacity duration-500"
+          style={{
+            background: `linear-gradient(135deg, ${colors.primary[900]} 0%, ${colors.primary[800]} 50%, ${colors.secondary[800]} 100%)`,
+          }}
+        />
         <div className="absolute inset-0 bg-black/30 transition-opacity duration-500" />
       </div>
 
@@ -69,24 +81,37 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Main Title with fade-in and scale animation */}
           <h1
-            className={`text-3xl md:text-5xl lg:text-6xl font-bold leading-tight transition-all duration-1000 ${
+            className={`font-bold leading-tight transition-all duration-1000 ${
               isVisible
                 ? "translate-y-0 opacity-100 scale-100"
                 : "translate-y-12 opacity-0 scale-95"
             }`}
-            style={{ transitionDelay: "200ms" }}
+            style={{
+              transitionDelay: "200ms",
+              fontFamily: typography.presets.h1.fontFamily,
+              fontSize: "clamp(2.5rem, 8vw, 4.5rem)",
+              fontWeight: typography.presets.h1.fontWeight,
+              lineHeight: typography.presets.h1.lineHeight,
+              letterSpacing: typography.presets.h1.letterSpacing,
+            }}
           >
             {title}
           </h1>
 
           {/* Description with slide-up animation */}
           <p
-            className={`text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed transition-all duration-700 ${
+            className={`text-white/90 max-w-3xl mx-auto leading-relaxed transition-all duration-700 ${
               isVisible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-8 opacity-0"
             }`}
-            style={{ transitionDelay: "400ms" }}
+            style={{
+              transitionDelay: "400ms",
+              fontFamily: typography.presets.body.fontFamily,
+              fontSize: "clamp(1.125rem, 2.5vw, 1.25rem)",
+              fontWeight: typography.presets.body.fontWeight,
+              lineHeight: typography.presets.body.lineHeight,
+            }}
           >
             {description}
           </p>
@@ -100,14 +125,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             }`}
             style={{ transitionDelay: "600ms" }}
           >
-            <Button
-              variant="cta"
-              size="lg"
-              asChild
-              className="transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
-            >
-              <a href={ctaLink}>{ctaText}</a>
-            </Button>
+            <a href={ctaLink} className="inline-block">
+              <Button
+                variant="primary"
+                size="lg"
+                className="transform hover:scale-105 hover:shadow-2xl transition-all duration-300"
+              >
+                {ctaText}
+              </Button>
+            </a>
           </div>
         </div>
       </Container>

@@ -6,6 +6,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { PostListResponseSchema, PostListQuerySchema } from "@/lib/contracts";
 import { mockPosts } from "@/lib/mock-data";
 
+// Force dynamic rendering to avoid static generation issues
+export const dynamic = "force-dynamic";
+
 // ===== STATIC FALLBACK DATA (NO MSW DEPENDENCY) =====
 const fallbackPosts = [
   {

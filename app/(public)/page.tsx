@@ -33,12 +33,12 @@ export default function HomePage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
+      <div className="min-h-screen bg-white">
         <Header />
         <main role="main" className="relative">
           {/* Hero Section Skeleton */}
-          <section className="relative min-h-[250px] md:min-h-[300px] lg:min-h-[350px] flex items-center justify-center overflow-hidden bg-gray-200">
-            <div className="text-center space-y-4">
+          <section className="relative min-h-[250px] md:min-h-[300px] lg:min-h-[350px] flex items-center justify-center overflow-hidden bg-gray-100">
+            <div className="text-center space-y-6">
               <Skeleton variant="title" className="w-64 h-12" />
               <Skeleton variant="text" lines={2} className="w-96" />
               <Skeleton variant="button" className="w-32 h-12" />
@@ -46,12 +46,12 @@ export default function HomePage() {
           </section>
 
           {/* Main Content Skeleton */}
-          <Container variant="wide" className="py-16 px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+          <Container variant="wide" className="py-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
               <div className="lg:col-span-2 space-y-12">
                 {/* Featured Post Skeleton */}
                 <section className="text-center">
-                  <Skeleton variant="title" className="mx-auto mb-4" />
+                  <Skeleton variant="title" className="mx-auto mb-6" />
                   <Skeleton variant="card" className="max-w-2xl mx-auto" />
                 </section>
 
@@ -61,7 +61,7 @@ export default function HomePage() {
 
               {/* Sidebar Skeleton */}
               <div className="lg:col-span-1">
-                <div className="space-y-4">
+                <div className="space-y-8">
                   <Skeleton variant="title" />
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Skeleton variant="text" key={i} lines={2} />
@@ -78,12 +78,12 @@ export default function HomePage() {
   // Ensure homeData is available
   if (!homeData) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
+      <div className="min-h-screen bg-white">
         <Header />
         <main role="main" className="relative">
           <div className="flex items-center justify-center min-h-[400px]">
             <div className="text-center">
-              <h1 className="text-2xl font-bold text-gray-900 mb-4">
+              <h1 className="text-2xl font-bold text-gray-900 mb-6">
                 Loading...
               </h1>
               <p className="text-gray-600">
@@ -97,7 +97,7 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Enhanced Header */}
       <Header />
 
@@ -120,25 +120,40 @@ export default function HomePage() {
           }
         />
 
-        {/* Enhanced Main Content Area */}
-        <Container variant="wide" className="py-16 -mx-4 sm:-mx-6 lg:-mx-8">
+        {/* Enhanced Main Content Area - Premium Layout */}
+        <Container variant="wide" className="py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-            {/* Left Column - Enhanced Main Content */}
-            <div className="lg:col-span-2 space-y-12">
+            {/* Left Column - Premium Main Content */}
+            <div className="lg:col-span-2 space-y-8">
               {/* Enhanced Featured Post Section */}
               <section className="relative">
-                <div className="text-center mb-10">
-                  <div className="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-medium mb-4">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center px-4 py-2 bg-red-50 text-red-700 rounded-full text-sm font-semibold mb-4 border border-red-200 shadow-sm">
                     <span className="w-2 h-2 bg-red-500 rounded-full mr-2 animate-pulse" />
-                    Featured Content
+                    Chef&apos;s Pick: This Week&apos;s Must-Read
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                    Featured Article
+                    Molecular Gastronomy: The Future of Fine Dining
                   </h2>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                    Our top pick for this week - a must-read for gastronomy
-                    enthusiasts and industry professionals
+                  <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-4">
+                    Chef Heston Blumenthal reveals how science is
+                    revolutionizing haute cuisine, transforming traditional
+                    cooking into an art form that pushes culinary boundaries.
                   </p>
+                  <div className="flex items-center justify-center space-x-4 text-sm text-gray-500">
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-2" />
+                      Read Time: 8 min
+                    </span>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-2" />
+                      Difficulty: Advanced
+                    </span>
+                    <span className="flex items-center">
+                      <span className="w-1.5 h-1.5 bg-gray-400 rounded-full mr-2" />
+                      Category: Innovation
+                    </span>
+                  </div>
                 </div>
 
                 {/* Enhanced Featured Post Card */}
@@ -150,13 +165,13 @@ export default function HomePage() {
                 </div>
               </section>
 
-              {/* Enhanced Latest Posts Section */}
+              {/* Enhanced Latest Posts Section - Premium Spacing */}
               <section className="relative">
-                <div className="text-center mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <div className="text-center mb-6">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
                     Latest Articles
                   </h2>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  <p className="text-base text-gray-600 max-w-2xl mx-auto">
                     Stay updated with the newest insights from the gastronomy
                     world
                   </p>
@@ -171,17 +186,17 @@ export default function HomePage() {
                 />
               </section>
 
-              {/* Enhanced Popular Posts Section */}
+              {/* Enhanced Popular Posts Section - Premium Spacing */}
               <section className="relative">
-                <div className="text-center mb-10">
-                  <div className="inline-flex items-center px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium mb-4">
-                    <span className="w-2 h-2 bg-yellow-500 rounded-full mr-2" />
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center px-3 py-1.5 bg-orange-50 text-orange-700 rounded-full text-sm font-medium mb-3 border border-orange-200">
+                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2" />
                     Trending Now
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
                     Popular Articles
                   </h2>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  <p className="text-base text-gray-600 max-w-2xl mx-auto">
                     Most read and shared content from our community
                   </p>
                 </div>
@@ -199,37 +214,45 @@ export default function HomePage() {
               <NewsletterSection />
             </div>
 
-            {/* Right Column - Enhanced Live News Sidebar */}
+            {/* Right Column - Premium Live News Sidebar */}
             <div className="lg:col-span-1">
-              <div className="sticky top-24">
+              <div className="sticky top-24 space-y-6">
                 <LiveNewsSidebar posts={homeData.latestPosts || []} />
               </div>
             </div>
           </div>
         </Container>
 
-        {/* Enhanced Sections Grid */}
-        <SectionsGrid
-          sections={homeData.sections || []}
-          title="Explore Our Sections"
-          subtitle="Discover curated content across gastronomy and hospitality"
-        />
+        {/* Enhanced Sections Grid - Premium Spacing */}
+        <div className="py-12 bg-gray-50">
+          <Container variant="wide">
+            <SectionsGrid
+              sections={homeData.sections || []}
+              title="Explore Our Sections"
+              subtitle="Discover curated content across gastronomy and hospitality"
+            />
+          </Container>
+        </div>
 
-        {/* Enhanced Trending Tags */}
-        <TrendingTags
-          tags={homeData.trendingTags || []}
-          title="Trending Topics"
-          subtitle="What's hot in the gastronomy world"
-        />
+        {/* Enhanced Trending Tags - Premium Spacing */}
+        <div className="py-12 bg-white">
+          <Container variant="wide">
+            <TrendingTags
+              tags={homeData.trendingTags || []}
+              title="Trending Topics"
+              subtitle="What's hot in the gastronomy world"
+            />
+          </Container>
+        </div>
       </main>
 
       {/* Enhanced Footer */}
       <footer
-        className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white p-12"
+        className="bg-gray-900 text-white py-12"
         role="contentinfo"
         data-testid="site-footer"
       >
-        <Container variant="wide" className="px-4 sm:px-6 lg:px-8">
+        <Container variant="wide">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-white mb-4">MastroHUB</h3>
