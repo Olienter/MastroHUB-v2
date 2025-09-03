@@ -31,8 +31,8 @@ Cursor, implementuj TALK v1 formát vo všetkých AI interakciách a over compli
 "use client";
 
 import { useState, useEffect } from "react";
-import { getHomePageData } from "@/lib/mock-data";
-import { HomePageData, Section } from "@/lib/types";
+import { getHomePageData } from "../../lib/mock-data";
+import { HomePageData } from "../../lib/types";
 import { Header } from "../../components/layout/Header";
 import { HeroSection } from "../../components/sections/HeroSection";
 import { FeaturedPostCard } from "../../components/cards/PostCard";
@@ -335,7 +335,7 @@ export default function HomePage() {
                 Sections
               </h4>
               <ul className="space-y-3">
-                {homeData?.sections?.slice(0, 4).map((section: Section) => (
+                {homeData?.sections?.slice(0, 4).map((section) => (
                   <li key={section.id}>
                     <a
                       href={`/section/${section.slug}`}

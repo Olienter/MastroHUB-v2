@@ -1,0 +1,670 @@
+{
+  "timestamp": "2025-09-03T10:29:24.413Z",
+  "designSystem": {
+    "colors": {
+      "bg": "oklch(0.13 0.02 250)",
+      "fg": "oklch(0.95 0.02 250)",
+      "fg-subtle": "oklch(0.8 0.02 250)",
+      "fg-muted": "oklch(0.6 0.02 250)",
+      "brand": "oklch(0.65 0.25 25)",
+      "brand-subtle": "oklch(0.75 0.2 25)",
+      "brand-muted": "oklch(0.9 0.1 25)",
+      "focus": "oklch(0 0 0)",
+      "success": "oklch(0.65 0.2 140)",
+      "warning": "oklch(0.75 0.2 80)",
+      "error": "oklch(0.65 0.2 25)",
+      "border": "oklch(0 0 0)",
+      "border-subtle": "oklch(0.15 0.02 250)",
+      "surface": "oklch(0.18 0.02 250)",
+      "surface-subtle": "oklch(0.16 0.02 250)",
+      "code-bg": "oklch(0.2 0.02 250)",
+      "code-fg": "oklch(0.8 0.02 250)",
+      "table-header": "oklch(0.22 0.02 250)",
+      "select": "oklch(0.3 0.15 250)",
+      "gastronomy-primary": "oklch(0.65 0.25 25)",
+      "gastronomy-secondary": "oklch(0.2 0.05 250)",
+      "gastronomy-accent": "oklch(0.75 0.2 80)",
+      "gastronomy-warm": "oklch(0.85 0.15 60)",
+      "gastronomy-cool": "oklch(0.7 0.1 200)",
+      "gastronomy-neutral": "oklch(0.3 0.02 60)",
+      "focus);\n  --focus-ring-offset": "2px",
+      "focus);\n\n  /* ===== SCROLLBAR TOKENS ===== */\n  --scrollbar-width": "8px",
+      "surface-subtle);\n  --scrollbar-thumb": "var(--color-border)",
+      "fg-muted);\n\n  /* ===== TYPOGRAPHY TOKENS ===== */\n  /* Fluid type scale (clamp-based) */\n  --step-0": "clamp(14px, 1.2vw + 10px, 16px)"
+    },
+    "typography": {
+      "step-0": "clamp(14px, 1.2vw + 10px, 16px)",
+      "step-1": "clamp(18px, 1.4vw + 12px, 20px)",
+      "step-2": "clamp(22px, 1.8vw + 12px, 28px)",
+      "step-3": "clamp(28px, 2.4vw + 16px, 36px)",
+      "step-4": "clamp(36px, 3.2vw + 20px, 48px)"
+    },
+    "spacing": {
+      "0": "0",
+      "1": "0.25rem",
+      "2": "0.5rem",
+      "3": "0.75rem",
+      "4": "1rem",
+      "5": "1.25rem",
+      "6": "1.5rem",
+      "7": "1.75rem",
+      "8": "2rem",
+      "9": "2.25rem",
+      "10": "2.5rem",
+      "11": "2.75rem",
+      "12": "3rem",
+      "14": "3.5rem",
+      "16": "4rem",
+      "20": "5rem",
+      "24": "6rem",
+      "32": "8rem",
+      "4);\n  --container-padding-sm": "var(--space-2)",
+      "6);\n\n  /* ===== SHADOW TOKENS ===== */\n  --shadow-1": "0 1px 2px 0 oklch(0 0 0 / 0.05)"
+    },
+    "components": {
+      "ArticleCard": {
+        "name": "ArticleCard",
+        "path": "components\\cards\\ArticleCard.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Not responsive"
+        ]
+      },
+      "PostCard": {
+        "name": "PostCard",
+        "path": "components\\cards\\PostCard.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "AIAgentDashboard": {
+        "name": "AIAgentDashboard",
+        "path": "components\\dashboard\\AIAgentDashboard.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "ContentGenerationForm": {
+        "name": "ContentGenerationForm",
+        "path": "components\\forms\\ContentGenerationForm.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "BlogLayout": {
+        "name": "BlogLayout",
+        "path": "components\\layout\\BlogLayout.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": []
+      },
+      "Footer": {
+        "name": "Footer",
+        "path": "components\\layout\\Footer.tsx",
+        "hasTypeScript": false,
+        "hasProps": false,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing TypeScript types",
+          "No props interface defined",
+          "Missing accessibility attributes"
+        ]
+      },
+      "Header": {
+        "name": "Header",
+        "path": "components\\layout\\Header.tsx",
+        "hasTypeScript": false,
+        "hasProps": false,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing TypeScript types",
+          "No props interface defined"
+        ]
+      },
+      "HeroSection": {
+        "name": "HeroSection",
+        "path": "components\\sections\\HeroSection.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": []
+      },
+      "LiveNewsSidebar": {
+        "name": "LiveNewsSidebar",
+        "path": "components\\sidebar\\LiveNewsSidebar.tsx",
+        "hasTypeScript": false,
+        "hasProps": false,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing TypeScript types",
+          "No props interface defined",
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "NewsletterSection": {
+        "name": "NewsletterSection",
+        "path": "components\\sections\\NewsletterSection.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": []
+      },
+      "PostGrid": {
+        "name": "PostGrid",
+        "path": "components\\sections\\PostGrid.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "SectionsGrid": {
+        "name": "SectionsGrid",
+        "path": "components\\sections\\SectionsGrid.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "TrendingTags": {
+        "name": "TrendingTags",
+        "path": "components\\sidebar\\TrendingTags.tsx",
+        "hasTypeScript": false,
+        "hasProps": false,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing TypeScript types",
+          "No props interface defined",
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "Sidebar": {
+        "name": "Sidebar",
+        "path": "components\\ui\\Sidebar.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "Badge": {
+        "name": "Badge",
+        "path": "components\\ui\\Badge.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "Breadcrumb": {
+        "name": "Breadcrumb",
+        "path": "components\\ui\\Breadcrumb.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Not responsive"
+        ]
+      },
+      "Button": {
+        "name": "Button",
+        "path": "components\\ui\\Button.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": true,
+        "usesDesignTokens": true,
+        "issues": []
+      },
+      "Card": {
+        "name": "Card",
+        "path": "components\\ui\\Card.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "Chart": {
+        "name": "Chart",
+        "path": "components\\ui\\Chart.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "Container": {
+        "name": "Container",
+        "path": "components\\ui\\Container.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "DataGridBody": {
+        "name": "DataGridBody",
+        "path": "components\\ui\\data-grid\\DataGridBody.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "DataGridHeader": {
+        "name": "DataGridHeader",
+        "path": "components\\ui\\data-grid\\DataGridHeader.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "DataGridPagination": {
+        "name": "DataGridPagination",
+        "path": "components\\ui\\data-grid\\DataGridPagination.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "DataGrid": {
+        "name": "DataGrid",
+        "path": "components\\ui\\DataGrid.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "dropdown-menu": {
+        "name": "dropdown-menu",
+        "path": "components\\ui\\dropdown-menu.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "Flex": {
+        "name": "Flex",
+        "path": "components\\ui\\Flex.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "Form": {
+        "name": "Form",
+        "path": "components\\ui\\Form.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Not responsive"
+        ]
+      },
+      "Grid": {
+        "name": "Grid",
+        "path": "components\\ui\\Grid.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "index": {
+        "name": "index",
+        "path": "components\\ui\\index.ts",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": false,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "Input": {
+        "name": "Input",
+        "path": "components\\ui\\Input.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "Loading": {
+        "name": "Loading",
+        "path": "components\\ui\\Loading.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "MegaMenu": {
+        "name": "MegaMenu",
+        "path": "components\\ui\\MegaMenu.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "MobileNavigation": {
+        "name": "MobileNavigation",
+        "path": "components\\ui\\MobileNavigation.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": []
+      },
+      "Modal": {
+        "name": "Modal",
+        "path": "components\\ui\\Modal.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": []
+      },
+      "Navigation": {
+        "name": "Navigation",
+        "path": "components\\ui\\Navigation.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "PageHeader": {
+        "name": "PageHeader",
+        "path": "components\\ui\\PageHeader.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "ProgressBar": {
+        "name": "ProgressBar",
+        "path": "components\\ui\\ProgressBar.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "Skeleton": {
+        "name": "Skeleton",
+        "path": "components\\ui\\Skeleton.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "Stack": {
+        "name": "Stack",
+        "path": "components\\ui\\Stack.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": true,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes"
+        ]
+      },
+      "Table": {
+        "name": "Table",
+        "path": "components\\ui\\Table.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": false,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Missing accessibility attributes",
+          "Not responsive"
+        ]
+      },
+      "Toast": {
+        "name": "Toast",
+        "path": "components\\ui\\Toast.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Not responsive"
+        ]
+      },
+      "Tooltip": {
+        "name": "Tooltip",
+        "path": "components\\ui\\Tooltip.tsx",
+        "hasTypeScript": true,
+        "hasProps": true,
+        "hasTailwind": true,
+        "hasAccessibility": true,
+        "hasResponsive": false,
+        "usesDesignTokens": false,
+        "issues": [
+          "Not responsive"
+        ]
+      }
+    },
+    "breakpoints": {
+      "mobile": "320px",
+      "tablet": "768px",
+      "desktop": "1024px",
+      "wide": "1280px"
+    }
+  },
+  "validation": {
+    "colors": {
+      "score": 80,
+      "issues": [
+        "Missing required color: primary",
+        "Missing required color: secondary",
+        "Missing required color: accent"
+      ],
+      "status": "excellent"
+    },
+    "typography": {
+      "score": 70,
+      "issues": [
+        "Missing line height tokens"
+      ],
+      "status": "good"
+    },
+    "spacing": {
+      "score": 100,
+      "issues": [],
+      "status": "excellent"
+    },
+    "components": {
+      "score": 100,
+      "issues": [],
+      "status": "excellent"
+    },
+    "overall": {
+      "score": 88,
+      "status": "excellent"
+    }
+  },
+  "recommendations": [
+    "Improve accessibility across all components"
+  ],
+  "nextSteps": [
+    "1. Complete missing design tokens",
+    "2. Implement required components",
+    "3. Add accessibility attributes",
+    "4. Test responsive design",
+    "5. Create component documentation",
+    "6. Set up automated testing"
+  ]
+}

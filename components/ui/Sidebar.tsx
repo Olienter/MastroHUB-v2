@@ -60,7 +60,7 @@ export function Sidebar({
         {items.map((item) => (
           <Button
             key={item.id}
-            variant={item.active ? "primary" : "ghost"}
+            variant={item.active ? "default" : "ghost"}
             className={cn(
               "w-full justify-start",
               collapsed ? "px-2" : "px-3"

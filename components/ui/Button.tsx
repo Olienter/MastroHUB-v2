@@ -1,135 +1,52 @@
-"use client";
+import React from 'react';
+import { cn } from '@/lib/utils';
 
-import React from "react";
-import { cn } from "@/lib/utils";
-// Design tokens removed - using Tailwind classes instead
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "ghost" | "outline" | "danger";
-  size?: "sm" | "md" | "lg" | "xl" | "icon";
-  isLoading?: boolean;
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'accent' | 'outline' | 'ghost' | 'destructive';
+  size?: 'sm' | 'md' | 'lg';
+  loading?: boolean;
   children: React.ReactNode;
 }
 
-const buttonVariants = {
-  variant: {
-    primary: `
-      bg-red-500 hover:bg-red-600 
-      text-white 
-      shadow-md hover:shadow-xl
-      border border-transparent
-      focus:ring-2 focus:ring-red-500 focus:ring-offset-2
-      transform hover:scale-105 active:scale-95
-      transition-all duration-200 ease-out
-    `,
-    secondary: `
-      bg-orange-500 hover:bg-orange-600 
-      text-white 
-      shadow-md hover:shadow-xl
-      border border-transparent
-      focus:ring-2 focus:ring-orange-500 focus:ring-offset-2
-      transform hover:scale-105 active:scale-95
-      transition-all duration-200 ease-out
-    `,
-    ghost: `
-      bg-transparent hover:bg-gray-100 
-      text-gray-700 hover:text-gray-900
-      border border-transparent
-      focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
-    `,
-    outline: `
-      bg-transparent 
-      text-gray-700 hover:text-gray-900
-      border border-gray-300 hover:border-gray-400
-      hover:bg-gray-50
-      focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
-    `,
-    danger: `
-      bg-red-600 hover:bg-red-700 
-      text-white 
-      shadow-md hover:shadow-lg
-      border border-transparent
-      focus:ring-2 focus:ring-red-500 focus:ring-offset-2
-    `,
-  },
-  size: {
-    sm: `
-      px-3 py-1.5 
-      text-sm font-medium
-      rounded-md
-    `,
-    md: `
-      px-4 py-2 
-      text-base font-medium
-      rounded-lg
-    `,
-    lg: `
-      px-6 py-3 
-      text-lg font-semibold
-      rounded-lg
-    `,
-    xl: `
-      px-8 py-4 
-      text-xl font-semibold
-      rounded-xl
-    `,
-    icon: `
-      p-2
-      text-base font-medium
-      rounded-lg
-      aspect-square
-    `,
-  },
-};
-
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      className,
-      variant = "primary",
-      size = "md",
-      isLoading = false,
-      leftIcon,
-      rightIcon,
-      children,
-      disabled,
-      ...props
-    },
-    ref
-  ) => {
-    const isDisabled = disabled || isLoading;
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant = 'primary', size = 'md', loading = false, disabled, children, ...props }, ref) => {
+    const baseClasses = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
+    
+    const variants = {
+      primary: 'bg-[var(--color-gastronomy-primary)] text-white hover:bg-[var(--color-gastronomy-primary)]/90 focus-visible:ring-[var(--color-gastronomy-primary)]',
+      secondary: 'bg-[var(--color-gastronomy-secondary)] text-white hover:bg-[var(--color-gastronomy-secondary)]/90 focus-visible:ring-[var(--color-gastronomy-secondary)]',
+      accent: 'bg-[var(--color-gastronomy-accent)] text-white hover:bg-[var(--color-gastronomy-accent)]/90 focus-visible:ring-[var(--color-gastronomy-accent)]',
+      outline: 'border border-[var(--color-border)] bg-transparent hover:bg-[var(--color-surface)] focus-visible:ring-[var(--color-gastronomy-primary)]',
+      ghost: 'hover:bg-[var(--color-surface)] focus-visible:ring-[var(--color-gastronomy-primary)]',
+      destructive: 'bg-[var(--color-error)] text-white hover:bg-[var(--color-error)]/90 focus-visible:ring-[var(--color-error)]'
+    };
+    
+    const sizes = {
+      sm: 'h-8 px-3 text-sm',
+      md: 'h-10 px-4 py-2',
+      lg: 'h-12 px-6 text-lg'
+    };
 
     return (
       <button
         className={cn(
-          // Base styles
-          "inline-flex items-center justify-center",
-          "font-medium transition-all duration-200",
-          "focus:outline-none focus:ring-2 focus:ring-offset-2",
-          "disabled:opacity-50 disabled:cursor-not-allowed",
-          "active:scale-95",
-
-          // Variants
-          buttonVariants.variant[variant],
-          buttonVariants.size[size],
-
-          // Custom className
+          baseClasses,
+          variants[variant],
+          sizes[size],
           className
         )}
         ref={ref}
-        disabled={isDisabled}
+        disabled={disabled || loading}
+        aria-disabled={disabled || loading}
         {...props}
       >
-        {/* Loading state */}
-        {isLoading && (
+        {loading && (
           <svg
-            className="animate-spin -ml-1 mr-2 h-4 w-4"
+            className="mr-2 h-4 w-4 animate-spin"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <circle
               className="opacity-25"
@@ -146,18 +63,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             />
           </svg>
         )}
-
-        {/* Left icon */}
-        {!isLoading && leftIcon && <span className="mr-2">{leftIcon}</span>}
-
-        {/* Content */}
         {children}
-
-        {/* Right icon */}
-        {!isLoading && rightIcon && <span className="ml-2">{rightIcon}</span>}
       </button>
     );
   }
 );
 
-Button.displayName = "Button";
+Button.displayName = 'Button';
+
+export { Button, type ButtonProps };

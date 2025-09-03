@@ -20,6 +20,32 @@ export interface HeaderConfig {
   showLogin?: boolean;
 }
 
+// Navigation object for Header component
+export const navigation = {
+  main: [
+    { id: "fine-dining", label: "Fine Dining", href: "/fine-dining" },
+    { id: "street-food", label: "Street Food", href: "/street-food" },
+    { id: "wine-spirits", label: "Wine & Spirits", href: "/wine-spirits" },
+    { id: "hotels", label: "Hotels", href: "/hotels" },
+    { id: "chef-interviews", label: "Chef Interviews", href: "/chef-interviews" },
+    { id: "food-trends", label: "Food Trends", href: "/food-trends" },
+  ],
+  categories: [
+    { id: "gastronomy", label: "Gastronomy", href: "/gastronomy" },
+    { id: "hospitality", label: "Hospitality", href: "/hospitality" },
+    { id: "chefs", label: "Chefs", href: "/chefs" },
+    { id: "recipes", label: "Recipes", href: "/recipes" },
+    { id: "trends", label: "Trends", href: "/trends" },
+  ],
+  sub: [
+    { id: "latest", label: "Latest News", href: "/latest" },
+    { id: "featured", label: "Featured", href: "/featured" },
+    { id: "exclusive", label: "Exclusive", href: "/exclusive" },
+    { id: "podcast", label: "Podcast", href: "/podcast" },
+    { id: "video", label: "Video", href: "/video" },
+  ],
+};
+
 // Default navigation configuration
 export const defaultHeaderConfig: HeaderConfig = {
   topNavigation: [

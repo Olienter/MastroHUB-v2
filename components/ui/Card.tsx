@@ -1,75 +1,211 @@
 "use client";
 
 import React from "react";
-import { cn } from "../../lib/utils";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/lib/utils";
 
-// Design tokens removed - using Tailwind classes instead
-
-export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: "default" | "elevated" | "outlined" | "featured";
-  size?: "sm" | "md" | "lg";
-  isHoverable?: boolean;
-}
-
-const cardVariants = {
-  variant: {
-    default: "bg-white border border-gray-200",
-    elevated: "bg-white shadow-lg border-0",
-    outlined: "bg-white border-2 border-gray-300",
-    featured: "bg-gradient-to-br from-white to-gray-50 border-2 border-yellow-200 shadow-xl",
-  },
-  size: {
-    sm: "p-4",
-    md: "p-6",
-    lg: "p-8",
-  },
-};
-
-export const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  (
-    {
-      variant = "default",
-      size = "md",
-      isHoverable = false,
-      className,
-      children,
-      ...props
+const cardVariants = cva(
+  "rounded-xl border bg-white shadow-sm transition-all duration-300 hover:shadow-lg",
+  {
+    variants: {
+      variant: {
+        default: "border-gray-200 hover:border-gray-300",
+        elevated: "border-gray-200 shadow-lg hover:shadow-xl hover:border-gray-300",
+        outline: "border-2 border-gray-200 hover:border-gray-300",
+        premium: "border-red-200 bg-gradient-to-br from-white to-red-50 hover:border-red-300 shadow-lg hover:shadow-xl",
+        dark: "border-gray-700 bg-gray-900 text-white hover:border-gray-600",
+        glass: "border-white/20 bg-white/10 backdrop-blur-sm hover:bg-white/20",
+        interactive: "border-gray-200 hover:border-red-300 hover:shadow-xl cursor-pointer transform hover:-translate-y-1",
+      },
+      size: {
+        sm: "p-4",
+        default: "p-6",
+        lg: "p-8",
+        xl: "p-10",
+      },
+      animation: {
+        none: "",
+        hover: "hover:scale-105",
+        lift: "hover:-translate-y-2",
+        glow: "hover:shadow-red-500/25",
+      },
     },
-    ref
-  ) => {
-    return (
-      <div
-        ref={ref}
-        className={cn(
-          // Base styles
-          "rounded-xl",
-          "transition-all duration-200",
-
-          // Variants
-          cardVariants.variant[variant],
-          cardVariants.size[size],
-
-          // Hover effects
-          isHoverable && "hover:scale-[1.02] hover:shadow-lg",
-
-          // Custom className
-          className
-        )}
-        {...props}
-      >
-        {/* Featured badge for featured variant */}
-        {variant === "featured" && (
-          <div className="absolute top-0 right-0 bg-red-500 text-white px-3 py-1 text-xs font-medium rounded-bl-lg">
-            Featured
-          </div>
-        )}
-
-        {children}
-      </div>
-    );
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+      animation: "none",
+    },
   }
 );
 
+const cardHeaderVariants = cva("flex flex-col space-y-1.5", {
+  variants: {
+    size: {
+      sm: "pb-3",
+      default: "pb-4",
+      lg: "pb-6",
+      xl: "pb-8",
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
+
+const cardTitleVariants = cva("font-semibold leading-none tracking-tight", {
+  variants: {
+    size: {
+      sm: "text-sm",
+      default: "text-base",
+      lg: "text-lg",
+      xl: "text-xl",
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
+
+const cardDescriptionVariants = cva("text-muted-foreground", {
+  variants: {
+    size: {
+      sm: "text-xs",
+      default: "text-sm",
+      lg: "text-base",
+      xl: "text-lg",
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
+
+const cardContentVariants = cva("", {
+  variants: {
+    size: {
+      sm: "pt-3",
+      default: "pt-4",
+      lg: "pt-6",
+      xl: "pt-8",
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
+
+const cardFooterVariants = cva("flex items-center", {
+  variants: {
+    size: {
+      sm: "pt-3",
+      default: "pt-4",
+      lg: "pt-6",
+      xl: "pt-8",
+    },
+  },
+  defaultVariants: {
+    size: "default",
+  },
+});
+
+export interface CardProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof cardVariants> {
+  asChild?: boolean;
+}
+
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ className, variant, size, animation, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(cardVariants({ variant, size, animation, className }))}
+      {...props}
+    />
+  )
+);
 Card.displayName = "Card";
 
-// Card sub-components removed - not used in current implementation
+export interface CardHeaderProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof cardHeaderVariants> {}
+
+const CardHeader = React.forwardRef<HTMLDivElement, CardHeaderProps>(
+  ({ className, size, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(cardHeaderVariants({ size, className }))}
+      {...props}
+    />
+  )
+);
+CardHeader.displayName = "CardHeader";
+
+export interface CardTitleProps
+  extends React.HTMLAttributes<HTMLHeadingElement>,
+    VariantProps<typeof cardTitleVariants> {
+  children: React.ReactNode;
+}
+
+const CardTitle = React.forwardRef<HTMLHeadingElement, CardTitleProps>(
+  ({ className, size, children, ...props }, ref) => (
+    <h3
+      ref={ref}
+      className={cn(cardTitleVariants({ size, className }))}
+      {...props}
+    >
+      {children}
+    </h3>
+  )
+);
+CardTitle.displayName = "CardTitle";
+
+export interface CardDescriptionProps
+  extends React.HTMLAttributes<HTMLParagraphElement>,
+    VariantProps<typeof cardDescriptionVariants> {
+  children: React.ReactNode;
+}
+
+const CardDescription = React.forwardRef<HTMLParagraphElement, CardDescriptionProps>(
+  ({ className, size, children, ...props }, ref) => (
+    <p
+      ref={ref}
+      className={cn(cardDescriptionVariants({ size, className }))}
+      {...props}
+    >
+      {children}
+    </p>
+  )
+);
+CardDescription.displayName = "CardDescription";
+
+export interface CardContentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof cardContentVariants> {}
+
+const CardContent = React.forwardRef<HTMLDivElement, CardContentProps>(
+  ({ className, size, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(cardContentVariants({ size, className }))}
+      {...props}
+    />
+  )
+);
+CardContent.displayName = "CardContent";
+
+export interface CardFooterProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof cardFooterVariants> {}
+
+const CardFooter = React.forwardRef<HTMLDivElement, CardFooterProps>(
+  ({ className, size, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(cardFooterVariants({ size, className }))}
+      {...props}
+    />
+  )
+);
+CardFooter.displayName = "CardFooter";
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent };

@@ -50,7 +50,12 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
         />
         {error && <div style={{ color: "red" }}>{error}</div>}
-        <Image src="/logo.png" alt="MastroHUB Logo" width={150} height={75} />
+        <Image
+          src="/images/placeholders/hero-gastronomy.svg"
+          alt="MastroHUB Logo"
+          width={150}
+          height={75}
+        />
         <button type="submit">Submit</button>
       </form>
     </>

@@ -1,0 +1,2465 @@
+{
+  "timestamp": "2025-09-03T10:20:47.490Z",
+  "summary": {
+    "totalComponents": 42,
+    "averageScore": 88,
+    "totalIssues": 197,
+    "totalWarnings": 152,
+    "categories": {
+      "colors": 75,
+      "spacing": 90,
+      "typography": 94,
+      "accessibility": 84,
+      "responsive": 96
+    },
+    "status": "good"
+  },
+  "components": {
+    "ArticleCard": {
+      "name": "ArticleCard",
+      "path": "components\\cards\\ArticleCard.tsx",
+      "issues": [
+        "Avoid hardcoded hex colors: #666666",
+        "Forbidden color used: white",
+        "Forbidden color used: red",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: alt text provided"
+      ],
+      "score": 84,
+      "categories": {
+        "colors": {
+          "score": 55,
+          "issues": [
+            "Avoid hardcoded hex colors: #666666",
+            "Forbidden color used: white",
+            "Forbidden color used: red"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: alt text provided"
+          ]
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "PostCard": {
+      "name": "PostCard",
+      "path": "components\\cards\\PostCard.tsx",
+      "issues": [
+        "Forbidden color used: red",
+        "Missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system spacing variables found",
+        "No design system typography variables found"
+      ],
+      "score": 85,
+      "categories": {
+        "colors": {
+          "score": 80,
+          "issues": [
+            "Forbidden color used: red"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system spacing variables found"
+          ]
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "AIAgentDashboard": {
+      "name": "AIAgentDashboard",
+      "path": "components\\dashboard\\AIAgentDashboard.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden color used: red",
+        "Forbidden color used: blue",
+        "Forbidden color used: green",
+        "Missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system typography variables found",
+        "Good: tablet breakpoint used"
+      ],
+      "score": 84,
+      "categories": {
+        "colors": {
+          "score": 40,
+          "issues": [
+            "Forbidden color used: white",
+            "Forbidden color used: red",
+            "Forbidden color used: blue",
+            "Forbidden color used: green"
+          ],
+          "warnings": []
+        },
+        "spacing": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: tablet breakpoint used"
+          ]
+        }
+      }
+    },
+    "ContentGenerationForm": {
+      "name": "ContentGenerationForm",
+      "path": "components\\forms\\ContentGenerationForm.tsx",
+      "issues": [
+        "Forbidden color used: red",
+        "Forbidden color used: blue",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Interactive element <button> missing accessibility attributes",
+        "Interactive element <input> missing accessibility attributes",
+        "Interactive element <select> missing accessibility attributes",
+        "Interactive element <textarea> missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system typography variables found",
+        "Good: tablet breakpoint used"
+      ],
+      "score": 80,
+      "categories": {
+        "colors": {
+          "score": 70,
+          "issues": [
+            "Forbidden color used: red",
+            "Forbidden color used: blue"
+          ],
+          "warnings": []
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 40,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <button> missing accessibility attributes",
+            "Interactive element <input> missing accessibility attributes",
+            "Interactive element <select> missing accessibility attributes",
+            "Interactive element <textarea> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: tablet breakpoint used"
+          ]
+        }
+      }
+    },
+    "BlogLayout": {
+      "name": "BlogLayout",
+      "path": "components\\layout\\BlogLayout.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden spacing class: py-",
+        "Forbidden spacing class: mx-"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: role attribute provided",
+        "Good: desktop breakpoint used"
+      ],
+      "score": 95,
+      "categories": {
+        "colors": {
+          "score": 80,
+          "issues": [
+            "Forbidden color used: white"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: py-",
+            "Forbidden spacing class: mx-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: role attribute provided"
+          ]
+        },
+        "responsive": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "Footer": {
+      "name": "Footer",
+      "path": "components\\layout\\Footer.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Forbidden spacing class: mx-",
+        "Missing accessibility attributes",
+        "Interactive element <button> missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: tablet breakpoint used",
+        "Good: desktop breakpoint used"
+      ],
+      "score": 89,
+      "categories": {
+        "colors": {
+          "score": 80,
+          "issues": [
+            "Forbidden color used: white"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 85,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-",
+            "Forbidden spacing class: mx-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <button> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 115,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: tablet breakpoint used",
+            "Good: desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "Header": {
+      "name": "Header",
+      "path": "components\\layout\\Header.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden color used: red",
+        "Forbidden color used: green",
+        "Forbidden spacing class: py-"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: aria-label provided",
+        "Good: role attribute provided",
+        "Good: desktop breakpoint used"
+      ],
+      "score": 91,
+      "categories": {
+        "colors": {
+          "score": 50,
+          "issues": [
+            "Forbidden color used: white",
+            "Forbidden color used: red",
+            "Forbidden color used: green"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 95,
+          "issues": [
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 110,
+          "issues": [],
+          "warnings": [
+            "Good: aria-label provided",
+            "Good: role attribute provided"
+          ]
+        },
+        "responsive": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "HeroSection": {
+      "name": "HeroSection",
+      "path": "components\\sections\\HeroSection.tsx",
+      "issues": [
+        "Avoid rgba() colors, use CSS variables: rgba(, rgba(, rgba(, rgba(, rgba(",
+        "Forbidden color used: black",
+        "Forbidden color used: white",
+        "Forbidden color used: red",
+        "Avoid hardcoded pixel values for spacing: 4px, 8px, 2px, 4px",
+        "Use CSS variables instead of hardcoded rem values: 5rem, 5rem, 1rem, 5rem",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Forbidden spacing class: mx-",
+        "Avoid hardcoded pixel values for typography: 4px, 8px, 2px, 4px"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: role attribute provided",
+        "Good: mobile-first responsive design",
+        "Good: desktop breakpoint used"
+      ],
+      "score": 81,
+      "categories": {
+        "colors": {
+          "score": 40,
+          "issues": [
+            "Avoid rgba() colors, use CSS variables: rgba(, rgba(, rgba(, rgba(, rgba(",
+            "Forbidden color used: black",
+            "Forbidden color used: white",
+            "Forbidden color used: red"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 65,
+          "issues": [
+            "Avoid hardcoded pixel values for spacing: 4px, 8px, 2px, 4px",
+            "Use CSS variables instead of hardcoded rem values: 5rem, 5rem, 1rem, 5rem",
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-",
+            "Forbidden spacing class: mx-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 85,
+          "issues": [
+            "Avoid hardcoded pixel values for typography: 4px, 8px, 2px, 4px"
+          ],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: role attribute provided"
+          ]
+        },
+        "responsive": {
+          "score": 110,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "LiveNewsSidebar": {
+      "name": "LiveNewsSidebar",
+      "path": "components\\sidebar\\LiveNewsSidebar.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden color used: blue",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found"
+      ],
+      "score": 81,
+      "categories": {
+        "colors": {
+          "score": 65,
+          "issues": [
+            "Forbidden color used: white",
+            "Forbidden color used: blue"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "NewsletterSection": {
+      "name": "NewsletterSection",
+      "path": "components\\sections\\NewsletterSection.tsx",
+      "issues": [
+        "Forbidden color used: black",
+        "Forbidden color used: white",
+        "Forbidden color used: red",
+        "Forbidden color used: green",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Forbidden spacing class: mx-"
+      ],
+      "warnings": [
+        "No design system typography variables found",
+        "Good: aria-label provided",
+        "Good: mobile-first responsive design",
+        "Good: tablet breakpoint used"
+      ],
+      "score": 87,
+      "categories": {
+        "colors": {
+          "score": 40,
+          "issues": [
+            "Forbidden color used: black",
+            "Forbidden color used: white",
+            "Forbidden color used: red",
+            "Forbidden color used: green"
+          ],
+          "warnings": []
+        },
+        "spacing": {
+          "score": 85,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-",
+            "Forbidden spacing class: mx-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: aria-label provided"
+          ]
+        },
+        "responsive": {
+          "score": 110,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: tablet breakpoint used"
+          ]
+        }
+      }
+    },
+    "PostGrid": {
+      "name": "PostGrid",
+      "path": "components\\sections\\PostGrid.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden color used: red",
+        "Forbidden color used: blue",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Forbidden spacing class: mx-",
+        "Missing accessibility attributes",
+        "Interactive element <a> missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: tablet breakpoint used",
+        "Good: desktop breakpoint used"
+      ],
+      "score": 82,
+      "categories": {
+        "colors": {
+          "score": 50,
+          "issues": [
+            "Forbidden color used: white",
+            "Forbidden color used: red",
+            "Forbidden color used: blue"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 85,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-",
+            "Forbidden spacing class: mx-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <a> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 110,
+          "issues": [],
+          "warnings": [
+            "Good: tablet breakpoint used",
+            "Good: desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "SectionsGrid": {
+      "name": "SectionsGrid",
+      "path": "components\\sections\\SectionsGrid.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden color used: blue",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Forbidden spacing class: mx-",
+        "Missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: tablet breakpoint used",
+        "Good: desktop breakpoint used"
+      ],
+      "score": 88,
+      "categories": {
+        "colors": {
+          "score": 65,
+          "issues": [
+            "Forbidden color used: white",
+            "Forbidden color used: blue"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 85,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-",
+            "Forbidden spacing class: mx-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 115,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: tablet breakpoint used",
+            "Good: desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "TrendingTags": {
+      "name": "TrendingTags",
+      "path": "components\\sidebar\\TrendingTags.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Interactive element <button> missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found"
+      ],
+      "score": 82,
+      "categories": {
+        "colors": {
+          "score": 80,
+          "issues": [
+            "Forbidden color used: white"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <button> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "Sidebar": {
+      "name": "Sidebar",
+      "path": "components\\ui\\Sidebar.tsx",
+      "issues": [
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Interactive element <a> missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found"
+      ],
+      "score": 85,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <a> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "Badge": {
+      "name": "Badge",
+      "path": "components\\ui\\Badge.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden color used: red",
+        "Forbidden color used: blue",
+        "Forbidden color used: green",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: desktop breakpoint used",
+        "Good: large desktop breakpoint used"
+      ],
+      "score": 84,
+      "categories": {
+        "colors": {
+          "score": 40,
+          "issues": [
+            "Forbidden color used: white",
+            "Forbidden color used: red",
+            "Forbidden color used: blue",
+            "Forbidden color used: green"
+          ],
+          "warnings": []
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 115,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: desktop breakpoint used",
+            "Good: large desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "Breadcrumb": {
+      "name": "Breadcrumb",
+      "path": "components\\ui\\Breadcrumb.tsx",
+      "issues": [
+        "Forbidden spacing class: mx-",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: aria-label provided"
+      ],
+      "score": 93,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 95,
+          "issues": [
+            "Forbidden spacing class: mx-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: aria-label provided"
+          ]
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "Button": {
+      "name": "Button",
+      "path": "components\\ui\\Button.tsx",
+      "issues": [
+        "Use CSS variables for colors: var(--color-gastronomy-primary), var(--color-gastronomy-primary), var(--color-gastronomy-primary), var(--color-gastronomy-secondary), var(--color-gastronomy-secondary), var(--color-gastronomy-secondary), var(--color-gastronomy-accent), var(--color-gastronomy-accent), var(--color-gastronomy-accent), var(--color-border), var(--color-surface), var(--color-gastronomy-primary), var(--color-surface), var(--color-gastronomy-primary), var(--color-error), var(--color-error), var(--color-error)",
+        "Forbidden color used: white",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Forbidden spacing class: my-"
+      ],
+      "warnings": [
+        "No design system spacing variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: tablet breakpoint used",
+        "Good: desktop breakpoint used"
+      ],
+      "score": 93,
+      "categories": {
+        "colors": {
+          "score": 75,
+          "issues": [
+            "Use CSS variables for colors: var(--color-gastronomy-primary), var(--color-gastronomy-primary), var(--color-gastronomy-primary), var(--color-gastronomy-secondary), var(--color-gastronomy-secondary), var(--color-gastronomy-secondary), var(--color-gastronomy-accent), var(--color-gastronomy-accent), var(--color-gastronomy-accent), var(--color-border), var(--color-surface), var(--color-gastronomy-primary), var(--color-surface), var(--color-gastronomy-primary), var(--color-error), var(--color-error), var(--color-error)",
+            "Forbidden color used: white"
+          ],
+          "warnings": []
+        },
+        "spacing": {
+          "score": 80,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-",
+            "Forbidden spacing class: my-"
+          ],
+          "warnings": [
+            "No design system spacing variables found"
+          ]
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 115,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: tablet breakpoint used",
+            "Good: desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "Card": {
+      "name": "Card",
+      "path": "components\\ui\\Card.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden color used: red",
+        "Missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: desktop breakpoint used",
+        "Good: large desktop breakpoint used"
+      ],
+      "score": 91,
+      "categories": {
+        "colors": {
+          "score": 65,
+          "issues": [
+            "Forbidden color used: white",
+            "Forbidden color used: red"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 115,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: desktop breakpoint used",
+            "Good: large desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "Chart": {
+      "name": "Chart",
+      "path": "components\\ui\\Chart.tsx",
+      "issues": [
+        "Avoid hardcoded pixel values for spacing: 400px",
+        "Avoid hardcoded pixel values for typography: 400px",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found"
+      ],
+      "score": 89,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Avoid hardcoded pixel values for spacing: 400px"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 85,
+          "issues": [
+            "Avoid hardcoded pixel values for typography: 400px"
+          ],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "Container": {
+      "name": "Container",
+      "path": "components\\ui\\Container.tsx",
+      "issues": [
+        "Avoid hardcoded pixel values for spacing: 1920px",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: mx-",
+        "Avoid hardcoded pixel values for typography: 1920px",
+        "Missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system spacing variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: desktop breakpoint used"
+      ],
+      "score": 89,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 75,
+          "issues": [
+            "Avoid hardcoded pixel values for spacing: 1920px",
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: mx-"
+          ],
+          "warnings": [
+            "No design system spacing variables found"
+          ]
+        },
+        "typography": {
+          "score": 85,
+          "issues": [
+            "Avoid hardcoded pixel values for typography: 1920px"
+          ],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 110,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "DataGridBody": {
+      "name": "DataGridBody",
+      "path": "components\\ui\\data-grid\\DataGridBody.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden color used: red",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Interactive element <input> missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found"
+      ],
+      "score": 79,
+      "categories": {
+        "colors": {
+          "score": 65,
+          "issues": [
+            "Forbidden color used: white",
+            "Forbidden color used: red"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <input> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "DataGridHeader": {
+      "name": "DataGridHeader",
+      "path": "components\\ui\\data-grid\\DataGridHeader.tsx",
+      "issues": [
+        "Forbidden color used: red",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Interactive element <input> missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design"
+      ],
+      "score": 89,
+      "categories": {
+        "colors": {
+          "score": 80,
+          "issues": [
+            "Forbidden color used: red"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 95,
+          "issues": [
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <input> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design"
+          ]
+        }
+      }
+    },
+    "DataGridPagination": {
+      "name": "DataGridPagination",
+      "path": "components\\ui\\data-grid\\DataGridPagination.tsx",
+      "issues": [
+        "Avoid hardcoded pixel values for spacing: 40px",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Avoid hardcoded pixel values for typography: 40px",
+        "Missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found"
+      ],
+      "score": 83,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 80,
+          "issues": [
+            "Avoid hardcoded pixel values for spacing: 40px",
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 85,
+          "issues": [
+            "Avoid hardcoded pixel values for typography: 40px"
+          ],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "DataGrid": {
+      "name": "DataGrid",
+      "path": "components\\ui\\DataGrid.tsx",
+      "issues": [
+        "Forbidden color used: red",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Interactive element <input> missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design"
+      ],
+      "score": 88,
+      "categories": {
+        "colors": {
+          "score": 80,
+          "issues": [
+            "Forbidden color used: red"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <input> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design"
+          ]
+        }
+      }
+    },
+    "dropdown-menu": {
+      "name": "dropdown-menu",
+      "path": "components\\ui\\dropdown-menu.tsx",
+      "issues": [
+        "Use CSS variables instead of hardcoded rem values: 8rem, 8rem",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Forbidden spacing class: mx-",
+        "Forbidden spacing class: my-",
+        "Missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found"
+      ],
+      "score": 83,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 70,
+          "issues": [
+            "Use CSS variables instead of hardcoded rem values: 8rem, 8rem",
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-",
+            "Forbidden spacing class: mx-",
+            "Forbidden spacing class: my-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "Flex": {
+      "name": "Flex",
+      "path": "components\\ui\\Flex.tsx",
+      "issues": [
+        "Missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: tablet breakpoint used",
+        "Good: desktop breakpoint used",
+        "Good: large desktop breakpoint used"
+      ],
+      "score": 98,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 120,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: tablet breakpoint used",
+            "Good: desktop breakpoint used",
+            "Good: large desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "Form": {
+      "name": "Form",
+      "path": "components\\ui\\Form.tsx",
+      "issues": [
+        "Forbidden color used: red",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system typography variables found",
+        "Good: role attribute provided"
+      ],
+      "score": 92,
+      "categories": {
+        "colors": {
+          "score": 85,
+          "issues": [
+            "Forbidden color used: red"
+          ],
+          "warnings": []
+        },
+        "spacing": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: role attribute provided"
+          ]
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "Grid": {
+      "name": "Grid",
+      "path": "components\\ui\\Grid.tsx",
+      "issues": [
+        "Missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: tablet breakpoint used",
+        "Good: desktop breakpoint used",
+        "Good: large desktop breakpoint used"
+      ],
+      "score": 98,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 120,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: tablet breakpoint used",
+            "Good: desktop breakpoint used",
+            "Good: large desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "index": {
+      "name": "index",
+      "path": "components\\ui\\index.ts",
+      "issues": [
+        "Missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system spacing variables found",
+        "No design system typography variables found"
+      ],
+      "score": 88,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system spacing variables found"
+          ]
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "Input": {
+      "name": "Input",
+      "path": "components\\ui\\Input.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden color used: red",
+        "Forbidden color used: green",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Interactive element <input> missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: desktop breakpoint used",
+        "Good: large desktop breakpoint used"
+      ],
+      "score": 85,
+      "categories": {
+        "colors": {
+          "score": 55,
+          "issues": [
+            "Forbidden color used: white",
+            "Forbidden color used: red",
+            "Forbidden color used: green"
+          ],
+          "warnings": []
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <input> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 115,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: desktop breakpoint used",
+            "Good: large desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "Loading": {
+      "name": "Loading",
+      "path": "components\\ui\\Loading.tsx",
+      "issues": [
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Interactive element <button> missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: tablet breakpoint used",
+        "Good: desktop breakpoint used",
+        "Good: large desktop breakpoint used"
+      ],
+      "score": 95,
+      "categories": {
+        "colors": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <button> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 120,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: tablet breakpoint used",
+            "Good: desktop breakpoint used",
+            "Good: large desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "MegaMenu": {
+      "name": "MegaMenu",
+      "path": "components\\ui\\MegaMenu.tsx",
+      "issues": [
+        "Forbidden color used: black",
+        "Forbidden color used: red",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Forbidden spacing class: mx-",
+        "Missing accessibility attributes",
+        "Interactive element <button> missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: desktop breakpoint used"
+      ],
+      "score": 85,
+      "categories": {
+        "colors": {
+          "score": 65,
+          "issues": [
+            "Forbidden color used: black",
+            "Forbidden color used: red"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 85,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-",
+            "Forbidden spacing class: mx-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <button> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 110,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "MobileNavigation": {
+      "name": "MobileNavigation",
+      "path": "components\\ui\\MobileNavigation.tsx",
+      "issues": [
+        "Forbidden color used: black",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: aria-label provided",
+        "Good: desktop breakpoint used"
+      ],
+      "score": 95,
+      "categories": {
+        "colors": {
+          "score": 80,
+          "issues": [
+            "Forbidden color used: black"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: aria-label provided"
+          ]
+        },
+        "responsive": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "Modal": {
+      "name": "Modal",
+      "path": "components\\ui\\Modal.tsx",
+      "issues": [
+        "Forbidden color used: black",
+        "Forbidden spacing class: mx-"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: aria-label provided",
+        "Good: role attribute provided",
+        "Good: mobile-first responsive design",
+        "Good: tablet breakpoint used",
+        "Good: desktop breakpoint used",
+        "Good: large desktop breakpoint used"
+      ],
+      "score": 100,
+      "categories": {
+        "colors": {
+          "score": 80,
+          "issues": [
+            "Forbidden color used: black"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 95,
+          "issues": [
+            "Forbidden spacing class: mx-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 110,
+          "issues": [],
+          "warnings": [
+            "Good: aria-label provided",
+            "Good: role attribute provided"
+          ]
+        },
+        "responsive": {
+          "score": 120,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: tablet breakpoint used",
+            "Good: desktop breakpoint used",
+            "Good: large desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "Navigation": {
+      "name": "Navigation",
+      "path": "components\\ui\\Navigation.tsx",
+      "issues": [
+        "Forbidden color used: white",
+        "Forbidden color used: red",
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Interactive element <a> missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: tablet breakpoint used",
+        "Good: desktop breakpoint used"
+      ],
+      "score": 87,
+      "categories": {
+        "colors": {
+          "score": 65,
+          "issues": [
+            "Forbidden color used: white",
+            "Forbidden color used: red"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <a> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 115,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: tablet breakpoint used",
+            "Good: desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "PageHeader": {
+      "name": "PageHeader",
+      "path": "components\\ui\\PageHeader.tsx",
+      "issues": [
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found"
+      ],
+      "score": 88,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 95,
+          "issues": [
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "ProgressBar": {
+      "name": "ProgressBar",
+      "path": "components\\ui\\ProgressBar.tsx",
+      "issues": [
+        "Forbidden color used: red",
+        "Forbidden color used: blue",
+        "Forbidden color used: green",
+        "Missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system spacing variables found",
+        "No design system typography variables found"
+      ],
+      "score": 79,
+      "categories": {
+        "colors": {
+          "score": 50,
+          "issues": [
+            "Forbidden color used: red",
+            "Forbidden color used: blue",
+            "Forbidden color used: green"
+          ],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system spacing variables found"
+          ]
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "Skeleton": {
+      "name": "Skeleton",
+      "path": "components\\ui\\Skeleton.tsx",
+      "issues": [
+        "Missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found"
+      ],
+      "score": 89,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "Stack": {
+      "name": "Stack",
+      "path": "components\\ui\\Stack.tsx",
+      "issues": [
+        "Missing accessibility attributes"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: mobile-first responsive design",
+        "Good: tablet breakpoint used",
+        "Good: desktop breakpoint used",
+        "Good: large desktop breakpoint used"
+      ],
+      "score": 98,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 80,
+          "issues": [
+            "Missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 120,
+          "issues": [],
+          "warnings": [
+            "Good: mobile-first responsive design",
+            "Good: tablet breakpoint used",
+            "Good: desktop breakpoint used",
+            "Good: large desktop breakpoint used"
+          ]
+        }
+      }
+    },
+    "Table": {
+      "name": "Table",
+      "path": "components\\ui\\Table.tsx",
+      "issues": [
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Missing accessibility attributes",
+        "Interactive element <input> missing accessibility attributes",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found"
+      ],
+      "score": 85,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 70,
+          "issues": [
+            "Missing accessibility attributes",
+            "Interactive element <input> missing accessibility attributes"
+          ],
+          "warnings": []
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "Toast": {
+      "name": "Toast",
+      "path": "components\\ui\\Toast.tsx",
+      "issues": [
+        "Forbidden color used: black",
+        "Forbidden color used: red",
+        "Forbidden color used: blue",
+        "Forbidden color used: green",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system typography variables found",
+        "Good: aria-label provided",
+        "Good: role attribute provided"
+      ],
+      "score": 84,
+      "categories": {
+        "colors": {
+          "score": 40,
+          "issues": [
+            "Forbidden color used: black",
+            "Forbidden color used: red",
+            "Forbidden color used: blue",
+            "Forbidden color used: green"
+          ],
+          "warnings": []
+        },
+        "spacing": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 110,
+          "issues": [],
+          "warnings": [
+            "Good: aria-label provided",
+            "Good: role attribute provided"
+          ]
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    },
+    "Tooltip": {
+      "name": "Tooltip",
+      "path": "components\\ui\\Tooltip.tsx",
+      "issues": [
+        "Forbidden spacing class: px-",
+        "Forbidden spacing class: py-",
+        "Component not responsive"
+      ],
+      "warnings": [
+        "No design system color variables found",
+        "No design system typography variables found",
+        "Good: role attribute provided"
+      ],
+      "score": 92,
+      "categories": {
+        "colors": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system color variables found"
+          ]
+        },
+        "spacing": {
+          "score": 90,
+          "issues": [
+            "Forbidden spacing class: px-",
+            "Forbidden spacing class: py-"
+          ],
+          "warnings": []
+        },
+        "typography": {
+          "score": 95,
+          "issues": [],
+          "warnings": [
+            "No design system typography variables found"
+          ]
+        },
+        "accessibility": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Good: role attribute provided"
+          ]
+        },
+        "responsive": {
+          "score": 75,
+          "issues": [
+            "Component not responsive"
+          ],
+          "warnings": []
+        }
+      }
+    }
+  },
+  "recommendations": [
+    "Improve color consistency - use CSS variables instead of hardcoded colors",
+    "Fix 197 consistency issues across components"
+  ],
+  "nextSteps": [
+    "1. Fix critical consistency issues",
+    "2. Implement missing design tokens",
+    "3. Add accessibility attributes",
+    "4. Improve responsive design",
+    "5. Set up automated consistency checks",
+    "6. Create component documentation"
+  ]
+}

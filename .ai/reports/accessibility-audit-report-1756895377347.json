@@ -1,0 +1,1832 @@
+{
+  "timestamp": "2025-09-03T10:29:37.346Z",
+  "summary": {
+    "totalComponents": 42,
+    "averageScore": 68,
+    "totalIssues": 69,
+    "totalWarnings": 21,
+    "wcagCompliance": {
+      "perceivable": 95,
+      "operable": 94,
+      "understandable": 95,
+      "robust": 94
+    },
+    "accessibilityFeatures": {
+      "semanticHTML": null,
+      "ariaImplementation": null,
+      "keyboardAccessibility": 100
+    },
+    "status": "fair"
+  },
+  "components": {
+    "ArticleCard": {
+      "name": "ArticleCard",
+      "path": "components\\cards\\ArticleCard.tsx",
+      "score": 69,
+      "issues": [
+        "2.1.1 Keyboard: Links must be keyboard accessible"
+      ],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 85,
+          "issues": [
+            "2.1.1 Keyboard: Links must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "PostCard": {
+      "name": "PostCard",
+      "path": "components\\cards\\PostCard.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "AIAgentDashboard": {
+      "name": "AIAgentDashboard",
+      "path": "components\\dashboard\\AIAgentDashboard.tsx",
+      "score": 72,
+      "issues": [],
+      "warnings": [
+        "4.1.1 Parsing: Avoid empty divs - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "4.1.1 Parsing: Avoid empty divs - OK"
+          ]
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "ContentGenerationForm": {
+      "name": "ContentGenerationForm",
+      "path": "components\\forms\\ContentGenerationForm.tsx",
+      "score": 47,
+      "issues": [
+        "1.3.1 Info and Relationships: Forms must have labels",
+        "2.1.1 Keyboard: Buttons must be keyboard accessible",
+        "2.1.1 Keyboard: Inputs must be keyboard accessible",
+        "3.3.1 Error Identification: Form inputs need error handling",
+        "3.3.1 Error Identification: Select elements need error handling",
+        "3.3.1 Error Identification: Textareas need error handling",
+        "3.3.2 Labels or Instructions: Inputs must have labels",
+        "3.3.2 Labels or Instructions: Selects must have labels",
+        "3.3.2 Labels or Instructions: Textareas must have labels",
+        "4.1.2 Name, Role, Value: Buttons need accessible names",
+        "4.1.2 Name, Role, Value: Inputs need accessible names",
+        "4.1.2 Name, Role, Value: Selects need accessible names"
+      ],
+      "warnings": [
+        "3.2.2 On Input: Avoid automatic context changes on input - OK",
+        "Good: Using onKeyPress handler: 1 found"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 85,
+          "issues": [
+            "1.3.1 Info and Relationships: Forms must have labels"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 70,
+          "issues": [
+            "2.1.1 Keyboard: Buttons must be keyboard accessible",
+            "2.1.1 Keyboard: Inputs must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 15,
+          "issues": [
+            "3.3.1 Error Identification: Form inputs need error handling",
+            "3.3.1 Error Identification: Select elements need error handling",
+            "3.3.1 Error Identification: Textareas need error handling",
+            "3.3.2 Labels or Instructions: Inputs must have labels",
+            "3.3.2 Labels or Instructions: Selects must have labels",
+            "3.3.2 Labels or Instructions: Textareas must have labels"
+          ],
+          "warnings": [
+            "3.2.2 On Input: Avoid automatic context changes on input - OK"
+          ]
+        },
+        "robust": {
+          "score": 55,
+          "issues": [
+            "4.1.2 Name, Role, Value: Buttons need accessible names",
+            "4.1.2 Name, Role, Value: Inputs need accessible names",
+            "4.1.2 Name, Role, Value: Selects need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 105,
+        "issues": [],
+        "warnings": [
+          "Good: Using onKeyPress handler: 1 found"
+        ]
+      }
+    },
+    "BlogLayout": {
+      "name": "BlogLayout",
+      "path": "components\\layout\\BlogLayout.tsx",
+      "score": 72,
+      "issues": [],
+      "warnings": [
+        "2.4.1 Bypass Blocks: Use semantic main element - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "2.4.1 Bypass Blocks: Use semantic main element - OK"
+          ]
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Footer": {
+      "name": "Footer",
+      "path": "components\\layout\\Footer.tsx",
+      "score": 65,
+      "issues": [
+        "1.1.1 Non-text Content: SVGs must have aria-label or title",
+        "2.1.1 Keyboard: Buttons must be keyboard accessible",
+        "4.1.2 Name, Role, Value: Buttons need accessible names"
+      ],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 85,
+          "issues": [
+            "1.1.1 Non-text Content: SVGs must have aria-label or title"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 85,
+          "issues": [
+            "2.1.1 Keyboard: Buttons must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Buttons need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Header": {
+      "name": "Header",
+      "path": "components\\layout\\Header.tsx",
+      "score": 70,
+      "issues": [
+        "1.1.1 Non-text Content: SVGs must have aria-label or title"
+      ],
+      "warnings": [
+        "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 85,
+          "issues": [
+            "1.1.1 Non-text Content: SVGs must have aria-label or title"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+          ]
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "HeroSection": {
+      "name": "HeroSection",
+      "path": "components\\sections\\HeroSection.tsx",
+      "score": 69,
+      "issues": [
+        "1.1.1 Non-text Content: SVGs must have aria-label or title"
+      ],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 85,
+          "issues": [
+            "1.1.1 Non-text Content: SVGs must have aria-label or title"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "LiveNewsSidebar": {
+      "name": "LiveNewsSidebar",
+      "path": "components\\sidebar\\LiveNewsSidebar.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "NewsletterSection": {
+      "name": "NewsletterSection",
+      "path": "components\\sections\\NewsletterSection.tsx",
+      "score": 55,
+      "issues": [
+        "1.1.1 Non-text Content: SVGs must have aria-label or title",
+        "1.3.1 Info and Relationships: Forms must have labels",
+        "2.1.1 Keyboard: Buttons must be keyboard accessible",
+        "2.1.1 Keyboard: Inputs must be keyboard accessible",
+        "3.3.1 Error Identification: Form inputs need error handling",
+        "3.3.2 Labels or Instructions: Inputs must have labels",
+        "4.1.2 Name, Role, Value: Buttons need accessible names",
+        "4.1.2 Name, Role, Value: Inputs need accessible names"
+      ],
+      "warnings": [
+        "3.2.2 On Input: Avoid automatic context changes on input - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 70,
+          "issues": [
+            "1.1.1 Non-text Content: SVGs must have aria-label or title",
+            "1.3.1 Info and Relationships: Forms must have labels"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 70,
+          "issues": [
+            "2.1.1 Keyboard: Buttons must be keyboard accessible",
+            "2.1.1 Keyboard: Inputs must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 75,
+          "issues": [
+            "3.3.1 Error Identification: Form inputs need error handling",
+            "3.3.2 Labels or Instructions: Inputs must have labels"
+          ],
+          "warnings": [
+            "3.2.2 On Input: Avoid automatic context changes on input - OK"
+          ]
+        },
+        "robust": {
+          "score": 70,
+          "issues": [
+            "4.1.2 Name, Role, Value: Buttons need accessible names",
+            "4.1.2 Name, Role, Value: Inputs need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "PostGrid": {
+      "name": "PostGrid",
+      "path": "components\\sections\\PostGrid.tsx",
+      "score": 67,
+      "issues": [
+        "1.1.1 Non-text Content: SVGs must have aria-label or title",
+        "2.1.1 Keyboard: Links must be keyboard accessible"
+      ],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 85,
+          "issues": [
+            "1.1.1 Non-text Content: SVGs must have aria-label or title"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 85,
+          "issues": [
+            "2.1.1 Keyboard: Links must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "SectionsGrid": {
+      "name": "SectionsGrid",
+      "path": "components\\sections\\SectionsGrid.tsx",
+      "score": 69,
+      "issues": [
+        "1.1.1 Non-text Content: SVGs must have aria-label or title"
+      ],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 85,
+          "issues": [
+            "1.1.1 Non-text Content: SVGs must have aria-label or title"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "TrendingTags": {
+      "name": "TrendingTags",
+      "path": "components\\sidebar\\TrendingTags.tsx",
+      "score": 67,
+      "issues": [
+        "2.1.1 Keyboard: Buttons must be keyboard accessible",
+        "4.1.2 Name, Role, Value: Buttons need accessible names"
+      ],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 85,
+          "issues": [
+            "2.1.1 Keyboard: Buttons must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Buttons need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Sidebar": {
+      "name": "Sidebar",
+      "path": "components\\ui\\Sidebar.tsx",
+      "score": 70,
+      "issues": [
+        "2.1.1 Keyboard: Links must be keyboard accessible"
+      ],
+      "warnings": [
+        "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 90,
+          "issues": [
+            "2.1.1 Keyboard: Links must be keyboard accessible"
+          ],
+          "warnings": [
+            "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+          ]
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Badge": {
+      "name": "Badge",
+      "path": "components\\ui\\Badge.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Breadcrumb": {
+      "name": "Breadcrumb",
+      "path": "components\\ui\\Breadcrumb.tsx",
+      "score": 66,
+      "issues": [
+        "2.1.1 Keyboard: Buttons must be keyboard accessible",
+        "2.1.1 Keyboard: Links must be keyboard accessible",
+        "4.1.2 Name, Role, Value: Buttons need accessible names"
+      ],
+      "warnings": [
+        "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 75,
+          "issues": [
+            "2.1.1 Keyboard: Buttons must be keyboard accessible",
+            "2.1.1 Keyboard: Links must be keyboard accessible"
+          ],
+          "warnings": [
+            "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+          ]
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Buttons need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Button": {
+      "name": "Button",
+      "path": "components\\ui\\Button.tsx",
+      "score": 65,
+      "issues": [
+        "1.1.1 Non-text Content: SVGs must have aria-label or title",
+        "2.1.1 Keyboard: Buttons must be keyboard accessible",
+        "4.1.2 Name, Role, Value: Buttons need accessible names"
+      ],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 85,
+          "issues": [
+            "1.1.1 Non-text Content: SVGs must have aria-label or title"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 85,
+          "issues": [
+            "2.1.1 Keyboard: Buttons must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Buttons need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Card": {
+      "name": "Card",
+      "path": "components\\ui\\Card.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Chart": {
+      "name": "Chart",
+      "path": "components\\ui\\Chart.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Container": {
+      "name": "Container",
+      "path": "components\\ui\\Container.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "DataGridBody": {
+      "name": "DataGridBody",
+      "path": "components\\ui\\data-grid\\DataGridBody.tsx",
+      "score": 61,
+      "issues": [
+        "1.3.1 Info and Relationships: Tables must have headers and captions",
+        "2.1.1 Keyboard: Inputs must be keyboard accessible",
+        "3.3.1 Error Identification: Form inputs need error handling",
+        "3.3.2 Labels or Instructions: Inputs must have labels",
+        "4.1.2 Name, Role, Value: Inputs need accessible names"
+      ],
+      "warnings": [
+        "3.2.2 On Input: Avoid automatic context changes on input - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 85,
+          "issues": [
+            "1.3.1 Info and Relationships: Tables must have headers and captions"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 85,
+          "issues": [
+            "2.1.1 Keyboard: Inputs must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 75,
+          "issues": [
+            "3.3.1 Error Identification: Form inputs need error handling",
+            "3.3.2 Labels or Instructions: Inputs must have labels"
+          ],
+          "warnings": [
+            "3.2.2 On Input: Avoid automatic context changes on input - OK"
+          ]
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Inputs need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "DataGridHeader": {
+      "name": "DataGridHeader",
+      "path": "components\\ui\\data-grid\\DataGridHeader.tsx",
+      "score": 64,
+      "issues": [
+        "2.1.1 Keyboard: Inputs must be keyboard accessible",
+        "3.3.1 Error Identification: Form inputs need error handling",
+        "3.3.2 Labels or Instructions: Inputs must have labels",
+        "4.1.2 Name, Role, Value: Inputs need accessible names"
+      ],
+      "warnings": [
+        "3.2.2 On Input: Avoid automatic context changes on input - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 85,
+          "issues": [
+            "2.1.1 Keyboard: Inputs must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 75,
+          "issues": [
+            "3.3.1 Error Identification: Form inputs need error handling",
+            "3.3.2 Labels or Instructions: Inputs must have labels"
+          ],
+          "warnings": [
+            "3.2.2 On Input: Avoid automatic context changes on input - OK"
+          ]
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Inputs need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "DataGridPagination": {
+      "name": "DataGridPagination",
+      "path": "components\\ui\\data-grid\\DataGridPagination.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "DataGrid": {
+      "name": "DataGrid",
+      "path": "components\\ui\\DataGrid.tsx",
+      "score": 62,
+      "issues": [
+        "1.3.1 Info and Relationships: Tables must have headers and captions",
+        "2.1.1 Keyboard: Inputs must be keyboard accessible",
+        "3.3.1 Error Identification: Form inputs need error handling",
+        "3.3.2 Labels or Instructions: Inputs must have labels",
+        "4.1.2 Name, Role, Value: Inputs need accessible names"
+      ],
+      "warnings": [
+        "3.2.2 On Input: Avoid automatic context changes on input - OK",
+        "3.2.2 On Input: Avoid automatic context changes on select - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 85,
+          "issues": [
+            "1.3.1 Info and Relationships: Tables must have headers and captions"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 85,
+          "issues": [
+            "2.1.1 Keyboard: Inputs must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 80,
+          "issues": [
+            "3.3.1 Error Identification: Form inputs need error handling",
+            "3.3.2 Labels or Instructions: Inputs must have labels"
+          ],
+          "warnings": [
+            "3.2.2 On Input: Avoid automatic context changes on input - OK",
+            "3.2.2 On Input: Avoid automatic context changes on select - OK"
+          ]
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Inputs need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "dropdown-menu": {
+      "name": "dropdown-menu",
+      "path": "components\\ui\\dropdown-menu.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Flex": {
+      "name": "Flex",
+      "path": "components\\ui\\Flex.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Form": {
+      "name": "Form",
+      "path": "components\\ui\\Form.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Grid": {
+      "name": "Grid",
+      "path": "components\\ui\\Grid.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "index": {
+      "name": "index",
+      "path": "components\\ui\\index.ts",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Input": {
+      "name": "Input",
+      "path": "components\\ui\\Input.tsx",
+      "score": 61,
+      "issues": [
+        "1.1.1 Non-text Content: SVGs must have aria-label or title",
+        "2.1.1 Keyboard: Inputs must be keyboard accessible",
+        "3.3.1 Error Identification: Form inputs need error handling",
+        "3.3.2 Labels or Instructions: Inputs must have labels",
+        "4.1.2 Name, Role, Value: Inputs need accessible names"
+      ],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 85,
+          "issues": [
+            "1.1.1 Non-text Content: SVGs must have aria-label or title"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 85,
+          "issues": [
+            "2.1.1 Keyboard: Inputs must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 70,
+          "issues": [
+            "3.3.1 Error Identification: Form inputs need error handling",
+            "3.3.2 Labels or Instructions: Inputs must have labels"
+          ],
+          "warnings": []
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Inputs need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Loading": {
+      "name": "Loading",
+      "path": "components\\ui\\Loading.tsx",
+      "score": 67,
+      "issues": [
+        "2.1.1 Keyboard: Buttons must be keyboard accessible",
+        "4.1.2 Name, Role, Value: Buttons need accessible names"
+      ],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 85,
+          "issues": [
+            "2.1.1 Keyboard: Buttons must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Buttons need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "MegaMenu": {
+      "name": "MegaMenu",
+      "path": "components\\ui\\MegaMenu.tsx",
+      "score": 68,
+      "issues": [
+        "2.1.1 Keyboard: Buttons must be keyboard accessible",
+        "4.1.2 Name, Role, Value: Buttons need accessible names"
+      ],
+      "warnings": [
+        "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 90,
+          "issues": [
+            "2.1.1 Keyboard: Buttons must be keyboard accessible"
+          ],
+          "warnings": [
+            "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+          ]
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Buttons need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "MobileNavigation": {
+      "name": "MobileNavigation",
+      "path": "components\\ui\\MobileNavigation.tsx",
+      "score": 68,
+      "issues": [
+        "2.1.1 Keyboard: Buttons must be keyboard accessible",
+        "4.1.2 Name, Role, Value: Buttons need accessible names"
+      ],
+      "warnings": [
+        "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 90,
+          "issues": [
+            "2.1.1 Keyboard: Buttons must be keyboard accessible"
+          ],
+          "warnings": [
+            "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+          ]
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Buttons need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Modal": {
+      "name": "Modal",
+      "path": "components\\ui\\Modal.tsx",
+      "score": 74,
+      "issues": [],
+      "warnings": [
+        "2.1.2 No Keyboard Trap: Provide escape mechanism for keyboard traps - OK",
+        "Good: Using onKeyDown handler: 1 found",
+        "Good: Programmatic focus management: 2 found"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "2.1.2 No Keyboard Trap: Provide escape mechanism for keyboard traps - OK"
+          ]
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 110,
+        "issues": [],
+        "warnings": [
+          "Good: Using onKeyDown handler: 1 found",
+          "Good: Programmatic focus management: 2 found"
+        ]
+      }
+    },
+    "Navigation": {
+      "name": "Navigation",
+      "path": "components\\ui\\Navigation.tsx",
+      "score": 70,
+      "issues": [
+        "2.1.1 Keyboard: Links must be keyboard accessible"
+      ],
+      "warnings": [
+        "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 90,
+          "issues": [
+            "2.1.1 Keyboard: Links must be keyboard accessible"
+          ],
+          "warnings": [
+            "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+          ]
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "PageHeader": {
+      "name": "PageHeader",
+      "path": "components\\ui\\PageHeader.tsx",
+      "score": 72,
+      "issues": [],
+      "warnings": [
+        "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "2.4.1 Bypass Blocks: Use semantic nav element - OK"
+          ]
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "ProgressBar": {
+      "name": "ProgressBar",
+      "path": "components\\ui\\ProgressBar.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Skeleton": {
+      "name": "Skeleton",
+      "path": "components\\ui\\Skeleton.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Stack": {
+      "name": "Stack",
+      "path": "components\\ui\\Stack.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Table": {
+      "name": "Table",
+      "path": "components\\ui\\Table.tsx",
+      "score": 62,
+      "issues": [
+        "1.3.1 Info and Relationships: Tables must have headers and captions",
+        "2.1.1 Keyboard: Inputs must be keyboard accessible",
+        "3.3.1 Error Identification: Form inputs need error handling",
+        "3.3.2 Labels or Instructions: Inputs must have labels",
+        "4.1.2 Name, Role, Value: Inputs need accessible names"
+      ],
+      "warnings": [
+        "3.2.2 On Input: Avoid automatic context changes on input - OK",
+        "3.2.2 On Input: Avoid automatic context changes on select - OK"
+      ],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 85,
+          "issues": [
+            "1.3.1 Info and Relationships: Tables must have headers and captions"
+          ],
+          "warnings": []
+        },
+        "operable": {
+          "score": 85,
+          "issues": [
+            "2.1.1 Keyboard: Inputs must be keyboard accessible"
+          ],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 80,
+          "issues": [
+            "3.3.1 Error Identification: Form inputs need error handling",
+            "3.3.2 Labels or Instructions: Inputs must have labels"
+          ],
+          "warnings": [
+            "3.2.2 On Input: Avoid automatic context changes on input - OK",
+            "3.2.2 On Input: Avoid automatic context changes on select - OK"
+          ]
+        },
+        "robust": {
+          "score": 85,
+          "issues": [
+            "4.1.2 Name, Role, Value: Inputs need accessible names"
+          ],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Toast": {
+      "name": "Toast",
+      "path": "components\\ui\\Toast.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Tooltip": {
+      "name": "Tooltip",
+      "path": "components\\ui\\Tooltip.tsx",
+      "score": 71,
+      "issues": [],
+      "warnings": [],
+      "wcagCompliance": {
+        "perceivable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "operable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "understandable": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        },
+        "robust": {
+          "score": 100,
+          "issues": [],
+          "warnings": []
+        }
+      },
+      "semanticHTML": {},
+      "ariaImplementation": {},
+      "keyboardAccessibility": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    }
+  },
+  "recommendations": [
+    "Fix 69 accessibility issues across components"
+  ],
+  "nextSteps": [
+    "1. Fix critical accessibility issues",
+    "2. Add missing ARIA attributes",
+    "3. Implement keyboard navigation",
+    "4. Test with screen readers",
+    "5. Validate color contrast ratios",
+    "6. Set up automated accessibility testing"
+  ]
+}

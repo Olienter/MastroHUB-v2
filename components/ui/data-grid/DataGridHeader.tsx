@@ -41,7 +41,7 @@ export function DataGridHeader({
       {/* Filters Toggle */}
       {filterable && (
         <Button
-          variant={showFilters ? "primary" : "outline"}
+          variant={showFilters ? "default" : "outline"}
           onClick={onToggleFilters}
           className="flex items-center gap-2"
         >

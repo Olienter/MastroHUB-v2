@@ -1,0 +1,40 @@
+{
+  "timestamp": "2025-09-03T09:52:21.748Z",
+  "overall_status": "completed",
+  "workflows": {
+    "talk_v1": {
+      "status": "completed",
+      "steps": {
+        "validate_talk_v1_compliance": {
+          "output": "🔍 TALK v1 Format Validation...\n\n📝 Validating TALK v1 Format...\n✅ TALK v1 Format: PASS\n\n📋 Validating Evidence System...\n✅ Evidence System: PASS (10/10)\n\n📊 Validating Decision Tracking...\n✅ Decision Tracking: PASS\n\n🤖 Validating Automation Readiness...\n✅ Automation Readiness: PASS (10/10)\n\n📊 Generating Compliance Report...\n\n============================================================\nTALK V1 COMPLIANCE REPORT\n============================================================\nOverall Score: 10%\nTimestamp: 2025-09-03T09:52:22.018Z\n============================================================\nFORMAT: PASS (10/10)\nEVIDENCE: PASS (10/10)\nDECISIONS: PASS (10/10)\nAUTOMATION: PASS (10/10)\n\n📄 Report saved to: .ai/talk-v1-compliance-report.json\n",
+          "status": "completed",
+          "duration_ms": 264
+        },
+        "execute_talk_v1_core": {
+          "output": "📊 TALK v1 Core Status: {\n  evidenceCount: 0,\n  journalEntries: 0,\n  qualityGates: 0,\n  status: 'operational'\n}\n",
+          "status": "completed",
+          "duration_ms": 103
+        },
+        "validate_evidence": {
+          "output": "Found 42 evidence files",
+          "status": "completed",
+          "duration_ms": 1
+        },
+        "update_journal": {
+          "output": "Journal updated",
+          "status": "completed",
+          "duration_ms": 62
+        }
+      },
+      "start_time": 1756893141798,
+      "errors": [],
+      "end_time": 1756893142239
+    }
+  },
+  "errors": [],
+  "performance": {
+    "start_time": 1756893141749,
+    "end_time": 1756893142240,
+    "duration_ms": 491
+  }
+}

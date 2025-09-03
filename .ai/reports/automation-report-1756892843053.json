@@ -1,0 +1,35 @@
+{
+  "timestamp": "2025-09-03T09:47:22.339Z",
+  "overall_status": "completed",
+  "workflows": {
+    "quality": {
+      "status": "completed",
+      "steps": {
+        "validate_environment": {
+          "output": "Environment validation passed",
+          "status": "completed",
+          "duration_ms": 590
+        },
+        "run_quality_gates": {
+          "output": "",
+          "status": "completed",
+          "duration_ms": 111
+        },
+        "generate_evidence": {
+          "output": "Evidence generated: .ai/checks/AUTO-ORCHESTRATOR-1756892843051.json",
+          "status": "completed",
+          "duration_ms": 1
+        }
+      },
+      "start_time": 1756892842347,
+      "errors": [],
+      "end_time": 1756892843052
+    }
+  },
+  "errors": [],
+  "performance": {
+    "start_time": 1756892842340,
+    "end_time": 1756892843053,
+    "duration_ms": 713
+  }
+}

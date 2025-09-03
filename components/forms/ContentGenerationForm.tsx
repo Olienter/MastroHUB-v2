@@ -235,7 +235,7 @@ export function ContentGenerationForm({ onSubmit, className = "" }: ContentGener
 
         {/* Submit Button */}
         <div className="flex justify-end">
-          <Button type="submit" variant="primary" className="px-8">
+          <Button type="submit" variant="default" className="px-8">
             Generate Content
           </Button>
         </div>

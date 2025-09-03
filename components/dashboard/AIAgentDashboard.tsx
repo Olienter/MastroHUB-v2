@@ -109,7 +109,7 @@ export function AIAgentDashboard({ className = "" }: AIAgentDashboardProps) {
           <p className="text-gray-600">Manage your AI agents and daily content generation</p>
         </div>
         <div className="flex space-x-3">
-          <Button onClick={generateDailyContent} variant="primary">
+          <Button onClick={generateDailyContent} variant="default">
             Generate Daily Content
           </Button>
           <Button onClick={scheduleContent} variant="secondary">

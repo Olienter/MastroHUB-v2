@@ -1,0 +1,2477 @@
+{
+  "timestamp": "2025-09-03T10:29:32.462Z",
+  "summary": {
+    "totalComponents": 42,
+    "averageScore": 84,
+    "totalIssues": 144,
+    "totalWarnings": 167,
+    "breakpointCoverage": {
+      "mobile": 90,
+      "tablet": 93,
+      "desktop": 100,
+      "wide": 100
+    },
+    "mobileFirstPercentage": 43,
+    "status": "good"
+  },
+  "components": {
+    "ArticleCard": {
+      "name": "ArticleCard",
+      "path": "components\\cards\\ArticleCard.tsx",
+      "score": 77,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4",
+        "Good tablet pattern: p-6",
+        "Good desktop pattern: text-lg"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 79,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 77,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": [
+            "Good tablet pattern: p-6"
+          ]
+        },
+        "desktop": {
+          "score": 77,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": [
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "PostCard": {
+      "name": "PostCard",
+      "path": "components\\cards\\PostCard.tsx",
+      "score": 75,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [],
+      "breakpoints": {
+        "mobile": {
+          "score": 75,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "AIAgentDashboard": {
+      "name": "AIAgentDashboard",
+      "path": "components\\dashboard\\AIAgentDashboard.tsx",
+      "score": 86,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4",
+        "Good mobile pattern: space-y-4",
+        "Tablet breakpoint used: md:, md:",
+        "Good tablet pattern: p-6",
+        "Good tablet pattern: space-y-6",
+        "Good desktop pattern: text-lg",
+        "Good wide pattern: text-xl"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 81,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4",
+            "Good mobile pattern: space-y-4"
+          ]
+        },
+        "tablet": {
+          "score": 109,
+          "issues": [],
+          "warnings": [
+            "Tablet breakpoint used: md:, md:",
+            "Good tablet pattern: p-6",
+            "Good tablet pattern: space-y-6"
+          ]
+        },
+        "desktop": {
+          "score": 77,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": [
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 77,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": [
+            "Good wide pattern: text-xl"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "ContentGenerationForm": {
+      "name": "ContentGenerationForm",
+      "path": "components\\forms\\ContentGenerationForm.tsx",
+      "score": 85,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm",
+        "Tablet breakpoint used: md:, md:",
+        "Good tablet pattern: p-6",
+        "Good tablet pattern: space-y-6",
+        "Good wide pattern: text-xl"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 109,
+          "issues": [],
+          "warnings": [
+            "Tablet breakpoint used: md:, md:",
+            "Good tablet pattern: p-6",
+            "Good tablet pattern: space-y-6"
+          ]
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 77,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": [
+            "Good wide pattern: text-xl"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "BlogLayout": {
+      "name": "BlogLayout",
+      "path": "components\\layout\\BlogLayout.tsx",
+      "score": 80,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Forbidden breakpoint class in mobile: lg:",
+        "Missing tablet breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Desktop breakpoint used: lg:, lg:, lg:, lg:",
+        "Good desktop pattern: p-8",
+        "Good wide pattern: p-12"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 60,
+          "issues": [
+            "Missing mobile breakpoint classes",
+            "Forbidden breakpoint class in mobile: lg:"
+          ],
+          "warnings": []
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:, lg:, lg:, lg:",
+            "Good desktop pattern: p-8"
+          ]
+        },
+        "wide": {
+          "score": 77,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": [
+            "Good wide pattern: p-12"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Footer": {
+      "name": "Footer",
+      "path": "components\\layout\\Footer.tsx",
+      "score": 95,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: text-sm",
+        "Tablet breakpoint used: md:, md:",
+        "Desktop breakpoint used: lg:",
+        "Good desktop pattern: text-lg",
+        "Good desktop pattern: p-8"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 92,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Tablet breakpoint used: md:, md:"
+          ]
+        },
+        "desktop": {
+          "score": 109,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:",
+            "Good desktop pattern: text-lg",
+            "Good desktop pattern: p-8"
+          ]
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Header": {
+      "name": "Header",
+      "path": "components\\layout\\Header.tsx",
+      "score": 80,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Forbidden breakpoint class in mobile: lg:",
+        "Missing tablet breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: space-y-4",
+        "Desktop breakpoint used: lg:, lg:, lg:, lg:, lg:, lg:, lg:, lg:, lg:",
+        "Good desktop pattern: text-lg",
+        "Good wide pattern: text-xl"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 62,
+          "issues": [
+            "Missing mobile breakpoint classes",
+            "Forbidden breakpoint class in mobile: lg:"
+          ],
+          "warnings": [
+            "Good mobile pattern: space-y-4"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:, lg:, lg:, lg:, lg:, lg:, lg:, lg:, lg:",
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 77,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": [
+            "Good wide pattern: text-xl"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "HeroSection": {
+      "name": "HeroSection",
+      "path": "components\\sections\\HeroSection.tsx",
+      "score": 90,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Missing tablet breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:, sm:, sm:",
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4",
+        "Good tablet pattern: text-base",
+        "Good tablet pattern: p-6",
+        "Good tablet pattern: space-y-6",
+        "Desktop breakpoint used: lg:, lg:, lg:, lg:, lg:, lg:, lg:, lg:, lg:",
+        "Good desktop pattern: p-8",
+        "Good desktop pattern: space-y-8"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 94,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:, sm:, sm:",
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 81,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": [
+            "Good tablet pattern: text-base",
+            "Good tablet pattern: p-6",
+            "Good tablet pattern: space-y-6"
+          ]
+        },
+        "desktop": {
+          "score": 109,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:, lg:, lg:, lg:, lg:, lg:, lg:, lg:, lg:",
+            "Good desktop pattern: p-8",
+            "Good desktop pattern: space-y-8"
+          ]
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "LiveNewsSidebar": {
+      "name": "LiveNewsSidebar",
+      "path": "components\\sidebar\\LiveNewsSidebar.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 79,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "NewsletterSection": {
+      "name": "NewsletterSection",
+      "path": "components\\sections\\NewsletterSection.tsx",
+      "score": 93,
+      "issues": [
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4",
+        "Good mobile pattern: space-y-4",
+        "Tablet breakpoint used: md:, md:, md:",
+        "Good desktop pattern: text-lg",
+        "Good desktop pattern: p-8",
+        "Good wide pattern: p-12"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 111,
+          "issues": [],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4",
+            "Good mobile pattern: space-y-4"
+          ]
+        },
+        "tablet": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Tablet breakpoint used: md:, md:, md:"
+          ]
+        },
+        "desktop": {
+          "score": 79,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": [
+            "Good desktop pattern: text-lg",
+            "Good desktop pattern: p-8"
+          ]
+        },
+        "wide": {
+          "score": 77,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": [
+            "Good wide pattern: p-12"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "PostGrid": {
+      "name": "PostGrid",
+      "path": "components\\sections\\PostGrid.tsx",
+      "score": 88,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Forbidden breakpoint class in mobile: lg:",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Tablet breakpoint used: md:, md:, md:",
+        "Good tablet pattern: text-base",
+        "Desktop breakpoint used: lg:, lg:",
+        "Good desktop pattern: text-lg",
+        "Good desktop pattern: p-8"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 60,
+          "issues": [
+            "Missing mobile breakpoint classes",
+            "Forbidden breakpoint class in mobile: lg:"
+          ],
+          "warnings": []
+        },
+        "tablet": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Tablet breakpoint used: md:, md:, md:",
+            "Good tablet pattern: text-base"
+          ]
+        },
+        "desktop": {
+          "score": 109,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:, lg:",
+            "Good desktop pattern: text-lg",
+            "Good desktop pattern: p-8"
+          ]
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "SectionsGrid": {
+      "name": "SectionsGrid",
+      "path": "components\\sections\\SectionsGrid.tsx",
+      "score": 96,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: text-sm",
+        "Tablet breakpoint used: md:, md:",
+        "Good tablet pattern: p-6",
+        "Desktop breakpoint used: lg:, lg:",
+        "Good desktop pattern: text-lg",
+        "Good wide pattern: text-xl"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 92,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Tablet breakpoint used: md:, md:",
+            "Good tablet pattern: p-6"
+          ]
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:, lg:",
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 77,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": [
+            "Good wide pattern: text-xl"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "TrendingTags": {
+      "name": "TrendingTags",
+      "path": "components\\sidebar\\TrendingTags.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 79,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Sidebar": {
+      "name": "Sidebar",
+      "path": "components\\ui\\Sidebar.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: p-4",
+        "Good desktop pattern: text-lg"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 77,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": [
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Badge": {
+      "name": "Badge",
+      "path": "components\\ui\\Badge.tsx",
+      "score": 87,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Forbidden breakpoint class in mobile: xl:",
+        "Missing tablet breakpoint classes",
+        "Forbidden breakpoint class in tablet: xl:"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: text-sm",
+        "Good tablet pattern: text-base",
+        "Desktop breakpoint used: lg:",
+        "Large desktop breakpoint used: xl:"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:",
+            "Forbidden breakpoint class in mobile: xl:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 62,
+          "issues": [
+            "Missing tablet breakpoint classes",
+            "Forbidden breakpoint class in tablet: xl:"
+          ],
+          "warnings": [
+            "Good tablet pattern: text-base"
+          ]
+        },
+        "desktop": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:"
+          ]
+        },
+        "wide": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Large desktop breakpoint used: xl:"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Breadcrumb": {
+      "name": "Breadcrumb",
+      "path": "components\\ui\\Breadcrumb.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Button": {
+      "name": "Button",
+      "path": "components\\ui\\Button.tsx",
+      "score": 95,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: text-sm",
+        "Tablet breakpoint used: md:",
+        "Desktop breakpoint used: lg:",
+        "Good desktop pattern: text-lg"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 92,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Tablet breakpoint used: md:"
+          ]
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:",
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Card": {
+      "name": "Card",
+      "path": "components\\ui\\Card.tsx",
+      "score": 90,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Forbidden breakpoint class in mobile: xl:",
+        "Missing tablet breakpoint classes",
+        "Forbidden breakpoint class in tablet: xl:"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:, sm:, sm:, sm:, sm:, sm:",
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4",
+        "Good tablet pattern: text-base",
+        "Good tablet pattern: p-6",
+        "Desktop breakpoint used: lg:, lg:, lg:, lg:, lg:, lg:",
+        "Good desktop pattern: text-lg",
+        "Good desktop pattern: p-8",
+        "Large desktop breakpoint used: xl:, xl:, xl:, xl:, xl:, xl:",
+        "Good wide pattern: text-xl"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 79,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:",
+            "Forbidden breakpoint class in mobile: xl:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:, sm:, sm:, sm:, sm:, sm:",
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 64,
+          "issues": [
+            "Missing tablet breakpoint classes",
+            "Forbidden breakpoint class in tablet: xl:"
+          ],
+          "warnings": [
+            "Good tablet pattern: text-base",
+            "Good tablet pattern: p-6"
+          ]
+        },
+        "desktop": {
+          "score": 109,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:, lg:, lg:, lg:, lg:, lg:",
+            "Good desktop pattern: text-lg",
+            "Good desktop pattern: p-8"
+          ]
+        },
+        "wide": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Large desktop breakpoint used: xl:, xl:, xl:, xl:, xl:, xl:",
+            "Good wide pattern: text-xl"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Chart": {
+      "name": "Chart",
+      "path": "components\\ui\\Chart.tsx",
+      "score": 77,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4",
+        "Good mobile pattern: space-y-4",
+        "Good desktop pattern: text-lg"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 81,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4",
+            "Good mobile pattern: space-y-4"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 77,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": [
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Container": {
+      "name": "Container",
+      "path": "components\\ui\\Container.tsx",
+      "score": 94,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Missing tablet breakpoint classes"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:, sm:, sm:, sm:",
+        "Desktop breakpoint used: lg:, lg:, lg:, lg:",
+        "Custom wide breakpoint: wide:"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 90,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:, sm:, sm:, sm:"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:, lg:, lg:, lg:"
+          ]
+        },
+        "wide": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Custom wide breakpoint: wide:"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "DataGridBody": {
+      "name": "DataGridBody",
+      "path": "components\\ui\\data-grid\\DataGridBody.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "DataGridHeader": {
+      "name": "DataGridHeader",
+      "path": "components\\ui\\data-grid\\DataGridHeader.tsx",
+      "score": 83,
+      "issues": [
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: p-4"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "DataGridPagination": {
+      "name": "DataGridPagination",
+      "path": "components\\ui\\data-grid\\DataGridPagination.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "DataGrid": {
+      "name": "DataGrid",
+      "path": "components\\ui\\DataGrid.tsx",
+      "score": 84,
+      "issues": [
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:, sm:",
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4",
+        "Good mobile pattern: space-y-4"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 111,
+          "issues": [],
+          "warnings": [
+            "Mobile-first responsive design: sm:, sm:",
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4",
+            "Good mobile pattern: space-y-4"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "dropdown-menu": {
+      "name": "dropdown-menu",
+      "path": "components\\ui\\dropdown-menu.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Flex": {
+      "name": "Flex",
+      "path": "components\\ui\\Flex.tsx",
+      "score": 95,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Forbidden breakpoint class in mobile: xl:",
+        "Forbidden breakpoint class in tablet: xl:"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: p-4",
+        "Tablet breakpoint used: md:",
+        "Good tablet pattern: p-6",
+        "Desktop breakpoint used: lg:",
+        "Good desktop pattern: p-8",
+        "Large desktop breakpoint used: xl:"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:",
+            "Forbidden breakpoint class in mobile: xl:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 92,
+          "issues": [
+            "Forbidden breakpoint class in tablet: xl:"
+          ],
+          "warnings": [
+            "Tablet breakpoint used: md:",
+            "Good tablet pattern: p-6"
+          ]
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:",
+            "Good desktop pattern: p-8"
+          ]
+        },
+        "wide": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Large desktop breakpoint used: xl:"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Form": {
+      "name": "Form",
+      "path": "components\\ui\\Form.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Grid": {
+      "name": "Grid",
+      "path": "components\\ui\\Grid.tsx",
+      "score": 95,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Forbidden breakpoint class in mobile: xl:",
+        "Forbidden breakpoint class in tablet: xl:"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: p-4",
+        "Tablet breakpoint used: md:",
+        "Good tablet pattern: p-6",
+        "Desktop breakpoint used: lg:",
+        "Good desktop pattern: p-8",
+        "Large desktop breakpoint used: xl:"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:",
+            "Forbidden breakpoint class in mobile: xl:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 92,
+          "issues": [
+            "Forbidden breakpoint class in tablet: xl:"
+          ],
+          "warnings": [
+            "Tablet breakpoint used: md:",
+            "Good tablet pattern: p-6"
+          ]
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:",
+            "Good desktop pattern: p-8"
+          ]
+        },
+        "wide": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Large desktop breakpoint used: xl:"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "index": {
+      "name": "index",
+      "path": "components\\ui\\index.ts",
+      "score": 75,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [],
+      "breakpoints": {
+        "mobile": {
+          "score": 75,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Input": {
+      "name": "Input",
+      "path": "components\\ui\\Input.tsx",
+      "score": 88,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Forbidden breakpoint class in mobile: xl:",
+        "Missing tablet breakpoint classes",
+        "Forbidden breakpoint class in tablet: xl:"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: text-sm",
+        "Good tablet pattern: text-base",
+        "Desktop breakpoint used: lg:",
+        "Good desktop pattern: text-lg",
+        "Large desktop breakpoint used: xl:"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:",
+            "Forbidden breakpoint class in mobile: xl:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 62,
+          "issues": [
+            "Missing tablet breakpoint classes",
+            "Forbidden breakpoint class in tablet: xl:"
+          ],
+          "warnings": [
+            "Good tablet pattern: text-base"
+          ]
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:",
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Large desktop breakpoint used: xl:"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Loading": {
+      "name": "Loading",
+      "path": "components\\ui\\Loading.tsx",
+      "score": 95,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Forbidden breakpoint class in mobile: xl:",
+        "Forbidden breakpoint class in tablet: xl:"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:, sm:",
+        "Good mobile pattern: text-sm",
+        "Tablet breakpoint used: md:, md:",
+        "Good tablet pattern: text-base",
+        "Desktop breakpoint used: lg:, lg:",
+        "Good desktop pattern: text-lg",
+        "Large desktop breakpoint used: xl:, xl:"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:",
+            "Forbidden breakpoint class in mobile: xl:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:, sm:",
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 92,
+          "issues": [
+            "Forbidden breakpoint class in tablet: xl:"
+          ],
+          "warnings": [
+            "Tablet breakpoint used: md:, md:",
+            "Good tablet pattern: text-base"
+          ]
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:, lg:",
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Large desktop breakpoint used: xl:, xl:"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "MegaMenu": {
+      "name": "MegaMenu",
+      "path": "components\\ui\\MegaMenu.tsx",
+      "score": 88,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Missing tablet breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4",
+        "Good tablet pattern: p-6",
+        "Desktop breakpoint used: lg:, lg:, lg:",
+        "Good desktop pattern: p-8"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 94,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 77,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": [
+            "Good tablet pattern: p-6"
+          ]
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:, lg:, lg:",
+            "Good desktop pattern: p-8"
+          ]
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "MobileNavigation": {
+      "name": "MobileNavigation",
+      "path": "components\\ui\\MobileNavigation.tsx",
+      "score": 80,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Forbidden breakpoint class in mobile: lg:",
+        "Missing tablet breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4",
+        "Desktop breakpoint used: lg:, lg:",
+        "Good desktop pattern: text-lg"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 64,
+          "issues": [
+            "Missing mobile breakpoint classes",
+            "Forbidden breakpoint class in mobile: lg:"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:, lg:",
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Modal": {
+      "name": "Modal",
+      "path": "components\\ui\\Modal.tsx",
+      "score": 95,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Forbidden breakpoint class in mobile: xl:",
+        "Forbidden breakpoint class in tablet: xl:"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: p-4",
+        "Tablet breakpoint used: md:",
+        "Desktop breakpoint used: lg:",
+        "Good desktop pattern: text-lg",
+        "Large desktop breakpoint used: xl:"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:",
+            "Forbidden breakpoint class in mobile: xl:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 90,
+          "issues": [
+            "Forbidden breakpoint class in tablet: xl:"
+          ],
+          "warnings": [
+            "Tablet breakpoint used: md:"
+          ]
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:",
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Large desktop breakpoint used: xl:"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Navigation": {
+      "name": "Navigation",
+      "path": "components\\ui\\Navigation.tsx",
+      "score": 96,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: space-y-4",
+        "Tablet breakpoint used: md:, md:, md:",
+        "Good tablet pattern: text-base",
+        "Desktop breakpoint used: lg:",
+        "Good desktop pattern: text-lg"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 94,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: space-y-4"
+          ]
+        },
+        "tablet": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Tablet breakpoint used: md:, md:, md:",
+            "Good tablet pattern: text-base"
+          ]
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:",
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "PageHeader": {
+      "name": "PageHeader",
+      "path": "components\\ui\\PageHeader.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm",
+        "Good desktop pattern: text-lg"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 77,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": [
+            "Good desktop pattern: text-lg"
+          ]
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "ProgressBar": {
+      "name": "ProgressBar",
+      "path": "components\\ui\\ProgressBar.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Skeleton": {
+      "name": "Skeleton",
+      "path": "components\\ui\\Skeleton.tsx",
+      "score": 75,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [],
+      "breakpoints": {
+        "mobile": {
+          "score": 75,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Stack": {
+      "name": "Stack",
+      "path": "components\\ui\\Stack.tsx",
+      "score": 95,
+      "issues": [
+        "Forbidden breakpoint class in mobile: lg:",
+        "Forbidden breakpoint class in mobile: xl:",
+        "Forbidden breakpoint class in tablet: xl:"
+      ],
+      "warnings": [
+        "Mobile-first responsive design: sm:",
+        "Good mobile pattern: space-y-4",
+        "Tablet breakpoint used: md:",
+        "Good tablet pattern: space-y-6",
+        "Desktop breakpoint used: lg:",
+        "Good desktop pattern: space-y-8",
+        "Large desktop breakpoint used: xl:"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Forbidden breakpoint class in mobile: lg:",
+            "Forbidden breakpoint class in mobile: xl:"
+          ],
+          "warnings": [
+            "Mobile-first responsive design: sm:",
+            "Good mobile pattern: space-y-4"
+          ]
+        },
+        "tablet": {
+          "score": 92,
+          "issues": [
+            "Forbidden breakpoint class in tablet: xl:"
+          ],
+          "warnings": [
+            "Tablet breakpoint used: md:",
+            "Good tablet pattern: space-y-6"
+          ]
+        },
+        "desktop": {
+          "score": 107,
+          "issues": [],
+          "warnings": [
+            "Desktop breakpoint used: lg:",
+            "Good desktop pattern: space-y-8"
+          ]
+        },
+        "wide": {
+          "score": 105,
+          "issues": [],
+          "warnings": [
+            "Large desktop breakpoint used: xl:"
+          ]
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 100,
+        "issues": [],
+        "warnings": []
+      }
+    },
+    "Table": {
+      "name": "Table",
+      "path": "components\\ui\\Table.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Toast": {
+      "name": "Toast",
+      "path": "components\\ui\\Toast.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm",
+        "Good mobile pattern: p-4"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 79,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm",
+            "Good mobile pattern: p-4"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    },
+    "Tooltip": {
+      "name": "Tooltip",
+      "path": "components\\ui\\Tooltip.tsx",
+      "score": 76,
+      "issues": [
+        "Missing mobile breakpoint classes",
+        "Missing tablet breakpoint classes",
+        "Missing desktop breakpoint classes",
+        "Missing wide breakpoint classes"
+      ],
+      "warnings": [
+        "Good mobile pattern: text-sm"
+      ],
+      "breakpoints": {
+        "mobile": {
+          "score": 77,
+          "issues": [
+            "Missing mobile breakpoint classes"
+          ],
+          "warnings": [
+            "Good mobile pattern: text-sm"
+          ]
+        },
+        "tablet": {
+          "score": 75,
+          "issues": [
+            "Missing tablet breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "desktop": {
+          "score": 75,
+          "issues": [
+            "Missing desktop breakpoint classes"
+          ],
+          "warnings": []
+        },
+        "wide": {
+          "score": 75,
+          "issues": [
+            "Missing wide breakpoint classes"
+          ],
+          "warnings": []
+        }
+      },
+      "patterns": {},
+      "mobileFirst": {
+        "score": 70,
+        "issues": [
+          "Not using mobile-first approach"
+        ],
+        "warnings": []
+      }
+    }
+  },
+  "recommendations": [
+    "Adopt mobile-first approach - start with mobile styles and add larger breakpoints",
+    "Fix 144 responsive design issues"
+  ],
+  "nextSteps": [
+    "1. Fix mobile responsiveness issues",
+    "2. Add missing breakpoint classes",
+    "3. Implement mobile-first approach",
+    "4. Test on actual devices",
+    "5. Set up automated responsive testing",
+    "6. Create responsive design documentation"
+  ]
+}

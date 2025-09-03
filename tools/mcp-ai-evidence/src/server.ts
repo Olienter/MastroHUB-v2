@@ -24,6 +24,31 @@ process.on('unhandledRejection', (reason, promise) => {
 // Health monitoring
 let isHealthy = true;
 let lastHealthCheck = Date.now();
+let activityCount = 0;
+let lastActivity = Date.now();
+
+// Health check interval
+const HEALTH_CHECK_INTERVAL = 30000; // 30 seconds
+const ACTIVITY_TIMEOUT = 60000; // 1 minute
+
+setInterval(() => {
+  const now = Date.now();
+  const timeSinceLastActivity = now - lastActivity;
+  
+  if (timeSinceLastActivity > ACTIVITY_TIMEOUT) {
+    if (isHealthy) {
+      console.log("⚠️ Server marked as unhealthy - no recent activity");
+      isHealthy = false;
+    }
+  } else {
+    if (!isHealthy) {
+      console.log("✅ Server marked as healthy - activity detected");
+      isHealthy = true;
+    }
+  }
+  
+  lastHealthCheck = now;
+}, HEALTH_CHECK_INTERVAL);
 
 const server = new Server(
   { name: "mastro-mcp-ai-evidence", version: "0.1.0" },
@@ -40,9 +65,11 @@ const server = new Server(
 // 1) tools/list
 server.setRequestHandler(ListToolsRequestSchema, async () => {
   try {
-    // Update health status
+    // Update health status and activity
     isHealthy = true;
     lastHealthCheck = Date.now();
+    lastActivity = Date.now();
+    activityCount++;
     
     return {
       tools: [
@@ -107,9 +134,11 @@ server.setRequestHandler(
   CallToolRequestSchema,
   async (request: CallToolRequest) => {
     try {
-      // Update health status
+      // Update health status and activity
       isHealthy = true;
       lastHealthCheck = Date.now();
+      lastActivity = Date.now();
+      activityCount++;
       
       const name = request.params.name;
       const args = (request.params.arguments ?? {}) as Record<string, unknown>;
